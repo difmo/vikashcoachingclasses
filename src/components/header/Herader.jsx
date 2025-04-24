@@ -9,6 +9,15 @@ const Header = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
+  const navLinks = [
+    { path: "/content-layout", label: "Online Physics Tutor" },
+    { path: "/chemistry", label: "Online Chemistry Tutor" },
+    { path: "/maths", label: "Online Maths Tutor" },
+    { path: "/biology", label: "Online Biology Tutor" },
+    { path: "/online-classes", label: "Online Courses" },
+    { path: "/taup", label: "Taup (Urban Tutma)" },
+  ];
+
   return (
     <header className="bg-white shadow sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -30,65 +39,17 @@ const Header = () => {
           }`}
         >
           <ul className="flex flex-col md:flex-row gap-4 p-4 md:p-0 text-gray-700 font-medium">
-            {/* <li>
-              <Link to="/" onClick={closeMenu} className="hover:text-blue-500">
-                Home
-              </Link>
-            </li> */}
-            <li>
-              <Link
-                to="/online-classes"
-                onClick={closeMenu}
-                className="hover:text-blue-500"
-              >
-                Online Physics Tutor
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/chemistry"
-                onClick={closeMenu}
-                className="hover:text-blue-500"
-              >
-                Online Chemistry Tutor
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/maths"
-                onClick={closeMenu}
-                className="hover:text-blue-500"
-              >
-                Online Maths Tutor
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/biology"
-                onClick={closeMenu}
-                className="hover:text-blue-500"
-              >
-                Online Biology Tutor
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/courses"
-                onClick={closeMenu}
-                className="hover:text-blue-500"
-              >
-                Online Courses
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/taup"
-                onClick={closeMenu}
-                className="hover:text-blue-500"
-              >
-                Taup (Urban Tutma)
-              </Link>
-            </li>
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <Link
+                  to={link.path}
+                  onClick={closeMenu}
+                  className="hover:text-blue-500"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
             <li className="block md:hidden">
               <Link
                 to="/join-form"
@@ -102,11 +63,9 @@ const Header = () => {
         </div>
 
         {/* "Join as a Tutor" Button for Desktop */}
-        <div className="hidden md:block  w-40">
-          <Link
-            to="/join-form"
-            >
-              <CustomButton label="Jion Tuter"/>
+        <div className="hidden md:block w-40">
+          <Link to="/join-form">
+            <CustomButton label="Join Tutor" />
           </Link>
         </div>
       </div>
