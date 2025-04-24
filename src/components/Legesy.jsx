@@ -78,25 +78,6 @@ const Legesy = () => {
 
         {/* Forms Section with Scroll Animation */}
         <div className="flex flex-col lg:flex-row gap-6 justify-center items-stretch">
-          {/* Enquire Now Form */}
-          <motion.div
-            variants={fadeInLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            custom={0}
-            className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3"
-          >
-            {/* <h3 className="text-2xl text-center font-semibold mb-4 text-gray-800">
-              Enquire Now
-            </h3> */}
-            {/* <Formcontect
-              heading={"  Get upto 100% Scholarship"}
-              nameCollection={"enquire-now"}
-              formKey={"enquireKey"}
-            /> */}
-          </motion.div>
-
           {/* Logo Section (or Registration Button) */}
           <motion.div
             variants={fadeInRight}
@@ -104,42 +85,35 @@ const Legesy = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             custom={0.5}
-            className="w-full "
+            className="w-full"
           >
-            {/* <button className="py-16 px-8 rounded-full text-white bg-sky-500 transition-all duration-300">
-            Registration
-          </button> */}
-            <div>
-              <CustomHeading text1={"Tastmoinal"} />{" "}
+            <div className="text-center lg:text-left mt-4">
+              {/* Text Content */}
+              <CustomHeading text1={"Tastmoinal"} />
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Laboriosam magnam ipsam nostrum reprehenderit.{" "}
+                <Link to="#">more .. </Link>
+              </p>
             </div>
-            <div className="flex gap-10 justify-center">
-              <img src={logo} className="h-44 pt-4 pb-2" />
-              <img src={logo} className="h-44 pt-4 pb-2" />
-              <img src={logo} className="h-44 pt-4 pb-2" />
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
+              {/* Adjusted Image Container */}
+              <img
+                src={logo}
+                className="h-44 pt-4 pb-2 max-w-full"
+                alt="Logo"
+              />
+              <img
+                src={logo}
+                className="h-44 pt-4 pb-2 max-w-full"
+                alt="Logo"
+              />
+              <img
+                src={logo}
+                className="h-44 pt-4 pb-2 max-w-full"
+                alt="Logo"
+              />
             </div>
-            <div>
-              Lorem ipsumt consectetur adipisicing elit. Laboriosam magnam ipsam
-              nostrum reprehenderit. <Link to="#">more .. </Link>
-            </div>
-          </motion.div>
-
-          {/* Quick Registration Form */}
-          <motion.div
-            variants={fadeInLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            custom={1}
-            className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3"
-          >
-            {/* <h3 className="text-2xl text-center font-semibold mb-4 text-gray-800">
-              Quick Registration
-            </h3> */}
-            {/* <Formcontect
-              heading={"Get in Touch"}
-              nameCollection={"enquire-now"}
-              formKey={"enquireKey1"}
-            /> */}
           </motion.div>
         </div>
       </div>

@@ -15,7 +15,7 @@ function App() {
           <Route path="/online-classes" element={<OnlineClasses />} />
           <Route path="/join-form" element={<JoinTeamForm />} />
           <Route path="/form" element={<Form />} />
-          <Route path="/content-layout" element={<ContentLayout />} />
+          <Route path="/subject/:subject" element={<ContentLayout />} />
         </Route>
       </Routes>
     </BrowserRouter>

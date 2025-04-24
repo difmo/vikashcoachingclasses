@@ -10,10 +10,10 @@ const Header = () => {
   const closeMenu = () => setIsOpen(false);
 
   const navLinks = [
-    { path: "/content-layout", label: "Online Physics Tutor" },
-    { path: "/chemistry", label: "Online Chemistry Tutor" },
-    { path: "/maths", label: "Online Maths Tutor" },
-    { path: "/biology", label: "Online Biology Tutor" },
+    { path: "/subject/physics", label: "Online Physics Tutor" },
+    { path: "/subject/chemistry", label: "Online Chemistry Tutor" },
+    { path: "/subject/math", label: "Online Maths Tutor" },
+    { path: "/subject/biology", label: "Online Biology Tutor" },
     { path: "/online-classes", label: "Online Courses" },
     { path: "/taup", label: "Taup (Urban Tutma)" },
   ];
