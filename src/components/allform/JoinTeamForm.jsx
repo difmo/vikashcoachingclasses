@@ -3,7 +3,6 @@ import CustomButton from "../CustomButton";
 import CustomInput from "../CustomInput";
 import CustomCheckbox from "../CustomCheckbox";
 
-
 const boards = ["CBSE", "ICSE", "ISC", "IB", "IGCSE", "State"];
 const subjects = ["Phy", "Chem", "Bio", "Maths"];
 const exams = ["NEET", "IIT-JEE"];
@@ -58,133 +57,165 @@ const JoinTeamForm = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-white text-black rounded-xl shadow-md">
-      <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-6">
-        Kindly Fill the Form
-      </h2>
-      <form onSubmit={handleSubmit} className="space-y-5">
-        <CustomInput
-          type="text"
-          label="Name"
-          placeholder="Name"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          required
-        />
+    <div className="bg-white/60 ">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-28">
+        <div className="flex flex-col md:flex-row text-black rounded-xl overflow-hidden">
+          {/* Left Section */}
+          <div className="md:basis-1/2  border border-amber-800 bg-gray-50">
+            <p className="text-md  p-5 leading-relaxed">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae
+              excepturi tenetur tempora odio, veniam expedita quam quidem
+              reiciendis aliquid saepe quae exercitationem? Odio aliquam dolorum
+              repellat aliquid quae impedit obcaecati. Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Asperiores at quasi aperiam aut
+              delectus commodi, a doloremque ea impedit soluta! Laudantium
+              inventore, ab porro doloremque necessitatibus fuga officia in.
+              Doloribus.
+            </p>
+          </div>
 
-        <CustomInput
-          label="Class"
-          type="text"
-          placeholder="Class (e.g. 7 to Dropper)"
-          value={formData.class}
-          onChange={(e) => setFormData({ ...formData, class: e.target.value })}
-          required
-        />
+          {/* Right Section (Form) */}
+          <div className="md:basis-1/2 p-6 border-b-cyan-400 bg-white">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-6">
+              Kindly Fill the Form
+            </h2>
 
-        <div>
-          <label className="block font-medium mb-1">Subjects</label>
-          <div className="flex flex-wrap gap-3">
-            {subjects.map((sub) => (
-              <label key={sub} className="flex items-center gap-2">
-                <CustomCheckbox
-                  type="checkbox"
-                  onChange={() => toggleSelection("subjects", sub)}
-                  checked={formData.subjects.includes(sub)}
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <CustomInput
+                type="text"
+                label="Name"
+                placeholder="Name"
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+                required
+              />
+
+              <CustomInput
+                label="Class"
+                type="text"
+                placeholder="Class (e.g. 7 to Dropper)"
+                value={formData.class}
+                onChange={(e) =>
+                  setFormData({ ...formData, class: e.target.value })
+                }
+                required
+              />
+
+              {/* Subjects */}
+              <div>
+                <label className="block font-medium mb-1">Subjects</label>
+                <div className="flex flex-wrap gap-3">
+                  {subjects.map((sub) => (
+                    <label key={sub} className="flex items-center gap-2">
+                      <CustomCheckbox
+                        type="checkbox"
+                        onChange={() => toggleSelection("subjects", sub)}
+                        checked={formData.subjects.includes(sub)}
+                      />
+                      {sub}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Boards */}
+              <div>
+                <label className="block font-medium mb-1">Boards</label>
+                <div className="flex flex-wrap gap-3">
+                  {boards.map((board) => (
+                    <label key={board} className="flex items-center gap-2">
+                      <CustomCheckbox
+                        type="checkbox"
+                        onChange={() => toggleSelection("boards", board)}
+                        checked={formData.boards.includes(board)}
+                      />
+                      {board}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Exams */}
+              <div>
+                <label className="block font-medium mb-1">Exams</label>
+                <div className="flex flex-wrap gap-3">
+                  {exams.map((exam) => (
+                    <label key={exam} className="flex items-center gap-2">
+                      <CustomCheckbox
+                        type="checkbox"
+                        onChange={() => toggleSelection("exams", exam)}
+                        checked={formData.exams.includes(exam)}
+                      />
+                      {exam}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <CustomInput
+                type="text"
+                placeholder="Experience"
+                value={formData.experience}
+                onChange={(e) =>
+                  setFormData({ ...formData, experience: e.target.value })
+                }
+              />
+
+              <CustomInput
+                type="tel"
+                placeholder="Contact Number"
+                value={formData.contact}
+                onChange={(e) =>
+                  setFormData({ ...formData, contact: e.target.value })
+                }
+                required
+              />
+
+              {/* OTP Section */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+                <button
+                  type="button"
+                  onClick={sendOtp}
+                  className="btn sm:w-auto w-full bg-gray-200"
+                >
+                  Send OTP
+                </button>
+                <CustomInput
+                  type="text"
+                  placeholder="Enter OTP"
+                  className="sm:w-32 w-full"
+                  value={formData.otp}
+                  onChange={(e) =>
+                    setFormData({ ...formData, otp: e.target.value })
+                  }
                 />
-                {sub}
-              </label>
-            ))}
+                <button
+                  type="button"
+                  onClick={verifyOtp}
+                  className="btn sm:w-auto w-full bg-gray-200"
+                >
+                  Verify OTP
+                </button>
+              </div>
+
+              <CustomInput
+                type="file"
+                accept="application/pdf"
+                onChange={handleFileChange}
+                required
+              />
+
+              <CustomButton
+                type="submit"
+                label="Submit"
+                className="btn w-full bg-blue-600 text-white"
+              />
+            </form>
           </div>
         </div>
-
-        <div>
-          <label className="block font-medium mb-1">Boards</label>
-          <div className="flex flex-wrap gap-3">
-            {boards.map((board) => (
-              <label key={board} className="flex items-center gap-2">
-                <CustomCheckbox
-                  type="checkbox"
-                  onChange={() => toggleSelection("boards", board)}
-                  checked={formData.boards.includes(board)}
-                />
-                {board}
-              </label>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <label className="block font-medium mb-1">Exams</label>
-          <div className="flex flex-wrap gap-3">
-            {exams.map((exam) => (
-              <label key={exam} className="flex items-center gap-2">
-                <CustomCheckbox
-                  type="checkbox"
-                  onChange={() => toggleSelection("exams", exam)}
-                  checked={formData.exams.includes(exam)}
-                />
-                {exam}
-              </label>
-            ))}
-          </div>
-        </div>
-
-        <CustomInput
-          type="text"
-          placeholder="Experience"
-          value={formData.experience}
-          onChange={(e) =>
-            setFormData({ ...formData, experience: e.target.value })
-          }
-        />
-
-        <CustomInput
-          type="tel"
-          placeholder="Contact Number"
-          value={formData.contact}
-          onChange={(e) =>
-            setFormData({ ...formData, contact: e.target.value })
-          }
-          required
-        />
-
-        <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-          <button
-            type="button"
-            onClick={sendOtp}
-            className="btn sm:w-auto w-full bg-gray-200"
-          >
-            Send OTP
-          </button>
-          <CustomInput
-            type="text"
-            placeholder="Enter OTP"
-            className="sm:w-32 w-full"
-            value={formData.otp}
-            onChange={(e) => setFormData({ ...formData, otp: e.target.value })}
-          />
-          <button
-            type="button"
-            onClick={verifyOtp}
-            className="btn sm:w-auto w-full bg-gray-200"
-          >
-            Verify OTP
-          </button>
-        </div>
-
-        <CustomInput
-          type="file"
-          accept="application/pdf"
-          onChange={handleFileChange}
-          required
-        />
-
-        <CustomButton
-          type="submit"
-          label="Submit"
-          className="btn w-full bg-blue-600 text-white"
-        />
-      </form>
+      </div>
     </div>
   );
 };
