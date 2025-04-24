@@ -7,31 +7,30 @@ const slides = [
   {
     image: img3,
     heading: "Hi, Looking for Online Physics Tutor",
-    text: "7th, 8th, 9th, 10th, 11th, 12th, JEE, NEET, NDA, must join roots classes.",
+    text: "7th to 12th, JEE, NEET, NDA — Join Roots Classes.",
   },
   {
     image: img3,
     heading: "Hi, Looking for Online Chemistry Tutor",
-    text: "7th, 8th, 9th, 10th, 11th, 12th, JEE, NEET, NDA, must join roots classes.",
+    text: "7th to 12th, JEE, NEET, NDA — Join Roots Classes.",
   },
   {
     image: img3,
     heading: "Hi, Looking for Online Maths Tutor",
-    text: "7th, 8th, 9th, 10th, 11th, 12th, JEE, NEET, NDA, must join roots classes.",
+    text: "7th to 12th, JEE, NEET, NDA — Join Roots Classes.",
   },
   {
     image: img3,
     heading: "Hi, Looking for Online Biology Tutor",
-    text: "7th, 8th, 9th, 10th, 11th, 12th, JEE, NEET, NDA, must join roots classes.",
+    text: "7th to 12th, JEE, NEET, NDA — Join Roots Classes.",
   },
   {
     image: img3,
-    heading: "You are at night ",
-    text: "7th, 8th, 9th, 10th, 11th, 12th, JEE, NEET, NDA, must join roots classes.",
+    heading: "You are at night",
+    text: "Join Roots Classes to brighten your future.",
   },
 ];
 
-// Animation for fade-in text
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -41,7 +40,6 @@ const fadeUp = {
   },
 };
 
-// Animation for background image zoom
 const imageZoom = {
   initial: { scale: 1 },
   animate: { scale: 1.05 },
@@ -68,7 +66,8 @@ const MainSlider = () => {
   };
 
   return (
-    <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden">
+    <div className="relative w-full h-[600px] md:h-[700px] overflow-hidden">
+      {/* Background Image & Overlay */}
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
@@ -81,21 +80,21 @@ const MainSlider = () => {
         >
           <img
             src={slides[current].image}
-            alt="Slider"
+            alt="Slide"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40" />
         </motion.div>
       </AnimatePresence>
 
-      {/* Content */}
-      <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center px-6">
+      {/* Center Text Content */}
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 md:px-6">
         <motion.h1
           key={`heading-${current}`}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="text-white mt-4 max-w-2xl text-3xl md:text-5xl lg:text-6xl font-bold"
+          className="text-white text-2xl md:text-4xl lg:text-5xl font-bold max-w-xl"
         >
           {slides[current].heading}
         </motion.h1>
@@ -105,26 +104,31 @@ const MainSlider = () => {
           initial="hidden"
           animate="visible"
           transition={{ delay: 0.2 }}
-          className="text-white text-base md:text-lg mt-4 max-w-2xl"
+          className="text-white text-sm md:text-lg mt-4 max-w-xl"
         >
           {slides[current].text}
         </motion.p>
       </div>
 
-      {/* Dots Navigation */}
-      <div className="absolute bottom-6 w-full flex justify-center gap-3">
+      {/* Form Overlay (Right side) */}
+      <div className="absolute right-4 top-1/2 transform -translate-y-1/2 w-full max-w-sm bg-white/90 backdrop-blur-md shadow-xl rounded-lg p-6 md:right-10">
+        {/* <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">
+          Join Now
+        </h2> */}
+        <Form />
+      </div>
+
+      {/* Dots */}
+      <div className="absolute bottom-4 w-full flex justify-center gap-2 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-2.5 w-2.5 rounded-full transition-all ${
+            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
               index === current ? "bg-sky-500 scale-125" : "bg-gray-300"
             }`}
           />
         ))}
-      </div>
-      <div className="absolute bottom-0 w-full flex justify-right gap-3 p-4">
-      <Form />
       </div>
     </div>
   );

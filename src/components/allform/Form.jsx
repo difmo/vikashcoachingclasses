@@ -22,9 +22,7 @@ export default function Form() {
 
 
             {/* 3. Select Class */}
-            <div className="mb-4">
-                <label className="block mb-1">Select Class:</label>
-                <div className="space-y-2">
+            <div className="flex flex-wrap gap-4 ">
                     {['Board', 'IB', 'IGCSE', 'ICSE', 'Dropper'].map((type) => (
                         <label key={type} className="flex items-center space-x-2">
                             <input type="radio" name="classType" value={type} />
@@ -32,12 +30,11 @@ export default function Form() {
                         </label>
                     ))}
                 </div>
-            </div>
 
             {/* 4. Select Subjects */}
             <div className="mb-4">
                 <label className="block mb-1">Select Subjects:</label>
-                <div className="flex flex-row gap-10">
+                <div className="flex flex-row gap-1 flex-wrap">
                     {['Physics', 'Chemistry', 'Maths', 'Biology'].map((subject) => (
                         <label key={subject} className="flex items-center space-x-2">
                             <input type="checkbox" value={subject} />
