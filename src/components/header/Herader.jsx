@@ -95,18 +95,18 @@ const Header = () => {
                 onClick={closeMenu}
                 className="bg-blue-600 text-white px-8 py-2 rounded-lg hover:bg-blue-700 transition"
               >
-                Join as a Tutor
+                Join Tutor
               </Link>
             </li>
           </ul>
         </div>
 
         {/* "Join as a Tutor" Button for Desktop */}
-        <div className="hidden md:block">
+        <div className="hidden md:block  w-40">
           <Link
             to="/join-form"
             >
-              <CustomButton label="Jion as a Tuter"/>
+              <CustomButton label="Jion Tuter"/>
           </Link>
         </div>
       </div>
