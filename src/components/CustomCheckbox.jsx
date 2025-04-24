@@ -1,0 +1,54 @@
+import React from "react";
+
+const CustomCheckbox = ({
+  label = "",
+  id,
+  checked,
+  onChange,
+  error,
+  style,
+}) => {
+  const mainLabel = label ? label.split("*")[0] : "";
+
+  return (
+    <div className="relative mb-2 py-1.5">
+      <label
+        htmlFor={id}
+        className="flex items-center gap-2 cursor-pointer text-sm text-gray-800"
+        style={style}
+      >
+        <input
+          type="checkbox"
+          id={id}
+          checked={checked}
+          onChange={onChange}
+          className="peer hidden"
+        />
+        <div className="w-5 h-5 border-2 border-gray-300 rounded-md peer-checked:bg-blue-600 peer-checked:border-blue-600 flex items-center justify-center transition-all duration-200">
+          {checked && (
+            <svg
+              className="w-3 h-3 text-white"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="3"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          )}
+        </div>
+        <span>
+          {mainLabel}
+          {label.includes("*") && <span className="text-red-500">*</span>}
+        </span>
+      </label>
+      {error && <p className="mt-1 text-xs italic text-red-500">{error}</p>}
+    </div>
+  );
+};
+
+export default CustomCheckbox;
