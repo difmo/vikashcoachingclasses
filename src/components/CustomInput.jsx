@@ -8,7 +8,7 @@ const CustomInput = ({
   value,
   error,
 }) => {
-  // Safely split the label only if it's a string and not empty.
+  // Safelyit the label only if it's a string and not empty.
   const mainLabel = label ? label.split("*")[0] : "";
 
   return (

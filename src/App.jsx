@@ -2,7 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LayOut from "./layout/LayOut";
 import Home from "./components/Home";
 import OnlineClasses from "./pages/class/OnlineClasses";
-import JoinTeamForm from "./pages/JoinTeamForm";
+import JoinTeamForm from "./components/allform/JoinTeamForm";
+import Form from "./components/allform/Form";
+
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/online-classes" element={<OnlineClasses />} />
           <Route path="/join-form" element={<JoinTeamForm />} />
+          <Route path="/form" element={<Form />} />
         </Route>
       </Routes>
     </BrowserRouter>

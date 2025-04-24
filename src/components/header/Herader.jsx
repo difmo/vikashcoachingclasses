@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import CustomButton from "../CustomButton";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -104,9 +105,8 @@ const Header = () => {
         <div className="hidden md:block">
           <Link
             to="/join-form"
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-          >
-            Join as a Tutor
+            >
+              <CustomButton label="Jion as a Tuter"/>
           </Link>
         </div>
       </div>

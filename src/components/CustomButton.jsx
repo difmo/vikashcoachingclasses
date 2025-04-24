@@ -3,7 +3,7 @@ import React from "react";
 const CustomButton = ({
   label,
   onClick,
-  type = "button", // ✅ accept type from props
+  type = "button", ///// ✅ accept type from props
   className = "",
 }) => {
   return (

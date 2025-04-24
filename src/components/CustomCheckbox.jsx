@@ -24,6 +24,7 @@ const CustomCheckbox = ({
           onChange={onChange}
           className="peer hidden"
         />
+        {/*  */}
         <div className="w-5 h-5 border-2 border-gray-300 rounded-md peer-checked:bg-blue-600 peer-checked:border-blue-600 flex items-center justify-center transition-all duration-200">
           {checked && (
             <svg

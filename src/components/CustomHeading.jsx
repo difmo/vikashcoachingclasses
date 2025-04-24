@@ -7,6 +7,7 @@ const CustomHeading = ({ text1, text2 }) => {
       <span className="text-sky-500">{text2}</span>
     </h2>
   );
+  // 
 };
 
 export default CustomHeading;

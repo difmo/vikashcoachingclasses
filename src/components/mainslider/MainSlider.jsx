@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import img3 from "../../assets/home.jpg";
+import Form from "../allform/Form";
 
 const slides = [
   {
@@ -121,6 +122,9 @@ const MainSlider = () => {
             }`}
           />
         ))}
+      </div>
+      <div className="absolute bottom-0 w-full flex justify-right gap-3 p-4">
+      <Form />
       </div>
     </div>
   );
