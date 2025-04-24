@@ -2,7 +2,38 @@ import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import CustomButton from "../../components/CustomButton";
 import { Link } from "react-router-dom";
-// import { onlineCoursesData as data } from "../../data/onlineCourses";
+
+// ✅ Static Data
+const data = {
+  heading: "Start Learning with Our Online Classes",
+  introText:
+    "Explore our comprehensive classes tailored to CBSE, ICSE, and State Boards. Learn from expert tutors with live sessions and recorded content.",
+  video: {
+    url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    title: "Introduction to Online Classes",
+  },
+  classInfo: {
+    className: "Class 10 - Science & Math",
+    subjects: ["Physics", "Chemistry", "Biology", "Mathematics"],
+    features: [
+      "Live interactive sessions with subject experts",
+      "Doubt clearing sessions and daily practice problems",
+      "Access to recorded videos and downloadable notes",
+      "Mock tests based on board patterns",
+      "Affordable pricing with flexible payment",
+    ],
+  },
+  buttons: {
+    contact: {
+      label: "Contact Us",
+      link: "/contact",
+    },
+    payment: {
+      label: "Pay Now",
+      link: "https://paymentgateway.com/pay-link",
+    },
+  },
+};
 
 const OnlineClasses = () => {
   const ref = useRef(null);
@@ -23,7 +54,6 @@ const OnlineClasses = () => {
 
       {/* Video + Class Info */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-12 items-start px-4 sm:px-6 lg:px-8">
-        {/* Video Section */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -39,7 +69,6 @@ const OnlineClasses = () => {
           ></iframe>
         </motion.div>
 
-        {/* Class Info Section */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -68,17 +97,17 @@ const OnlineClasses = () => {
             <Link to={data.buttons.contact.link} className="w-full sm:w-auto">
               <CustomButton
                 label={data.buttons.contact.label}
-                className="w-full sm:w-28"
+                className="w-full "
               />
             </Link>
-            <a
+            {/* <a
               href={data.buttons.payment.link}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 text-base font-medium rounded-lg px-6 py-3 text-center w-full sm:w-auto"
             >
               {data.buttons.payment.label}
-            </a>
+            </a> */}
           </div>
         </motion.div>
       </div>

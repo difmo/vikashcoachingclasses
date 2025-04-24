@@ -66,7 +66,7 @@ const MainSlider = () => {
   };
 
   return (
-    <div className="relative w-full h-[600px] md:h-[700px] overflow-hidden">
+    <div className="relative w-full h-[400px] md:h-[600px] xl:h-[700px] overflow-hidden">
       {/* Background Image & Overlay */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -111,10 +111,7 @@ const MainSlider = () => {
       </div>
 
       {/* Form Overlay (Right side) */}
-      <div className="absolute right-4 top-1/2 transform -translate-y-1/2 w-full max-w-sm bg-white/90 backdrop-blur-md shadow-xl rounded-lg p-6 md:right-10">
-        {/* <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">
-          Join Now
-        </h2> */}
+      <div className="absolute hidden md:block right-4 top-1/2 transform -translate-y-1/2 w-full max-w-sm bg-white/40 backdrop-blur-md shadow-xl rounded-lg md:right-10">
         <Form />
       </div>
 
