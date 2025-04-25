@@ -57,30 +57,28 @@ const JoinTeamForm = () => {
   };
 
   return (
-    <div className="bg-white/60 ">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-28">
-        <div className="flex flex-col md:flex-row text-black rounded-xl overflow-hidden">
-          {/* Left Section */}
-          <div className="md:basis-1/2  border border-amber-800 bg-gray-50">
-            <p className="text-md  p-5 leading-relaxed">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae
-              excepturi tenetur tempora odio, veniam expedita quam quidem
-              reiciendis aliquid saepe quae exercitationem? Odio aliquam dolorum
-              repellat aliquid quae impedit obcaecati. Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Asperiores at quasi aperiam aut
-              delectus commodi, a doloremque ea impedit soluta! Laudantium
-              inventore, ab porro doloremque necessitatibus fuga officia in.
-              Doloribus.
+    <div className=" py-10 px-4">
+      <div className="max-w-5xl mx-auto shadow-xl bg-white rounded-3xl overflow-hidden">
+        <div className="flex flex-col lg:flex-row">
+          {/* Left Section (Info / Description) */}
+          <div className="lg:w-1/2 bg-secondary/10 text-black p-8 hidden lg:flex flex-col justify-center">
+            <h2 className="text-3xl font-bold mb-4">Join Our Educator Team</h2>
+            <p className="text-lg">
+              Help shape the future by sharing your knowledge. Fill in the form
+              and become a part of our growing network of educators.
             </p>
           </div>
 
           {/* Right Section (Form) */}
-          <div className="md:basis-1/2 p-6 border-b-cyan-400 bg-white">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-6">
+          <div className="w-full lg:w-1/2 p-8">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-center text-gradient-primary mb-6">
               Kindly Fill the Form
             </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-5 max-w-xl mx-auto"
+            >
               <CustomInput
                 type="text"
                 label="Name"
@@ -105,12 +103,16 @@ const JoinTeamForm = () => {
 
               {/* Subjects */}
               <div>
-                <label className="block font-medium mb-1">Subjects</label>
+                <label className="block font-semibold mb-2 text-gray-700">
+                  Subjects
+                </label>
                 <div className="flex flex-wrap gap-3">
                   {subjects.map((sub) => (
-                    <label key={sub} className="flex items-center gap-2">
+                    <label
+                      key={sub}
+                      className="flex items-center gap-2 text-sm"
+                    >
                       <CustomCheckbox
-                        type="checkbox"
                         onChange={() => toggleSelection("subjects", sub)}
                         checked={formData.subjects.includes(sub)}
                       />
@@ -122,12 +124,16 @@ const JoinTeamForm = () => {
 
               {/* Boards */}
               <div>
-                <label className="block font-medium mb-1">Boards</label>
+                <label className="block font-semibold mb-2 text-gray-700">
+                  Boards
+                </label>
                 <div className="flex flex-wrap gap-3">
                   {boards.map((board) => (
-                    <label key={board} className="flex items-center gap-2">
+                    <label
+                      key={board}
+                      className="flex items-center gap-2 text-sm"
+                    >
                       <CustomCheckbox
-                        type="checkbox"
                         onChange={() => toggleSelection("boards", board)}
                         checked={formData.boards.includes(board)}
                       />
@@ -139,12 +145,16 @@ const JoinTeamForm = () => {
 
               {/* Exams */}
               <div>
-                <label className="block font-medium mb-1">Exams</label>
+                <label className="block font-semibold mb-2 text-gray-700">
+                  Exams
+                </label>
                 <div className="flex flex-wrap gap-3">
                   {exams.map((exam) => (
-                    <label key={exam} className="flex items-center gap-2">
+                    <label
+                      key={exam}
+                      className="flex items-center gap-2 text-sm"
+                    >
                       <CustomCheckbox
-                        type="checkbox"
                         onChange={() => toggleSelection("exams", exam)}
                         checked={formData.exams.includes(exam)}
                       />
@@ -156,7 +166,7 @@ const JoinTeamForm = () => {
 
               <CustomInput
                 type="text"
-                placeholder="Experience"
+                placeholder="Experience (in years)"
                 value={formData.experience}
                 onChange={(e) =>
                   setFormData({ ...formData, experience: e.target.value })
@@ -174,14 +184,14 @@ const JoinTeamForm = () => {
               />
 
               {/* OTP Section */}
-              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-                <button
+              <div className="flex flex-col sm:flex-row items-center gap-3">
+                <CustomButton
                   type="button"
+                  label="  Send OTP"
                   onClick={sendOtp}
-                  className="btn sm:w-auto w-full bg-gray-200"
-                >
-                  Send OTP
-                </button>
+                  className=" px-4 py-2 rounded-lg"
+                />
+
                 <CustomInput
                   type="text"
                   placeholder="Enter OTP"
@@ -191,13 +201,12 @@ const JoinTeamForm = () => {
                     setFormData({ ...formData, otp: e.target.value })
                   }
                 />
-                <button
+                <CustomButton
                   type="button"
+                  label="  Verify"
                   onClick={verifyOtp}
-                  className="btn sm:w-auto w-full bg-gray-200"
-                >
-                  Verify OTP
-                </button>
+                  className="bg-green-500 text- px-4 py-2 rounded-lg hover:bg-indigo-200 transition-all"
+                />
               </div>
 
               <CustomInput
@@ -210,7 +219,7 @@ const JoinTeamForm = () => {
               <CustomButton
                 type="submit"
                 label="Submit"
-                className="btn w-full bg-blue-600 text-white"
+                className="w-full bg-secondary text-white hover:bg-primary transition-all py-2 rounded-xl"
               />
             </form>
           </div>

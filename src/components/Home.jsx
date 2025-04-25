@@ -5,11 +5,11 @@ import FAQ from "./FAQ";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <MainSlider />
       <Legesy />
       <FAQ />
-    </div>
+    </>
   );
 };
 

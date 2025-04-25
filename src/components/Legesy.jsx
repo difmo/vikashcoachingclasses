@@ -66,7 +66,7 @@ const Legesy = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 border border-sky-300 rounded-xl shadow-sm text-center"
+              className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 border border-red-300 rounded-xl shadow-sm text-center"
             >
               <h2 className="text-xl font-semibold mb-2 text-black">
                 {item.title}
@@ -74,10 +74,6 @@ const Legesy = () => {
               <p className="text-gray-600">{item.description}</p>
             </motion.div>
           ))}
-        </div>
-
-        {/* Forms Section with Scroll Animation */}
-        <div className="flex flex-col lg:flex-row gap-6 justify-center items-stretch">
           {/* Logo Section (or Registration Button) */}
           <motion.div
             variants={fadeInRight}
@@ -89,14 +85,16 @@ const Legesy = () => {
           >
             <div className="text-center lg:text-left mt-4">
               {/* Text Content */}
-              <CustomHeading text1={"Tastmoinal"} />
-              <p>
+              <div className="text-center">
+                <CustomHeading text1={"Testimonial"} />
+              </div>
+              <p className="text-center">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Laboriosam magnam ipsam nostrum reprehenderit.{" "}
                 <Link to="#">more .. </Link>
               </p>
             </div>
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-16">
               {/* Adjusted Image Container */}
               <img
                 src={logo}

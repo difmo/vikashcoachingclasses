@@ -24,7 +24,7 @@ const Header = () => {
         <header className="sticky top-0 z-50 w-full">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             {/* Logo */}
-            <Link to="/" className="text-2xl font-bold text-blue-600">
+            <Link to="/" className="text-2xl font-bold text-gradient-primary">
               Vikash Institute
             </Link>
 
@@ -47,7 +47,7 @@ const Header = () => {
                     <Link
                       to={link.path}
                       onClick={closeMenu}
-                      className="hover:text-blue-500 transition-colors duration-200"
+                      className="hover:text-secondary hover:underline transition-colors duration-200"
                     >
                       {link.label}
                     </Link>

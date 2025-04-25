@@ -7,27 +7,27 @@ const slides = [
   {
     image: img3,
     heading: "Hi, Looking for Online Physics Tutor",
-    text: "7th to 12th, JEE, NEET, NDA — Join Roots Classes.",
+    text: "7th to 12th, JEE, NEET, NDA — Join Vikash Classes.",
   },
   {
     image: img3,
     heading: "Hi, Looking for Online Chemistry Tutor",
-    text: "7th to 12th, JEE, NEET, NDA — Join Roots Classes.",
+    text: "7th to 12th, JEE, NEET, NDA — Join Vikash Classes.",
   },
   {
     image: img3,
     heading: "Hi, Looking for Online Maths Tutor",
-    text: "7th to 12th, JEE, NEET, NDA — Join Roots Classes.",
+    text: "7th to 12th, JEE, NEET, NDA — Join Vikash Classes.",
   },
   {
     image: img3,
     heading: "Hi, Looking for Online Biology Tutor",
-    text: "7th to 12th, JEE, NEET, NDA — Join Roots Classes.",
+    text: "7th to 12th, JEE, NEET, NDA — Join Vikash Classes.",
   },
   {
     image: img3,
     heading: "You are at night",
-    text: "Join Roots Classes to brighten your future.",
+    text: "Join Vikash Classes to brighten your future.",
   },
 ];
 

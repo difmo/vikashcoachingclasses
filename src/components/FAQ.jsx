@@ -60,7 +60,7 @@ const FAQ = () => {
       <div ref={ref} className="px-4 py-16 mx-auto max-w-6xl sm:px-6 container">
         <h2 className="mb-10 text-4xl font-bold text-center text-secondaryblue text-black">
           Frequently Asked Questions{" "}
-          <span className="text-blue-500"> - Vikash Classes</span>
+          <span className="text-gradient-primary"> - Vikash Classes</span>
         </h2>
 
         <div className="space-y-4">
@@ -80,7 +80,7 @@ const FAQ = () => {
                 <h3 className="text-md font-semibold text-gray-800">
                   {faq.question}
                 </h3>
-                <span className="text-3xl font-bold text-blue-500">
+                <span className="text-3xl font-bold text-gradient-primary">
                   {openIndex === index ? "-" : "+"}
                 </span>
               </div>

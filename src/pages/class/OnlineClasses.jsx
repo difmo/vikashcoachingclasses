@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import CustomButton from "../../components/CustomButton";
 import { Link } from "react-router-dom";
+import CustomHeading from "../../components/CustomHeading";
 
 // ✅ Static Data
 const data = {
@@ -40,7 +41,7 @@ const OnlineClasses = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <div ref={ref} className="bg-white pt-12 px-4 md:px-12 text-gray-800">
+    <div ref={ref} className="bg-white  text-gray-800 m-8">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -48,17 +49,23 @@ const OnlineClasses = () => {
         transition={{ duration: 0.6 }}
         className="text-center container mx-auto mb-10"
       >
-        <h1 className="text-3xl md:text-5xl font-bold">{data.heading}</h1>
+        {" "}
+        <div className="text-center mb-10">
+          <CustomHeading
+            text1={"Start Learning with"}
+            text2={" Our Online Classes"}
+          />
+        </div>
         <p className="mt-2 px-2 text-xl text-left">{data.introText}</p>
       </motion.div>
 
       {/* Video + Class Info */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-12 items-start px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-12 items-start px-4 sm:px-6 lg:px-8 gradient-border">
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="aspect-video bg-gray-200 rounded-md overflow-hidden"
+          className="aspect-video  rounded-md overflow-hidden"
         >
           <iframe
             className="w-full h-full"
@@ -73,7 +80,7 @@ const OnlineClasses = () => {
           initial={{ opacity: 0, x: 60 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-blue-50 px-6 py-10 sm:px-8 sm:py-12 rounded-md shadow-md"
+          className="bg-secondary/5 px-6 py-10 sm:px-8 sm:py-12 rounded-md shadow-md"
         >
           <h2 className="text-xl sm:text-2xl font-semibold mb-4">
             {data.classInfo.className}
@@ -82,7 +89,7 @@ const OnlineClasses = () => {
             {data.classInfo.subjects.map((subject, idx) => (
               <span
                 key={idx}
-                className="bg-blue-200 px-3 py-1 rounded-full text-sm"
+                className="bg-secondary/20 px-3 py-1 rounded-full text-sm"
               >
                 {subject}
               </span>
