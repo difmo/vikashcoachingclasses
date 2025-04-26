@@ -1,5 +1,5 @@
 import phy from "../assets/tutr.jpg";
-
+import phy1 from "../assets/a.jpg"
 const physics = [
   {
     src: phy,
@@ -10,7 +10,7 @@ const physics = [
     ],
   },
   {
-    src: phy,
+    src: phy1,
     title: "Thermodynamics",
     descraption: [
       "Study heat transfer and the laws of energy conservation.",

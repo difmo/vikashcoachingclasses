@@ -1,73 +1,111 @@
-// src/components/Footer.js
-import React from "react";
-import { Link } from "react-router-dom";
+import {
+  FaTwitter,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaInstagram,
+} from "react-icons/fa";
+import { Link } from "react-router-dom"; // or 'next/link' if you're using Next.js
 
-const Footer = () => {
+const socialLinks = [
+  { icon: <FaTwitter />, url: "#" },
+  { icon: <FaFacebookF />, url: "#" },
+  { icon: <FaLinkedinIn />, url: "#" },
+  { icon: <FaInstagram />, url: "#" },
+];
+
+const courses = ["Web Design", "Apps Design", "Marketing", "Research", "SEO"];
+
+const footerLinks = [
+  { name: "Privacy", url: "#" },
+  { name: "Terms", url: "#" },
+  { name: "FAQs", url: "#" },
+  { name: "Help", url: "#" },
+];
+
+export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white   ">
-      <div className="container mx-auto px-4 py-10 max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <footer className="bg-[#393951] text-white py-10 px-5">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Get In Touch */}
         <div>
-          <h2 className="text-lg font-semibold mb-4">Get in Touch</h2>
-          <p>UT</p>
-          <p>Fother</p>
+          <h2 className="text-orange-500 text-xl font-semibold mb-4">
+            GET IN TOUCH
+          </h2>
+          <p className="flex items-center mb-2">
+            📍 Main Market, Malviya Nagar, New Delhi 110017
+          </p>
+          <p className="flex items-center mb-2">✉️ info@urbantutors.pro</p>
+          <p className="flex items-center mb-4">
+            ✉️ urbantutorsindia@gmail.com
+          </p>
+          <div className="flex space-x-4">
+            {socialLinks.map((item, index) => (
+              <Link
+                to={item.url}
+                key={index}
+                className="p-2 border rounded hover:bg-orange-500 transition"
+              >
+                {item.icon}
+              </Link>
+            ))}
+          </div>
         </div>
 
+        {/* Our Courses */}
         <div>
-          <h2 className="text-lg font-semibold mb-4">Tutoring</h2>
+          <h2 className="text-orange-500 text-xl font-semibold mb-4">
+            OUR COURSES
+          </h2>
           <ul className="space-y-2">
-            <li>
-              <Link to="/hire" className="hover:text-secondary transition">
-                Hire Online Tutor
-              </Link>
-            </li>
-            <li>
-              <Link to="/apply" className="hover:text-secondary transition">
-                Apply as a Tutor
-              </Link>
-            </li>
+            {courses.map((course, index) => (
+              <li key={index}>➤ {course}</li>
+            ))}
           </ul>
         </div>
 
+        {/* Newsletter */}
         <div>
-          <h2 className="text-lg font-semibold mb-4">Resources</h2>
-          <ul className="space-y-2">
-            <li>
-              <Link to="/che" className="hover:text-secondary transition">
-                Che
-              </Link>
-            </li>
-            <li>
-              <Link to="/an41" className="hover:text-secondary transition">
-                AN 41
-              </Link>
-            </li>
-            <li>
-              <Link to="/m" className="hover:text-secondary transition">
-                M
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        <div className="text-white">
-          <h2 className="text-lg font-semibold mb-4">Newsletter</h2>
-          <p className="mb-2">Stay updated with our latest news</p>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="w-full px-3 py-2 rounded text-black mb-2 bg-white"
-          />
-          <button className="bg-secondary text-white px-4 py-2 rounded hover:bg-primary transition">
-            Subscribe
-          </button>
+          <h2 className="text-orange-500 text-xl font-semibold mb-4">
+            NEWSLETTER
+          </h2>
+          <p className="text-sm mb-4">
+            Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum
+            sea tempor magna tempor. Accu kasd sed ea duo ipsum. Dolor duo
+            eirmod sea justo no lorem est diam
+          </p>
+          <div className="flex">
+            <input
+              type="email"
+              placeholder="Your Email Address"
+              className="w-full p-2 rounded-l bg-white text-black outline-none"
+            />
+            <button className="bg-orange-500 px-4 rounded-r">Sign Up</button>
+          </div>
         </div>
       </div>
 
-      <div className="text-center py-4 border-t border-gray-700 text-sm text-gray-400">
-        © {new Date().getFullYear()} Roots Classes. All rights reserved.
+      {/* Bottom Footer */}
+      <div className="border-t border-gray-700 mt-10 pt-5 flex flex-col md:flex-row justify-between items-center text-sm">
+        <p>
+          <span className="text-orange-500">Urban Tutor</span>. All Rights
+          Reserved. Designed by{" "}
+          <span className="text-orange-500">Nita Infotech</span>
+        </p>
+        <div className="flex space-x-4 mt-3 md:mt-0">
+          {footerLinks.map((link, index) => (
+            <Link to={link.url} key={index} className="hover:text-orange-500">
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Scroll to Top Button */}
+      <div className="fixed bottom-5 right-5">
+        <button className="bg-orange-500 p-3 rounded-full shadow-lg hover:bg-orange-600">
+          <span className="text-white">⬆️</span>
+        </button>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

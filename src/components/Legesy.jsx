@@ -50,6 +50,7 @@ const Legesy = () => {
 
   return (
     <div className="bg-white">
+      <img src="" alt="" />
       <div className="container mx-auto px-4 md:px-28 py-10">
         {/* Heading Section */}
         <div className="text-center mb-10">
