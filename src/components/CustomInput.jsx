@@ -15,7 +15,7 @@ const CustomInput = ({
     <div className="relative mb-2 py-1.5">
       {label && (
         <label
-          className="block mb-2 text-md font-semibold text-gray-800 transition-all duration-300 ease-in-out"
+          className="block mb-2 text-md font-semibold text-primary transition-all duration-300 ease-in-out"
           htmlFor={id}
         >
           {mainLabel}

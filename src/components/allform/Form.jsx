@@ -15,41 +15,41 @@ export default function Form() {
         </CustomHeading>
 
         {/* Name */}
-        <CustomInput label="Name" placeholder="Enter your name" />
+        <CustomInput placeholder="Enter Your Name :" />
 
         {/* Email / Contact */}
         <CustomInput
-          label="Email / Contact No."
-          placeholder="Enter email or phone number"
+          //   label="Email / Contact No."
+          placeholder="Enter Phone Number :"
         />
 
         {/* Class Type */}
-        <div>
-          <div className="flex flex-wrap gap-4">
-            {" "}
-            <label className="block font-semibold mb-2">Select Class:</label>
+        <div className="mb-6">
+          <label className="block font-semibold mb-2">Select Class:</label>
+          <select
+            name="classType"
+            className="w-full p-2 border border-gray-300 rounded-md text-black"
+          >
             {["Board", "IB", "IGCSE", "ICSE", "Dropper"].map((type) => (
-              <label key={type} className="flex items-center space-x-2">
-                <input
-                  type="radio"
-                  name="classType"
-                  className=" bg-amber-400"
-                  value={type}
-                />
-                <span>{type}</span>
-              </label>
+              <option key={type} value={type}>
+                {type}
+              </option>
             ))}
-          </div>
+          </select>
         </div>
 
-        {/* Subjects */}
-        <div>
-          <div className="flex flex-wrap gap-4">
-            <label className="block font-semibold mb-2">Select Subjects:</label>
+        <div className="mb-6">
+          <label className="block font-semibold mb-2">Select Subject:</label>
+          <select
+            name="subject"
+            className="w-full p-2 border border-gray-300 rounded-md text-black"
+          >
             {["Physics", "Chemistry", "Maths", "Biology"].map((subject) => (
-              <CustomCheckbox key={subject} label={subject} value={subject} />
+              <option key={subject} value={subject}>
+                {subject}
+              </option>
             ))}
-          </div>
+          </select>
         </div>
 
         {/* Level */}

@@ -14,7 +14,7 @@ const CustomCheckbox = ({
     <div className="relative py-1">
       <label
         htmlFor={id}
-        className="flex items-center gap-2 cursor-pointer text-md text-gray-800"
+        className="flex items-center gap-2 cursor-pointer text-md text-primary"
         style={style}
       >
         <input
@@ -28,7 +28,7 @@ const CustomCheckbox = ({
         <div className="w-5 h-5 border-2 border-gray-300 rounded-md peer-checked:bg-yellow-500 peer-checked:border-blue-600 flex items-center justify-center transition-all duration-200">
           {checked && (
             <svg
-              className="w-3 h-3 text-white"
+              className="w-3 h-3 text-primary"
               fill="none"
               stroke="currentColor"
               strokeWidth="3"
