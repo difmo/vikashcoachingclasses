@@ -68,6 +68,9 @@ const MainSlider = () => {
   return (
     <div className=" ">
       <div className="container mx-auto">
+        <div className=" bg-[#f2f2f2] text-2xl h-7 text-blue-500 flex justify-center">
+          {/* Home / Vikas Institute */}
+        </div>
         <div className="flex flex-col md:flex-row w-full px-3 mx-auto rounded-b-lg">
           {/* Left: Slider */}
           <div className="relative w-full mt-16 md:w-2/3 h-[400px] md:h-[550px] xl-[600px]">

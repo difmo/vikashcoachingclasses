@@ -19,17 +19,17 @@ const Header = () => {
   ];
 
   return (
-    <div className="bg-white shadow ">
+    <div className=" shadow ">
       <div className="container mx-auto">
-        <header className="sticky top-0 z-50 w-full">
-          <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <header className="sticky top-0 z-50 w-full items-center h-20">
+          <div className=" mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex justify-between items-center">
             {/* Logo */}
             <Link to="/" className="text-2xl font-bold text-gradient-primary">
               Vikas Institute
             </Link>
 
             {/* Mobile Menu Toggle */}
-            <div className="md:hidden">
+            <div className="md:hidden ">
               <button onClick={toggleMenu} aria-label="Toggle Menu">
                 {isOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
@@ -41,7 +41,7 @@ const Header = () => {
                 isOpen ? "block" : "hidden"
               } absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none transition-all duration-300 ease-in-out z-40 md:flex md:items-center`}
             >
-              <ul className="flex flex-col md:flex-row gap-4 p-4 md:p-0 text-gray-700 font-medium">
+              <ul className="flex flex-col md:flex-row gap-4 p-4 md:p-0 text-lg  text-[#f2f2f2] font-medium">
                 {navLinks.map((link, index) => (
                   <li key={index}>
                     <Link
