@@ -23,7 +23,7 @@ const CustomInput = ({
         </label>
       )}
       <input
-        className="appearance-none border-2 border-gray-300 w-full py-2.5 px-4 text-gray-800 leading-tight focus:outline-none focus:ring-1 focus:ring-primary-orange focus:border-primary-orange transition-all duration-300 ease-in-out rounded-md"
+        className="appearance-none border-2 bg-white border-gray-300 w-full py-2.5 px-2 text-black leading-tight focus:outline-none focus:ring-1 focus:ring-primary-orange focus:border-primary-orange transition-all duration-300 ease-in-out rounded-md"
         id={id}
         type={type}
         placeholder={placeholder}

@@ -20,12 +20,12 @@ const Header = () => {
 
   return (
     <div className="bg-white shadow ">
-      <div className="container ">
+      <div className="container mx-auto">
         <header className="sticky top-0 z-50 w-full">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+          <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             {/* Logo */}
             <Link to="/" className="text-2xl font-bold text-gradient-primary">
-              Vikash Institute
+              Vikas Institute
             </Link>
 
             {/* Mobile Menu Toggle */}

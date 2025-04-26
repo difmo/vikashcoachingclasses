@@ -11,10 +11,10 @@ const CustomCheckbox = ({
   const mainLabel = label ? label.split("*")[0] : "";
 
   return (
-    <div className="relative mb-2 py-1.5">
+    <div className="relative py-1">
       <label
         htmlFor={id}
-        className="flex items-center gap-2 cursor-pointer text-sm text-gray-800"
+        className="flex items-center gap-2 cursor-pointer text-md text-gray-800"
         style={style}
       >
         <input
@@ -25,7 +25,7 @@ const CustomCheckbox = ({
           className="peer hidden"
         />
         {/*  */}
-        <div className="w-5 h-5 border-2 border-gray-300 rounded-md peer-checked:bg-blue-600 peer-checked:border-blue-600 flex items-center justify-center transition-all duration-200">
+        <div className="w-5 h-5 border-2 border-gray-300 rounded-md peer-checked:bg-yellow-500 peer-checked:border-blue-600 flex items-center justify-center transition-all duration-200">
           {checked && (
             <svg
               className="w-3 h-3 text-white"

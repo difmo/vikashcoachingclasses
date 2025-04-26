@@ -6,7 +6,11 @@
 /* Base layer */
 @layer base {
   body {
-    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-family: "Eurostile";
+    --font-family-sans-serif: "Poppins", sans-serif;
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
     background-color: #326cb5;
   }
 }
@@ -15,7 +19,6 @@
 @theme {
   --color-primary: oklch(0.82 0.19 85); /* Yellow */
   --color-secondary: oklch(0.83 0.19 80); /* Deep accent */
- 
 }
 /* #fec624 */
 /* Utilities for solid background and text */

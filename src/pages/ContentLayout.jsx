@@ -24,7 +24,8 @@ const getSlideVariant = (direction = "left") => ({
     },
   },
 });
-const getSlideVariants = (direction = "rigbt") => ({
+
+const getSlideVariants = (direction = "right") => ({
   hidden: {
     opacity: 0,
     x: direction === "right" ? 100 : -100,
@@ -37,6 +38,7 @@ const getSlideVariants = (direction = "rigbt") => ({
     },
   },
 });
+
 const ContentLayout = () => {
   const { subject } = useParams();
   const selectedData = dataMap[subject];
@@ -72,11 +74,13 @@ const ContentLayout = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <h2 className="text-xl font-bold mb-4">{item.title}</h2>
+                <h2 className="text-xl font-bold text-primary mb-4">
+                  {item.title}
+                </h2>
                 {item.descraption.map((text, idx) => (
                   <p
                     key={idx}
-                    className="text-gray-700 text-base md:text-lg mb-2"
+                    className="text-gray-200 text-base md:text-lg mb-2"
                   >
                     {text}
                   </p>

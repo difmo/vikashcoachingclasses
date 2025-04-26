@@ -50,8 +50,7 @@ const Legesy = () => {
 
   return (
     <div className="">
-      <img src="" alt="" />
-      <div className="container mx-auto px-4 md:px-28 py-10">
+      <div className="container mx-auto px-4 py-10">
         {/* Heading Section */}
         <div className="text-center mb-10">
           <CustomHeading text1={"11 Years of"} text2={" Legacy"} />
@@ -67,7 +66,7 @@ const Legesy = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 border border-red-300 rounded-xl shadow-sm text-center"
+              className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 border border-yellow-300/40 hover:shadow-amber-600 rounded-xl shadow-sm text-center"
             >
               <h2 className="text-xl font-semibold mb-2 text-primary">
                 {item.title}
@@ -89,14 +88,19 @@ const Legesy = () => {
               <div className="text-center">
                 <CustomHeading text1={"Testimonial"} />
               </div>
-              <p className="text-center">
+              <p className="text-center text-white">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Laboriosam magnam ipsam nostrum reprehenderit.{" "}
                 <Link to="#">more .. </Link>
               </p>
             </div>
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-16">
+            <div className="flex flex-col lg:flex-row items-center justify-around ">
               {/* Adjusted Image Container */}
+              <img
+                src={logo}
+                className="h-44 pt-4 pb-2 max-w-full"
+                alt="Logo"
+              />
               <img
                 src={logo}
                 className="h-44 pt-4 pb-2 max-w-full"
