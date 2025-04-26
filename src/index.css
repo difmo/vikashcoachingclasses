@@ -6,43 +6,12 @@
 /* Base layer */
 @layer base {
   body {
-    /* font-weight: 400;
+    font-weight: 400;
     font-family: "Eurostile";
     --font-family-sans-serif: "Poppins", sans-serif;
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-      "Liberation Mono", "Courier New", monospace; */
+      "Liberation Mono", "Courier New", monospace;
     background-color: #326cb5;
-    /* --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-      "Noto Color Emoji"; */
-    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-      "Noto Color Emoji";
-    --bs-font-monospace: SFMono-Regular, Me;
-    --fa-font-thin: normal 100 1em / 1 "Font Awesome 6 Pro";
-  }
-
-  :host,
-  :root {
-    --fa-font-solid: normal 900 1em / 1 "Font Awesome 6 Pro";
-  }
-  :host,
-  :root {
-    --fa-font-regular: normal 400 1em / 1 "Font Awesome 6 Pro";
-  }
-  :host,
-  :root {
-    --fa-font-light: normal 300 1em / 1 "Font Awesome 6 Pro";
-  }
-  :host,
-  :root {
-    --fa-font-duotone: normal 900 1em / 1 "Font Awesome 6 Duotone";
-  }
-  :host,
-  :root {
-    --fa-font-brands: normal 400 1em;
   }
 }
 
