@@ -1,28 +1,28 @@
 import { useState } from "react";
+import CustomButton from "../CustomButton";
+import CustomInput from "../CustomInput";
+import CustomCheckbox from "../CustomCheckbox";
+import CustomHeading from "../CustomHeading";
 
 export default function Form() {
     const [otpSent, setOtpSent] = useState(false);
 
     return (
-        <div className="max-w-3xl mx-auto p-6  rounded-2xl ">
-            <h2 className="text-2xl font-bold mb-4">Fill the form to hire a tutor</h2>
+        <div className="max-w-3xl mx-auto p-6 rounded-2xl bg-white shadow-xl space-y-6">
+            <CustomHeading level={2} className="text-3xl font-bold text-center text-primary">
+                Fill the form to hire a tutor
+            </CustomHeading>
 
-            {/* 1. Name */}
-            <div className="mb-4">
-                <label className="block mb-1">Name:</label>
-                <input type="text" className="w-full p-2 border rounded" />
-            </div>
+            {/* Name */}
+            <CustomInput label="Name" placeholder="Enter your name" />
 
-            {/* 2. Email/Contasdddct No. */}
-            <div className="mb-4">
-                <label className="block mb-1">Email / Contact No.:</label>
-                <input type="text" className="w-full p-2 border rounded" />
-            </div>
+            {/* Email / Contact */}
+            <CustomInput label="Email / Contact No." placeholder="Enter email or phone number" />
 
-
-
-            {/* 3. Select Class */}
-            <div className="flex flex-wrap gap-4 ">
+            {/* Class Type */}
+            <div>
+                <label className="block font-semibold mb-2">Select Class:</label>
+                <div className="flex flex-wrap gap-4">
                     {['Board', 'IB', 'IGCSE', 'ICSE', 'Dropper'].map((type) => (
                         <label key={type} className="flex items-center space-x-2">
                             <input type="radio" name="classType" value={type} />
@@ -30,24 +30,22 @@ export default function Form() {
                         </label>
                     ))}
                 </div>
+            </div>
 
-            {/* 4. Select Subjects */}
-            <div className="mb-4">
-                <label className="block mb-1">Select Subjects:</label>
-                <div className="flex flex-row gap-1 flex-wrap">
+            {/* Subjects */}
+            <div>
+                <label className="block font-semibold mb-2">Select Subjects:</label>
+                <div className="flex flex-wrap gap-4">
                     {['Physics', 'Chemistry', 'Maths', 'Biology'].map((subject) => (
-                        <label key={subject} className="flex items-center space-x-2">
-                            <input type="checkbox" value={subject} />
-                            <span>{subject}</span>
-                        </label>
+                        <CustomCheckbox key={subject} label={subject} value={subject} />
                     ))}
                 </div>
             </div>
 
-            {/* 5. Select Level */}
-            <div className="mb-4">
-                <label className="block mb-1">Select Level:</label>
-                <select className="w-full p-2 border rounded">
+            {/* Level */}
+            <div>
+                <label className="block font-semibold mb-2">Select Level:</label>
+                <select className="w-full p-3 border border-gray-300 rounded-md">
                     <option>Board</option>
                     <option>NEET</option>
                     <option>IIT-JEE</option>
@@ -57,13 +55,12 @@ export default function Form() {
             </div>
 
             {/* Get OTP */}
-            <div className="mb-4">
-                <button
+            <div className="text-center pt-4">
+                <CustomButton
                     onClick={() => setOtpSent(true)}
-                    className="bg-secondary text-white px-4 py-2 rounded hover:bg-primary"
-                >
-                    Get OTP
-                </button>
+                    className="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-primary transition"
+                    label="Get OTP"
+                />
             </div>
         </div>
     );

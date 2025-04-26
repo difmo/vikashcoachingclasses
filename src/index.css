@@ -13,12 +13,11 @@
 
 /* Custom theme variables */
 @theme {
-  --color-primary: oklch(0.4 0.22 25);
-  --color-secondary: oklch(0.6 0.25 27);
-  --color-accent: oklch(0.8 0.12 330); /* Pinkish accent */
-  --color-red: oklch(0.6 0.25 27); /* Vibrant red */
+  --color-primary: oklch(0.82 0.19 85); /* Yellow */
+  --color-secondary: oklch(0.83 0.19 80); /* Deep accent */
+ 
 }
-
+/* #fec624 */
 /* Utilities for solid background and text */
 @utility bg-primary {
   background-color: var(--color-primary);

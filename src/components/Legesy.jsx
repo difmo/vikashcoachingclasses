@@ -49,7 +49,7 @@ const Legesy = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="">
       <img src="" alt="" />
       <div className="container mx-auto px-4 md:px-28 py-10">
         {/* Heading Section */}
@@ -69,10 +69,10 @@ const Legesy = () => {
               viewport={{ once: true, amount: 0.3 }}
               className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 border border-red-300 rounded-xl shadow-sm text-center"
             >
-              <h2 className="text-xl font-semibold mb-2 text-black">
+              <h2 className="text-xl font-semibold mb-2 text-primary">
                 {item.title}
               </h2>
-              <p className="text-gray-600">{item.description}</p>
+              <p className="text-gray-200">{item.description}</p>
             </motion.div>
           ))}
           {/* Logo Section (or Registration Button) */}
