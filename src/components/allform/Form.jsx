@@ -28,7 +28,7 @@ export default function Form() {
           <label className="block font-semibold mb-2">Select Class:</label>
           <select
             name="classType"
-            className="w-full p-2 border border-gray-300 rounded-md text-black"
+            className="w-full p-2 border border-gray-300 rounded-md bg-white text-black"
           >
             {["Board", "IB", "IGCSE", "ICSE", "Dropper"].map((type) => (
               <option key={type} value={type}>
@@ -42,7 +42,7 @@ export default function Form() {
           <label className="block font-semibold mb-2">Select Subject:</label>
           <select
             name="subject"
-            className="w-full p-2 border border-gray-300 rounded-md text-black"
+            className="w-full p-2 border border-gray-300 rounded-md  bg-white text-black"
           >
             {["Physics", "Chemistry", "Maths", "Biology"].map((subject) => (
               <option key={subject} value={subject}>
@@ -55,7 +55,7 @@ export default function Form() {
         {/* Level */}
         <div>
           <label className="block font-semibold mb-2">Select Level:</label>
-          <select className="w-full p-3 border border-gray-300 rounded-md">
+          <select className="w-full p-3 border  bg-white border-gray-300 rounded-md">
             <option>Board</option>
             <option>NEET</option>
             <option>IIT-JEE</option>
@@ -68,7 +68,7 @@ export default function Form() {
         <div className="text-center pt-4">
           <CustomButton
             onClick={() => setOtpSent(true)}
-            className="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-primary transition"
+            className="bg-secondary  px-6 py-3 rounded-lg hover:bg-primary transition"
             label="Get OTP"
           />
         </div>

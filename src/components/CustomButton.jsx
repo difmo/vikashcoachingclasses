@@ -10,7 +10,7 @@ const CustomButton = ({
     <button
       onClick={onClick}
       type={type} // ✅ apply dynamic type
-      className={`text-primary hover:bg-primary bg-secondary text-lg font-medium rounded-lg px-8 py-2 text-center ${className}`}
+      className={`text-black hover:bg-primary bg-secondary text-lg font-medium rounded-lg px-8 py-2 text-center ${className}`}
     >
       {label}
     </button>
