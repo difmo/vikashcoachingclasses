@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logo from "../../assets/logo1.jpeg";
 import CustomButton from "../CustomButton";
 
 const Header = () => {
@@ -21,11 +22,10 @@ const Header = () => {
   return (
     <div className=" shadow ">
       <div className="container mx-auto">
-        <header className="sticky top-0 z-50 w-full items-center h-20">
-          <div className=" mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex justify-between items-center">
-            {/* Logo */}
+        <header className="sticky top-0 z-50 w-full items-center">
+          <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
             <Link to="/" className="text-2xl font-bold text-gradient-primary">
-              Vikas Institute
+              <img src={logo} className="h-11 border-2 " alt="" />
             </Link>
 
             {/* Mobile Menu Toggle */}
