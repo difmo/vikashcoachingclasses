@@ -126,7 +126,7 @@ const ContentLayout = () => {
         />
       </Helmet> */}
 
-      <div className="py-6">
+      <div className="">
         <div className="bg-[#f2f2f2] text-2xl text-blue-500 flex justify-center">
           Home / Vikas Institute
         </div>
@@ -185,11 +185,11 @@ const ContentLayout = () => {
             );
           })}
         </div>
-        <div className="flex justify-between flex-wrap pt-6">
-          <div className="w-1/2">
-            <img src={phy} alt="" />
+        <div className="flex flex-col md:flex-row justify-between flex-wrap pt-6">
+          <div className="w-full md:w-1/2">
+            <img src={phy} alt="" className="w-full h-80 md:h-[400px]" />
           </div>
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2 mt-6 md:mt-0">
             <Form />
           </div>
         </div>

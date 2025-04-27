@@ -17,7 +17,7 @@ const Header = () => {
     { path: "/subject/math", label: "Online Maths Tutor" },
     { path: "/subject/biology", label: "Online Biology Tutor" },
     // { path: "/online-classes", label: "Online Courses" },
-    { path: "/join-form", label: "Join as a Tutor" },
+    { path: "/join-form", label: "Contact Us" },
   ];
 
   return (

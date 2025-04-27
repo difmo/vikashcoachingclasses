@@ -61,7 +61,7 @@ const MainSlider = () => {
   return (
     <div className="w-full">
       {/* Top Section */}
-      <div className="py-4 bg-[#f2f2f2] text-blue-500 flex justify-center text-lg md:text-2xl">
+      <div className="py-3.5  bg-[#f2f2f2] text-blue-500 flex justify-center text-lg md:text-2xl">
         {/* Optional Top Bar */}
       </div>
 
