@@ -8,29 +8,40 @@ export default function Form() {
   const [otpSent, setOtpSent] = useState(false);
 
   return (
-    <div className="pt-12">
-      <div className="w-full px-6   pb-4 border-2 ">
-        <CustomHeading className="text-3xl font-bold text-center text-primary">
-          Fill the form to hire a tutor
-        </CustomHeading>
+    <div className="">
+      <div className="w-full px-4 sm:px-6 md:px-8 pb-6 border-2 border-white rounded-lg ">
+        <div className="text-2xl sm:text-3xl font-bold text-center  xl:py-2">
+          <CustomHeading text1="Fill the form to hire a tutor" />
+        </div>
 
         {/* Name */}
-        <CustomInput placeholder="Enter Your Name :" />
+        <div className="mb-4">
+          <CustomInput placeholder="Enter Your Name :" />
+        </div>
 
         {/* Email / Contact */}
-        <CustomInput
-          //   label="Email / Contact No."
-          placeholder="Enter Phone Number :"
-        />
+        <div className="mb-4">
+          <CustomInput placeholder="Enter Phone Number :" />
+        </div>
 
         {/* Class Type */}
         <div className="mb-6">
-          <label className="block font-semibold mb-2">Select Class:</label>
           <select
             name="classType"
-            className="w-full p-2 border border-gray-300 rounded-md bg-white text-black"
+            className="w-full p-3 border border-gray-300 rounded-md bg-white text-black "
           >
-            {["Board", "IB", "IGCSE", "ICSE", "Dropper"].map((type) => (
+            {[
+              "Select Class",
+              "7th",
+              "8th",
+              "9th",
+              "10th",
+              "12th",
+              "IB",
+              "IGCSE",
+              "ICSE",
+              "Dropper",
+            ].map((type) => (
               <option key={type} value={type}>
                 {type}
               </option>
@@ -38,37 +49,57 @@ export default function Form() {
           </select>
         </div>
 
+        {/* Subject */}
         <div className="mb-6">
-          <label className="block font-semibold mb-2">Select Subject:</label>
-          <select
-            name="subject"
-            className="w-full p-2 border border-gray-300 rounded-md  bg-white text-black"
-          >
+          <label className="block font-semibold mb-2 text-sm sm:text-base">
+            Select Subject:
+          </label>
+          <div className="flex flex-wrap gap-4">
             {["Physics", "Chemistry", "Maths", "Biology"].map((subject) => (
-              <option key={subject} value={subject}>
-                {subject}
-              </option>
+              <label key={subject} className="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  name="subject"
+                  value={subject}
+                  className="text-primary"
+                />
+                <span className="text-sm sm:text-base">{subject}</span>
+              </label>
             ))}
-          </select>
+          </div>
         </div>
 
         {/* Level */}
-        <div>
-          <label className="block font-semibold mb-2">Select Level:</label>
-          <select className="w-full p-3 border  bg-white border-gray-300 rounded-md">
-            <option>Board</option>
-            <option>NEET</option>
-            <option>IIT-JEE</option>
-            <option>Board + NEET</option>
-            <option>Board + IIT-JEE</option>
-          </select>
+        <div className="mb-6">
+          <label className="block font-semibold mb-2 text-sm sm:text-base">
+            Select Level:
+          </label>
+          <div className="flex flex-wrap gap-4">
+            {[
+              "Board",
+              "NEET",
+              "IIT-JEE",
+              "Board + NEET",
+              "Board + IIT-JEE",
+            ].map((level) => (
+              <label key={level} className="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  name="level"
+                  value={level}
+                  className="text-blue-600"
+                />
+                <span className="text-sm sm:text-base">{level}</span>
+              </label>
+            ))}
+          </div>
         </div>
 
         {/* Get OTP */}
         <div className="text-center pt-4">
           <CustomButton
             onClick={() => setOtpSent(true)}
-            className="bg-secondary  px-6 py-3 rounded-lg hover:bg-primary transition"
+            className="bg-secondary px-6 py-3 rounded-lg hover:bg-primary transition text-white text-sm sm:text-base"
             label="Get OTP"
           />
         </div>
