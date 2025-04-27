@@ -52,8 +52,10 @@ const Legesy = () => {
     <div className="">
       <div className="container mx-auto px-4 py-10">
         {/* Heading Section */}
-        <div className="text-center mb-10">
-          <CustomHeading text1={"11 Years of"} text2={" Legacy"} />
+        <div className="text-center mb-10 bg-[#dba577] py-3">
+          <h1 className="text-[#51087E] text-5xl font-bold">
+            11 Years of Legacy
+          </h1>
         </div>
 
         {/* Legacy Stats with Animation */}

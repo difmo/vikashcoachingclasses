@@ -6,28 +6,28 @@ import Form from "../allform/Form";
 const slides = [
   {
     image: img3,
-    heading: "Hi, Looking for Online Physics Tutor",
-    text: "7th to 12th, JEE, NEET, NDA — Join Vikash Classes.",
+    heading: "Hi, Looking for Online Science Tutor ",
+    text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
     image: img3,
-    heading: "Hi, Looking for Online Chemistry Tutor",
-    text: "7th to 12th, JEE, NEET, NDA — Join Vikash Classes.",
+    heading: "Hi, Looking for Online Physics Tutor ",
+    text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
     image: img3,
-    heading: "Hi, Looking for Online Maths Tutor",
-    text: "7th to 12th, JEE, NEET, NDA — Join Vikash Classes.",
+    heading: "Hi, Looking for Online Chemistry Tutor ",
+    text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
     image: img3,
-    heading: "Hi, Looking for Online Biology Tutor",
-    text: "7th to 12th, JEE, NEET, NDA — Join Vikash Classes.",
+    heading: "Hi, Looking for Online Maths Tutor ",
+    text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
     image: img3,
-    heading: "You are at night",
-    text: "Join Vikash Classes to brighten your future.",
+    heading: "Hi, Looking for Online Biology Tutor ",
+    text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
 ];
 
@@ -61,8 +61,21 @@ const MainSlider = () => {
   return (
     <div className="w-full">
       {/* Top Section */}
-      <div className="py-3.5  bg-[#f2f2f2] text-blue-500 flex justify-center text-lg md:text-2xl">
-        {/* Optional Top Bar */}
+      <div className="bg-[#f2f2f2]  text-[#51087E] flex justify-center text-lg md:text-xl overflow-hidden">
+        <motion.div
+          className="whitespace-nowrap"
+          animate={{ x: ["100%", "-100%"] }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 20,
+            ease: "linear",
+          }}
+        >
+          A Most Trusted Website to Hire, Best Online Private Tutors for the
+          Students of {"       "} USA - CANADA - UK - QATAR - UAE - INDIA -
+          AUSTRALIA.
+        </motion.div>
       </div>
 
       {/* Main Container */}
@@ -89,13 +102,13 @@ const MainSlider = () => {
             </AnimatePresence>
 
             {/* Text on Slide */}
-            <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+            <div className="absolute inset-0 flex flex-col justify-end items-center text-center px-4 pb-10">
               <motion.h1
                 key={`heading-${current}`}
                 variants={fadeUp}
                 initial="hidden"
                 animate="visible"
-                className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold max-w-2xl"
+                className="text-white text-xl sm:text-3xl md:text-7xl lg:text-7xl font-bold max-w-2xl"
               >
                 {slides[current].heading}
               </motion.h1>

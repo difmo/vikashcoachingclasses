@@ -3,28 +3,31 @@ import {
   FaFacebookF,
   FaLinkedinIn,
   FaInstagram,
+  FaWhatsapp,
 } from "react-icons/fa";
 import { Link } from "react-router-dom"; // or 'next/link' if you're using Next.js
 
 const socialLinks = [
   { icon: <FaTwitter />, url: "#" },
   { icon: <FaFacebookF />, url: "#" },
-  { icon: <FaLinkedinIn />, url: "#" },
   { icon: <FaInstagram />, url: "#" },
+  { icon: <FaWhatsapp />, url: "#" },
 ];
 
 const courses = [
-  "Online Physics Tutor",
-  "Online Chemistry Tutor",
-  "Online Maths Tutor",
-  "Online Biology Tutor",
+  "Online Science Tutors",
+  "Online Physics Tutors",
+  "Online Chemistry Tutors",
+  "Online Maths Tutors",
+  "Online Biology Tutors",
 ];
 
 const footerLinks = [
-  { url: "/subject/physics", name: "Online Physics Tutor" },
-  { url: "/subject/chemistry", name: "Online Chemistry Tutor" },
-  { url: "/subject/math", name: "Online Maths Tutor" },
-  { url: "/subject/biology", name: "Online Biology Tutor" },
+  { url: "/", name: "Online Science Tutors" },
+  { url: "/subject/physics", name: "Online Physics Tutors" },
+  { url: "/subject/chemistry", name: "Online Chemistry Tutors" },
+  { url: "/subject/math", name: "Online Maths Tutors" },
+  { url: "/subject/biology", name: "Online Biology Tutors" },
 ];
 
 export default function Footer() {
@@ -39,10 +42,14 @@ export default function Footer() {
                 GET IN TOUCH
               </h2>
               <p className="flex items-center mb-2">
-                Main Market, Malviya Nagar, New Delhi 110017
+                Malviya Nagar, New Delhi 110017
               </p>
-              <p className="flex items-center mb-2">vikasinstitute.in</p>
-              <p className="flex items-center mb-4">vipndls@gmail.com</p>
+              <p className="flex items-center mb-4">
+                {" "}
+                Contact No : +91 84273 73281
+              </p>
+              <p className="flex items-center mb-2">info@vikasinstitute.in</p>
+
               <div className="flex space-x-4">
                 {socialLinks.map((item, index) => (
                   <Link
@@ -59,7 +66,7 @@ export default function Footer() {
             {/* Our Courses */}
             <div>
               <h2 className="text-orange-500 text-xl font-semibold mb-4">
-                OUR COURSES
+                Hire Online Private Tutors
               </h2>
               <ul className="space-y-2">
                 {courses.map((course, index) => (
@@ -73,18 +80,18 @@ export default function Footer() {
               <h2 className="text-orange-500 text-xl font-semibold mb-4">
                 NEWSLETTER
               </h2>
-              <p className="mb-4">
-                Rebum labore lorem dolores kasd est, et ipsum amet et at kasd,
-                ipsum sea tempor magna tempor. Accu kasd sed ea duo ipsum. Dolor
-                duo eirmod sea justo no lorem est diam
+              <p className="mb-4 flex text-left">
+                We specialize in providing personalized One to One tutors,
+                across the students of the DUBAI-UAE, Qatar, UK, USA, Canada,
+                Australia & India.
               </p>
-              <div className="flex">
+              <div className="flex w-full ">
                 <input
                   type="email"
                   placeholder="Your Email Address"
                   className="w-full p-2 rounded-l bg-white text-black outline-none"
                 />
-                <button className="bg-orange-500 px-4 rounded-r">
+                <button className="bg-orange-500 rounded-r px-6 py-2 text-white font-semibold whitespace-nowrap">
                   Sign Up
                 </button>
               </div>
@@ -94,9 +101,9 @@ export default function Footer() {
           {/* Bottom Footer */}
           <div className="border-t border-gray-700  mt-10 pt-5 flex flex-col md:flex-row justify-between items-center text-sm">
             <p>
-              <span className="text-orange-500">Urban Tutor</span>. All Rights
-              Reserved. Designed by{" "}
-              <span className="text-orange-500">Nita Infotech</span>
+              <span className="text-orange-500">VIKAS INSTITUTE</span>. All
+              Rights Reserved. Designed by{" "}
+              <span className="text-orange-500">NITA Infotech</span>
             </p>
             <div className="flex space-x-4 mt-3 md:mt-0">
               {footerLinks.map((link, index) => (

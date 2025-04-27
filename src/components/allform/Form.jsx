@@ -11,7 +11,7 @@ export default function Form() {
     <div className="">
       <div className="w-full px-4 sm:px-6 md:px-8 pb-6 border-2 border-white rounded-lg ">
         <div className="text-2xl sm:text-3xl font-bold text-center  xl:py-2">
-          <CustomHeading text1="Fill the form to hire a tutor" />
+          <CustomHeading text1="Hire a Online Private Tutor:" />
         </div>
 
         {/* Name */}
@@ -37,12 +37,9 @@ export default function Form() {
               "9th",
               "10th",
               "12th",
-              "IB",
-              "IGCSE",
-              "ICSE",
               "Dropper",
             ].map((type) => (
-              <option key={type} value={type}>
+              <option key={type} value={type} className="px-4">
                 {type}
               </option>
             ))}
@@ -52,10 +49,18 @@ export default function Form() {
         {/* Subject */}
         <div className="mb-6">
           <label className="block font-semibold mb-2 text-sm sm:text-base">
-            Select Subject:
+            Select Subjects:
           </label>
           <div className="flex flex-wrap gap-4">
-            {["Physics", "Chemistry", "Maths", "Biology"].map((subject) => (
+            {[
+              "Sci.",
+              "Physics",
+              "Chemistry",
+              "Maths",
+              "Biology",
+
+              // "Robitics & AI",
+            ].map((subject) => (
               <label key={subject} className="flex items-center space-x-2">
                 <input
                   type="radio"
@@ -73,6 +78,29 @@ export default function Form() {
         <div className="mb-6">
           <label className="block font-semibold mb-2 text-sm sm:text-base">
             Select Level:
+          </label>
+          <div className="w-full">
+            <select
+              name="level"
+              className="w-full p-2 bg-white border px-2 border-gray-300 rounded-md text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              {[
+                "School Level",
+                "NEET",
+                "IIT-JEE",
+                "Board + NEET",
+                "Board + IIT-JEE",
+              ].map((level) => (
+                <option key={level} value={level}>
+                  {level}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+        {/* <div className="mb-6">
+          <label className="block font-semibold mb-2 text-sm sm:text-base">
+            Select Board:
           </label>
           <div className="flex flex-wrap gap-4">
             {[
@@ -93,7 +121,7 @@ export default function Form() {
               </label>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Get OTP */}
         <div className="text-center pt-4">
