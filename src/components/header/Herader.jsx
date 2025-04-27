@@ -11,11 +11,12 @@ const Header = () => {
   const closeMenu = () => setIsOpen(false);
 
   const navLinks = [
+    { path: "/", label: "About Us" },
     { path: "/subject/physics", label: "Online Physics Tutor" },
     { path: "/subject/chemistry", label: "Online Chemistry Tutor" },
     { path: "/subject/math", label: "Online Maths Tutor" },
     { path: "/subject/biology", label: "Online Biology Tutor" },
-    { path: "/online-classes", label: "Online Courses" },
+    // { path: "/online-classes", label: "Online Courses" },
     { path: "/join-form", label: "Join as a Tutor" },
   ];
 
