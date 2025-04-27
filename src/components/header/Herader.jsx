@@ -23,7 +23,7 @@ const Header = () => {
     <div className=" shadow ">
       <div className="container mx-auto">
         <header className="sticky top-0 z-50 w-full items-center">
-          <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
+          <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <Link to="/" className="text-2xl font-bold text-gradient-primary">
               <img src={logo} className="h-11 border-2 " alt="" />
             </Link>
