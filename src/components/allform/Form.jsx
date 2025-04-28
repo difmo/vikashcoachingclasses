@@ -81,7 +81,6 @@ export default function Form() {
             ))}
             (Can Select Multiple)
           </div>
-        
         </div>
 
         {/* Level Dropdown */}
@@ -102,7 +101,7 @@ export default function Form() {
         <div className="text-center py-2">
           <CustomButton
             onClick={() => setOtpSent(true)}
-            className="bg-secondary px-6 py-3 rounded-lg hover:bg-primary transition text-white text-sm sm:text-base"
+            className=" text-[#51087E] hover:bg-primary bg-[#dba577] text-xl font-bold "
             label="Get OTP"
           />
         </div>

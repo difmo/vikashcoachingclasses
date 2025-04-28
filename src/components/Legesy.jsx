@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-
 import { Link } from "react-router-dom";
 import logo from "../assets/home.jpg";
 import CustomHeading from "./CustomHeading";
@@ -35,16 +34,22 @@ const fadeInRight = {
 const Legesy = () => {
   const legacyStats = [
     {
-      title: "Boards",
-      description: "11000+ Students Quallified with or more then 90 %",
+      title: "BOARDS",
+      description: "11000+ Students Scored more than 90%",
     },
     {
       title: "NEET",
-      description: "7000+  Students Quallified 400+ Scores 650+ Marks",
+      description: [
+        "7000+ Students Qualified .",
+        "2100+ Students Scored 650+ Marks",
+      ],
     },
     {
       title: "IIT-JEE",
-      description: "5000+ Students Quallified 100+ Scores 150+ Marks",
+      description: [
+        "5000+ Students Qualified .",
+        " 3100+ Students Scored 150+ Marks",
+      ],
     },
   ];
 
@@ -68,14 +73,25 @@ const Legesy = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 border border-yellow-300/40 hover:shadow-amber-600 rounded-xl shadow-sm text-center"
+              className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 border bg-[#dba577] border-yellow-300/40 hover:shadow-amber-600 rounded-xl shadow-sm text-center"
             >
-              <h2 className="text-xl font-semibold mb-2 text-primary">
+              <h2 className="text-xl font-semibold mb-2 text-[#51087E] ">
                 {item.title}
               </h2>
-              <p className="text-gray-200">{item.description}</p>
+
+              {/* Description */}
+              {Array.isArray(item.description) ? (
+                item.description.map((line, idx) => (
+                  <p key={idx} className="text-[#51087E] ">
+                    {line}
+                  </p>
+                ))
+              ) : (
+                <p className="text-[#51087E] ">{item.description}</p>
+              )}
             </motion.div>
           ))}
+
           {/* Logo Section (or Registration Button) */}
           <motion.div
             variants={fadeInRight}
@@ -85,39 +101,26 @@ const Legesy = () => {
             custom={0.5}
             className="w-full"
           >
-            <div className="text-center lg:text-left mt-4">
+            <div className="text-center mt-4">
               {/* Text Content */}
-              <div className="text-center">
-                <CustomHeading text1={"Testimonial"} />
-              </div>
-              <p className="text-center text-white">
+              <CustomHeading text1="Testimonial" />
+              <p className="text-center text-white text-2xl ">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Laboriosam magnam ipsam nostrum reprehenderit.{" "}
-                <Link to="#">more .. </Link>
+                <Link to="#">more..</Link>
               </p>
             </div>
-            <div className="flex flex-col lg:flex-row items-center justify-around ">
-              {/* Adjusted Image Container */}
-              <img
-                src={logo}
-                className="h-44 pt-4 pb-2 max-w-full"
-                alt="Logo"
-              />
-              <img
-                src={logo}
-                className="h-44 pt-4 pb-2 max-w-full"
-                alt="Logo"
-              />
-              <img
-                src={logo}
-                className="h-44 pt-4 pb-2 max-w-full"
-                alt="Logo"
-              />
-              <img
-                src={logo}
-                className="h-44 pt-4 pb-2 max-w-full"
-                alt="Logo"
-              />
+
+            {/* Images */}
+            <div className="flex flex-col lg:flex-row items-center justify-around mt-4">
+              {[...Array(4)].map((_, idx) => (
+                <img
+                  key={idx}
+                  src={logo}
+                  className="h-44 pt-4 pb-2 max-w-7xl"
+                  alt="Logo"
+                />
+              ))}
             </div>
           </motion.div>
         </div>
