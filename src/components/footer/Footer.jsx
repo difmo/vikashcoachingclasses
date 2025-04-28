@@ -83,7 +83,7 @@ export default function Footer() {
               <p className="mb-4 flex text-left">
                 We specialize in providing personalized One to One tutors,
                 across the students of the DUBAI-UAE, Qatar, UK, USA, Canada,
-                Australia & India.
+                India and Australia.
               </p>
               <div className="flex w-full ">
                 <input
@@ -102,9 +102,9 @@ export default function Footer() {
           <div className="border-t border-gray-700  mt-10 pt-5 flex flex-col md:flex-row justify-between items-center text-sm">
             <p>
               <span className="text-orange-500">
-                Vikas Institute @ SYBRA CORPORATION
+                Vikas Institute @ SYBRA CORPORATION. &nbsp;
               </span>
-              . All Rights Reserved.
+              All Rights Reserved.{"  "}
             </p>
             <div className="flex space-x-4 mt-3 md:mt-0">
               {footerLinks.map((link, index) => (
