@@ -34,7 +34,7 @@ const AboutUs = () => {
     <>
       <div className="">
         <div className=" bg-[#f2f2f2] text-2xl  text-blue-500 flex justify-center">
-          Home / Abut Us
+          Home / About Us
         </div>
       </div>
       <div className="w-full max-w-7xl mx-auto px-4 py-8">
