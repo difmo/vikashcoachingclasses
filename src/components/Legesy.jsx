@@ -101,15 +101,14 @@ const Legacy = () => {
         >
           <div className="text-center mt-8">
             <div className="bg-[#dba577] w-full inline-block px-4 py-2 rounded-lg">
-              <CustomHeading text1="Testimonial" />
+              <CustomHeading text1="Testimonials" />
             </div>
 
             <p className="text-center text-white text-2xl mt-4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Laboriosam magnam ipsam nostrum reprehenderit.{" "}
-              <Link to="#" className="underline hover:text-yellow-300">
+              Feedbacks provieded by some of the Parents .{" "}
+              {/* <Link to="#" className="underline hover:text-yellow-300">
                 more..
-              </Link>
+              </Link> */}
             </p>
           </div>
 

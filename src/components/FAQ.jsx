@@ -30,19 +30,19 @@ const fadeInRight = {
 
 const faqs = [
   {
-    question: "What is Vikash Classes?",
+    question: "Is Trial Class Free or Paid?",
     answer:
-      "Vikash Classes is an educational institute providing coaching for competitive exams like JEE and NEET, with both online and offline options.",
+      "Trial Class can be a free or paid depending on tutor. In most cases, Trial Class is free of cost However in some cases experienced tutor might demand paid Trial Class.",
   },
   {
-    question: "Are the courses at Vikash Classes available online?",
+    question: "What is the cost of hiring a home tutor / online tutor?",
     answer:
-      "Yes, Vikash Classes offers both online and offline classes, so students can choose based on their convenience.",
+      "The tutor fees depend upon various factors such as your location, the tutor's experience, the specific exam (Neet/IIT JEE etc.), the duration of the sessions, and number of subjects. All the tutors listed on our website set their own fees. Just contact us here or call us to know the fees of hiring a home tutor.",
   },
   {
-    question: "How can I enroll in a course at Vikash Classes?",
+    question: "Will I have to pay in advance or Can I pay Session Wise?",
     answer:
-      "You can enroll by visiting the Vikash Classes website, filling out the registration form, or directly contacting the support team for further assistance.",
+      "Its depends upon the mutual Interest. In monthly charge, payment is usually done in advance (Recommended payment on our website) and in session wise class payment is usually done session wise.",
   },
 ];
 
@@ -56,13 +56,11 @@ const FAQ = () => {
   };
 
   return (
-    <div className=""> 
-    
+    <div className="">
       <div ref={ref} className="px-4 py-16 mx-auto sm:px-6 container">
-        
         <h2 className="mb-10 text-4xl font-bold text-center text-secondaryblue text-black">
           Frequently Asked Questions{" "}
-          <span className="text-gradient-primary"> - Vikash Classes</span>
+          <span className="text-gradient-primary"></span>
         </h2>
 
         <div className="space-y-4">
