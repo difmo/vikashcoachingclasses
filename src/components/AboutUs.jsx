@@ -46,7 +46,7 @@ const AboutUs = () => {
         >
           <div className="md:w-1/2">
             <h1 className="text-3xl  font-bold mb-4">About Vikas Sir</h1>
-            <p className="text-2xl text-primary text-justify">
+            <p className="text-xl text-primary text-justify">
               Vikas Sir is a Gold Medalist in IIT Delhi, MTech Programs for
               their outstanding academic performance and having more than 11
               years of experience. He has become a synonym for training Physics
@@ -74,7 +74,7 @@ const AboutUs = () => {
             <img
               src={md}
               alt="Vikas Sir"
-              className="h-96 md:h-[500px] w-full  object-contain rounded-lg pt-14"
+              className="h-96 md:h-[500px] w-full  object-contain rounded-lg "
             />
           </div>
         </div>
