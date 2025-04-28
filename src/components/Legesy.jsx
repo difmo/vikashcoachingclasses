@@ -103,7 +103,9 @@ const Legesy = () => {
           >
             <div className="text-center mt-4">
               {/* Text Content */}
-              <CustomHeading text1="Testimonial" />
+              <div className="bg-[#dba577]">
+                <CustomHeading text1="Testimonial" />
+              </div>
               <p className="text-center text-white text-2xl ">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Laboriosam magnam ipsam nostrum reprehenderit.{" "}
@@ -128,5 +130,4 @@ const Legesy = () => {
     </div>
   );
 };
-
 export default Legesy;
