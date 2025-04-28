@@ -24,9 +24,9 @@ export default function Form() {
 
   return (
     <div className="">
-      <div className="w-full px-4 sm:px-6 md:px-4 pb-3 border-2 border-white rounded-lg ">
+      <div className="w-full px-4 sm:px-6 md:px-4 pb-3 border-2 border-white rounded-lg">
         <div className="text-2xl sm:text-3xl font-bold text-left md:py-2 xl:py-2">
-          <CustomHeading text1="Kindly, Fill  the Form :" />
+          <CustomHeading text1="Kindly, Fill the Form :" />
         </div>
 
         {/* Name */}
@@ -52,21 +52,37 @@ export default function Form() {
           <label className="block font-semibold mb-2 text-sm sm:text-base">
             Select Subjects:
           </label>
+          {/* First Row */}
           <div className="flex flex-wrap gap-4">
-            {["Sci.", "Physics", "Chemistry", "Maths", "Biology"].map(
-              (subject) => (
-                <label key={subject} className="flex items-center space-x-2">
-                  <input
-                    type="radio"
-                    name="subject"
-                    value={subject}
-                    className="text-primary"
-                  />
-                  <span className="text-sm sm:text-base">{subject}</span>
-                </label>
-              )
-            )}
+            {["Science", "Physics", "Chemistry"].map((subject) => (
+              <label key={subject} className="flex items-center space-x-2 ">
+                <input
+                  type="checkbox" // ✅ removed wrong comment here
+                  name="subjects"
+                  value={subject}
+                  className="text-primary"
+                />
+                <span className="text-sm sm:text-base">{subject}</span>
+              </label>
+            ))}
           </div>
+          {/* Second Row */}
+          <div className="flex flex-wrap gap-4 mt-2">
+            {["Maths", "Biology"].map((subject) => (
+              <label key={subject} className="flex items-center space-x-2 ">
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value={subject}
+                  className="text-primary"
+                />
+                <span className="text-sm sm:text-base">{subject}</span>
+              </label>
+            ))}
+            (You can select multiple subjects)
+          </div>
+          {/* <p className="text-xs sm:text-sm mt-2 "> */}
+          {/* </p> */}
         </div>
 
         {/* Level Dropdown */}
