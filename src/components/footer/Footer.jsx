@@ -36,8 +36,8 @@ export default function Footer() {
   return (
     <div className=" bg-[#393951] text-white text-xl">
       <div className="container mx-auto">
-        <footer className=" py-10 px-5">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <footer className=" pt-10 px-5">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 pb-5">
             {/* Get In Touch */}
             <div>
               <h2 className="text-orange-500 text-lg font-semibold mb-4">
@@ -114,13 +114,16 @@ export default function Footer() {
           </div>
 
           {/* Bottom Footer */}
-          <div className="border-t border-gray-700  mt-10 pt-5 flex flex-col md:flex-row justify-between items-center text-sm">
-            <p>
-              <span className="text-orange-500">
-                Vikas Institute @ SYBRA CORPORATION. &nbsp;
-              </span>
-              All Rights Reserved.{"  "}
-            </p>
+          <div className="border-t border-blue-500  "></div>
+          <div className=" flex flex-col md:flex-row justify-between text-sm items-center py-5 ">
+            <div>
+              <p>
+                <span className="text-orange-500">
+                  Vikas Institute @ SYBRA CORPORATION. &nbsp;
+                </span>
+                All Rights Reserved.{"  "}
+              </p>
+            </div>
             <div className="flex space-x-4 mt-3 md:mt-0">
               {footerLinks.map((link, index) => (
                 <a
@@ -131,11 +134,6 @@ export default function Footer() {
                   {link.name}
                 </a>
               ))}
-            </div>
-            <div className="fixed ">
-              <button className="bg-orange-500 p-3 rounded-full shadow-lg hover:bg-orange-600">
-                <span className="text-white">⬆️</span>
-              </button>
             </div>
           </div>
         </footer>
