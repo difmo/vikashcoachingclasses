@@ -140,7 +140,7 @@ const MainSlider = () => {
 
           {/* Right: Form */}
           <div className="w-full md:w-1/2 xl:w-1/3">
-            <div className="mt-9 ">
+            <div className="mt-8 ">
               <Form />
             </div>
           </div>

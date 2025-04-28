@@ -9,23 +9,23 @@ export default function Form() {
 
   return (
     <div className="">
-      <div className="w-full px-4 sm:px-6 md:px-8 pb-6 border-2 border-white rounded-lg ">
-        <div className="text-2xl sm:text-3xl font-bold text-center  xl:py-2">
+      <div className="w-full px-4 sm:px-6 md:px-4 pb-3 border-2 border-white rounded-lg ">
+        <div className="text-2xl sm:text-3xl font-bold text-center  md:py-2 xl:py-9">
           <CustomHeading text1="Hire a Online Private Tutor:" />
         </div>
 
         {/* Name */}
-        <div className="mb-4">
+        <div className="pb-4">
           <CustomInput placeholder="Enter Your Name :" />
         </div>
 
         {/* Email / Contact */}
-        <div className="mb-4">
+        <div className="pb-4">
           <CustomInput placeholder="Enter Phone Number :" />
         </div>
 
         {/* Class Type */}
-        <div className="mb-6">
+        <div className="pb-4">
           <select
             name="classType"
             className="w-full p-3 border border-gray-300 rounded-md bg-white text-black "
@@ -47,7 +47,7 @@ export default function Form() {
         </div>
 
         {/* Subject */}
-        <div className="mb-6">
+        <div className="pb-4">
           <label className="block font-semibold mb-2 text-sm sm:text-base">
             Select Subjects:
           </label>
@@ -75,7 +75,7 @@ export default function Form() {
         </div>
 
         {/* Level */}
-        <div className="mb-6">
+        <div className="pb-4">
           <label className="block font-semibold mb-2 text-sm sm:text-base">
             Select Level:
           </label>
@@ -98,33 +98,9 @@ export default function Form() {
             </select>
           </div>
         </div>
-        {/* <div className="mb-6">
-          <label className="block font-semibold mb-2 text-sm sm:text-base">
-            Select Board:
-          </label>
-          <div className="flex flex-wrap gap-4">
-            {[
-              "Board",
-              "NEET",
-              "IIT-JEE",
-              "Board + NEET",
-              "Board + IIT-JEE",
-            ].map((level) => (
-              <label key={level} className="flex items-center space-x-2">
-                <input
-                  type="radio"
-                  name="level"
-                  value={level}
-                  className="text-blue-600"
-                />
-                <span className="text-sm sm:text-base">{level}</span>
-              </label>
-            ))}
-          </div>
-        </div> */}
 
         {/* Get OTP */}
-        <div className="text-center pt-4">
+        <div className="text-center py-2">
           <CustomButton
             onClick={() => setOtpSent(true)}
             className="bg-secondary px-6 py-3 rounded-lg hover:bg-primary transition text-white text-sm sm:text-base"
