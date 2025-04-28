@@ -46,13 +46,15 @@ export default function Footer() {
               <p className="flex items-center mb-2">
                 Malviya Nagar, New Delhi 110017
               </p>
-              <p className="flex items-center mb-4">
+              <p className="flex items-center mb-2">
                 {" "}
                 Contact No : +91 84273 73281
               </p>
-              <p className="flex items-center mb-2">info@vikasinstitute.in</p>
+              <p className="flex items-center mb-7 text-2xl ">
+                info@vikasinstitute.in
+              </p>
 
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 mb-4">
                 {socialLinks.map((item, index) => (
                   <Link
                     to={item.url}
@@ -84,8 +86,8 @@ export default function Footer() {
               </h2>
               <p className="mb-4 flex text-left">
                 We specialize in providing personalized One to One tutors,
-                across the students of the DUBAI-UAE, Qatar, UK, USA, Canada,
-                India and Australia.
+                across the students of the  USA, CANADA, UK, QATAR, UAE,
+                INDIA and AUSTRALIA.
               </p>
               <div className="flex w-full ">
                 <input
