@@ -101,9 +101,10 @@ export default function Footer() {
           {/* Bottom Footer */}
           <div className="border-t border-gray-700  mt-10 pt-5 flex flex-col md:flex-row justify-between items-center text-sm">
             <p>
-              <span className="text-orange-500">VIKAS INSTITUTE</span>. All
-              Rights Reserved. Designed by{" "}
-              <span className="text-orange-500">NITA Infotech</span>
+              <span className="text-orange-500">
+                Vikas Institute @ SYBRA CORPORATION
+              </span>
+              . All Rights Reserved.
             </p>
             <div className="flex space-x-4 mt-3 md:mt-0">
               {footerLinks.map((link, index) => (
