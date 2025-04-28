@@ -9,7 +9,7 @@ const AboutUs = () => {
     { icon: "📚", title: "STUDY MATERIAL" },
     { icon: "👨‍🏫", title: "FACULTY" },
     { icon: "📋", title: "DOUBT SESSION" },
-    
+
     { icon: "🕒", title: "PERIODIC TEST" },
     { icon: "📈", title: "RESULT" },
   ];
@@ -21,7 +21,7 @@ const AboutUs = () => {
     "X",
     "XI",
     "XII",
-    
+
     "BOARDS",
     "CUET",
     "NEET",
@@ -142,7 +142,7 @@ const AboutUs = () => {
 
         {/* Top Features */}
         <div
-          className="flex flex-wrap justify-center gap-4 mb-10"
+          className="-left-4 text-left flex flex-wrap justify-start gap-6 mb-10"
           data-aos="fade-up"
         >
           {topFeatures.map((feature, index) => (
