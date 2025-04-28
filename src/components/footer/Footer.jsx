@@ -4,10 +4,12 @@ import {
   FaLinkedinIn,
   FaInstagram,
   FaWhatsapp,
+  FaYoutube,
 } from "react-icons/fa";
 import { Link } from "react-router-dom"; // or 'next/link' if you're using Next.js
 
 const socialLinks = [
+  { icon: <FaYoutube />, url: "#" },
   { icon: <FaTwitter />, url: "#" },
   { icon: <FaFacebookF />, url: "#" },
   { icon: <FaInstagram />, url: "#" },
