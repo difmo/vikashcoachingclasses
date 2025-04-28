@@ -45,9 +45,9 @@ const AboutUs = () => {
           data-aos="fade-up"
         >
           <div className="md:w-1/2">
-            <h1 className="text-3xl  font-bold mb-4">About Vikas Sir</h1>
+            <h1 className="text-3xl  font-bold mb-4 text-[#51087E]">About Vikas Sir,</h1>
             <p className="text-xl text-primary text-justify">
-              Vikas Sir is a Gold Medalist in IIT Delhi, MTech Programs for
+              Vikas Sir is a Gold Medalist in IIT Delhi, M.Tech Programs for
               their outstanding academic performance and having more than 11
               years of experience. He has become a synonym for training Physics
               toppers among the top Schools in Delhi and some National
