@@ -58,7 +58,7 @@ const JoinTeamForm = () => {
 
   return (
     <div>
-      <div className="pt-6">
+      <div className="">
         <div className=" bg-[#f2f2f2] text-2xl  text-blue-500 flex justify-center">
           Home / Vikas Institute
         </div>
@@ -68,9 +68,9 @@ const JoinTeamForm = () => {
         <div className="max-w-7xl mx-auto space-y-10">
           {/* Form and Info Section */}
           <div className="shadow-xl bg-white rounded-3xl overflow-hidden">
-            <div className="flex flex-col lg:flex-row gap-7">
+            <div className="flex flex-col lg:flex-row gap-7 mb-10">
               {/* Left Section */}
-              <div className="hidden lg:flex flex-col justify-center bg-yellow-100 text-black p-8 lg:w-1/2">
+              <div className=" lg:flex flex-col justify-center bg-yellow-100 text-black p-8 lg:w-1/2 py-6">
                 <h1 className="text-3xl font-bold mb-4">Vikas Institute</h1>
                 <p>Gupta Colony, Malviya Nagar, New Delhi - 110017</p>
                 <p>Phone Numbers: +91 9988752471, +91 8289052751</p>
@@ -104,7 +104,6 @@ const JoinTeamForm = () => {
                 >
                   {/* Name */}
                   <CustomInput
-                    label="Name"
                     type="text"
                     placeholder="Name"
                     value={formData.name}
@@ -116,7 +115,6 @@ const JoinTeamForm = () => {
 
                   {/* Class */}
                   <CustomInput
-                    label="Class"
                     type="text"
                     placeholder="Class (e.g. 7 to Dropper)"
                     value={formData.class}
@@ -191,7 +189,6 @@ const JoinTeamForm = () => {
 
                   {/* Experience */}
                   <CustomInput
-                    label="Experience"
                     type="text"
                     placeholder="Experience (in years)"
                     value={formData.experience}
@@ -202,7 +199,6 @@ const JoinTeamForm = () => {
 
                   {/* Contact Number */}
                   <CustomInput
-                    label="Contact Number"
                     type="tel"
                     placeholder="Contact Number"
                     value={formData.contact}
@@ -235,7 +231,7 @@ const JoinTeamForm = () => {
                       type="button"
                       label="Verify"
                       onClick={verifyOtp}
-                      className="px-4 py-2 rounded-lg bg-green-500 hover:bg-green-600"
+                      className="px-4 py-2  bg-yellow-400 rounded-lg hover:bg-green-600"
                     />
                   </div>
 

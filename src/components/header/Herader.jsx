@@ -11,55 +11,53 @@ const Header = () => {
   const closeMenu = () => setIsOpen(false);
 
   const navLinks = [
-    { path: "/", label: "About Us" },
+    { path: "/about-us", label: "About Us" },
     { path: "/subject/physics", label: "Online Physics Tutor" },
     { path: "/subject/chemistry", label: "Online Chemistry Tutor" },
     { path: "/subject/math", label: "Online Maths Tutor" },
     { path: "/subject/biology", label: "Online Biology Tutor" },
-    // { path: "/online-classes", label: "Online Courses" },
     { path: "/join-form", label: "Contact Us" },
   ];
 
   return (
-    <div className=" shadow ">
-      <div className="container mx-auto">
-        <header className="sticky top-0 z-50 w-full items-center">
-          <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold text-gradient-primary">
-              <img src={logo} className="h-11 border-2 " alt="" />
-            </Link>
+    <header className="sticky top-0 z-50 w-ful">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+        {/* Logo */}
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="Logo" className="h-11 border-2 rounded" />
+        </Link>
 
-            {/* Mobile Menu Toggle */}
-            <div className="md:hidden ">
-              <button onClick={toggleMenu} aria-label="Toggle Menu">
-                {isOpen ? <X size={28} /> : <Menu size={28} />}
-              </button>
-            </div>
+        {/* Mobile Menu Button */}
+        <button
+          onClick={toggleMenu}
+          className="md:hidden text-gray-700"
+          aria-label="Toggle Menu"
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
 
-            {/* Navigation */}
-            <nav
-              className={`${
-                isOpen ? "block" : "hidden"
-              } absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none transition-all duration-300 ease-in-out z-40 md:flex md:items-center`}
-            >
-              <ul className="flex flex-col md:flex-row gap-4 p-4 md:p-0 text-lg  text-[#f2f2f2] font-medium">
-                {navLinks.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      to={link.path}
-                      onClick={closeMenu}
-                      className="hover:text-secondary hover:underline transition-colors duration-200"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-        </header>
+        {/* Navigation Links */}
+        <nav
+          className={`${
+            isOpen ? "block" : "hidden"
+          } absolute top-full left-0 w-full bg-white md:bg-transparent md:static md:w-auto md:flex md:items-center z-40 transition-all duration-300 ease-in-out`}
+        >
+          <ul className="flex flex-col md:flex-row md:space-x-6 p-4 md:p-0 text-base font-medium text-gray-800">
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <Link
+                  to={link.path}
+                  onClick={closeMenu}
+                  className="block py-2 md:py-0 hover:text-blue-600 transition-colors"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
-    </div>
+    </header>
   );
 };
 
