@@ -25,7 +25,7 @@ const courses = [
 ];
 
 const footerLinks = [
-  { url: "/", name: "Online Science Tutors" },
+  { url: "/join-form", name: "Online Science Tutors" },
   { url: "/subject/physics", name: "Online Physics Tutors" },
   { url: "/subject/chemistry", name: "Online Chemistry Tutors" },
   { url: "/subject/math", name: "Online Maths Tutors" },
@@ -73,8 +73,7 @@ export default function Footer() {
                 Hire Online Private Tutors
               </h2>
               {footerLinks.map((link, index) => (
-                <li >
-                  
+                <li>
                   <a
                     href={link.url}
                     key={index}
