@@ -73,7 +73,7 @@ const MainSlider = () => {
           }}
         >
           A Most Trusted Website to Hire, Best Online Private Tutors for the
-          Students of {"       "} USA - CANADA - UK - QATAR - UAE - INDIA -
+          Students of &nbsp; USA - CANADA - UK - QATAR - UAE - INDIA -
           AUSTRALIA.
         </motion.div>
       </div>
