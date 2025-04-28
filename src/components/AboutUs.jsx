@@ -6,11 +6,12 @@ import "aos/dist/aos.css";
 
 const AboutUs = () => {
   const topFeatures = [
-    { icon: "📈", title: "RESULT" },
-    { icon: "👨‍🏫", title: "FACULTY" },
     { icon: "📚", title: "STUDY MATERIAL" },
-    { icon: "🕒", title: "PERIODIC TEST" },
+    { icon: "👨‍🏫", title: "FACULTY" },
     { icon: "📋", title: "DOUBT SESSION" },
+    
+    { icon: "🕒", title: "PERIODIC TEST" },
+    { icon: "📈", title: "RESULT" },
   ];
 
   const courses = [
