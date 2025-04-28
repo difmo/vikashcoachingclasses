@@ -21,10 +21,11 @@ const AboutUs = () => {
     "X",
     "XI",
     "XII",
-    "IB",
-    "CBSE",
-    "ICSE",
-    "IGCSE",
+    
+    "BOARDS",
+    "CUET",
+    "NEET",
+    "IIT-JEE",
   ];
 
   useEffect(() => {
