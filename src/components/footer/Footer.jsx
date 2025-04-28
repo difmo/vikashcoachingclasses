@@ -56,13 +56,13 @@ export default function Footer() {
 
               <div className="flex space-x-4 mb-4">
                 {socialLinks.map((item, index) => (
-                  <Link
-                    to={item.url}
+                  <a
+                    href={item.url}
                     key={index}
                     className="p-2 border rounded hover:bg-orange-500 transition"
                   >
                     {item.icon}
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>
@@ -72,11 +72,23 @@ export default function Footer() {
               <h2 className="text-orange-500 text-xl font-semibold mb-4">
                 Hire Online Private Tutors
               </h2>
-              <ul className="space-y-2">
+              {footerLinks.map((link, index) => (
+                <li >
+                  
+                  <a
+                    href={link.url}
+                    key={index}
+                    className="hover:text-orange-500"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+              {/* <ul className="space-y-2">
                 {courses.map((course, index) => (
                   <li key={index}>➤ {course}</li>
                 ))}
-              </ul>
+              </ul> */}
             </div>
 
             {/* Newsletter */}
@@ -86,8 +98,8 @@ export default function Footer() {
               </h2>
               <p className="mb-4 flex text-left">
                 We specialize in providing personalized One to One tutors,
-                across the students of the  USA, CANADA, UK, QATAR, UAE,
-                INDIA and AUSTRALIA.
+                across the students of the USA, CANADA, UK, QATAR, UAE, INDIA
+                and AUSTRALIA.
               </p>
               <div className="flex w-full ">
                 <input
@@ -112,13 +124,13 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4 mt-3 md:mt-0">
               {footerLinks.map((link, index) => (
-                <Link
-                  to={link.url}
+                <a
+                  href={link.url}
                   key={index}
                   className="hover:text-orange-500"
                 >
                   {link.name}
-                </Link>
+                </a>
               ))}
             </div>
             <div className="fixed ">
