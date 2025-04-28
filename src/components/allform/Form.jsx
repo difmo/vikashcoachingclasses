@@ -79,10 +79,9 @@ export default function Form() {
                 <span className="text-sm sm:text-base">{subject}</span>
               </label>
             ))}
-            (You can select multiple subjects)
+            (Can Select Multiple)
           </div>
-          {/* <p className="text-xs sm:text-sm mt-2 "> */}
-          {/* </p> */}
+        
         </div>
 
         {/* Level Dropdown */}
