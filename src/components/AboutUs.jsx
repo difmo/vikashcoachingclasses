@@ -74,7 +74,7 @@ const AboutUs = () => {
             <img
               src={md}
               alt="Vikas Sir"
-              className="h-96 md:h-[500px] w-full  object-contain rounded-lg "
+              className="h-96 md:h-[500px] w-full  object-contain rounded-lg pt-1.5 "
             />
           </div>
         </div>
