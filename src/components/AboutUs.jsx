@@ -68,7 +68,7 @@ const AboutUs = () => {
                 doubts.
               </span>
             </p>
-            <p className="text-lg text-primary">Thanks.</p>
+            <p className="text-2xl text-primary">Thanks.</p>
           </div>
           <div className="md:w-1/2 flex justify-center" data-aos="zoom-in">
             <img
