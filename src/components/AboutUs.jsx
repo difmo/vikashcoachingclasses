@@ -34,7 +34,7 @@ const AboutUs = () => {
     <>
       <div className="">
         <div className=" bg-[#f2f2f2] text-2xl  text-blue-500 flex justify-center">
-          Home / Vikas Institute
+          Home / Abut Us
         </div>
       </div>
       <div className="w-full max-w-7xl mx-auto px-4 py-8">
@@ -45,7 +45,9 @@ const AboutUs = () => {
           data-aos="fade-up"
         >
           <div className="md:w-1/2">
-            <h1 className="text-3xl  font-bold mb-4 text-[#51087E]">About Vikas Sir,</h1>
+            <h1 className="text-3xl  font-bold mb-4 text-[#51087E]">
+              About Vikas Sir,
+            </h1>
             <p className="text-xl text-primary text-justify">
               Vikas Sir is a Gold Medalist in IIT Delhi, M.Tech Programs for
               their outstanding academic performance and having more than 11
