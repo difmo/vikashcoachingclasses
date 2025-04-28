@@ -148,7 +148,7 @@ const AboutUs = () => {
           {topFeatures.map((feature, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center p-4 border-2 border-red-400 rounded-md hover:shadow-lg transition w-[45%] sm:w-[30%] md:w-[18%]"
+              className="flex flex-col items-center bg-[#ffe7d0] justify-center p-4 border-2 border-red-400 rounded-md hover:shadow-lg transition w-[45%] sm:w-[30%] md:w-[18%]"
             >
               <div className="text-4xl sm:text-5xl mb-2">{feature.icon}</div>
               <h3 className="text-md sm:text-lg font-semibold text-center">
