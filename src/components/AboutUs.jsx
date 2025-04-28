@@ -142,7 +142,7 @@ const AboutUs = () => {
 
         {/* Top Features */}
         <div
-          className="-left-4 text-left flex flex-wrap justify-start gap-6 mb-10"
+          className="-left-4 text-left flex flex-wrap justify-between gap-7 mb-10"
           data-aos="fade-up"
         >
           {topFeatures.map((feature, index) => (
@@ -163,13 +163,13 @@ const AboutUs = () => {
           WE PREPARE YOU FOR
         </h2>
         <div
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-items-center"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 justify-items-center"
           data-aos="fade-up"
         >
           {courses.map((course, index) => (
             <button
               key={index}
-              className="bg-blue-900 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition text-base sm:text-lg font-semibold w-full text-center"
+              className="bg-blue-900 text-white py-2 px-3 rounded-md hover:bg-blue-700 transition text-base sm:text-lg font-semibold w-full text-center"
             >
               {course}
             </button>
