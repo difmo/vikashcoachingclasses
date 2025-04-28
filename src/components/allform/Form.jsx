@@ -15,18 +15,18 @@ export default function Form() {
   const [selectedLevel, setSelectedLevel] = useState("");
 
   const handleClassTypeSelect = (classType) => {
-    setSelectedClassType(classType);  // Update the selected class type
+    setSelectedClassType(classType); // Update the selected class type
   };
 
   const handleLevelSelect = (level) => {
-    setSelectedLevel(level);  // Update the selected level
+    setSelectedLevel(level); // Update the selected level
   };
 
   return (
     <div className="">
       <div className="w-full px-4 sm:px-6 md:px-4 pb-3 border-2 border-white rounded-lg ">
-        <div className="text-2xl sm:text-3xl font-bold text-center md:py-2 xl:py-9">
-          <CustomHeading text1="Hire an Online Private Tutor:" />
+        <div className="text-2xl sm:text-3xl font-bold text-left md:py-2 xl:py-2">
+          <CustomHeading text1="Kindly, Fill  the Form :" />
         </div>
 
         {/* Name */}
@@ -43,8 +43,8 @@ export default function Form() {
         <CustomDropdown
           className="text-black"
           selectOption={["7th", "8th", "9th", "10th", "12th", "Dropper"]}
-          selectedValue={selectedClassType}   // Class Type selected value
-          onSelect={handleClassTypeSelect}     // Class Type select handler
+          selectedValue={selectedClassType} // Class Type selected value
+          onSelect={handleClassTypeSelect} // Class Type select handler
         />
 
         {/* Subject */}
@@ -53,26 +53,34 @@ export default function Form() {
             Select Subjects:
           </label>
           <div className="flex flex-wrap gap-4">
-            {["Sci.", "Physics", "Chemistry", "Maths", "Biology"].map((subject) => (
-              <label key={subject} className="flex items-center space-x-2">
-                <input
-                  type="radio"
-                  name="subject"
-                  value={subject}
-                  className="text-primary"
-                />
-                <span className="text-sm sm:text-base">{subject}</span>
-              </label>
-            ))}
+            {["Sci.", "Physics", "Chemistry", "Maths", "Biology"].map(
+              (subject) => (
+                <label key={subject} className="flex items-center space-x-2">
+                  <input
+                    type="radio"
+                    name="subject"
+                    value={subject}
+                    className="text-primary"
+                  />
+                  <span className="text-sm sm:text-base">{subject}</span>
+                </label>
+              )
+            )}
           </div>
         </div>
 
         {/* Level Dropdown */}
         <CustomDropdown
           className="text-black"
-          selectOption={["School Level", "NEET", "IIT-JEE", "Board + NEET", "Board + IIT-JEE"]}
-          selectedValue={selectedLevel}   // Level selected value
-          onSelect={handleLevelSelect}     // Level select handler
+          selectOption={[
+            "School Level",
+            "NEET",
+            "IIT-JEE",
+            "Board + NEET",
+            "Board + IIT-JEE",
+          ]}
+          selectedValue={selectedLevel} // Level selected value
+          onSelect={handleLevelSelect} // Level select handler
         />
 
         {/* Get OTP */}
