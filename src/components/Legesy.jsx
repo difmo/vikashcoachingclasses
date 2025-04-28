@@ -112,12 +112,12 @@ const Legesy = () => {
             </div>
 
             {/* Images */}
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-4 mt-4">
+            <div className="flex flex-col lg:flex-row items-center justify-center mt-4 gap-12 lg:gap-24">
               {[...Array(4)].map((_, idx) => (
                 <img
                   key={idx}
                   src={logo}
-                  className="h-44 pt-2 pb-2 gap-6"
+                  className="h-44 pt-2 pb-2 "
                   alt="Logo"
                 />
               ))}
