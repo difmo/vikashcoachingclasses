@@ -2,37 +2,37 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // ✅ Make sure these files exist with exact names
-import Vikas0 from "../../assets/homeslider/vikash0.png";
-import Vikas4 from "../../assets/homeslider/vikas4.png";
-import Vikas3 from "../../assets/homeslider/vikas3.png";
-import Vikas1 from "../../assets/homeslider/vikas1.png";
-import Vikas from "../../assets/homeslider/vikas.png";
-
+// import Vikas0 from "../../assets/homeslider/vikash0.png";
+// import Vikas4 from "../../assets/homeslider/vikas4.png";
+// import Vikas3 from "../../assets/homeslider/vikas3.png";
+// import Vikas1 from "../../assets/homeslider/vikas1.png";
+// import Vikas from "../../assets/homeslider/vikas.png";
+import img from "../../assets/home.jpg";
 import Form from "../allform/Form";
 
 const slides = [
   {
-    image: Vikas0,
+    image: img,
     heading: "Hi, Looking for Online Science Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
-    image: Vikas4,
+    image: img,
     heading: "Hi, Looking for Online Physics Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
-    image: Vikas3,
+    image: img,
     heading: "Hi, Looking for Online Chemistry Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
-    image: Vikas,
+    image: img,
     heading: "Hi, Looking for Online Maths Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
-    image: Vikas1,
+    image: img,
     heading: "Hi, Looking for Online Biology Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
@@ -91,11 +91,7 @@ const MainSlider = () => {
           {/* Left: Slider */}
           <div className="relative mt-8 w-full md:w-1/2 xl:w-2/3 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[600px] overflow-hidden rounded-lg">
             <AnimatePresence mode="wait">
-              <div
-              
-                className="absolute inset-0 w-full h-full"
-                
-              >
+              <div className="absolute inset-0 w-full h-full">
                 <img
                   src={slides.image}
                   alt="Slide"
