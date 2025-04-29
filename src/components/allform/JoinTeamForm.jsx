@@ -130,7 +130,7 @@ const JoinTeamForm = () => {
               {/* Right Section (Form) */}
               <div className="w-full lg:w-1/2 p-8 bg-white rounded-e-2xl">
                 <h2 className="text-3xl font-bold text-center text-yellow-500 mb-6">
-                  Kindly, Fill the Form
+                  Kindly, Fill the Form to get in Touch :
                 </h2>
 
                 <form
