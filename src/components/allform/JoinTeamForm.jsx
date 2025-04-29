@@ -88,8 +88,8 @@ const JoinTeamForm = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-3 ">
-          <label className="block font-semibold mb-2 text-gray-700">
+        <div className="flex flex-wrap gap-4 ">
+          <label className="block font-semibold mr-2 text-gray-700">
             Select Subject:
           </label>
           {subjects.map((sub) => (
@@ -102,8 +102,8 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
-        <div className="flex flex-wrap gap-3 ">
-          <label className="block font-semibold mb-2 text-gray-700">
+        <div className="flex flex-wrap gap-4 ">
+          <label className="block font-semibold mr-2 text-gray-700">
             Select Boards:
           </label>
           {boards.map((board) => (
@@ -143,8 +143,8 @@ const JoinTeamForm = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-3 ">
-          <label className="block font-semibold mb-2 text-gray-700">
+        <div className="flex flex-wrap gap-4 ">
+          <label className="block font-semibold mr-2 text-gray-700">
             Select Subject:
           </label>
           {subjects.map((sub) => (
@@ -157,8 +157,8 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
-        <div className="flex flex-wrap gap-3 ">
-          <label className="block font-semibold mb-2 text-gray-700">
+        <div className="flex flex-wrap gap-4 ">
+          <label className="block font-semibold mr-2 text-gray-700">
             Boards :
           </label>
           {boards.map((board) => (
@@ -273,7 +273,7 @@ const JoinTeamForm = () => {
 
               {/* Right */}
               <div className="w-full lg:w-1/2 p-8 bg-white border-3 border-black md:border-0  rounded-2xl lg:rounded-s-none">
-                <h2 className="text-3xl font-bold text-center text-yellow-500 mb-6">
+                <h2 className="text-3xl font-bold text-center text-[#dba577] mb-6">
                   Kindly, Fill the Form to get in Touch :
                 </h2>
 
@@ -340,7 +340,7 @@ const JoinTeamForm = () => {
           }`}
                           >
                             {selectedRole === role.value && (
-                              <div className="w-2.5 h-2.5 bg-yellow-400 rounded-full" />
+                              <div className="w-2.5 h-2.5 bg-[#dba577] rounded-full" />
                             )}
                           </div>
                         </span>
@@ -353,13 +353,14 @@ const JoinTeamForm = () => {
                   {roleFields[selectedRole]}
 
                   {/* OTP */}
-                  <div className="flex flex-col sm:flex-row items-center gap-3">
+                  <div className="flex flex-col sm:flex-row items-center justify-start gap-8 w-full">
                     <CustomButton
                       type="button"
                       label="Send OTP"
                       onClick={sendOtp}
-                      className="px-4 py-2 rounded-lg bg-yellow-400 hover:bg-yellow-500"
+                      className="px-4 py-2 rounded-lg bg-[#dba577] hover:bg-[#c08c5c] w-full sm:w-auto"
                     />
+
                     <CustomInput
                       type="text"
                       placeholder="Enter OTP"
@@ -367,13 +368,14 @@ const JoinTeamForm = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, otp: e.target.value })
                       }
-                      className="sm:w-32 w-full"
+                      className="w-full sm:w-36"
                     />
+
                     <CustomButton
                       type="button"
                       label="Verify"
                       onClick={verifyOtp}
-                      className="px-4 py-2 bg-yellow-400 rounded-lg hover:bg-green-600"
+                      className="px-4 py-2 bg-[#dba577] rounded-lg hover:bg-green-600 w-full sm:w-auto"
                     />
                   </div>
 
@@ -381,7 +383,7 @@ const JoinTeamForm = () => {
                   <CustomButton
                     type="submit"
                     label="Submit"
-                    className="w-full bg-yellow-400 hover:bg-yellow-500 py-2 rounded-lg font-semibold text-white"
+                    className="w-full bg-[#dba577] hover:bg-[#dba577] py-2 rounded-lg font-semibold text-white"
                   />
                 </form>
               </div>

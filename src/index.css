@@ -19,7 +19,7 @@
 @theme {
   --color-primary: #f8e4c9;
   --color-secondary: #f8e4c9;
---color-headerbordertext:#51087E;
+  --color-headerbordertext: #51087e;
 }
 /* #fec624 */
 /* Utilities for solid background and text */

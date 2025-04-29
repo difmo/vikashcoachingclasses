@@ -15,7 +15,7 @@ const CustomInput = ({
   const mainLabel = label ? label.split("*")[0] : "";
 
   return (
-    <div className="relative mb-2 py-1.5">
+    <div className="relative py-1.5">
       {/* Label for the input */}
       {label && (
         <label
