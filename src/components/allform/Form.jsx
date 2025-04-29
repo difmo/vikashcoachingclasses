@@ -9,6 +9,7 @@ import {
   RecaptchaVerifier,
   signInWithPhoneNumber,
 } from "../../Firebase";
+import CustomCheckbox from "../CustomCheckbox";
 
 export default function Form() {
   const [otpSent, setOtpSent] = useState(false);
@@ -17,9 +18,11 @@ export default function Form() {
   const [selectedClassType, setSelectedClassType] = useState("Select Class");
   const [selectedLevel, setSelectedLevel] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
+  const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    boards: [],
     subjects: [],
   });
   const [verificationId, setVerificationId] = useState("");
@@ -139,7 +142,7 @@ export default function Form() {
       {/* Phone Input */}
       <div className="pb-4">
         <CustomInput
-          placeholder="Enter Phone Number :"
+          placeholder="Enter Mobile No. :"
           name="phone"
           value={formData.phone}
           onChange={handleInputChange}
@@ -148,15 +151,17 @@ export default function Form() {
       {/* Class Dropdown */}
       <CustomDropdown
         className="text-black"
-        selectOption={["7th", "8th", "9th", "10th", "12th", "Dropper"]}
+        selectOption={["7th", "8th", "9th", "10th", "12th", "Droppers"]}
         selectedValue={selectedClassType}
         onSelect={handleClassTypeSelect}
       />
       {/* Subject Checkboxes */}
       <div className="pb-4">
         <label className="block font-semibold mb-2 text-sm sm:text-base">
-          Select Subjects:{" "}
+          Select Subjects :{" "}
           <span className="text-sm relative  mt-1 text-left text-[#ebe9e7]">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             ( You can Select Multiples )
           </span>
         </label>
@@ -184,10 +189,28 @@ export default function Form() {
           </span> */}
         </div>
       </div>
+      <div className="flex flex-wrap gap-4 pb-6 ">
+        <label className="block font-semibold  text-black">BOARD:</label>
+        {boards.map((board) => (
+          <label key={board} className="flex items-center -gap-2 text-sm">
+            <CustomCheckbox
+              checked={formData.boards.includes(board)}
+              onChange={() => toggleSelection("boards", board)}
+            />
+            {board}
+          </label>
+        ))}
+      </div>
       {/* Level Dropdown */}
       <CustomDropdown
         className="text-black"
-        selectOption={["School Level","NEET", "IIT-JEE", "Board + NEET", "Board + IIT-JEE"]}
+        selectOption={[
+          "School Level",
+          "NEET",
+          "IIT-JEE",
+          "Board + NEET",
+          "Board + IIT-JEE",
+        ]}
         selectedValue={selectedLevel}
         onSelect={handleLevelSelect}
       />

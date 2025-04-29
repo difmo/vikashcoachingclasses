@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import img3 from "../../assets/home.jpg";
+import img1 from "../../assets/homeslider/Vikas5.jpeg";
+import img2 from "../../assets/homeslider/Vikas4.jpeg";
+import img3 from "../../assets/homeslider/Vikas3.jpeg";
+import img4 from "../../assets/homeslider/Vikas1.jpeg";
+import img5 from "../../assets/homeslider/Vikas.jpeg";
 import Form from "../allform/Form";
 
 const slides = [
   {
-    image: img3,
+    image: img1,
     heading: "Hi, Looking for Online Science Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
-    image: img3,
+    image: img2,
     heading: "Hi, Looking for Online Physics Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
@@ -20,12 +24,12 @@ const slides = [
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
-    image: img3,
+    image: img4,
     heading: "Hi, Looking for Online Maths Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
-    image: img3,
+    image: img5,
     heading: "Hi, Looking for Online Biology Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
@@ -73,7 +77,7 @@ const MainSlider = () => {
           }}
         >
           A Most Trusted Website to Hire, Best Online Private Tutors for the
-          Students of &nbsp; USA - CANADA - UK - QATAR - UAE - AUSTRALIA - INDIA 
+          Students of &nbsp; USA - CANADA - UK - QATAR - UAE - AUSTRALIA - INDIA
           .
         </motion.div>
       </div>
@@ -84,21 +88,14 @@ const MainSlider = () => {
           {/* Left: Slider */}
           <div className="relative mt-8  w-full md:w-1/2 xl:w-2/3 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[600px] overflow-hidden rounded-lg">
             <AnimatePresence mode="wait">
-              <motion.div
-                key={current}
-                className="absolute inset-0 w-full h-full"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.8 }}
-              >
+              <div className="absolute inset-0 w-full h-full">
                 <img
                   src={slides[current].image}
                   alt="Slide"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/40" />
-              </motion.div>
+              </div>
             </AnimatePresence>
 
             {/* Text on Slide */}
