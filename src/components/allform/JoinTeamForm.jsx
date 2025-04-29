@@ -186,7 +186,7 @@ const JoinTeamForm = () => {
           <div className="overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-10 md:gap-0 md:border-2 rounded-2xl">
               {/* Left */}
-              <div className="w-full lg:w-1/2 flex flex-col items-center justify-center relative text-base sm:text-lg md:text-xl bg-primary text-headerbordertext py-6 rounded-2xl lg:rounded-e-none">
+              <div className="w-full lg:w-1/2 flex flex-col items-center justify-center border-3 md:border-0 relative text-base sm:text-lg md:text-xl bg-primary text-headerbordertext py-6 rounded-2xl lg:rounded-e-none">
                 <h1 className="text-2xl sm:text-3xl font-bold absolute top-4 sm:top-8 text-center w-full">
                   Vikas Institute
                 </h1>
