@@ -289,7 +289,7 @@ const JoinTeamForm = () => {
                 >
                   <CustomInput
                     type="text"
-                    placeholder="Enter Your Name"
+                    placeholder="Enter  Name :"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -298,7 +298,7 @@ const JoinTeamForm = () => {
                   />
                   <CustomInput
                     type="tel"
-                    placeholder="Enter Your Phone No."
+                    placeholder="Enter  Mobile No."
                     value={formData.contact}
                     onChange={(e) =>
                       setFormData({ ...formData, contact: e.target.value })
@@ -307,7 +307,7 @@ const JoinTeamForm = () => {
                   />
                   <CustomInput
                     type="email"
-                    placeholder="Enter Your Email Id"
+                    placeholder=" Email Id "
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
@@ -362,14 +362,14 @@ const JoinTeamForm = () => {
                   <div className="flex flex-col sm:flex-row items-center justify-start gap-12 w-full">
                     <CustomButton
                       type="button"
-                      label="Send OTP"
+                      label="Get OTP"
                       onClick={sendOtp}
                       className="px-4 py-2 rounded-lg bg-[#dba577] hover:bg-[#c08c5c] w-full sm:w-auto"
                     />
 
                     <CustomInput
                       type="text"
-                      placeholder="Enter OTP"
+                      placeholder="Enter OTP :"
                       value={formData.otp}
                       onChange={(e) =>
                         setFormData({ ...formData, otp: e.target.value })
