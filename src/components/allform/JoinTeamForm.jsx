@@ -6,7 +6,7 @@ import CustomRadio from "../CustomRadio"; // You can remove if not used elsewher
 import img from "../../assets/logo1.jpeg";
 
 const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
-const subjects = ["Sci.", "Phy", "Chem", "Bio", "Maths", "Others"];
+const subjects = ["Sci.", "Phy", "Chem", "Bio", "Maths", "Other"];
 const classes = ["7th", "8th", "9th", "10th", "12th", "Droppers"];
 const levels = [
   "School Level",
@@ -19,7 +19,7 @@ const levels = [
 const JoinTeamForm = () => {
   const [otpSent, setOtpSent] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
-  const [selectedRole, setSelectedRole] = useState("Others");
+  const [selectedRole, setSelectedRole] = useState("Other");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -32,7 +32,6 @@ const JoinTeamForm = () => {
     level: "",
     message: "",
     otp: "",
-    resume: null,
   });
 
   const toggleSelection = (field, value) => {
@@ -73,6 +72,7 @@ const JoinTeamForm = () => {
   const roleFields = {
     Teacher: (
       <>
+        {/* Boards */}
         <div className="flex flex-wrap gap-4 ">
           <label className="block font-semibold mr-2 text-gray-700">
             Select Boards:
@@ -87,6 +87,7 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
+        {/* Classes */}
         <div className="flex flex-wrap items-center gap-4">
           <label className="font-semibold text-gray-700 mr-4">
             Select Class:
@@ -101,7 +102,7 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
-
+        {/* Subjects */}
         <div className="flex flex-wrap gap-4 ">
           <label className="block font-semibold mr-2 text-gray-700">
             Select Subject:
@@ -116,7 +117,6 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
-
         <CustomInput
           type="text"
           placeholder="Experience (in years)"
@@ -127,8 +127,10 @@ const JoinTeamForm = () => {
         />
       </>
     ),
+
     "Students / Parents": (
       <>
+        {/* Boards */}
         <div className="flex flex-wrap gap-4 ">
           <label className="block font-semibold mr-2 text-gray-700">
             Select Boards:
@@ -143,6 +145,7 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
+        {/* Classes */}
         <div className="flex flex-wrap items-center gap-4">
           <label className="font-semibold text-gray-700 mr-4">
             Select Class :
@@ -157,7 +160,7 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
-
+        {/* Subjects */}
         <div className="flex flex-wrap gap-4 ">
           <label className="block font-semibold mr-2 text-gray-700">
             Select Subject:
@@ -172,7 +175,7 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
-
+        {/* Level Dropdown */}
         <select
           className="w-full border rounded-md px-4 py-2"
           value={formData.level}
@@ -187,6 +190,7 @@ const JoinTeamForm = () => {
         </select>
       </>
     ),
+
     Other: (
       <>
         <textarea
@@ -320,7 +324,7 @@ const JoinTeamForm = () => {
                         value: "Students / Parents",
                         label: "Students / Parents",
                       },
-                      { value: "Others", label: "Others" },
+                      { value: "Other", label: "Other" },
                     ].map((role) => (
                       <label
                         key={role.value}
@@ -355,7 +359,7 @@ const JoinTeamForm = () => {
                   {roleFields[selectedRole]}
 
                   {/* OTP */}
-                  <div className="flex flex-col sm:flex-row items-center justify-start gap-8 w-full">
+                  <div className="flex flex-col sm:flex-row items-center justify-start gap-12 w-full">
                     <CustomButton
                       type="button"
                       label="Send OTP"
@@ -370,14 +374,14 @@ const JoinTeamForm = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, otp: e.target.value })
                       }
-                      className="w-full sm:w-36"
+                      className="w-full sm:w-40"
                     />
 
                     <CustomButton
                       type="button"
                       label="Verify"
                       onClick={verifyOtp}
-                      className="px-4 py-2 bg-[#dba577] rounded-lg hover:bg-green-600 w-full sm:w-auto"
+                      className="px-6 py-2 bg-[#dba577] rounded-lg hover:bg-green-600 w-full sm:w-auto"
                     />
                   </div>
 
