@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-// ✅ Make sure these files exist with exact names
-// import Vikas0 from "../../assets/homeslider/vikash0.png";
-// import Vikas4 from "../../assets/homeslider/vikas4.png";
-// import Vikas3 from "../../assets/homeslider/vikas3.png";
-// import Vikas1 from "../../assets/homeslider/vikas1.png";
-// import Vikas from "../../assets/homeslider/vikas.png";
 import img from "../../assets/home.jpg";
 import Form from "../allform/Form";
 
@@ -91,14 +84,21 @@ const MainSlider = () => {
           {/* Left: Slider */}
           <div className="relative mt-8 w-full md:w-1/2 xl:w-2/3 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[600px] overflow-hidden rounded-lg">
             <AnimatePresence mode="wait">
-              <div className="absolute inset-0 w-full h-full">
+              <motion.div
+                key={current}
+                className="absolute inset-0 w-full h-full"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.8 }}
+              >
                 <img
-                  src={slides.image}
+                  src={slides[current].image} // ✅ Corrected line
                   alt="Slide"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/40" />
-              </div>
+              </motion.div>
             </AnimatePresence>
 
             {/* Text on Slide */}

@@ -161,7 +161,6 @@ export default function Form() {
           Select Subjects :{" "}
           <span className="text-sm relative  mt-1 text-left text-[#ebe9e7]">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             ( You can Select Multiples )
           </span>
         </label>
@@ -189,7 +188,7 @@ export default function Form() {
           </span> */}
         </div>
       </div>
-      <div className="flex flex-wrap gap-4 pb-6 ">
+      <div className="flex flex-wrap gap-2 pb-6 ">
         <label className="block font-semibold  text-black">BOARD:</label>
         {boards.map((board) => (
           <label key={board} className="flex items-center -gap-2 text-sm">
