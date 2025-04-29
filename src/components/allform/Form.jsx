@@ -9,7 +9,6 @@ import {
   RecaptchaVerifier,
   signInWithPhoneNumber,
 } from "../../Firebase";
-import CustomCheckbox from "../CustomCheckbox";
 
 export default function Form() {
   const [otpSent, setOtpSent] = useState(false);
@@ -22,17 +21,15 @@ export default function Form() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    boards: [],
+    board: "", // Now stores a single string
     subjects: [],
   });
   const [verificationId, setVerificationId] = useState("");
 
-  // Handle input change for text fields
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle checkbox change for subjects
   const handleSubjectChange = (e) => {
     const { value, checked } = e.target;
     let updatedSubjects = [...formData.subjects];
@@ -44,38 +41,38 @@ export default function Form() {
     setFormData({ ...formData, subjects: updatedSubjects });
   };
 
-  // Handle class type dropdown selection
+  const handleBoardChange = (e) => {
+    setFormData({ ...formData, board: e.target.value });
+  };
+
   const handleClassTypeSelect = (classType) => {
     setSelectedClassType(classType);
   };
 
-  // Handle level dropdown selection
   const handleLevelSelect = (level) => {
     setSelectedLevel(level);
   };
 
-  // Handle experience level change
   const handleExperienceChange = (e) => {
     setExperienceLevel(e.target.value);
   };
 
-  // Function to initiate OTP sending
   const handleOTPSubmit = () => {
     if (!otpSent) {
       const recaptchaVerifier = new RecaptchaVerifier(
         "recaptcha-container",
         {
           size: "invisible",
-          callback: (response) => {
+          callback: () => {
             console.log("Recaptcha verified!");
           },
         },
         auth
       );
 
-      const phoneNumber = "+" + formData.phone; // Assuming user enters the country code too
+      const phoneNumber = "+" + formData.phone;
 
-      signInWithPhoneNumber(auth, phoneNumber, RecaptchaVerifier)
+      signInWithPhoneNumber(auth, phoneNumber, recaptchaVerifier)
         .then((confirmationResult) => {
           setVerificationId(confirmationResult.verificationId);
           setOtpSent(true);
@@ -86,11 +83,7 @@ export default function Form() {
           alert("Error sending OTP. Please try again.");
         });
     } else {
-      // OTP verification logic
-      const credential = firebase.auth.PhoneAuthProvider.credential(
-        verificationId,
-        otp
-      );
+      const credential = auth.PhoneAuthProvider.credential(verificationId, otp);
       auth
         .signInWithCredential(credential)
         .then(() => {
@@ -104,7 +97,6 @@ export default function Form() {
     }
   };
 
-  // Handle final form submission
   const handleFinalSubmit = async (e) => {
     e.preventDefault();
 
@@ -114,6 +106,7 @@ export default function Form() {
         phone: formData.phone,
         classType: selectedClassType,
         level: selectedLevel,
+        board: formData.board,
         subjects: formData.subjects,
         experienceLevel,
         timestamp: new Date(),
@@ -130,7 +123,7 @@ export default function Form() {
       <div className="my-4 text-4xl tracking-tight text-[#dba577] font-extrabold">
         Kindly, Fill the Form :
       </div>
-      {/* Name Input */}
+
       <div className="pb-4">
         <CustomInput
           placeholder="Enter Your Name :"
@@ -139,7 +132,7 @@ export default function Form() {
           onChange={handleInputChange}
         />
       </div>
-      {/* Phone Input */}
+
       <div className="pb-4">
         <CustomInput
           placeholder="Enter Mobile No. :"
@@ -148,23 +141,22 @@ export default function Form() {
           onChange={handleInputChange}
         />
       </div>
-      {/* Class Dropdown */}
+
       <CustomDropdown
         className="text-black"
         selectOption={["7th", "8th", "9th", "10th", "12th", "Droppers"]}
         selectedValue={selectedClassType}
         onSelect={handleClassTypeSelect}
       />
-      {/* Subject Checkboxes */}
+
       <div className="pb-4">
         <label className="block font-semibold mb-2 text-sm sm:text-base">
-          Select Subjects :{" "}
-          <span className="text-sm relative  mt-1 text-left text-[#ebe9e7]">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            ( You can Select Multiples )
+          Select Subjects :
+          <span className="text-sm text-[#ebe9e7]">
+            &nbsp;( You can Select Multiples )
           </span>
         </label>
-        <div className="grid grid-cols-3 gap-">
+        <div className="grid grid-cols-3 gap-2">
           {[
             "Science",
             "Physics",
@@ -178,29 +170,31 @@ export default function Form() {
                 type="checkbox"
                 name="subjects"
                 value={subject}
-                onChange={handleSubjectChange} // Don't forget this
+                onChange={handleSubjectChange}
               />
               <span className="text-sm sm:text-base">{subject}</span>
             </label>
-          ))}{" "}
-          {/* <span className="text-sm relative -left-5 mt-1 text-left text-[#ebe9e7]">
-            (Can select multiple)
-          </span> */}
+          ))}
         </div>
       </div>
-      <div className="flex flex-wrap gap-2 pb-6 ">
-        <label className="block font-semibold  text-black">BOARD:</label>
+
+      {/* Single Board Selection */}
+      <div className="flex flex-wrap gap-2 pb-6">
+        <label className="block text-black">Board:</label>
         {boards.map((board) => (
-          <label key={board} className="flex items-center -gap-2 text-sm">
-            <CustomCheckbox
-              checked={formData.boards.includes(board)}
-              onChange={() => toggleSelection("boards", board)}
+          <label key={board} className="flex items-center gap-1 text-sm">
+            <input
+              type="radio"
+              name="board"
+              value={board}
+              checked={formData.board === board}
+              onChange={handleBoardChange}
             />
             {board}
           </label>
         ))}
       </div>
-      {/* Level Dropdown */}
+
       <CustomDropdown
         className="text-black"
         selectOption={[
@@ -213,8 +207,9 @@ export default function Form() {
         selectedValue={selectedLevel}
         onSelect={handleLevelSelect}
       />
-      {/* OTP Section */}
-      <div id="recaptcha-container"></div> {/* Recaptcha container */}
+
+      <div id="recaptcha-container"></div>
+
       {!otpSent ? (
         <div className="text-center py-2">
           <CustomButton
@@ -239,7 +234,7 @@ export default function Form() {
           />
         </div>
       ) : null}
-      {/* Experience Modal */}
+
       {otpVerified && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
           <form
