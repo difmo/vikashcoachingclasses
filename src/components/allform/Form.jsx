@@ -157,7 +157,7 @@ export default function Form() {
         <label className="block font-semibold mb-2 text-sm sm:text-base">
           Select Subjects:
         </label>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-2">
           {["Science", "Physics", "Chemistry", "Maths", "Biology"].map(
             (subject) => (
               <label key={subject} className="flex items-center space-x-2">
@@ -171,7 +171,9 @@ export default function Form() {
               </label>
             )
           )}{" "}
-          (Can select multiple)
+          <span className="text-sm relative -left-5 mt-1 text-left text-[#ebe9e7]">
+            (Can select multiple)
+          </span>
         </div>
       </div>
       {/* Level Dropdown */}
