@@ -6,7 +6,7 @@ import img from "../../assets/logo1.jpeg";
 const boards = ["CBSE", "ICSE", "ISC", "IB", "IGCSE", "State"];
 const subjects = ["Phy", "Chem", "Bio", "Maths"];
 const exams = ["NEET", "IIT-JEE"];
-
+const radio = ["Teacher", "Students / Parents", "Other"];
 const JoinTeamForm = () => {
   const [otpSent, setOtpSent] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
@@ -14,6 +14,7 @@ const JoinTeamForm = () => {
     name: "",
     class: "",
     subjects: [],
+    radio: [],
     boards: [],
     exams: [],
     experience: "",
@@ -147,6 +148,44 @@ const JoinTeamForm = () => {
                     }
                     required
                   />
+                  <CustomInput
+                    type="text"
+                    placeholder="Contact No."
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    required
+                  />
+                  <CustomInput
+                    type="email"
+                    placeholder="Email"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    required
+                  />
+                  <div>
+                    <div className="flex flex-wrap gap-16 px-1">
+                      <label className="block font-semibold mb-2 text-gray-700">
+                        {" "}
+                        Are You :
+                      </label>
+                      {radio.map((sub) => (
+                        <label
+                          key={sub}
+                          className="flex items-center gap-2 text-sm"
+                        >
+                          <CustomCheckbox
+                            checked={formData.radio.includes(sub)}
+                            onChange={() => toggleSelection("radio", sub)}
+                          />
+                          {sub}
+                        </label>
+                      ))}
+                    </div>
+                  </div>
 
                   {/* Class */}
                   <CustomInput
@@ -161,7 +200,7 @@ const JoinTeamForm = () => {
 
                   {/* Subjects */}
                   <div>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-3 px-1">
                       <label className="block font-semibold mb-2 text-gray-700">
                         Subjects
                       </label>
@@ -182,7 +221,7 @@ const JoinTeamForm = () => {
 
                   {/* Boards */}
                   <div>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-3 px-1">
                       <label className="block font-semibold mb-2 text-gray-700">
                         Boards
                       </label>
