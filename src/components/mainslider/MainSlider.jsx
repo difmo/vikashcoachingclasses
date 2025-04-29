@@ -1,35 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import img1 from "../../assets/homeslider/Vikas0.jpeg";
-import img2 from "../../assets/homeslider/Vikas4.jpeg";
-import img3 from "../../assets/homeslider/Vikas3.jpeg";
-import img4 from "../../assets/homeslider/Vikas1.jpeg";
-import img5 from "../../assets/homeslider/Vikas.jpeg";
+import Vikas0 from "../../assets/homeslider/Vikas0.png";
+import Vikas4 from "../../assets/homeslider/Vikas4.png";
+import Vikas3 from "../../assets/homeslider/Vikas3.png";
+import Vikas1 from "../../assets/homeslider/Vikas1.png";
+import Vikas from "../../assets/homeslider/Vikas.png";
 import Form from "../allform/Form";
 
 const slides = [
   {
-    image: img1,
+    image: Vikas0,
     heading: "Hi, Looking for Online Science Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
-    image: img2,
+    image: Vikas4,
     heading: "Hi, Looking for Online Physics Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
-    image: img3,
+    image: Vikas3,
     heading: "Hi, Looking for Online Chemistry Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
-    image: img4,
+    image: Vikas,
     heading: "Hi, Looking for Online Maths Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
-    image: img5,
+    image: Vikas1,
     heading: "Hi, Looking for Online Biology Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
