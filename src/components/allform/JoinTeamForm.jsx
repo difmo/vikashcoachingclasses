@@ -26,7 +26,7 @@ const JoinTeamForm = () => {
     contact: "",
     email: "",
     classes: [],
-    subjects: [ ],
+    subjects: [],
     boards: [],
     experience: "",
     level: "",
@@ -107,7 +107,7 @@ const JoinTeamForm = () => {
             Select Boards:
           </label>
           {boards.map((board) => (
-            <label key={board} className="flex items-center gap-2 text-sm">
+            <label key={board} className="flex items-center -gap-2 text-sm">
               <CustomCheckbox
                 checked={formData.boards.includes(board)}
                 onChange={() => toggleSelection("boards", board)}
@@ -162,7 +162,7 @@ const JoinTeamForm = () => {
             Boards :
           </label>
           {boards.map((board) => (
-            <label key={board} className="flex items-center gap-2 text-sm">
+            <label key={board} className="flex items-center -gap-2 text-sm">
               <CustomCheckbox
                 checked={formData.boards.includes(board)}
                 onChange={() => toggleSelection("boards", board)}
