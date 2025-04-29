@@ -3,6 +3,7 @@ import CustomButton from "../CustomButton";
 import CustomInput from "../CustomInput";
 import CustomCheckbox from "../CustomCheckbox";
 import img from "../../assets/logo1.jpeg";
+import CustomRadio from "../CustomRadio";
 const boards = ["CBSE", "ICSE", "ISC", "IB", "IGCSE", "State"];
 const subjects = ["Phy", "Chem", "Bio", "Maths"];
 const exams = ["NEET", "IIT-JEE"];
@@ -22,7 +23,7 @@ const JoinTeamForm = () => {
     otp: "",
     resume: null,
   });
-
+  const [selected, setSelected] = React.useState("option1");
   const toggleSelection = (field, value) => {
     setFormData((prev) => ({
       ...prev,
@@ -68,9 +69,9 @@ const JoinTeamForm = () => {
       <div className="container mx-auto py-10 px-4">
         <div className="max-w-7xl mx-auto space-y-10">
           {/* Form and Info Section */}
-          <p className="flex justify-center text-5xl text-headerbordertext font-bold">
+          {/* <p className="flex justify-center text-5xl text-headerbordertext font-bold">
             Contact Us . . .
-          </p>
+          </p> */}
           <div className="overflow-hidden">
             <div className="flex flex-col lg:flex-row gap- mb-10 border-2 rounded-2xl">
               {/* Left Section */}
@@ -150,7 +151,7 @@ const JoinTeamForm = () => {
                   />
                   <CustomInput
                     type="text"
-                    placeholder="Contact No."
+                    placeholder="Contact No :"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -159,7 +160,7 @@ const JoinTeamForm = () => {
                   />
                   <CustomInput
                     type="email"
-                    placeholder="Email"
+                    placeholder="Email Id :"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -172,18 +173,30 @@ const JoinTeamForm = () => {
                         {" "}
                         Are You :
                       </label>
-                      {radio.map((sub) => (
-                        <label
-                          key={sub}
-                          className="flex items-center gap-2 text-sm"
-                        >
-                          <CustomCheckbox
-                            checked={formData.radio.includes(sub)}
-                            onChange={() => toggleSelection("radio", sub)}
-                          />
-                          {sub}
-                        </label>
-                      ))}
+                      <CustomRadio
+                        id="option1"
+                        name="customRadio"
+                        label="Teacher"
+                        value="option1"
+                        checked={selected === "option1"}
+                        onChange={() => setSelected("option1")}
+                      />
+                      <CustomRadio
+                        id="option2"
+                        name="customRadio"
+                        label="Students / Parents"
+                        value="option2"
+                        checked={selected === "option2"}
+                        onChange={() => setSelected("option2")}
+                      />{" "}
+                      <CustomRadio
+                        id="option3"
+                        name="customRadio"
+                        label="Others"
+                        value="option3"
+                        checked={selected === "option3"}
+                        onChange={() => setSelected("option3")}
+                      />
                     </div>
                   </div>
 
