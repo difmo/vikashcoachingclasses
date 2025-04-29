@@ -4,6 +4,7 @@ import phy1 from "../assets/a.jpg";
 
 const physics = [
   {
+    mainHeadding: "Online Physics Tutors",
     mainTitle:
       "Online Physics Tutoring for Class 11th, 12th, CBSE, IB, IGCSE, ICSE, ISE Boards Students",
     welcomeMessage:
@@ -92,6 +93,7 @@ const physics = [
 
 const chemistry = [
   {
+    mainHeadding: "Online Chemistry Tutors",
     mainTitle:
       "Online Private Chemistry Tutor for Class 11th, 12th, CBSE, IB, IGCSE, ICSE, ISE Boards Students  @www.vikasinstitute.in",
     welcomeMessage:
@@ -173,6 +175,7 @@ const chemistry = [
 
 const math = [
   {
+    mainHeadding: "Online Math Tutors",
     mainTitle:
       "Online Private Maths Tutor for Class 11th, 12th, CBSE, IB, IGCSE, ICSE, ISE Boards Students @ www.vikasinstitute.in",
     welcomeMessage: `Welcome to Online Personal Maths Tutor @ Vikas Institute, your ultimate destination for top-quality online Maths tutoring. We specialize in Mathematics education for students following the CBSE, IB, IGCSE, ICSE, and ISE curricula across the UAE, Qatar, USA, UK, Canada, Australia, and India. With our team of highly skilled Maths tutors, customized learning plans, and student-focused online classes, we help students build confidence and excel in one of the most crucial academic subjects.`,
@@ -271,6 +274,7 @@ const math = [
 
 const biology = [
   {
+    mainHeadding: "Online Biology Tutors",
     mainTitle:
       "Online Private Biology Tutor for Class 11th, 12th, CBSE, IB, IGCSE, ICSE, ISE Board Students @ www.vikasinstitute.in",
     welcomeMessage:

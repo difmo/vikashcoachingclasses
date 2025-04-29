@@ -59,8 +59,8 @@ const JoinTeamForm = () => {
   return (
     <div>
       <div className="">
-        <div className=" bg-[#f2f2f2] text-2xl  text-blue-500 flex justify-center">
-          Home / Vikas Institute
+        <div className=" bg-[#f2f2f2] text-2xl  text-headerbordertext font-bold flex justify-center">
+          Home / Contact Us
         </div>
       </div>
 

@@ -35,7 +35,7 @@ const AboutUs = () => {
   return (
     <>
       <div className="">
-        <div className=" bg-[#f2f2f2] text-2xl  text-blue-500 flex justify-center">
+        <div className=" bg-[#f2f2f2] text-2xl font-bold text-headerbordertext flex justify-center">
           Home / About Us
         </div>
       </div>

@@ -4,12 +4,7 @@ import { physics, chemistry, math, biology } from "../data/AllData";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import Form from "../components/allform/Form";
-
 import phy from "../assets/a.jpg";
-// import chem from "../assets/home.jpg";
-// import mathImg from "../assets/a1.jpg";
-// import bio from "../assets/career.jpg"; // ✅ fixed filename here
-
 const dataMap = {
   physics,
   chemistry,
@@ -53,6 +48,8 @@ const ContentLayout = () => {
   }
 
   const selectedData = [
+    { mainHeading: rawData.mainHeadding },
+
     {
       title: rawData.mainTitle,
       subtitle: "Welcome Message",
@@ -128,7 +125,9 @@ const ContentLayout = () => {
 
       <div className="">
         <div className="bg-[#f2f2f2] text-2xl text-blue-500 flex justify-center">
-          Home / Vikas Institute
+          <div className="text-headerbordertext font-bold text-2xl flex justify-center">
+            Home / {rawData.mainHeadding}
+          </div>
         </div>
       </div>
 
