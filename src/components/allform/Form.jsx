@@ -182,7 +182,7 @@ export default function Form() {
       {/* Single Board Selection */}
       <div className="flex flex-wrap gap-2 pb-6">
         <label className="block text-black font-extrabold">
-          Board : &nbsp;{" "}
+          Board : &nbsp;&nbsp;{" "}
         </label>
         {boards.map((board) => (
           <label key={board} className="flex items-center gap-1 text-sm">
