@@ -2,6 +2,13 @@ import { useState } from "react";
 import CustomButton from "../CustomButton";
 import CustomInput from "../CustomInput";
 import CustomDropdown from "../CustomDropdown";
+import { addDoc, collection } from "firebase/firestore";
+import {
+  auth,
+  db,
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
+} from "../../Firebase";
 
 export default function Form() {
   const [otpSent, setOtpSent] = useState(false);
@@ -10,30 +17,109 @@ export default function Form() {
   const [selectedClassType, setSelectedClassType] = useState("Select Class");
   const [selectedLevel, setSelectedLevel] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    subjects: [],
+  });
+  const [verificationId, setVerificationId] = useState("");
 
+  // Handle input change for text fields
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle checkbox change for subjects
+  const handleSubjectChange = (e) => {
+    const { value, checked } = e.target;
+    let updatedSubjects = [...formData.subjects];
+    if (checked) {
+      updatedSubjects.push(value);
+    } else {
+      updatedSubjects = updatedSubjects.filter((subj) => subj !== value);
+    }
+    setFormData({ ...formData, subjects: updatedSubjects });
+  };
+
+  // Handle class type dropdown selection
   const handleClassTypeSelect = (classType) => {
     setSelectedClassType(classType);
   };
 
+  // Handle level dropdown selection
   const handleLevelSelect = (level) => {
     setSelectedLevel(level);
   };
 
+  // Handle experience level change
   const handleExperienceChange = (e) => {
     setExperienceLevel(e.target.value);
   };
 
+  // Function to initiate OTP sending
   const handleOTPSubmit = () => {
-    if (otp === "1234") {
-      setOtpVerified(true);
+    if (!otpSent) {
+      const recaptchaVerifier = new RecaptchaVerifier(
+        "recaptcha-container",
+        {
+          size: "invisible",
+          callback: (response) => {
+            console.log("Recaptcha verified!");
+          },
+        },
+        auth
+      );
+
+      const phoneNumber = "+" + formData.phone; // Assuming user enters the country code too
+
+      signInWithPhoneNumber(auth, phoneNumber, RecaptchaVerifier)
+        .then((confirmationResult) => {
+          setVerificationId(confirmationResult.verificationId);
+          setOtpSent(true);
+          console.log("OTP sent to " + phoneNumber);
+        })
+        .catch((error) => {
+          console.error("Error during OTP sending:", error);
+          alert("Error sending OTP. Please try again.");
+        });
     } else {
-      alert("Invalid OTP. Please try again.");
+      // OTP verification logic
+      const credential = firebase.auth.PhoneAuthProvider.credential(
+        verificationId,
+        otp
+      );
+      auth
+        .signInWithCredential(credential)
+        .then(() => {
+          console.log("OTP Verified!");
+          setOtpVerified(true);
+        })
+        .catch((error) => {
+          console.error("OTP verification failed:", error);
+          alert("Invalid OTP. Please try again.");
+        });
     }
   };
 
-  const handleFinalSubmit = (e) => {
+  // Handle final form submission
+  const handleFinalSubmit = async (e) => {
     e.preventDefault();
-    alert(`Form Submitted!\nExperience: ${experienceLevel}`);
+
+    try {
+      await addDoc(collection(db, "Vikasrequests"), {
+        name: formData.name,
+        phone: formData.phone,
+        classType: selectedClassType,
+        level: selectedLevel,
+        subjects: formData.subjects,
+        experienceLevel,
+        timestamp: new Date(),
+      });
+      alert("Form Submitted Successfully!");
+    } catch (err) {
+      alert("Failed to submit form. Try again.");
+      console.error(err);
+    }
   };
 
   return (
@@ -41,17 +127,24 @@ export default function Form() {
       <div className="my-4 text-4xl tracking-tight text-[#dba577] font-extrabold">
         Kindly, Fill the Form :
       </div>
-
-      {/* Name */}
+      {/* Name Input */}
       <div className="pb-4">
-        <CustomInput placeholder="Enter Your Name :" />
+        <CustomInput
+          placeholder="Enter Your Name :"
+          name="name"
+          value={formData.name}
+          onChange={handleInputChange}
+        />
       </div>
-
-      {/* Phone */}
+      {/* Phone Input */}
       <div className="pb-4">
-        <CustomInput placeholder="Enter Phone Number :" />
+        <CustomInput
+          placeholder="Enter Phone Number :"
+          name="phone"
+          value={formData.phone}
+          onChange={handleInputChange}
+        />
       </div>
-
       {/* Class Dropdown */}
       <CustomDropdown
         className="text-black"
@@ -59,27 +152,28 @@ export default function Form() {
         selectedValue={selectedClassType}
         onSelect={handleClassTypeSelect}
       />
-
       {/* Subject Checkboxes */}
       <div className="pb-4">
         <label className="block font-semibold mb-2 text-sm sm:text-base">
           Select Subjects:
         </label>
-        <div className="flex flex-wrap gap-4">
+        <div className="grid grid-cols-3 gap-4">
           {["Science", "Physics", "Chemistry", "Maths", "Biology"].map(
             (subject) => (
               <label key={subject} className="flex items-center space-x-2">
-                <input type="checkbox" name="subjects" value={subject} />
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value={subject}
+                  onChange={handleSubjectChange} // Don't forget this
+                />
                 <span className="text-sm sm:text-base">{subject}</span>
               </label>
             )
-          )}
-        </div>
-        <span className="text-sm text-gray-500 mt-1 block">
+          )}{" "}
           (Can select multiple)
-        </span>
+        </div>
       </div>
-
       {/* Level Dropdown */}
       <CustomDropdown
         className="text-black"
@@ -87,12 +181,12 @@ export default function Form() {
         selectedValue={selectedLevel}
         onSelect={handleLevelSelect}
       />
-
-      {/* Get OTP */}
+      {/* OTP Section */}
+      <div id="recaptcha-container"></div> {/* Recaptcha container */}
       {!otpSent ? (
         <div className="text-center py-2">
           <CustomButton
-            onClick={() => setOtpSent(true)}
+            onClick={handleOTPSubmit}
             className="text-[#51087E] hover:bg-primary bg-[#dba577] text-xl font-bold"
             label="Get OTP"
           />
@@ -113,8 +207,7 @@ export default function Form() {
           />
         </div>
       ) : null}
-
-      {/* Full-Screen Modal for Experience Form */}
+      {/* Experience Modal */}
       {otpVerified && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
           <form
