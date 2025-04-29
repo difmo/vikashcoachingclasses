@@ -157,7 +157,7 @@ export default function Form() {
         <label className="block font-semibold mb-2 text-sm sm:text-base">
           Select Subjects:
         </label>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-">
           {["Science", "Physics", "Chemistry", "Maths", "Biology"].map(
             (subject) => (
               <label key={subject} className="flex items-center space-x-2">
