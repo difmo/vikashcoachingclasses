@@ -77,15 +77,44 @@ const JoinTeamForm = () => {
                 <h1 className="text-3xl absolute flex justify-center font-bold top-8 ">
                   Vikas Institute
                 </h1>
-                <p> Malviya Nagar, New Delhi - 110017</p>
-                <p>Phone Numbers: +91 9988752471, +91 8289052751</p>
-                <p>Email: vikasinstitute@gmail.com</p>
+                <p>Malviya Nagar, New Delhi - 110017</p>
                 <p>
-                  Website:{" "}
-                  <a href="https://www.viptutors.in" className=" underline">
+                  Contact Numbers:{" "}
+                  <a href="tel:+919988752471" className=" hover:underline">
+                    +91 9988752471
+                  </a>
+                </p>
+                <p>
+                  Email:{" "}
+                  <a
+                    href="mailto:info@vikasinstitute.in"
+                    className="hover:underline"
+                  >
                     info@vikasinstitute.in
                   </a>
                 </p>
+
+                <p>
+                  Website:{" "}
+                  <a
+                    href="https://www.vikasinstitute.in/"
+                    className="hover:underline "
+                  >
+                    www.vikasinstitute.in
+                  </a>
+                </p>
+                <p>
+                  WhatsApp:{" "}
+                  <a
+                    href="https://wa.me/919582699555"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    919582699555
+                  </a>
+                </p>
+
                 <img
                   src={img}
                   alt="VIP Tutors Logo"
