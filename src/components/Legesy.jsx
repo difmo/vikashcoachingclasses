@@ -105,7 +105,8 @@ const Legacy = () => {
             </div>
 
             <p className="text-center text-white text-2xl mt-4">
-              Feedbacks provieded by some of the Parents .{" "}
+              At the Heart of our Success lies the Confidence that you Place in Us, Globly.
+              Your Trust is our Greatest Asset.
               {/* <Link to="#" className="underline hover:text-yellow-300">
                 more..
               </Link> */}

@@ -9,19 +9,13 @@ import {
 import { Link } from "react-router-dom"; // or 'next/link' if you're using Next.js
 
 const socialLinks = [
-  {
-    icon: <FaYoutube />,
-    url: "https://youtube.com/@viptutors?si=5RXybw4w1k_a_lyX",
-  },
+  { icon: <FaYoutube />, url: "https://youtube.com/@viptutors?si=5RXybw4w1k_a_lyX" },
   { icon: <FaTwitter />, url: "https://x.com/vikaskashyapsir?s=11" },
   {
     icon: <FaFacebookF />,
     url: "https://www.facebook.com/share/167YKPPfKp/?mibextid=wwXIfr",
   },
-  {
-    icon: <FaInstagram />,
-    url: "https://www.instagram.com/onlinephysicsguru?igsh=cWwzY3ptMXluaGps&utm_source=qr",
-  },
+  { icon: <FaInstagram />, url: "https://www.instagram.com/onlinephysicsguru?igsh=cWwzY3ptMXluaGps&utm_source=qr" },
   { icon: <FaWhatsapp />, url: "https://wa.me/919582699555" },
 ];
 
