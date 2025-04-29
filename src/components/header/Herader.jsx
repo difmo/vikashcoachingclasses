@@ -73,7 +73,7 @@ const Header = () => {
                 <Link
                   to={link.path}
                   onClick={closeMenu}
-                  className="block py-2 md:py-0 hover:text-blue-600 transition-colors text-xl"
+                  className="block py-2 md:py-0 hover:text-[#dba577] transition-colors text-xl"
                 >
                   {link.label}
                 </Link>
