@@ -275,7 +275,7 @@ const JoinTeamForm = () => {
                   <br />
                   USA - CANADA - UK - QATAR - UAE - AUSTRALIA - INDIA.
                 </p>
-                <p>At the Heart of our Success lies the Confidence that you Place in Us, Globly. Your Trust is our Greatest Asset.</p>
+                <p className=" px-4 sm:px-6 font-light uppercase text-center text-sm sm:text-base">At the Heart of our Success lies the Confidence that you Place in Us, Globly. Your Trust is our Greatest Asset.</p>
               </div>
 
               {/* Right */}
