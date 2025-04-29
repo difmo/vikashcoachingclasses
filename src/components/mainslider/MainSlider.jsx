@@ -82,7 +82,7 @@ const MainSlider = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left: Slider */}
-          <div className="relative mt-8 w-full md:w-1/2 xl:w-2/3 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[600px] overflow-hidden rounded-lg">
+          <div className="relative mt-8 w-full md:w-1/2 xl:w-2/3 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[590px] overflow-hidden rounded-lg">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
