@@ -153,7 +153,8 @@ export default function Form() {
         <label className="block font-semibold mb-2 text-sm sm:text-base">
           Select Subjects :
           <span className="text-sm text-[#ebe9e7]">
-            &nbsp;( You can Select Multiples )
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(
+            You can Select Multiples )
           </span>
         </label>
         <div className="grid grid-cols-3 gap-2">
@@ -180,7 +181,9 @@ export default function Form() {
 
       {/* Single Board Selection */}
       <div className="flex flex-wrap gap-2 pb-6">
-        <label className="block text-black font-extrabold">Board:</label>
+        <label className="block text-black font-extrabold">
+          Board : &nbsp;{" "}
+        </label>
         {boards.map((board) => (
           <label key={board} className="flex items-center gap-1 text-sm">
             <input
