@@ -26,7 +26,7 @@ const JoinTeamForm = () => {
     contact: "",
     email: "",
     classes: [],
-    subjects: [],
+    subjects: [ ],
     boards: [],
     experience: "",
     level: "",
@@ -90,10 +90,10 @@ const JoinTeamForm = () => {
 
         <div className="flex flex-wrap gap-3 ">
           <label className="block font-semibold mb-2 text-gray-700">
-            Select Subjects:
+            Select Subject:
           </label>
           {subjects.map((sub) => (
-            <label key={sub} className="flex items-center gap-2 text-sm">
+            <label key={sub} className="flex items-center -gap-2 text-sm">
               <CustomCheckbox
                 checked={formData.subjects.includes(sub)}
                 onChange={() => toggleSelection("subjects", sub)}
@@ -145,10 +145,10 @@ const JoinTeamForm = () => {
 
         <div className="flex flex-wrap gap-3 ">
           <label className="block font-semibold mb-2 text-gray-700">
-            Select Subjects:
+            Select Subject:
           </label>
           {subjects.map((sub) => (
-            <label key={sub} className="flex items-center gap-2 text-sm">
+            <label key={sub} className="flex items-center -gap-2 text-sm">
               <CustomCheckbox
                 checked={formData.subjects.includes(sub)}
                 onChange={() => toggleSelection("subjects", sub)}
