@@ -155,25 +155,33 @@ export default function Form() {
       {/* Subject Checkboxes */}
       <div className="pb-4">
         <label className="block font-semibold mb-2 text-sm sm:text-base">
-          Select Subjects:
+          Select Subjects:{" "}
+          <span className="text-sm relative  mt-1 text-left text-[#ebe9e7]">
+            ( You can Select Multiples )
+          </span>
         </label>
         <div className="grid grid-cols-3 gap-">
-          {["Science", "Physics", "Chemistry", "Maths", "Biology"].map(
-            (subject) => (
-              <label key={subject} className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  name="subjects"
-                  value={subject}
-                  onChange={handleSubjectChange} // Don't forget this
-                />
-                <span className="text-sm sm:text-base">{subject}</span>
-              </label>
-            )
-          )}{" "}
-          <span className="text-sm relative -left-5 mt-1 text-left text-[#ebe9e7]">
+          {[
+            "Science",
+            "Physics",
+            "Chemistry",
+            "Maths",
+            "Biology",
+            "Others",
+          ].map((subject) => (
+            <label key={subject} className="flex items-center space-x-2">
+              <input
+                type="checkbox"
+                name="subjects"
+                value={subject}
+                onChange={handleSubjectChange} // Don't forget this
+              />
+              <span className="text-sm sm:text-base">{subject}</span>
+            </label>
+          ))}{" "}
+          {/* <span className="text-sm relative -left-5 mt-1 text-left text-[#ebe9e7]">
             (Can select multiple)
-          </span>
+          </span> */}
         </div>
       </div>
       {/* Level Dropdown */}
