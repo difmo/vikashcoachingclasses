@@ -86,39 +86,24 @@ const MainSlider = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left: Slider */}
-          <div className="relative mt-8  w-full md:w-1/2 xl:w-2/3 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[600px] overflow-hidden rounded-lg">
-            <AnimatePresence mode="wait">
-              <div className="absolute inset-0 w-full h-full">
-                <img
-                  src={slides[current].image}
-                  alt="Slide"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/40" />
-              </div>
-            </AnimatePresence>
+          <div className="relative mt-8 w-full md:w-1/2 xl:w-2/3 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[600px] overflow-hidden rounded-lg">
+            <div className="absolute inset-0 w-full h-full">
+              <img
+                src={slides[current].image}
+                alt="Slide"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/40" />
+            </div>
 
             {/* Text on Slide */}
             <div className="absolute inset-0 flex flex-col justify-end items-center text-center px-4 pb-10">
-              <motion.h1
-                key={`heading-${current}`}
-                variants={fadeUp}
-                initial="hidden"
-                animate="visible"
-                className="text-white text-xl sm:text-3xl md:text-7xl lg:text-7xl font-bold max-w-2xl"
-              >
+              <h1 className="text-white text-xl sm:text-3xl md:text-7xl lg:text-7xl font-bold max-w-2xl">
                 {slides[current].heading}
-              </motion.h1>
-              <motion.p
-                key={`text-${current}`}
-                variants={fadeUp}
-                initial="hidden"
-                animate="visible"
-                transition={{ delay: 0.2 }}
-                className="text-white text-sm sm:text-lg md:text-xl mt-4 max-w-2xl"
-              >
+              </h1>
+              <p className="text-white text-sm sm:text-lg md:text-xl mt-4 max-w-2xl">
                 {slides[current].text}
-              </motion.p>
+              </p>
             </div>
 
             {/* Dots */}
@@ -137,7 +122,7 @@ const MainSlider = () => {
 
           {/* Right: Form */}
           <div className="w-full md:w-1/2 xl:w-1/3">
-            <div className="mt-8 ">
+            <div className="mt-8">
               <Form />
             </div>
           </div>
