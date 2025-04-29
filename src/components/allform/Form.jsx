@@ -25,8 +25,8 @@ export default function Form() {
   return (
     <div className="">
       <div className="w-full px-4 sm:px-6 md:px-4 pb-3 border-2 border-white rounded-lg">
-        <div className="text-2xl sm:text-3xl font-bold text-left md:py-2 xl:py-2">
-          <CustomHeading text1="Kindly, Fill the Form :" />
+        <div className="my-4 text-4xl tracking-tight  text-[#dba577] font-extrabold">
+          Kindly, Fill the Form :
         </div>
 
         {/* Name */}
