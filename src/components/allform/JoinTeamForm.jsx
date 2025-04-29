@@ -169,8 +169,7 @@ const JoinTeamForm = () => {
                   />
                   <div>
                     <div className="flex flex-wrap gap-16 px-1">
-                      <label className="block font-semibold mb-2 text-gray-700">
-                        {" "}
+                      <label className="block font-semibold pt-1 text-gray-700">
                         Are You :
                       </label>
                       <CustomRadio
