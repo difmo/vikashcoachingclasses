@@ -16,7 +16,7 @@ const CustomRadio = ({
     <div className="relative py-1">
       <label
         htmlFor={id}
-        className="flex items-center gap-2 cursor-pointer text-md text-gray-600"
+        className="flex items-center gap-1 cursor-pointer text-md text-gray-600"
         style={style}
       >
         <input

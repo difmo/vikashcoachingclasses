@@ -17,12 +17,9 @@ const firebaseConfig = {
   measurementId: "G-PS4GK783MX",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Authentication and Firestore
 const auth = getAuth(app); // Initialize Firebase Auth
 const db = getFirestore(app); // Initialize Firestore
 
-// Export necessary Firebase services
 export { db, auth, RecaptchaVerifier, signInWithPhoneNumber };
