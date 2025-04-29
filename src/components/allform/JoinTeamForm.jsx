@@ -7,6 +7,7 @@ import img from "../../assets/logo1.jpeg";
 
 const boards = ["CBSE", "ICSE", "ISC", "IB", "IGCSE", "State"];
 const subjects = ["Phy", "Chem", "Bio", "Maths"];
+const classes = ["7th", "8th", "9th", "10th", "12th", "Dropper"];
 const levels = ["Beginner", "Intermediate", "Advanced"];
 
 const JoinTeamForm = () => {
@@ -18,7 +19,7 @@ const JoinTeamForm = () => {
     name: "",
     contact: "",
     email: "",
-    class: "",
+    classes: [],
     subjects: [],
     boards: [],
     experience: "",
@@ -66,16 +67,29 @@ const JoinTeamForm = () => {
   const roleFields = {
     Teacher: (
       <>
-        <CustomInput
+        {/* <CustomInput
           type="text"
           placeholder="Class (e.g. 7 to Dropper)"
-          value={formData.class}
+          value={formData.classes}
           onChange={(e) => setFormData({ ...formData, class: e.target.value })}
           required
-        />
+        /> */}
+        <div className="flex flex-wrap items-center gap-4">
+          <label className="font-semibold text-gray-700 mr-4">Select Class:</label>
+          {classes.map((cla) => (
+            <label key={cla} className="flex items-center gap-2 text-sm">
+              <CustomCheckbox
+                checked={formData.classes.includes(cla)}
+                onChange={() => toggleSelection("classes", cla)}
+              />
+              {cla}
+            </label>
+          ))}
+        </div>
+
         <div className="flex flex-wrap gap-3 px-1">
           <label className="block font-semibold mb-2 text-gray-700">
-            Subjects
+           Select Subjects
           </label>
           {subjects.map((sub) => (
             <label key={sub} className="flex items-center gap-2 text-sm">
@@ -113,16 +127,22 @@ const JoinTeamForm = () => {
     ),
     "Students / Parents": (
       <>
-        <CustomInput
-          type="text"
-          placeholder="Class (e.g. 7 to Dropper)"
-          value={formData.class}
-          onChange={(e) => setFormData({ ...formData, class: e.target.value })}
-          required
-        />
+        <div className="flex flex-wrap items-center gap-4">
+          <label className="font-semibold text-gray-700 mr-4">Select Class:</label>
+          {classes.map((cla) => (
+            <label key={cla} className="flex items-center gap-2 text-sm">
+              <CustomCheckbox
+                checked={formData.classes.includes(cla)}
+                onChange={() => toggleSelection("classes", cla)}
+              />
+              {cla}
+            </label>
+          ))}
+        </div>
+
         <div className="flex flex-wrap gap-3 px-1">
           <label className="block font-semibold mb-2 text-gray-700">
-            Subjects
+           Select Subjects
           </label>
           {subjects.map((sub) => (
             <label key={sub} className="flex items-center gap-2 text-sm">
