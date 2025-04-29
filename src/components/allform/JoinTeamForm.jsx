@@ -71,10 +71,10 @@ const JoinTeamForm = () => {
             Contact Us . . .
           </p>
           <div className="overflow-hidden">
-            <div className="flex flex-col lg:flex-row gap-7 mb-10">
+            <div className="flex flex-col lg:flex-row gap- mb-10 border-2 rounded-2xl">
               {/* Left Section */}
-              <div className=" lg:flex flex-col text-xl justify-center items-center text-primary  lg:w-1/2 py-6">
-                <h1 className="text-3xl flex justify-center font-bold mb-4 text-primary">
+              <div className=" lg:flex flex-col relative text-xl justify-center items-center rounded-l-2xl bg-primary text-headerbordertext  lg:w-1/2 py-6">
+                <h1 className="text-3xl absolute flex justify-center font-bold top-8 ">
                   Vikas Institute
                 </h1>
                 <p> Malviya Nagar, New Delhi - 110017</p>
@@ -82,18 +82,24 @@ const JoinTeamForm = () => {
                 <p>Email: vikasinstitute@gmail.com</p>
                 <p>
                   Website:{" "}
-                  <a
-                    href="https://www.viptutors.in"
-                    className="text-primary underline"
-                  >
+                  <a href="https://www.viptutors.in" className=" underline">
                     info@vikasinstitute.in
                   </a>
                 </p>
-                <img src={img} alt="VIP Tutors Logo" className="mx-auto mt-6" />
+                <img
+                  src={img}
+                  alt="VIP Tutors Logo"
+                  className="mx-auto mt-6 px-6"
+                />
+                <p className="pt-10 px-6 font-extralight  uppercase">
+                  A Most Trusted Website to Hire, Best Online Private Tutors for
+                  the Students of USA - CANADA - UK - QATAR - UAE - AUSTRALIA -
+                  INDIA .
+                </p>
               </div>
 
               {/* Right Section (Form) */}
-              <div className="w-full lg:w-1/2 p-8 bg-white">
+              <div className="w-full lg:w-1/2 p-8 bg-white rounded-e-2xl">
                 <h2 className="text-3xl font-bold text-center text-yellow-500 mb-6">
                   Kindly, Fill the Form
                 </h2>
