@@ -285,7 +285,7 @@ const JoinTeamForm = () => {
                 >
                   <CustomInput
                     type="text"
-                    placeholder="Name"
+                    placeholder="Enter Your Name"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -294,7 +294,7 @@ const JoinTeamForm = () => {
                   />
                   <CustomInput
                     type="tel"
-                    placeholder="Contact Number"
+                    placeholder="Enter Your Phone No."
                     value={formData.contact}
                     onChange={(e) =>
                       setFormData({ ...formData, contact: e.target.value })
@@ -303,7 +303,7 @@ const JoinTeamForm = () => {
                   />
                   <CustomInput
                     type="email"
-                    placeholder="Email Id"
+                    placeholder="Enter Your Email Id"
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
