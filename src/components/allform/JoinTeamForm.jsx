@@ -284,7 +284,7 @@ const JoinTeamForm = () => {
                     }
                     required
                   />
-                  <div className="flex flex-col sm:flex-row  gap-10 mb-4">
+                  <div className="flex flex-col sm:flex-row  gap-14 mb-4">
                     <label className="font-semibold text-gray-800">
                       Are You :
                     </label>
