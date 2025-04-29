@@ -201,27 +201,6 @@ const JoinTeamForm = () => {
                     </div>
                   </div>
 
-                  {/* Exams */}
-                  {/* <div>
-                  <label className="block font-semibold mb-2 text-gray-700">
-                    Exams
-                  </label>
-                  <div className="flex flex-wrap gap-3">
-                    {exams.map((exam) => (
-                      <label
-                        key={exam}
-                        className="flex items-center gap-2 text-sm"
-                      >
-                        <CustomCheckbox
-                          checked={formData.exams.includes(exam)}
-                          onChange={() => toggleSelection("exams", exam)}
-                        />
-                        {exam}
-                      </label>
-                    ))}
-                  </div>
-                </div> */}
-
                   {/* Experience */}
                   <CustomInput
                     type="text"
@@ -284,7 +263,7 @@ const JoinTeamForm = () => {
           </div>
 
           {/* Contact Table */}
-          <div className="overflow-x-auto rounded-xl shadow-md bg-white">
+          {/* <div className="overflow-x-auto rounded-xl shadow-md bg-white">
             <table className="min-w-full text-left">
               <thead className="bg-blue-900 text-white">
                 <tr>
@@ -311,7 +290,7 @@ const JoinTeamForm = () => {
                 ))}
               </tbody>
             </table>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
