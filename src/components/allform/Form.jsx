@@ -185,7 +185,7 @@ export default function Form() {
           Board : &nbsp;&nbsp; &nbsp;{" "}
         </label>
         {boards.map((board) => (
-          <label key={board} className="flex items-center gap-4 text-sm">
+          <label key={board} className="flex items-center gap-3 text-sm">
             <input
               type="checkbox"
               name="board"
