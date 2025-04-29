@@ -194,7 +194,7 @@ const JoinTeamForm = () => {
     Other: (
       <>
         <textarea
-          placeholder="Message"
+          placeholder="Message :"
           value={formData.message}
           onChange={(e) =>
             setFormData({ ...formData, message: e.target.value })
@@ -298,7 +298,7 @@ const JoinTeamForm = () => {
                   />
                   <CustomInput
                     type="tel"
-                    placeholder="Enter  Mobile No."
+                    placeholder="Enter  Mobile No. :"
                     value={formData.contact}
                     onChange={(e) =>
                       setFormData({ ...formData, contact: e.target.value })
@@ -307,7 +307,7 @@ const JoinTeamForm = () => {
                   />
                   <CustomInput
                     type="email"
-                    placeholder=" Email Id "
+                    placeholder=" Email Id :"
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
