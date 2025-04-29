@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+// ✅ Make sure these files exist with exact names
 import Vikas0 from "../../assets/homeslider/Vikas0.png";
 import Vikas4 from "../../assets/homeslider/Vikas4.png";
 import Vikas3 from "../../assets/homeslider/Vikas3.png";
 import Vikas1 from "../../assets/homeslider/Vikas1.png";
 import Vikas from "../../assets/homeslider/Vikas.png";
+
 import Form from "../allform/Form";
 
 const slides = [
@@ -65,7 +68,7 @@ const MainSlider = () => {
   return (
     <div className="w-full">
       {/* Top Section */}
-      <div className="bg-[#f2f2f2]  text-[#51087E] flex justify-center text-lg md:text-xl overflow-hidden">
+      <div className="bg-[#f2f2f2] text-[#51087E] flex justify-center text-lg md:text-xl overflow-hidden">
         <motion.div
           className="whitespace-nowrap"
           animate={{ x: ["100%", "-100%"] }}
@@ -77,8 +80,8 @@ const MainSlider = () => {
           }}
         >
           A Most Trusted Website to Hire, Best Online Private Tutors for the
-          Students of &nbsp; USA - CANADA - UK - QATAR - UAE - AUSTRALIA - INDIA
-          .
+          Students of &nbsp; USA - CANADA - UK - QATAR - UAE - AUSTRALIA -
+          INDIA.
         </motion.div>
       </div>
 
@@ -86,7 +89,7 @@ const MainSlider = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left: Slider */}
-          <div className="relative mt-8  w-full md:w-1/2 xl:w-2/3 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[600px] overflow-hidden rounded-lg">
+          <div className="relative mt-8 w-full md:w-1/2 xl:w-2/3 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[600px] overflow-hidden rounded-lg">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
@@ -144,7 +147,7 @@ const MainSlider = () => {
 
           {/* Right: Form */}
           <div className="w-full md:w-1/2 xl:w-1/3">
-            <div className="mt-8 ">
+            <div className="mt-8">
               <Form />
             </div>
           </div>
