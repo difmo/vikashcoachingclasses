@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CustomButton from "../CustomButton";
 import CustomInput from "../CustomInput";
 import CustomCheckbox from "../CustomCheckbox";
-
+import img from "../../assets/logo1.jpeg";
 const boards = ["CBSE", "ICSE", "ISC", "IB", "IGCSE", "State"];
 const subjects = ["Phy", "Chem", "Bio", "Maths"];
 const exams = ["NEET", "IIT-JEE"];
@@ -67,35 +67,35 @@ const JoinTeamForm = () => {
       <div className="container mx-auto py-10 px-4">
         <div className="max-w-7xl mx-auto space-y-10">
           {/* Form and Info Section */}
-          <div className="shadow-xl bg-white rounded-3xl overflow-hidden">
+          <p className="flex justify-center text-5xl text-headerbordertext font-bold">
+            Contact Us . . .
+          </p>
+          <div className="overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-7 mb-10">
               {/* Left Section */}
-              <div className=" lg:flex flex-col justify-center bg-yellow-100 text-black p-8 lg:w-1/2 py-6">
-                <h1 className="text-3xl font-bold mb-4">Vikas Institute</h1>
-                <p>Gupta Colony, Malviya Nagar, New Delhi - 110017</p>
+              <div className=" lg:flex flex-col text-xl justify-center items-center text-primary  lg:w-1/2 py-6">
+                <h1 className="text-3xl flex justify-center font-bold mb-4 text-primary">
+                  Vikas Institute
+                </h1>
+                <p> Malviya Nagar, New Delhi - 110017</p>
                 <p>Phone Numbers: +91 9988752471, +91 8289052751</p>
-                <p>+91 8750919571, +91 8375094571</p>
-                <p>Email: vipndls@gmail.com</p>
+                <p>Email: vikasinstitute@gmail.com</p>
                 <p>
                   Website:{" "}
                   <a
                     href="https://www.viptutors.in"
-                    className="text-blue-700 underline"
+                    className="text-primary underline"
                   >
-                    www.viptutors.in
+                    info@vikasinstitute.in
                   </a>
                 </p>
-                <img
-                  src="/vip-tutors-logo.png"
-                  alt="VIP Tutors Logo"
-                  className="mx-auto mt-6"
-                />
+                <img src={img} alt="VIP Tutors Logo" className="mx-auto mt-6" />
               </div>
 
               {/* Right Section (Form) */}
-              <div className="w-full lg:w-1/2 p-8">
+              <div className="w-full lg:w-1/2 p-8 bg-white">
                 <h2 className="text-3xl font-bold text-center text-yellow-500 mb-6">
-                  Kindly Fill the Form
+                  Kindly, Fill the Form
                 </h2>
 
                 <form
