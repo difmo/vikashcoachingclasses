@@ -9,7 +9,7 @@ export default function Form() {
   const [otpSent, setOtpSent] = useState(false);
 
   // State for Class Type selection
-  const [selectedClassType, setSelectedClassType] = useState("");
+  const [selectedClassType, setSelectedClassType] = useState("Select Class");
 
   // State for Level selection
   const [selectedLevel, setSelectedLevel] = useState("");
@@ -86,13 +86,7 @@ export default function Form() {
         {/* Level Dropdown */}
         <CustomDropdown
           className="text-black"
-          selectOption={[
-            "School Level",
-            "NEET",
-            "IIT-JEE",
-            "Board + NEET",
-            "Board + IIT-JEE",
-          ]}
+          selectOption={["NEET", "IIT-JEE", "Board + NEET", "Board + IIT-JEE"]}
           selectedValue={selectedLevel} // Level selected value
           onSelect={handleLevelSelect} // Level select handler
         />
