@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import img1 from "../../assets/homeslider/Vikas5.jpeg";
+import img1 from "../../assets/homeslider/Vikas0.jpeg";
 import img2 from "../../assets/homeslider/Vikas4.jpeg";
 import img3 from "../../assets/homeslider/Vikas3.jpeg";
 import img4 from "../../assets/homeslider/Vikas1.jpeg";
