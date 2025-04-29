@@ -19,7 +19,7 @@ const levels = [
 const JoinTeamForm = () => {
   const [otpSent, setOtpSent] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
-  const [selectedRole, setSelectedRole] = useState("Teacher");
+  const [selectedRole, setSelectedRole] = useState("Others");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -73,6 +73,20 @@ const JoinTeamForm = () => {
   const roleFields = {
     Teacher: (
       <>
+        <div className="flex flex-wrap gap-4 ">
+          <label className="block font-semibold mr-2 text-gray-700">
+            Select Boards:
+          </label>
+          {boards.map((board) => (
+            <label key={board} className="flex items-center -gap-2 text-sm">
+              <CustomCheckbox
+                checked={formData.boards.includes(board)}
+                onChange={() => toggleSelection("boards", board)}
+              />
+              {board}
+            </label>
+          ))}
+        </div>
         <div className="flex flex-wrap items-center gap-4">
           <label className="font-semibold text-gray-700 mr-4">
             Select Class:
@@ -102,6 +116,19 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
+
+        <CustomInput
+          type="text"
+          placeholder="Experience (in years)"
+          value={formData.experience}
+          onChange={(e) =>
+            setFormData({ ...formData, experience: e.target.value })
+          }
+        />
+      </>
+    ),
+    "Students / Parents": (
+      <>
         <div className="flex flex-wrap gap-4 ">
           <label className="block font-semibold mr-2 text-gray-700">
             Select Boards:
@@ -116,18 +143,6 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
-        <CustomInput
-          type="text"
-          placeholder="Experience (in years)"
-          value={formData.experience}
-          onChange={(e) =>
-            setFormData({ ...formData, experience: e.target.value })
-          }
-        />
-      </>
-    ),
-    "Students / Parents": (
-      <>
         <div className="flex flex-wrap items-center gap-4">
           <label className="font-semibold text-gray-700 mr-4">
             Select Class :
@@ -157,20 +172,7 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
-        <div className="flex flex-wrap gap-4 ">
-          <label className="block font-semibold mr-2 text-gray-700">
-            Boards :
-          </label>
-          {boards.map((board) => (
-            <label key={board} className="flex items-center -gap-2 text-sm">
-              <CustomCheckbox
-                checked={formData.boards.includes(board)}
-                onChange={() => toggleSelection("boards", board)}
-              />
-              {board}
-            </label>
-          ))}
-        </div>
+
         <select
           className="w-full border rounded-md px-4 py-2"
           value={formData.level}
@@ -318,7 +320,7 @@ const JoinTeamForm = () => {
                         value: "Students / Parents",
                         label: "Students / Parents",
                       },
-                      { value: "Other", label: "Others" },
+                      { value: "Others", label: "Others" },
                     ].map((role) => (
                       <label
                         key={role.value}
