@@ -80,8 +80,8 @@ const JoinTeamForm = () => {
                 <p>Malviya Nagar, New Delhi - 110017</p>
                 <p>
                   Contact Numbers:{" "}
-                  <a href="tel:+919988752471" className=" hover:underline">
-                    +91 9988752471
+                  <a href="tel:+918427373281" className=" hover:underline">
+                    +91 8427373281
                   </a>
                 </p>
                 <p>
@@ -295,7 +295,7 @@ const JoinTeamForm = () => {
               </thead>
               <tbody>
                 {[
-                  { no: 1, city: "VIP Headquarter", phone: "9988752471" },
+                  { no: 1, city: "VIP Headquarter", phone: "8427373281" },
                   { no: 2, city: "New Delhi", phone: "8750919571" },
                   { no: 3, city: "New Delhi", phone: "8375094571" },
                   { no: 4, city: "Maharashtra", phone: "8587037571" },
@@ -385,7 +385,7 @@ export default JoinTeamForm;
 // <div className=" w-full md:w-1/2 text-center mb-8">
 //   <h1 className="text-3xl font-bold mb-4">VIP Home Tutors.</h1>
 //   <p>Gupta Colony, Malviya Nagar, New Delhi - 110017</p>
-//   <p>Phone Numbers: +91 9988752471, +91 8289052751</p>
+//   <p>Phone Numbers: +91 84273 73281, +91 8289052751</p>
 //   <p>+91 8750919571, +91 8375094571</p>
 //   <p>Email: info@viptutors.in</p>
 //   <p>
