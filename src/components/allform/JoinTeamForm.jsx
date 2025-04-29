@@ -6,14 +6,14 @@ import CustomRadio from "../CustomRadio"; // You can remove if not used elsewher
 import img from "../../assets/logo1.jpeg";
 
 const boards = ["CBSE", "ICSE", "ISC", "IB", "IGCSE", "State"];
-const subjects = ["Phy", "Chem", "Bio", "Maths"];
+const subjects = ["Sci.", "Phy", "Chem", "Bio", "Maths", "Others"];
 const classes = ["7th", "8th", "9th", "10th", "12th", "Dropper"];
 const levels = ["Beginner", "Intermediate", "Advanced"];
 
 const JoinTeamForm = () => {
   const [otpSent, setOtpSent] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
-  const [selectedRole, setSelectedRole] = useState(" Teacher");
+  const [selectedRole, setSelectedRole] = useState("Teacher");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -67,17 +67,12 @@ const JoinTeamForm = () => {
   const roleFields = {
     Teacher: (
       <>
-        {/* <CustomInput
-          type="text"
-          placeholder="Class (e.g. 7 to Dropper)"
-          value={formData.classes}
-          onChange={(e) => setFormData({ ...formData, class: e.target.value })}
-          required
-        /> */}
         <div className="flex flex-wrap items-center gap-4">
-          <label className="font-semibold text-gray-700 mr-4">Select Class:</label>
+          <label className="font-semibold text-gray-700 mr-4">
+            Select Class:
+          </label>
           {classes.map((cla) => (
-            <label key={cla} className="flex items-center gap-2 text-sm">
+            <label key={cla} className="flex items-center -gap-1 text-sm">
               <CustomCheckbox
                 checked={formData.classes.includes(cla)}
                 onChange={() => toggleSelection("classes", cla)}
@@ -89,7 +84,7 @@ const JoinTeamForm = () => {
 
         <div className="flex flex-wrap gap-3 px-1">
           <label className="block font-semibold mb-2 text-gray-700">
-           Select Subjects
+            Select Subjects
           </label>
           {subjects.map((sub) => (
             <label key={sub} className="flex items-center gap-2 text-sm">
@@ -128,9 +123,11 @@ const JoinTeamForm = () => {
     "Students / Parents": (
       <>
         <div className="flex flex-wrap items-center gap-4">
-          <label className="font-semibold text-gray-700 mr-4">Select Class:</label>
+          <label className="font-semibold text-gray-700 mr-4">
+            Select Class:
+          </label>
           {classes.map((cla) => (
-            <label key={cla} className="flex items-center gap-2 text-sm">
+            <label key={cla} className="flex items-center -gap-1 text-sm">
               <CustomCheckbox
                 checked={formData.classes.includes(cla)}
                 onChange={() => toggleSelection("classes", cla)}
@@ -142,7 +139,7 @@ const JoinTeamForm = () => {
 
         <div className="flex flex-wrap gap-3 px-1">
           <label className="block font-semibold mb-2 text-gray-700">
-           Select Subjects
+            Select Subjects
           </label>
           {subjects.map((sub) => (
             <label key={sub} className="flex items-center gap-2 text-sm">
