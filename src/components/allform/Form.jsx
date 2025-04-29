@@ -184,11 +184,14 @@ export default function Form() {
         {boards.map((board) => (
           <label key={board} className="flex items-center gap-1 text-sm">
             <input
-              type="radio"
+              type="checkbox"
               name="board"
               value={board}
               checked={formData.board === board}
               onChange={handleBoardChange}
+              className={`text-sm ${
+                formData.board === board ? "text-yellow-500" : "text-black"
+              }`}
             />
             {board}
           </label>
