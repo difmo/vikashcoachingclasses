@@ -25,11 +25,12 @@ const courses = [
 ];
 
 const footerLinks = [
-  { url: "/join-form", name: "Online Science Tutors" },
+  { url: "/", name: "Online Science Tutors" },
   { url: "/subject/physics", name: "Online Physics Tutors" },
   { url: "/subject/chemistry", name: "Online Chemistry Tutors" },
   { url: "/subject/math", name: "Online Maths Tutors" },
   { url: "/subject/biology", name: "Online Biology Tutors" },
+  { url: "/join-form", name: "Contact Us" },
 ];
 
 export default function Footer() {
