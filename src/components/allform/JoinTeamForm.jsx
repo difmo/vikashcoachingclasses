@@ -275,6 +275,7 @@ const JoinTeamForm = () => {
                   <br />
                   USA - CANADA - UK - QATAR - UAE - AUSTRALIA - INDIA.
                 </p>
+                <p>At the Heart of our Success lies the Confidence that you Place in Us, Globly. Your Trust is our Greatest Asset.</p>
               </div>
 
               {/* Right */}
@@ -298,7 +299,7 @@ const JoinTeamForm = () => {
                   />
                   <CustomInput
                     type="tel"
-                    placeholder="Enter  Mobile No. :"
+                    placeholder="Enter  Mobile No :"
                     value={formData.contact}
                     onChange={(e) =>
                       setFormData({ ...formData, contact: e.target.value })
