@@ -187,7 +187,7 @@ export default function Form() {
       {/* Level Dropdown */}
       <CustomDropdown
         className="text-black"
-        selectOption={["NEET", "IIT-JEE", "Board + NEET", "Board + IIT-JEE"]}
+        selectOption={["School Level","NEET", "IIT-JEE", "Board + NEET", "Board + IIT-JEE"]}
         selectedValue={selectedLevel}
         onSelect={handleLevelSelect}
       />

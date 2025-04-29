@@ -5,10 +5,16 @@ import CustomCheckbox from "../CustomCheckbox";
 import CustomRadio from "../CustomRadio"; // You can remove if not used elsewhere
 import img from "../../assets/logo1.jpeg";
 
-const boards = ["CBSE", "ICSE", "ISC", "IB", "IGCSE", "State"];
+const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
 const subjects = ["Sci.", "Phy", "Chem", "Bio", "Maths", "Others"];
-const classes = ["7th", "8th", "9th", "10th", "12th", "Dropper"];
-const levels = ["Beginner", "Intermediate", "Advanced"];
+const classes = ["7th", "8th", "9th", "10th", "12th", "Droppers"];
+const levels = [
+  "School Level",
+  "NEET",
+  "IIT-JEE",
+  "Board + NEET",
+  "Board + IIT-JEE",
+];
 
 const JoinTeamForm = () => {
   const [otpSent, setOtpSent] = useState(false);
@@ -82,9 +88,9 @@ const JoinTeamForm = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-3 px-1">
+        <div className="flex flex-wrap gap-3 ">
           <label className="block font-semibold mb-2 text-gray-700">
-            Select Subjects
+            Select Subjects:
           </label>
           {subjects.map((sub) => (
             <label key={sub} className="flex items-center gap-2 text-sm">
@@ -96,9 +102,9 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
-        <div className="flex flex-wrap gap-3 px-1">
+        <div className="flex flex-wrap gap-3 ">
           <label className="block font-semibold mb-2 text-gray-700">
-            Boards
+            Select Boards:
           </label>
           {boards.map((board) => (
             <label key={board} className="flex items-center gap-2 text-sm">
@@ -124,7 +130,7 @@ const JoinTeamForm = () => {
       <>
         <div className="flex flex-wrap items-center gap-4">
           <label className="font-semibold text-gray-700 mr-4">
-            Select Class:
+            Select Class :
           </label>
           {classes.map((cla) => (
             <label key={cla} className="flex items-center -gap-1 text-sm">
@@ -137,9 +143,9 @@ const JoinTeamForm = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-3 px-1">
+        <div className="flex flex-wrap gap-3 ">
           <label className="block font-semibold mb-2 text-gray-700">
-            Select Subjects
+            Select Subjects:
           </label>
           {subjects.map((sub) => (
             <label key={sub} className="flex items-center gap-2 text-sm">
@@ -151,9 +157,9 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
-        <div className="flex flex-wrap gap-3 px-1">
+        <div className="flex flex-wrap gap-3 ">
           <label className="block font-semibold mb-2 text-gray-700">
-            Boards
+            Boards :
           </label>
           {boards.map((board) => (
             <label key={board} className="flex items-center gap-2 text-sm">
@@ -181,13 +187,14 @@ const JoinTeamForm = () => {
     ),
     Other: (
       <>
-        <CustomInput
-          type="text"
+        <textarea
           placeholder="Message"
           value={formData.message}
           onChange={(e) =>
             setFormData({ ...formData, message: e.target.value })
           }
+          rows={4}
+          className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
       </>
     ),
