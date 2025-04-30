@@ -19,7 +19,7 @@ export default function Form() {
   //Chose Country Code
   const [selectedLevel, setSelectedLevel] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
-  const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
+  const boards = ["CBSE", "IB", "ICSE", "ISC", "IGCSE"];
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -177,7 +177,7 @@ export default function Form() {
         <label className="block font-semibold mb-2 text-sm sm:text-base">
           Select Subjects :
           <span className="text-sm text-[#ebe9e7]">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(
             You can Select Multiples )
           </span>
         </label>

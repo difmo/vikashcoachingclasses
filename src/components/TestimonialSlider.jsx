@@ -57,8 +57,8 @@ const TestimonialSlider = () => {
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: true,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />,
+    // nextArrow: <NextArrow />,
     responsive: [
       { breakpoint: 1280, settings: { slidesToShow: 3 } },
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
