@@ -139,24 +139,24 @@ export default function Form() {
       </div>
 
       <div className="pb-4 flex flex-wrap sm:flex-nowrap gap-2 items-center">
-        <div className="w-full sm:w-1/4">
+        <div className="w-full sm:w-1/6">
           <CustomDropdown
             className="text-black w-full mt-4"
             selectOption={[
-              "+1 USA",
-              "+1 CANADA",
-              "+44 UK",
-              "+974 QATAR",
-              "+971 UAE",
-              "+91 INDIA",
-              "+61 AUSTRALIA",
+              "+1",
+              // "+1 CANADA",
+              "+44 ",
+              "+974",
+              "+971",
+              "+91",
+              "+61",
             ]}
             selectedValue={selectedCountryCode}
             onSelect={handleCountryCodeSelect}
           />
         </div>
 
-        <div className="w-full sm:w-3/4">
+        <div className="w-full sm:w-3/2">
           <CustomInput
             placeholder="Enter Mobile No. :"
             name="phone"
