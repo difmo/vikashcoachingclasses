@@ -144,7 +144,7 @@ export default function Form() {
             className="text-black w-full mt-4"
             selectOption={[
               "+1",
-              // "+1 CANADA",
+             
               "+44 ",
               "+974",
               "+971",
