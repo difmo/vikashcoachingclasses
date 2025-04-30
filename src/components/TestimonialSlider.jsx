@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import logo from "../assets/home.jpg";
+import logo from "../assets/home.svg";
 import { testimonials } from "../data/AllData";
 
 const PrevArrow = ({ onClick }) => (
@@ -71,19 +71,21 @@ const TestimonialSlider = () => {
       <Slider {...sliderSettings}>
         {testimonials.map((testimonial, idx) => (
           <div key={idx} className="px-3">
-            <div className="relative h-52 md:h-56 lg:h-60 xl:h-64 w-full rounded-lg overflow-hidden shadow-lg">
+            <div className="relative h-44 md:h-48 lg:h-52 xl:h-56 w-full rounded-lg overflow-hidden shadow-lg">
               <img
                 src={logo}
                 alt={`Testimonial image ${idx + 1}`}
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover border-3 border-white rounded-2xl"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-black/80 text-primary p-4 flex flex-col justify-center text-sm">
-                <p className="italic py-2 line-clamp-4">"{testimonial.text}"</p>
+              <div className="absolute inset-0  text-headerbordertext px-14 flex flex-col justify-center text-sm">
+                <p className="italic pt-4  line-clamp-4">
+                  "{testimonial.text}"
+                </p>
                 <span className="text-lg py-2 text-right font-semibold">
                   – {testimonial.author}
                 </span>
-                <p className="flex justify-center pt-4">{testimonial.star}</p>
+                <p className="flex justify-end px-2 pt-4">{testimonial.star}</p>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import img from "../../assets/home.jpg";
+
 import Form from "../allform/Form";
 import vikas0 from "../../assets/homeslider/vikas0.png";
 import vikas1 from "../../assets/homeslider/vikas.png";
@@ -25,12 +25,12 @@ const slides = [
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
-    image: vikas3,
+    image: vikas4,
     heading: "Hi, Looking for Online Maths Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {
-    image: vikas4,
+    image: vikas3,
     heading: "Hi, Looking for Online Biology Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
