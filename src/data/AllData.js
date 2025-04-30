@@ -2,7 +2,7 @@ import phy from "../assets/tutr.jpg";
 import phy1 from "../assets/a.jpg";
 // AllData.js
 
-const  onlinePhysicsTutors = [
+const onlinePhysicsTutors = [
   {
     mainHeadding: "Online Physics Tutors",
     mainTitle:
@@ -91,7 +91,7 @@ const  onlinePhysicsTutors = [
 
 // You can create similar data for chemistry, math, and biology
 
-const  onlineChemistryTutors  = [
+const onlineChemistryTutors = [
   {
     mainHeadding: "Online Chemistry Tutors",
     mainTitle:
@@ -173,7 +173,7 @@ const  onlineChemistryTutors  = [
   },
 ];
 
-const  onlineMathsTutors = [
+const onlineMathsTutors = [
   {
     mainHeadding: "Online Math Tutors",
     mainTitle:
@@ -359,5 +359,266 @@ const onlineBiologyTutors = [
       "VIKAS INSTITUTE — Empowering Young Biologists for a Better Tomorrow",
   },
 ];
-
-export {  onlinePhysicsTutors, onlineChemistryTutors , onlineMathsTutors, onlineBiologyTutors};
+const testimonials = [
+  {
+    text: "The best online physics classes I've ever attended! The tutor made everything so easy to understand.",
+    author: "Aarav, Grade 12, CBSE",
+    star: "⭐⭐⭐⭐⭐",
+  },
+  {
+    text: "Thanks to Vikas Institute, my daughter scored 95% in IGCSE Physics. Brilliant teaching!",
+    author: "Mrs. Kapoor, Dubai",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Highly professional and friendly tutors. My concepts are now crystal clear.",
+    author: "Riya S., IB Diploma Student",
+    star: "⭐⭐⭐⭐⭐",
+  },
+  {
+    text: "Prompt support, excellent tutors, and flexible timings. Couldn't ask for more!",
+    author: "Muneer, Qatar",
+    star: "⭐⭐⭐⭐⭐",
+  },
+  {
+    text: "They matched me with a perfect tutor within 24 hours. Amazing service!",
+    author: "Anjali, ICSE Grade 10",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Top-notch quality. The tutor was patient, knowledgeable, and always encouraging.",
+    author: "Vedant, UK",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "I never thought online tutoring could be so effective. Thank you Vikas Institute!",
+    author: "Sarah, Canada",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Excellent curriculum coverage. The tutor helped me prepare for both board exams and NEET.",
+    author: "Nishant, India",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Great teaching methods and regular assessments. My son is finally enjoying Physics!",
+    author: "Mr. Thomas, Australia",
+  },
+  {
+    text: "They don’t just teach — they make learning enjoyable!",
+    author: "Zara, Grade 9, IGCSE",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "The tutor's clarity and patience turned my fear of Physics into a strength.",
+    author: "Aditya, Grade 11, IB",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Affordable yet premium quality tutoring. Worth every rupee!",
+    author: "Meena P., Chennai",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Flexible scheduling made it so easy for my child in a different time zone.",
+    author: "Mrs. Yusuf, UAE",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "They provide timely updates and clear communication. Very professional.",
+    author: "Rajeev, Mumbai",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "My grades improved within a month. Vikas Institute is a blessing!",
+    author: "Ishita, ICSE Board",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Their tutors are handpicked and it shows. World-class teaching.",
+    author: "Aman, USA",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "I tried other platforms, but nothing compares to Vikas Institute’s personalized support.",
+    author: "Tanisha, Canada",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Great support team and dedicated tutors. Always responsive.",
+    author: "Rehaan, Qatar",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Their mock tests helped me boost my confidence before finals.",
+    author: "Lakshmi, Grade 10, CBSE",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "I finally understand the logic behind physics. It’s fun now!",
+    author: "Neel, Australia",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "They make difficult topics so easy to digest. Highly recommended.",
+    author: "Fatima, IB HL Physics",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "The tutor went beyond the textbook to help me understand concepts deeply.",
+    author: "Siddharth, IGCSE",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Their teachers are not just experts—they are motivators too.",
+    author: "Priya, Bangalore",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Vikas Institute helped my son move from average to A+ in just one term.",
+    author: "Mrs. Das, UK",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Structured lessons, focused teaching, and fantastic results!",
+    author: "Ali, UAE",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Thanks to them, I got into my dream university with top grades in Physics.",
+    author: "Kritika, USA",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Very patient with slow learners. They never rushed me.",
+    author: "Nikhil, Grade 8",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "My tutor made me fall in love with the subject I feared the most.",
+    author: "Saima, ICSE",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "100% satisfaction. Vikas Institute really cares about your progress.",
+    author: "Manoj, Delhi",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "They helped me understand Physics in a way my school never could.",
+    author: "Divya, Canada",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Their use of real-life examples makes abstract topics easier to grasp.",
+    author: "Aryan, IB Physics SL",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Genuine attention to every student's strengths and weaknesses.",
+    author: "Mrs. Pillai, Chennai",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "So grateful I found this institute just before my board exams.",
+    author: "Shruti, CBSE Grade 12",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "I wish I'd joined them sooner. Totally worth it!",
+    author: "Ehsan, Qatar",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Tutors here are better than any tuition center I’ve seen.",
+    author: "Rohit, IGCSE Grade 10",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "The best part is how they adapt to your learning pace.",
+    author: "Jyoti, UAE",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Clear, concise, and super helpful teachers. Five stars!",
+    author: "Ayaan, IB Student",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "They helped me score a 7 in IB Physics. Highly recommend!",
+    author: "Lena, Australia",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "From weak in Physics to top of my class—thank you Vikas Institute!",
+    author: "Prateek, India",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "They made online learning feel personal and impactful.",
+    author: "Fatema, UK",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Very transparent with pricing and policies. No surprises!",
+    author: "Mr. Sharma, Mumbai",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "My child now looks forward to her Physics classes. That's a first!",
+    author: "Mrs. Kaur, Canada",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "They combine fun with learning—best investment ever.",
+    author: "Harsha, Grade 9",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "I got instant help even during exam week. Amazing support system!",
+    author: "Kabir, CBSE Grade 11",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Structured, punctual, and very student-focused.",
+    author: "Neha, ICSE Parent",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Loved the regular feedback and progress tracking.",
+    author: "Arman, Qatar",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "This institute truly understands international boards.",
+    author: "Aisha, UAE",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Perfect balance of theory and application-based learning.",
+    author: "Jatin, IB HL Physics",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "They care about outcomes, not just hours.",
+    author: "Tarun, USA",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "Vikas Institute tutors go above and beyond—thank you!",
+    author: "Sneha, Australia",
+    star: "⭐⭐⭐⭐",
+  },
+  {
+    text: "From struggling to excelling in Physics—all thanks to Vikas Institute!",
+    author: "Nidhi, Grade 10",
+    star: "⭐⭐⭐⭐",
+  },
+];
+export {
+  onlinePhysicsTutors,
+  onlineChemistryTutors,
+  onlineMathsTutors,
+  onlineBiologyTutors,
+  testimonials,
+};

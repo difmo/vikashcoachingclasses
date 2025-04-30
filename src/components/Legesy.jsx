@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import logo from "../assets/home.jpg";
+
 import CustomHeading from "./CustomHeading";
+import TestimonialSlider from "./TestimonialSlider";
 
 // Animation variants
 const fadeInLeft = {
@@ -55,7 +56,7 @@ const Legacy = () => {
       ],
     },
   ];
-
+ 
   return (
     <div>
       <div className="container mx-auto px-4 py-10">
@@ -105,25 +106,38 @@ const Legacy = () => {
             </div>
 
             <p className="text-center text-white text-2xl mt-4">
-              At the Heart of our Success lies the Confidence that you Place in Us, Globly.
-              Your Trust is our Greatest Asset.
+              At the Heart of our Success lies the Confidence that you Place in
+              Us, Globly. Your Trust is our Greatest Asset.
               {/* <Link to="#" className="underline hover:text-yellow-300">
                 more..
               </Link> */}
             </p>
           </div>
-
-          <div className="flex flex-col lg:flex-row items-center justify-center mt-6 gap-6 lg:gap-12">
-            {[...Array(4)].map((_, idx) => (
-              <img
+          <TestimonialSlider />
+          {/* <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 xl:gap-10 mt-6 px-4">
+            {testimonials.map((testimonial, idx) => (
+              <div
                 key={idx}
-                src={logo}
-                alt={`Testimonial image ${idx + 1}`}
-                className="h-44 pt-2 pb-2 rounded-lg object-cover"
-                loading="lazy"
-              />
+                className="relative w-full sm:w-[45%] lg:w-[30%] xl:w-[22%] h-52 sm:h-56 md:h-60 lg:h-64 rounded-lg overflow-hidden shadow-lg"
+              >
+                <img
+                  src={logo}
+                  alt={`Testimonial image ${idx + 1}`}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-[#dba577]/60 text-headerbordertext p-4 flex flex-col justify-center text-sm">
+                  <p className="italic py-2 line-clamp-4">
+                    "{testimonial.text}"
+                  </p>
+                  <span className="text-lg py-2 text-right font-semibold">
+                    – {testimonial.author}
+                  </span>
+                  <p className="flex justify-center pt-4">{testimonial.star}</p>
+                </div>
+              </div>
             ))}
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </div>
