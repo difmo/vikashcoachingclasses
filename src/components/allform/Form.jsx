@@ -126,7 +126,7 @@ export default function Form() {
   return (
     <div className="relative w-full px-4 sm:px-6 md:px-4 pb-3 border-3 border-white rounded-lg">
       <div className="my-4 text-4xl tracking-tight text-[#dba577] font-extrabold">
-        Kindly, Fill the Form :
+        Kindly, Fill the Form:
       </div>
 
       <div className="pb-4">
