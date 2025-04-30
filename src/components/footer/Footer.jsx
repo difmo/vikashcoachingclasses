@@ -9,13 +9,19 @@ import {
 import { Link } from "react-router-dom"; // or 'next/link' if you're using Next.js
 
 const socialLinks = [
-  { icon: <FaYoutube />, url: "https://youtube.com/@viptutors?si=5RXybw4w1k_a_lyX" },
+  {
+    icon: <FaYoutube />,
+    url: "https://youtube.com/@viptutors?si=5RXybw4w1k_a_lyX",
+  },
   { icon: <FaTwitter />, url: "https://x.com/vikaskashyapsir?s=11" },
   {
     icon: <FaFacebookF />,
     url: "https://www.facebook.com/share/167YKPPfKp/?mibextid=wwXIfr",
   },
-  { icon: <FaInstagram />, url: "https://www.instagram.com/onlinephysicsguru?igsh=cWwzY3ptMXluaGps&utm_source=qr" },
+  {
+    icon: <FaInstagram />,
+    url: "https://www.instagram.com/onlinephysicsguru?igsh=cWwzY3ptMXluaGps&utm_source=qr",
+  },
   { icon: <FaWhatsapp />, url: "https://wa.me/919582699555" },
 ];
 
@@ -29,10 +35,10 @@ const courses = [
 
 const footerLinks = [
   { url: "/", name: "Online Science Tutors" },
-  { url: "/subject/physics", name: "Online Physics Tutors" },
-  { url: "/subject/chemistry", name: "Online Chemistry Tutors" },
-  { url: "/subject/math", name: "Online Maths Tutors" },
-  { url: "/subject/biology", name: "Online Biology Tutors" },
+  { url: "/subject/online-physics-tutors", name: "Online Physics Tutors" },
+  { url: "/subject/online-chemistry-tutors", name: "Online Chemistry Tutors" },
+  { url: "/subject/online-maths-tutors", name: "Online Maths Tutors" },
+  { url: "/subject/online-biology-tutors", name: "Online Biology Tutors" },
   { url: "/join-form", name: "Contact Us" },
 ];
 

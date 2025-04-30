@@ -30,7 +30,7 @@ const fadeInRight = {
 
 const faqs = [
   {
-    question: "Is Trial Class Free or Paid?",
+    question: "Are Vikas Institute Tutors are Qualified and Verified ?",
     answer:
       "Trial Class can be a free or paid depending on tutor. In most cases, Trial Class is free of cost However in some cases experienced tutor might demand paid Trial Class.",
   },

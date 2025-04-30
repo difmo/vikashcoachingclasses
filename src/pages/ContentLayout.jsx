@@ -1,17 +1,22 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { physics, chemistry, math, biology } from "../data/AllData";
+import {
+  onlinePhysicsTutors,
+  onlineChemistryTutors,
+  onlineMathsTutors,
+  onlineBiologyTutors,
+} from "../data/AllData";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import Form from "../components/allform/Form";
 import phy from "../assets/a.jpg";
-const dataMap = {
-  physics,
-  chemistry,
-  math,
-  biology,
-};
 
+const dataMap = {
+  "online-physics-tutors": onlinePhysicsTutors,
+  "online-chemistry-tutors": onlineChemistryTutors,
+  "online-maths-tutors": onlineMathsTutors,
+  "online-biology-tutors": onlineBiologyTutors,
+};
 // const imageMap = {
 //   physics: phy,
 //   chemistry: chem,
@@ -115,14 +120,6 @@ const ContentLayout = () => {
 
   return (
     <div>
-      {/* <Helmet>
-        <title>{capitalize(subject)} Tutoring | Vikas Institute</title>
-        <meta
-          name="description"
-          content={rawData.welcomeMessage.slice(0, 150)}
-        />
-      </Helmet> */}
-
       <div className="">
         <div className="bg-[#f2f2f2] text-2xl text-blue-500 flex justify-center">
           <div className="text-headerbordertext font-bold text-2xl flex justify-center">

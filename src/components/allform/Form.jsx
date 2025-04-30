@@ -15,6 +15,8 @@ export default function Form() {
   const [otp, setOtp] = useState("");
   const [otpVerified, setOtpVerified] = useState(false);
   const [selectedClassType, setSelectedClassType] = useState("Select Class");
+  const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
+  //Chose Country Code
   const [selectedLevel, setSelectedLevel] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
   const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
@@ -47,6 +49,9 @@ export default function Form() {
 
   const handleClassTypeSelect = (classType) => {
     setSelectedClassType(classType);
+  };
+  const handleCountryCodeSelect = (countryCode) => {
+    setSelectedCountryCode(countryCode);
   };
 
   const handleLevelSelect = (level) => {
@@ -133,13 +138,32 @@ export default function Form() {
         />
       </div>
 
-      <div className="pb-4">
-        <CustomInput
-          placeholder="Enter Mobile No. :"
-          name="phone"
-          value={formData.phone}
-          onChange={handleInputChange}
-        />
+      <div className="pb-4 flex flex-wrap sm:flex-nowrap gap-2 items-center">
+        <div className="w-full sm:w-1/4">
+          <CustomDropdown
+            className="text-black w-full mt-4"
+            selectOption={[
+              "+1 USA",
+              "+1 CANADA",
+              "+44 UK",
+              "+974 QATAR",
+              "+971 UAE",
+              "+91 INDIA",
+              "+61 AUSTRALIA",
+            ]}
+            selectedValue={selectedCountryCode}
+            onSelect={handleCountryCodeSelect}
+          />
+        </div>
+
+        <div className="w-full sm:w-3/4">
+          <CustomInput
+            placeholder="Enter Mobile No. :"
+            name="phone"
+            value={formData.phone}
+            onChange={handleInputChange}
+          />
+        </div>
       </div>
 
       <CustomDropdown

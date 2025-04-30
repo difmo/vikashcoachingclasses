@@ -2,7 +2,7 @@ import phy from "../assets/tutr.jpg";
 import phy1 from "../assets/a.jpg";
 // AllData.js
 
-const physics = [
+const  onlinePhysicsTutors = [
   {
     mainHeadding: "Online Physics Tutors",
     mainTitle:
@@ -91,7 +91,7 @@ const physics = [
 
 // You can create similar data for chemistry, math, and biology
 
-const chemistry = [
+const  onlineChemistryTutors  = [
   {
     mainHeadding: "Online Chemistry Tutors",
     mainTitle:
@@ -173,7 +173,7 @@ const chemistry = [
   },
 ];
 
-const math = [
+const  onlineMathsTutors = [
   {
     mainHeadding: "Online Math Tutors",
     mainTitle:
@@ -272,7 +272,7 @@ const math = [
   },
 ];
 
-const biology = [
+const onlineBiologyTutors = [
   {
     mainHeadding: "Online Biology Tutors",
     mainTitle:
@@ -360,4 +360,4 @@ const biology = [
   },
 ];
 
-export { physics, chemistry, math, biology };
+export {  onlinePhysicsTutors, onlineChemistryTutors , onlineMathsTutors, onlineBiologyTutors};

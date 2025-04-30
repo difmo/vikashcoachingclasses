@@ -35,7 +35,7 @@ const CustomDropdown = ({
       <button
         type="button"
         onClick={toggleDropdown}
-        className="w-full p-3 border border-gray-300 rounded-md bg-white text-black flex justify-between items-center"
+        className="w-full px-3 py-2.5 border border-gray-300 rounded-md bg-white text-black flex justify-between items-center"
       >
         <span>{selectedValue || "Select Level"}</span>
         <ChevronDown
