@@ -88,7 +88,7 @@ const MainSlider = () => {
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left: Slider */}
           <div className="relative mt-8 w-full md:w-1/2 xl:w-2/3 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[590px] overflow-hidden rounded-lg">
-            <div className="absolute inset-0 w-full h-full">
+            <div className="relative w-full h-full rounded-2xl border-3 border-white overflow-hidden">
               <img
                 src={slides[current].image}
                 alt="Slide"
