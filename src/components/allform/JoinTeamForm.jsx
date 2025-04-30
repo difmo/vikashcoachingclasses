@@ -4,6 +4,7 @@ import CustomInput from "../CustomInput";
 import CustomCheckbox from "../CustomCheckbox";
 import CustomRadio from "../CustomRadio"; // You can remove if not used elsewhere
 import img from "../../assets/logo1.jpeg";
+import CustomDropdown from "../CustomDropdown";
 
 const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
 const subjects = ["Sci.", "Phy", "Chem", "Bio", "Maths", "Other"];
@@ -20,7 +21,7 @@ const JoinTeamForm = () => {
   const [otpSent, setOtpSent] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
   const [selectedRole, setSelectedRole] = useState("Other");
-
+  const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
   const [formData, setFormData] = useState({
     name: "",
     contact: "",
@@ -46,7 +47,9 @@ const JoinTeamForm = () => {
   const handleFileChange = (e) => {
     setFormData({ ...formData, resume: e.target.files[0] });
   };
-
+  const handleCountryCodeSelect = (countryCode) => {
+    setSelectedCountryCode(countryCode);
+  };
   const sendOtp = () => {
     if (!formData.contact) return alert("Enter contact number first");
     setOtpSent(true);
@@ -275,8 +278,13 @@ const JoinTeamForm = () => {
                   <br />
                   USA - CANADA - UK - QATAR - UAE - AUSTRALIA - INDIA.
                 </p>
-                <p className=" px-4 sm:px-6 pt-14
-                  font-light uppercase text-center text-sm sm:text-base">"At the Heart of our Success lies the Confidence that you Place in Us, Globly. Your Trust is our Greatest Asset."</p>
+                <p
+                  className=" px-4 sm:px-6 pt-14
+                  font-light uppercase text-center text-sm sm:text-base"
+                >
+                  "At the Heart of our Success lies the Confidence that you
+                  Place in Us, Globly. Your Trust is our Greatest Asset."
+                </p>
               </div>
 
               {/* Right */}
@@ -298,15 +306,32 @@ const JoinTeamForm = () => {
                     }
                     required
                   />
-                  <CustomInput
-                    type="tel"
-                    placeholder="Enter  Mobile No :"
-                    value={formData.contact}
-                    onChange={(e) =>
-                      setFormData({ ...formData, contact: e.target.value })
-                    }
-                    required
-                  />
+                  <div className="pb-4 flex flex-wrap sm:flex-nowrap gap-2 items-center">
+                    <div className="w-full sm:w-1/6">
+                      <CustomDropdown
+                        className="text-black w-full mt-4"
+                        selectOption={[
+                          "+1",
+                          "+44 ",
+                          "+974",
+                          "+971",
+                          "+91",
+                          "+61",
+                        ]}
+                        selectedValue={selectedCountryCode}
+                        onSelect={handleCountryCodeSelect}
+                      />
+                    </div>
+
+                    <div className="w-full sm:w-3/2">
+                      <CustomInput
+                        placeholder="Enter Mobile No. :"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleFileChange}
+                      />
+                    </div>
+                  </div>
                   <CustomInput
                     type="email"
                     placeholder=" Email Id :"
@@ -361,30 +386,39 @@ const JoinTeamForm = () => {
                   {roleFields[selectedRole]}
 
                   {/* OTP */}
-                  <div className="flex flex-col sm:flex-row items-center justify-start gap-12 w-full">
-                    <CustomButton
-                      type="button"
-                      label="Get OTP"
-                      onClick={sendOtp}
-                      className="px-4 py-2 rounded-lg bg-[#dba577] hover:bg-[#c08c5c] w-full sm:w-auto"
-                    />
+                  <div className="w-full flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-3">
+                    {/* Get OTP Button */}
+                    <div className="w-full sm:w-auto">
+                      <CustomButton
+                        type="button"
+                        label="Get OTP"
+                        onClick={sendOtp}
+                        className="w-full py-2 rounded-lg bg-[#dba577] hover:bg-[#c08c5c]"
+                      />
+                    </div>
 
-                    <CustomInput
-                      type="text"
-                      placeholder="Enter OTP :"
-                      value={formData.otp}
-                      onChange={(e) =>
-                        setFormData({ ...formData, otp: e.target.value })
-                      }
-                      className="w-full sm:w-40"
-                    />
+                    {/* OTP Input Field */}
+                    <div className="w-full sm:w-40">
+                      <CustomInput
+                        type="text"
+                        placeholder="Enter OTP"
+                        value={formData.otp}
+                        onChange={(e) =>
+                          setFormData({ ...formData, otp: e.target.value })
+                        }
+                        className="w-full"
+                      />
+                    </div>
 
-                    <CustomButton
-                      type="button"
-                      label="Verify"
-                      onClick={verifyOtp}
-                      className="px-6 py-2 bg-[#dba577] rounded-lg hover:bg-green-600 w-full sm:w-auto"
-                    />
+                    {/* Verify Button */}
+                    <div className="w-full sm:w-auto">
+                      <CustomButton
+                        type="button"
+                        label="Verify"
+                        onClick={verifyOtp}
+                        className="w-full sm:w-auto px-6 py-2 bg-[#dba577] rounded-lg hover:bg-green-600"
+                      />
+                    </div>
                   </div>
 
                   {/* Submit */}
