@@ -68,17 +68,20 @@ const AboutUs = () => {
                 Globe. So if you want to Score Good grades in competitive exams
                 like NEET or IIT-JEE along with Boards then connect us for a
                 guaranteed result & Get One to One Online PHYSICS, CHEMISTRY,
-                MATHS & BIOLOGY classes with Vikas Instutite Facultiey and make
+                MATHS & BIOLOGY classes with Vikas Instutite Faculties and make
                 your Concepts sharp & fair by clearing yours doubts.
               </span>
             </p>
             <p className="text-2xl text-primary">Thanks.</p>
           </div>
-          <div className="md:w-1/2 flex justify-center" data-aos="zoom-in">
+          <div
+            className="md:w-1/2 flex justify-center pt-14"
+            data-aos="zoom-in"
+          >
             <img
               src={md}
               alt="Vikas Sir"
-              className="h-96 md:h-[560px] w-full  object-contain rounded-lg pt-1 "
+              className="h-96 md:h-[500px] w-full  object-contain rounded-lg  "
             />
           </div>
         </div>
