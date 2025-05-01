@@ -63,7 +63,7 @@ const Legacy = () => {
         {/* Heading */}
         <div className="text-center mb-10 bg-[#dba577] py-3 rounded-lg">
           <h1 className="text-[#51087E] text-5xl font-bold">
-            Our 11 Years of Legacy in Edutech Industres...
+            Our 11 Years of Legacy in Edutech Industres. . .
           </h1>
         </div>
 
@@ -102,7 +102,7 @@ const Legacy = () => {
         >
           <div className="text-center mt-8">
             <div className="bg-[#dba577] w-full inline-block px-4 py-2 rounded-lg">
-              <CustomHeading text1="Testimonials..." />
+              <CustomHeading text1="Testimonials. . ." />
             </div>
 
             <p className="text-center text-white text-2xl mt-4">
