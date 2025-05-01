@@ -140,11 +140,11 @@ export default function Form() {
 
   return (
     <div className="relative w-full px-4 sm:px-6 md:px-4 pb-3 border-3 border-white rounded-lg">
-      <div className="my-1 text-[31px] tracking-tight text-[#dba577] font-extrabold">
+      <div className="-mb-1 mt-1 text-[31px] tracking-tight text-[#dba577] font-extrabold">
         Kindly, Fill the Form :
       </div>
 
-      <div className="pb-1">
+      <div className="-pb-1">
         <CustomInput
           placeholder="Enter Your Name :"
           name="name"
@@ -208,7 +208,7 @@ export default function Form() {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2 pb-1">
+      <div className="flex flex-wrap gap-2 pb-2">
         <label className="block text-black font-extrabold">Board : </label>
         {boards.map((board) => (
           <label key={board} className="flex items-center gap-2 text-sm">
