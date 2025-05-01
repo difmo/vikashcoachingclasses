@@ -60,27 +60,27 @@ const faqs = [
       "What is the Process of Hiring Online Private Tutors from www.vikasinstitute.in?",
     answer: [
       "Hiring a qualified online private tutor from Vikas Institute is simple, quick, and fully personalized to your academic needs. We follow a step-by-step process to ensure you get the best tutor for your child’s learning goals, curriculum, and schedule.",
-      "1: Submit an Inquiry",
+      "1. Submit an Inquiry",
       "Start by contacting us through our website www.vikasinstitute.in, email (info@vikasinstitute.in), or WhatsApp/call at +91 8427373281. Share your details including:",
       "• Student’s grade and subject(s)",
       "• Curriculum (CBSE, IB, IGCSE, ICSE, ISC etc.)",
       "• Preferred schedule and time zone",
       "• Specific learning goals or challenges",
-      " 2: Get a Free Consultation",
+      " 2. Get a Free Consultation",
       "Our academic advisor will reach out to you for a brief consultation to understand the student's needs and recommend the best-fit tutor. This includes discussing:",
       "• Teaching methodology",
       "• Duration and frequency of sessions",
       "• Customized learning plans",
-      " 3: Attend a Free Demo Class",
+      " 3. Attend a Free Demo Class",
       "We offer a free trial class so you can evaluate the tutor’s teaching style, subject knowledge, and compatibility with the student. This helps you make an informed decision before committing.",
-      " 4: Choose a Tutoring Plan",
+      " 4. Choose a Tutoring Plan",
       "Based on your experience in the trial class, you can choose from our flexible tutoring packages—hourly, monthly, or subject-specific plans. Our plans are affordable and designed to suit both short-term support and long-term academic success.",
-      " 5: Start Regular Sessions",
+      " 5. Start Regular Sessions",
       "Once you confirm, we schedule regular online sessions using secure platforms like Zoom or Google Meet. You’ll also get:",
       "• Regular progress updates",
       "• Personalized assignments and test prep",
       "• Continuous academic support",
-      "Why Choose Vikas Institute?",
+      "6. Why Choose Vikas Institute?",
       "• Highly qualified and verified tutors",
       "• Coverage for CBSE, ICSE, IGCSE, IB, and other international boards",
       "• Personalized one-on-one classes across UAE, Qatar, UK, USA, Australia, Canada, and India",
@@ -180,32 +180,32 @@ const faqs = [
     answer: [
       "Please read the following important guidelines carefully before starting your tutoring sessions with Vikas Institute. These policies are in place to ensure transparency, quality, and a smooth learning experience.",
 
-      " No Direct Fee Transfers to Tutors",
+      "1. No Direct Fee Transfers to Tutors",
       "• All payments must be made directly to Vikas Institute via approved channels only.",
       "• Direct transactions with tutors are strictly prohibited.",
       "• If any direct fee payment is made to a tutor without our knowledge and any misalignment, fraud, or issue occurs, Vikas Institute and its authorized personnel are not responsible.",
 
-      "Fee Must Be Paid in Advance",
+      "2. Fee Must Be Paid in Advance",
       "• Classes will only be scheduled once the fee is received and confirmed by our accounts team.",
 
-      " 24-Hour Rescheduling Policy",
+      "3. 24-Hour Rescheduling Policy",
       "• Students must inform us at least 24 hours in advance to reschedule a session.",
       "• Missed classes without prior notice will be counted as completed and charged accordingly.",
 
-      " Refunds Are Not Guaranteed",
+      "4. Refunds Are Not Guaranteed",
       "• Refunds are only provided in exceptional cases and are at the sole discretion of Vikas Institute.",
 
-      " Students Are Responsible for Technical Readiness",
+      "5. Students Are Responsible for Technical Readiness",
       "• Please ensure you have a working device, stable internet, and access to Zoom or Google Meet before each session.",
       "• The institute is not responsible for technical issues on the student’s side.",
 
-      "Invoices Are Issued on Request",
+      "6. Invoices Are Issued on Request",
       "• Digital invoices can be provided upon request after payment for your personal records.",
 
-      "Quality Assurance Through Monitoring",
+      "7. Quality Assurance Through Monitoring",
       "• Some sessions may be recorded for internal training and quality control purposes. You will be informed in advance when recordings are made.",
 
-      " Student Privacy is Protected",
+      "8. Student Privacy is Protected",
       "• All personal and academic information shared with Vikas Institute is strictly confidential and used solely for tutoring purposes.",
     ],
   },
@@ -248,7 +248,7 @@ const FAQ = () => {
                   <h3 className="text-xl font-semibold text-gray-800">
                     {faq.question}
                   </h3>
-                  <span className="text-3xl font-bold text-purple-500">
+                  <span className="text-3xl font-bold text-headerbordertext">
                     {isOpen ? "-" : "+"}
                   </span>
                 </div>

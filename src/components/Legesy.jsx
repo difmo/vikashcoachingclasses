@@ -56,14 +56,14 @@ const Legacy = () => {
       ],
     },
   ];
- 
+
   return (
     <div>
       <div className="container mx-auto px-4 py-10">
         {/* Heading */}
         <div className="text-center mb-10 bg-[#dba577] py-3 rounded-lg">
           <h1 className="text-[#51087E] text-5xl font-bold">
-            11 Years of Legacy
+            Our 11 Years of Legacy in Edutech Industry
           </h1>
         </div>
 
@@ -107,7 +107,7 @@ const Legacy = () => {
 
             <p className="text-center text-white text-2xl mt-4">
               "At the Heart of our Success lies the Confidence that you Place in
-              Us, Globly. Your Trust is our Greatest Asset."
+              us, Globly. Your Trust is our Greatest Asset"
               {/* <Link to="#" className="underline hover:text-yellow-300">
                 more..
               </Link> */}
