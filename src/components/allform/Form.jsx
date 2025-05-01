@@ -4,29 +4,31 @@ import CustomInput from "../CustomInput";
 import CustomDropdown from "../CustomDropdown";
 import { addDoc, collection } from "firebase/firestore";
 import {
-  auth,
   db,
   RecaptchaVerifier,
   signInWithPhoneNumber,
+  auth,
+  PhoneAuthProvider,
+  signInWithCredential,
 } from "../../Firebase";
 
 export default function Form() {
   const [otpSent, setOtpSent] = useState(false);
   const [otp, setOtp] = useState("");
   const [otpVerified, setOtpVerified] = useState(false);
+  const [verificationId, setVerificationId] = useState("");
   const [selectedClassType, setSelectedClassType] = useState("Select Class");
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
-  //Chose Country Code
   const [selectedLevel, setSelectedLevel] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
   const boards = ["CBSE", "IB", "ICSE", "ISC", "IGCSE"];
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    board: "", // Now stores a single string
+    board: "",
     subjects: [],
   });
-  const [verificationId, setVerificationId] = useState("");
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -50,8 +52,9 @@ export default function Form() {
   const handleClassTypeSelect = (classType) => {
     setSelectedClassType(classType);
   };
-  const handleCountryCodeSelect = (countryCode) => {
-    setSelectedCountryCode(countryCode);
+
+  const handleCountryCodeSelect = (code) => {
+    setSelectedCountryCode(code);
   };
 
   const handleLevelSelect = (level) => {
@@ -62,53 +65,65 @@ export default function Form() {
     setExperienceLevel(e.target.value);
   };
 
-  const handleOTPSubmit = () => {
-    if (!otpSent) {
-      const recaptchaVerifier = new RecaptchaVerifier(
+  const setupRecaptcha = () => {
+    if (!window.recaptchaVerifier) {
+      window.recaptchaVerifier = new RecaptchaVerifier(
+        auth,
         "recaptcha-container",
         {
           size: "invisible",
-          callback: () => {
-            console.log("Recaptcha verified!");
+          callback: (response) => {},
+          "expired-callback": () => {
+            alert("reCAPTCHA expired. Please try again.");
           },
-        },
-        auth
+        }
       );
-
-      const phoneNumber = "+" + formData.phone;
-
-      signInWithPhoneNumber(auth, phoneNumber, recaptchaVerifier)
-        .then((confirmationResult) => {
-          setVerificationId(confirmationResult.verificationId);
-          setOtpSent(true);
-          console.log("OTP sent to " + phoneNumber);
-        })
-        .catch((error) => {
-          console.error("Error during OTP sending:", error);
-          alert("Error sending OTP. Please try again.");
-        });
-    } else {
-      const credential = auth.PhoneAuthProvider.credential(verificationId, otp);
-      auth
-        .signInWithCredential(credential)
-        .then(() => {
-          console.log("OTP Verified!");
-          setOtpVerified(true);
-        })
-        .catch((error) => {
-          console.error("OTP verification failed:", error);
-          alert("Invalid OTP. Please try again.");
-        });
+      window.recaptchaVerifier.render();
     }
+  };
+
+  const handleSendOTP = () => {
+    const phoneNumber = selectedCountryCode + formData.phone;
+    if (!formData.phone) {
+      return alert("Enter a valid phone number.");
+    }
+
+    setupRecaptcha();
+    const appVerifier = window.recaptchaVerifier;
+
+    signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+      .then((confirmationResult) => {
+        setVerificationId(confirmationResult.verificationId);
+        setOtpSent(true);
+        alert("OTP sent successfully!");
+      })
+      .catch((error) => {
+        console.error("OTP Error:", error);
+        alert("Failed to send OTP. Use a valid phone number.");
+      });
+  };
+
+  const handleVerifyOTP = () => {
+    if (!otp || !verificationId) return alert("Please enter the OTP.");
+
+    const credential = PhoneAuthProvider.credential(verificationId, otp);
+    signInWithCredential(auth, credential)
+      .then(() => {
+        setOtpVerified(true);
+        alert("OTP verified!");
+      })
+      .catch((error) => {
+        console.error("OTP Verification Error:", error);
+        alert("Invalid OTP. Try again.");
+      });
   };
 
   const handleFinalSubmit = async (e) => {
     e.preventDefault();
-
     try {
       await addDoc(collection(db, "Vikasrequests"), {
         name: formData.name,
-        phone: formData.phone,
+        phone: selectedCountryCode + formData.phone,
         classType: selectedClassType,
         level: selectedLevel,
         board: formData.board,
@@ -118,7 +133,7 @@ export default function Form() {
       });
       alert("Form Submitted Successfully!");
     } catch (err) {
-      alert("Failed to submit form. Try again.");
+      alert("Something went wrong. Please try again later.");
       console.error(err);
     }
   };
@@ -142,12 +157,11 @@ export default function Form() {
         <div className="w-full sm:w-1/6">
           <CustomDropdown
             className="text-black w-full mt-4"
-            selectOption={["+1", "+44 ", "+974", "+971", "+91", "+61"]}
+            selectOption={["+91", "+1", "+44", "+974", "+971", "+61"]}
             selectedValue={selectedCountryCode}
             onSelect={handleCountryCodeSelect}
           />
         </div>
-
         <div className="w-full sm:w-3/2">
           <CustomInput
             placeholder="Enter Mobile No. :"
@@ -169,8 +183,7 @@ export default function Form() {
         <label className="block font-semibold mb-2 text-sm sm:text-base">
           Select Subjects :
           <span className="text-sm text-[#ebe9e7]">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(
-            You can Select Multiples )
+            &nbsp;(You can Select Multiples)
           </span>
         </label>
         <div className="grid grid-cols-3 gap-2">
@@ -195,11 +208,8 @@ export default function Form() {
         </div>
       </div>
 
-      {/* Single Board Selection */}
-      <div className="flex flex-wrap gap-2 pb-6">
-        <label className="block text-black font-extrabold">
-          Board : &nbsp;&nbsp;
-        </label>
+      <div className="flex flex-wrap gap-2 pb-4">
+        <label className="block text-black font-extrabold">Board : </label>
         {boards.map((board) => (
           <label key={board} className="flex items-center gap-2 text-sm">
             <input
@@ -208,9 +218,6 @@ export default function Form() {
               value={board}
               checked={formData.board === board}
               onChange={handleBoardChange}
-              className={`text-sm ${
-                formData.board === board ? "text-yellow-500" : "text-black"
-              }`}
             />
             {board}
           </label>
@@ -235,29 +242,28 @@ export default function Form() {
       {!otpSent ? (
         <div className="text-center py-2">
           <CustomButton
-            onClick={handleOTPSubmit}
+            onClick={handleSendOTP}
             className="text-[#51087E] hover:bg-primary bg-[#dba577] text-xl font-bold"
             label="Get OTP"
           />
         </div>
       ) : !otpVerified ? (
-        <div className="text-center py-2">
-          <input
-            type="text"
+        <div className="py-4">
+          <CustomInput
             placeholder="Enter OTP"
-            className="border px-4 py-2 mr-2 rounded"
+            name="otp"
             value={otp}
             onChange={(e) => setOtp(e.target.value)}
           />
-          <CustomButton
-            onClick={handleOTPSubmit}
-            className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
-            label="Verify OTP"
-          />
+          <div className="text-center pt-2">
+            <CustomButton
+              onClick={handleVerifyOTP}
+              className="bg-[#51087E] text-white font-bold"
+              label="Verify OTP"
+            />
+          </div>
         </div>
-      ) : null}
-
-      {otpVerified && (
+      ) : (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
           <form
             onSubmit={handleFinalSubmit}
@@ -266,7 +272,6 @@ export default function Form() {
             <h3 className="text-lg font-semibold mb-4 text-center text-[#51087E]">
               Select Experience Level and Fee Range
             </h3>
-
             <div className="space-y-3">
               <label className="block">
                 <input
@@ -311,10 +316,6 @@ export default function Form() {
             >
               Submit
             </button>
-
-            <p className="mt-4 text-green-700 font-medium text-center">
-              Thank you! Kindly wait, we will contact you as soon as possible.
-            </p>
           </form>
         </div>
       )}

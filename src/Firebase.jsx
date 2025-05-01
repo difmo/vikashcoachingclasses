@@ -1,9 +1,12 @@
+// Firebase.js
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import {
   getAuth,
   RecaptchaVerifier,
   signInWithPhoneNumber,
+  PhoneAuthProvider,
+  signInWithCredential,
 } from "firebase/auth";
 
 // Firebase Configuration
@@ -17,9 +20,16 @@ const firebaseConfig = {
   measurementId: "G-PS4GK783MX",
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-const auth = getAuth(app); // Initialize Firebase Auth
-const db = getFirestore(app); // Initialize Firestore
-
-export { db, auth, RecaptchaVerifier, signInWithPhoneNumber };
+export {
+  db,
+  auth,
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
+  PhoneAuthProvider,
+  signInWithCredential,
+};

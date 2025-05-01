@@ -224,7 +224,7 @@ const JoinTeamForm = () => {
                   Vikas Institute
                 </h1>
 
-                <div className="py-10 text-center space-y-2">
+                <div className="pb-5 pt-20 text-center space-y-2">
                   <p>Malviya Nagar, New Delhi - 110017</p>
 
                   <p>
@@ -386,7 +386,7 @@ const JoinTeamForm = () => {
                   {roleFields[selectedRole]}
 
                   {/* OTP */}
-                  <div className="w-full flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-3">
+                  <div className="w-full flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-3 xl:gap-22">
                     {/* Get OTP Button */}
                     <div className="w-full sm:w-auto">
                       <CustomButton
