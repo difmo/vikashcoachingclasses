@@ -186,7 +186,7 @@ export default function Form() {
             &nbsp;(You can Select Multiples)
           </span>
         </label>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-">
           {[
             "Science",
             "Physics",
@@ -195,7 +195,7 @@ export default function Form() {
             "Biology",
             "Others",
           ].map((subject) => (
-            <label key={subject} className="flex items-center space-x-2">
+            <label key={subject} className="flex items-center s">
               <input
                 type="checkbox"
                 name="subjects"
@@ -240,7 +240,7 @@ export default function Form() {
       <div id="recaptcha-container"></div>
 
       {!otpSent ? (
-        <div className="text-center -pt-4 ">
+        <div className="text-center -pt-2 ">
           <CustomButton
             onClick={handleSendOTP}
             className="text-[#51087E] hover:bg-primary bg-[#dba577] text-xl font-bold"
