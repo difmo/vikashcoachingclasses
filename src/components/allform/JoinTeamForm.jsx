@@ -78,7 +78,7 @@ const JoinTeamForm = () => {
         {/* Boards */}
         <div className="flex flex-wrap gap-4 ">
           <label className="block font-semibold mr-2 text-gray-700">
-            Select Boards:
+            Select Board:
           </label>
           {boards.map((board) => (
             <label key={board} className="flex items-center -gap-2 text-sm">
@@ -136,7 +136,7 @@ const JoinTeamForm = () => {
         {/* Boards */}
         <div className="flex flex-wrap gap-4 ">
           <label className="block font-semibold mr-2 text-gray-700">
-            Select Boards:
+            Select Board:
           </label>
           {boards.map((board) => (
             <label key={board} className="flex items-center -gap-2 text-sm">
@@ -393,7 +393,7 @@ const JoinTeamForm = () => {
                         type="button"
                         label="Get OTP"
                         onClick={sendOtp}
-                        className="w-full py-2 rounded-lg bg-[#dba577] hover:bg-[#c08c5c]"
+                        className="w-full py-3 text-sm  rounded-lg bg-[#dba577] hover:bg-[#c08c5c]"
                       />
                     </div>
 
@@ -416,7 +416,7 @@ const JoinTeamForm = () => {
                         type="button"
                         label="Verify"
                         onClick={verifyOtp}
-                        className="w-full sm:w-auto px-6 py-2 bg-[#dba577] rounded-lg hover:bg-green-600"
+                        className="w-full sm:w-auto px-6 py-3 text-sm bg-[#dba577] rounded-lg hover:bg-green-600"
                       />
                     </div>
                   </div>
