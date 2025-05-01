@@ -7,12 +7,9 @@ import {
   onlineBiologyTutors,
 } from "../data/AllData";
 import { motion } from "framer-motion";
-
+import { Helmet } from "react-helmet";
 import Form from "../components/allform/Form";
-import phy from "../assets/physics.png";
-import chem from "../assets/chemisitry.jpeg";
-import mathImg from "../assets/math.jpeg";
-import bio from "../assets/biology.jpeg";
+import phy from "../assets/a.jpg";
 
 const dataMap = {
   "online-physics-tutors": onlinePhysicsTutors,
@@ -20,13 +17,12 @@ const dataMap = {
   "online-maths-tutors": onlineMathsTutors,
   "online-biology-tutors": onlineBiologyTutors,
 };
-
-const imageMap = {
-  "online-physics-tutors": phy,
-  "online-chemistry-tutors": chem,
-  "online-maths-tutors": mathImg,
-  "online-biology-tutors": bio,
-};
+// const imageMap = {
+//   physics: phy,
+//   chemistry: chem,
+//   math: mathImg,
+//   biology: bio,
+// };
 
 const getSlideVariant = (direction = "left") => ({
   hidden: {
@@ -48,7 +44,7 @@ const capitalize = (word) =>
 const ContentLayout = () => {
   const { subject } = useParams();
   const rawData = dataMap[subject]?.[0];
-  const image = imageMap[subject];
+  // const image = imageMap[subject];
 
   if (!rawData) {
     return (
@@ -124,7 +120,6 @@ const ContentLayout = () => {
 
   return (
     <div>
-      {/* Header Section */}
       <div className="">
         <div className="bg-[#f2f2f2] text-2xl text-blue-500 flex justify-center">
           <div className="text-headerbordertext font-bold text-2xl flex justify-center">
@@ -133,7 +128,6 @@ const ContentLayout = () => {
         </div>
       </div>
 
-      {/* Main Content Section */}
       <div className="container bg-primary-gradient text-text mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto space-y-12">
           {selectedData.map((item, index) => {
@@ -151,13 +145,13 @@ const ContentLayout = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <div className="flex-1 text-left">
-                  <h2 className="text-2xl font-bold text-primary mb-2 text-left">
+                <div className="flex-1">
+                  <h2 className="text-2xl font-bold text-primary mb-2">
                     {item.title}
                   </h2>
 
                   {item.subtitle && (
-                    <h3 className="text-lg font-semibold text-gray-700 mb-4 text-left">
+                    <h3 className="text-lg font-semibold text-gray-700 mb-4">
                       {item.subtitle}
                     </h3>
                   )}
@@ -165,34 +159,33 @@ const ContentLayout = () => {
                   {item.description?.map((text, idx) => (
                     <p
                       key={idx}
-                      className="text-gray-100 text-base md:text-lg mb-2 leading-relaxed text-left"
+                      className="text-gray-100 text-base md:text-lg mb-2 leading-relaxed"
                     >
                       {text}
                     </p>
                   ))}
                 </div>
+
+                {/* {index === 0 && image && (
+                  <div className="w-full md:w-1/3">
+                    <div className="flex items-center justify-center rounded-xl overflow-hidden shadow-md">
+                      <img
+                        src={image}
+                        alt={`${subject} tutoring`}
+                        className="w-full h-auto max-w-full rounded-xl"
+                      />
+                    </div>
+                  </div>
+                )} */}
               </motion.div>
             );
           })}
         </div>
-
-        {/* Bottom Image + Form Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-10 max-w-7xl mx-auto px-4">
-          {/* Image Section */}
-          <div className="w-full md:w-1/2 flex justify-center border-3 rounded-2xl border-white">
-            {image && (
-              <div className="w-full  rounded-xl overflow-hidden shadow-md">
-                <img
-                  src={image}
-                  alt={`${subject} tutoring`}
-                  className="w-full h-auto object-cover rounded-xl"
-                />
-              </div>
-            )}
-          </div>
-
-          {/* Form Section */}
+        <div className="flex flex-col md:flex-row justify-between flex-wrap pt-6">
           <div className="w-full md:w-1/2">
+            {/* <img src={phy} alt="" className="w-full h-80 md:h-[400px]" /> */}
+          </div>
+          <div className="w-full md:w-1/2 mt-6 md:mt-0">
             <Form />
           </div>
         </div>

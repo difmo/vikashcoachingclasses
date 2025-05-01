@@ -140,11 +140,11 @@ export default function Form() {
 
   return (
     <div className="relative w-full px-4 sm:px-6 md:px-4 pb-3 border-3 border-white rounded-lg">
-      <div className="my-4 text-[31px] tracking-tight text-[#dba577] font-extrabold">
+      <div className="my-2 text-[31px] tracking-tight text-[#dba577] font-extrabold">
         Kindly, Fill the Form :
       </div>
 
-      <div className="pb-4">
+      <div className="pb-1">
         <CustomInput
           placeholder="Enter Your Name :"
           name="name"
@@ -153,7 +153,7 @@ export default function Form() {
         />
       </div>
 
-      <div className="pb-4 flex flex-wrap sm:flex-nowrap gap-2 items-center">
+      <div className="pb-1 flex flex-wrap sm:flex-nowrap gap-2 items-center">
         <div className="w-full sm:w-1/6">
           <CustomDropdown
             className="text-black w-full mt-4"
@@ -179,7 +179,7 @@ export default function Form() {
         onSelect={handleClassTypeSelect}
       />
 
-      <div className="pb-4">
+      <div className="pb-1">
         <label className="block font-semibold mb-2 text-sm sm:text-base">
           Select Subjects :
           <span className="text-sm text-[#ebe9e7]">
@@ -208,7 +208,7 @@ export default function Form() {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2 pb-4">
+      <div className="flex flex-wrap gap-2 pb-1">
         <label className="block text-black font-extrabold">Board : </label>
         {boards.map((board) => (
           <label key={board} className="flex items-center gap-2 text-sm">
