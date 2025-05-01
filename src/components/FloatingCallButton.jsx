@@ -28,7 +28,7 @@ const FloatingCallAndWhatsappButtons = () => {
           ease: "easeInOut",
         }}
       >
-        <FaWhatsapp size={24} />
+        <FaWhatsapp size={28} />
       </motion.a>
     </div>
   );

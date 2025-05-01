@@ -211,7 +211,7 @@ const JoinTeamForm = () => {
 
   return (
     <div>
-      <div className="bg-[#f2f2f2] text-2xl text-headerbordertext font-bold flex justify-center">
+      <div className="bg-[#f2f2f2] text-md text-headerbordertext font-extrabold flex justify-center">
         Home / Contact Us
       </div>
       <div className="container mx-auto py-10 px-4">

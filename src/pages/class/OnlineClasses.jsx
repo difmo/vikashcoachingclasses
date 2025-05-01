@@ -44,7 +44,7 @@ const OnlineClasses = () => {
     <div className=" text-gray-800 ">
       <div className="container mx-auto">
         <div className="py-6">
-          <div className=" bg-[#f2f2f2] text-2xl  text-blue-500 flex justify-center">
+          <div className=" bg-[#f2f2f2] text-md  font-extrabold flex justify-center">
             Home / Vikas Institute
           </div>
         </div>

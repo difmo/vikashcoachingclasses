@@ -121,8 +121,8 @@ const ContentLayout = () => {
   return (
     <div>
       <div className="">
-        <div className="bg-[#f2f2f2] text-2xl text-blue-500 flex justify-center">
-          <div className="text-headerbordertext font-bold text-2xl flex justify-center">
+        <div className="bg-[#f2f2f2] text-md text-blue-500 flex justify-center">
+          <div className="text-headerbordertext font-extrabold text-md flex justify-center">
             Home / {rawData.mainHeadding}
           </div>
         </div>

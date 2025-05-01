@@ -66,7 +66,7 @@ const MainSlider = () => {
   return (
     <div className="w-full">
       {/* Top Section */}
-      <div className="bg-[#f2f2f2] text-[#51087E] flex justify-center text-lg md:text-xl overflow-hidden">
+      <div className="bg-[#f2f2f2] text-[#51087E] flex justify-center text-lg md:text-md overflow-hidden">
         <motion.div
           className="whitespace-nowrap"
           animate={{ x: ["100%", "-100%"] }}
