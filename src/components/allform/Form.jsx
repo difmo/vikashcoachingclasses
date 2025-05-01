@@ -240,7 +240,7 @@ export default function Form() {
       <div id="recaptcha-container"></div>
 
       {!otpSent ? (
-        <div className="text-center py-2">
+        <div className="text-center -pt-4 ">
           <CustomButton
             onClick={handleSendOTP}
             className="text-[#51087E] hover:bg-primary bg-[#dba577] text-xl font-bold"
@@ -248,14 +248,14 @@ export default function Form() {
           />
         </div>
       ) : !otpVerified ? (
-        <div className="py-4">
+        <div className="">
           <CustomInput
             placeholder="Enter OTP"
             name="otp"
             value={otp}
             onChange={(e) => setOtp(e.target.value)}
           />
-          <div className="text-center pt-2">
+          <div className="text-center pt-">
             <CustomButton
               onClick={handleVerifyOTP}
               className="bg-[#51087E] text-white font-bold"
