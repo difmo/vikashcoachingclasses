@@ -62,15 +62,14 @@ const AboutUs = () => {
               had scored more than 90% Marks in PHYSICS in Boards, NEET &
               IIT-JEE continuously under his guidance, since many past years.
               <br />
-              <br />
               <span className="py-6">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vikas
-                Sir and his Team also likes to teach students online, across the
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vikas
+                Sir and his team also likes to teach students online, across the
                 Globe. So if you want to Score Good grades in competitive exams
                 like NEET or IIT-JEE along with Boards then connect us for a
                 guaranteed result & Get One to One Online PHYSICS, CHEMISTRY,
-                MATHS & BIOLOGY classes with Vikas Instutite Teachers team and make your
-                Concepts sharp & fair by clearing yours doubts.
+                MATHS & BIOLOGY classes with Vikas Instutite Facultiey and make
+                your Concepts sharp & fair by clearing yours doubts.
               </span>
             </p>
             <p className="text-2xl text-primary">Thanks.</p>
@@ -79,7 +78,7 @@ const AboutUs = () => {
             <img
               src={md}
               alt="Vikas Sir"
-              className="h-96 md:h-[500px] w-full  object-contain rounded-lg pt-1.5 "
+              className="h-96 md:h-[560px] w-full  object-contain rounded-lg pt-1 "
             />
           </div>
         </div>
