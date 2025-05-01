@@ -47,7 +47,7 @@ const AboutUs = () => {
           className="flex flex-col md:flex-row justify-between gap-6"
           data-aos="fade-up"
         >
-          <div className="md:w-1/2 px-8">
+          <div className="md:w-1/2">
             <h1 className="text-3xl  font-bold mb-4 text-primary">
               About Vikas Sir,
             </h1>
@@ -75,14 +75,11 @@ const AboutUs = () => {
             </p>
             <p className="text-2xl text-primary">Thanks.</p>
           </div>
-          <div
-            className="md:w-1/2 pt-1.5 px-[103px]   flex justify-center"
-            data-aos="zoom-in"
-          >
+          <div className="md:w-1/2 flex justify-center" data-aos="zoom-in">
             <img
               src={md}
               alt="Vikas Sir"
-              className="h-96 md:h-[500px] w-full border-2  border-black object-contain rounded-lg "
+              className="h-96 md:h-[500px] w-full  object-contain rounded-lg pt-1.5 "
             />
           </div>
         </div>
