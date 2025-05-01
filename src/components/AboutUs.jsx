@@ -47,11 +47,11 @@ const AboutUs = () => {
           className="flex flex-col md:flex-row justify-between gap-6"
           data-aos="fade-up"
         >
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 px-12">
             <h1 className="text-3xl  font-bold mb-4 text-primary">
               About Vikas Sir,
             </h1>
-            <p className="text-xl text-primary text-justify">
+            <p className="text-xl  text-primary text-justify">
               Vikas Sir is a Gold Medalist in IIT Delhi, M.Tech Programs for
               their outstanding academic performance and having more than 11
               years of experience. He has become a synonym for training Physics
@@ -64,7 +64,7 @@ const AboutUs = () => {
               <br />
               <br />
               <span className="py-6">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vikas
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vikas
                 Sir and his Team also likes to teach students online across the
                 Globe. So if you want to Score Good grades in competitive exams
                 like NEET or IIT-JEE along with Boards then connect us for a
