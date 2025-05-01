@@ -30,7 +30,7 @@ const fadeInRight = {
 
 const faqs = [
   {
-    question: "Are Vikas Institute Tutors Qualified and Verified?",
+    question: "Are Vikas Institute Tutors, Qualified and Verified ?",
     answer: [
       "Absolutely. At Vikas Institute, we take great pride in the quality and integrity of our tutoring team. Every tutor associated with our institute is not only highly qualified but also thoroughly verified to ensure they meet the highest standards of educational excellence and trustworthiness.",
       "1. Strong Academic Background",
@@ -176,7 +176,7 @@ const faqs = [
     ],
   },
   {
-    question: "Important Notes for Students and Parents",
+    question: "Important Notes for Students and Parents.",
     answer: [
       "Please read the following important guidelines carefully before starting your tutoring sessions with Vikas Institute. These policies are in place to ensure transparency, quality, and a smooth learning experience.",
 
