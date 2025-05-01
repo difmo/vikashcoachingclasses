@@ -6,8 +6,9 @@ import "aos/dist/aos.css";
 
 const AboutUs = () => {
   const topFeatures = [
+    { icon: "👨‍🏫", title: " QUALIFIED FACULTY" },
     { icon: "📚", title: "STUDY MATERIAL" },
-    { icon: "👨‍🏫", title: "FACULTY" },
+
     { icon: "📋", title: "DOUBT SESSION" },
 
     { icon: "🕒", title: "PERIODIC TEST" },
@@ -46,8 +47,8 @@ const AboutUs = () => {
           className="flex flex-col md:flex-row justify-between gap-6"
           data-aos="fade-up"
         >
-          <div className="md:w-1/2">
-            <h1 className="text-3xl  font-bold mb-4 text-[#51087E]">
+          <div className="md:w-1/2 px-8">
+            <h1 className="text-3xl  font-bold mb-4 text-primary">
               About Vikas Sir,
             </h1>
             <p className="text-xl text-primary text-justify">
@@ -74,11 +75,14 @@ const AboutUs = () => {
             </p>
             <p className="text-2xl text-primary">Thanks.</p>
           </div>
-          <div className="md:w-1/2 flex justify-center" data-aos="zoom-in">
+          <div
+            className="md:w-1/2 pt-1.5 px-[103px]   flex justify-center"
+            data-aos="zoom-in"
+          >
             <img
               src={md}
               alt="Vikas Sir"
-              className="h-96 md:h-[500px] w-full  object-contain rounded-lg pt-1.5 "
+              className="h-96 md:h-[500px] w-full border-2  border-black object-contain rounded-lg "
             />
           </div>
         </div>
@@ -160,7 +164,7 @@ const AboutUs = () => {
 
         {/* Courses Preparation */}
         <h2 className="text-center text-2xl font-bold mb-6" data-aos="fade-up">
-          WE PREPARE YOU FOR
+          WE PREPARE YOU FOR:
         </h2>
         <div
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 justify-items-center"
