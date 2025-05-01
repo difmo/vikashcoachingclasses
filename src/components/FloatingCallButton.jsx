@@ -10,7 +10,7 @@ const FloatingCallAndWhatsappButtons = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"
-        className=" bottom-12 fixed left-12 rounded-full transition duration-300 flex items-center justify-center"
+        className=" bottom-8 fixed left-12 rounded-full transition duration-300 flex items-center justify-center"
         initial={{ y: 20 }}
         animate={{ y: [20, -20, 20] }} // jump up and back down
         transition={{

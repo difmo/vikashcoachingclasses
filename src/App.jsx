@@ -6,10 +6,12 @@ import JoinTeamForm from "./components/allform/JoinTeamForm";
 import Form from "./components/allform/Form";
 import ContentLayout from "./pages/ContentLayout";
 import AboutUs from "./components/AboutUs";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
       <Routes>
         <Route element={<LayOut />}>
           <Route path="/" element={<Home />} />
