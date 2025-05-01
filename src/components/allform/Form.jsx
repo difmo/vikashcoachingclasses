@@ -180,13 +180,13 @@ export default function Form() {
       />
 
       <div className="pb-1">
-        <label className="block font-semibold mb-2 text-sm sm:text-base">
+        <label className="block font-semibold mb- text-sm sm:text-base">
           Select Subjects :
           <span className="text-sm text-[#ebe9e7]">
             &nbsp;(You can Select Multiples)
           </span>
         </label>
-        <div className="grid grid-cols-3 gap-">
+        <div className="grid grid-cols-3 gap- ">
           {[
             "Science",
             "Physics",
@@ -195,14 +195,14 @@ export default function Form() {
             "Biology",
             "Others",
           ].map((subject) => (
-            <label key={subject} className="flex items-center s">
+            <label key={subject} className="flex items-center ">
               <input
                 type="checkbox"
                 name="subjects"
                 value={subject}
                 onChange={handleSubjectChange}
               />
-              <span className="text-sm sm:text-base">{subject}</span>
+              <span className="text-sm sm:text-base px-2">{subject}</span>
             </label>
           ))}
         </div>
