@@ -64,13 +64,13 @@ const AboutUs = () => {
               <br />
               <br />
               <span className="py-6">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vikas
-                Sir and his Team also likes to teach students online across the
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vikas
+                Sir and his Team also likes to teach students online, across the
                 Globe. So if you want to Score Good grades in competitive exams
                 like NEET or IIT-JEE along with Boards then connect us for a
-                guaranteed result & Get 1 to 1 Online PHYSICS classes with Vikas
-                Sir and make your Concepts sharp & fair by clearing yours
-                doubts.
+                guaranteed result & Get One to One Online PHYSICS, CHEMISTRY,
+                MATHS & BIOLOGY classes with Vikas Instutite Teachers team and make your
+                Concepts sharp & fair by clearing yours doubts.
               </span>
             </p>
             <p className="text-2xl text-primary">Thanks.</p>
