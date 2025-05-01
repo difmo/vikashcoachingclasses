@@ -19,7 +19,7 @@ const FloatingCallAndWhatsappButtons = () => {
           ease: "easeInOut",
         }}
       >
-        <img src={whatsapp} className="h-24 w-24 rounded-full" />
+        <img src={whatsapp} className="h-14 w-14 rounded-full" />
       </motion.a>
     </div>
   );
