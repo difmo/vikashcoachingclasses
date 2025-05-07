@@ -190,16 +190,16 @@ const onlineMathsTutors = [
       "Safe and Secure Online Learning Platform: We use secure platforms like Zoom and Google Meet for classes, supported by digital whiteboards and real-time collaboration tools.",
     ],
 
-    boards: {
-      cbse: "Our CBSE Maths tutors follow the NCERT syllabus and help students from Classes 6 to 12 with topics such as Linear Equations, Probability, Statistics, and Coordinate Geometry. We also prepare students for exams like JEE and NTSE.",
-      ib: "We offer expert Maths tutoring for IB students at both SL and HL levels. Our tutors assist with IA projects, past paper analysis, and prepare students for rigorous IB assessments.",
-      igcse:
+    boardTutoring: {
+      CBSE: "Our CBSE Maths tutors follow the NCERT syllabus and help students from Classes 6 to 12 with topics such as Linear Equations, Probability, Statistics, and Coordinate Geometry. We also prepare students for exams like JEE and NTSE.",
+      IB: "We offer expert Maths tutoring for IB students at both SL and HL levels. Our tutors assist with IA projects, past paper analysis, and prepare students for rigorous IB assessments.",
+      IGCSE:
         "Our IGCSE Maths tutors are well-versed in Extended and Core syllabi. We teach key areas like Algebra, Mensuration, and Vectors with emphasis on solving past papers and understanding examiner expectations.",
-      icse: "We help ICSE students from Grades 6 to 10 with thorough coverage of Arithmetic, Geometry, Trigonometry, and Algebra. We provide regular practice worksheets, short quizzes, and problem-solving sessions.",
-      ise: "Our ISE Maths tutoring supports senior secondary students with topics like Calculus, Linear Programming, and Statistics while preparing them for final exams and competitive entrance tests.",
+      ICSE: "We help ICSE students from Grades 6 to 10 with thorough coverage of Arithmetic, Geometry, Trigonometry, and Algebra. We provide regular practice worksheets, short quizzes, and problem-solving sessions.",
+      ISE: "Our ISE Maths tutoring supports senior secondary students with topics like Calculus, Linear Programming, and Statistics while preparing them for final exams and competitive entrance tests.",
     },
 
-    locationsServed: [
+    globalCoverage: [
       "UAE (United Arab Emirates): Dubai, Abu Dhabi, Sharjah, Al Ain",
       "Qatar: Doha, Al Wakrah, Al Rayyan",
       "USA: New York, Texas, California, Florida, Illinois",
@@ -217,7 +217,7 @@ const onlineMathsTutors = [
       "Step 5: Exam Preparation: We conduct regular mock tests, past paper practice, and revision sessions to prepare students for school and board exams.",
     ],
 
-    parentTestimonials: [
+    testimonials: [
       {
         name: "Mrs. Iqbal",
         location: "Dubai",
@@ -238,7 +238,7 @@ const onlineMathsTutors = [
       },
     ],
 
-    competitiveExams: [
+    competitiveExamPreparation: [
       "JEE Mains and Advanced",
       "NEET Maths (for PCB stream students)",
       "SAT Maths",
@@ -258,13 +258,13 @@ const onlineMathsTutors = [
       "Safe, secure, and engaging learning experience",
     ],
 
-    contactInfo: {
+    contact: {
       phone: "+91 8427373281",
       email: "info@vikasinstitute.in",
       website: "www.vikasinstitute.in",
     },
 
-    callToAction:
+    closingLine:
       "Book your Free Trial Session today and give your child the Vikas advantage!",
 
     slogan:
@@ -332,7 +332,7 @@ const onlineBiologyTutors = [
           "Finding a good Biology tutor in Qatar was hard until we found Vikas Institute. The online sessions are as effective as in-person coaching.",
       },
     ],
-    examPreparationSupport: [
+    competitiveExamPreparation: [
       "NEET UG Biology",
       "JEE Biology (for BArch & B Pharma branches)",
       "SAT Subject Test (Biology E/M)",

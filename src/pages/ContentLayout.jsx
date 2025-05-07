@@ -9,9 +9,10 @@ import {
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import Form from "../components/allform/Form";
-import phy from "../assets/physics.png";
-import bio from "../assets/biology.png";
-import chem from "../assets/chem.png";
+import phy from "../assets/bgsvg/phy.png";
+import bio from "../assets/bgsvg/bio.jpeg";
+import chem from "../assets/bgsvg/chwmi.jpeg";
+import math from "../assets/math.jpeg";
 const dataMap = {
   "online-physics-tutors": onlinePhysicsTutors,
   "online-chemistry-tutors": onlineChemistryTutors,
@@ -23,6 +24,7 @@ const imageMap = {
   physics: phy,
   biology: bio,
   chemistry: chem,
+  maths: math,
   // Add more: chemistry: chem, maths: mathImg, biology: bio
 };
 
@@ -172,22 +174,22 @@ const ContentLayout = () => {
         </div>
 
         {/* Bottom Section: Image on left, Form on right */}
-        <div className="flex flex-col md:flex-row items-center justify-between pt-12 gap-8">
-          {/* Bottom Image */}
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-6 p-4 md:p-8">
+          {/* Image Section */}
           {image && (
-            <div className="w-full md:w-1/2 flex justify-center">
-              <div className="rounded-xl overflow-hidden shadow-md max-w-sm">
+            <div className="w-full lg:w-1/2 flex justify-center ">
+              <div className="max-w-full rounded-xl border-2 border-white overflow-hidden ">
                 <img
                   src={image}
                   alt={`${subject} tutoring`}
-                  className="w-full h-auto rounded-xl"
+                  className="w-full h-auto object-cover rounded-xl"
                 />
               </div>
             </div>
           )}
 
-          {/* Form */}
-          <div className="w-full md:w-1/2">
+          {/* Form Section */}
+          <div className="w-full lg:w-1/2 mt-6 lg:mt-0">
             <Form />
           </div>
         </div>
