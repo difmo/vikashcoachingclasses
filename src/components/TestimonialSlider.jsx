@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import logo from "../assets/home.svg";
+import logo from "../assets/bgsvg/tes.svg";
 import { testimonials } from "../data/AllData";
 
 const PrevArrow = ({ onClick }) => (
@@ -52,17 +52,29 @@ const TestimonialSlider = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: true,
-    // prevArrow: <PrevArrow />,
-    // nextArrow: <NextArrow />,
+
     responsive: [
-      { breakpoint: 1280, settings: { slidesToShow: 3 } },
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
+      {
+        breakpoint: 1280, // xl
+        settings: { slidesToShow: 3 },
+      },
+      {
+        breakpoint: 1024, // lg
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 768, // md
+        settings: { slidesToShow: 1 },
+      },
+      {
+        breakpoint: 480, // sm
+        settings: { slidesToShow: 1 },
+      },
     ],
   };
 
@@ -70,22 +82,18 @@ const TestimonialSlider = () => {
     <div className="w-full px-4 py-10">
       <Slider {...sliderSettings}>
         {testimonials.map((testimonial, idx) => (
-          <div key={idx} className="px-3">
-            <div className="relative h-44 md:h-48 lg:h-52 xl:h-56 w-full rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={logo}
-                alt={`Testimonial image ${idx + 1}`}
-                className="absolute inset-0 h-full w-full object-cover border-3 border-white rounded-2xl"
-                loading="lazy"
-              />
-              <div className="absolute inset-0  text-headerbordertext px-14 flex flex-col justify-center text-sm">
-                <p className="italic pt-4  line-clamp-4">
+          <div key={idx} className="px-2 md:px-3">
+            <div className="relative h-48 md:h-52 lg:h-56 xl:h-60 w-full rounded-2xl overflow-hidden shadow-lg border-2 border-white">
+              <div className="absolute inset-0 bg-[#dba577] text-headerbordertext p-4 md:p-6 flex flex-col justify-center">
+                <p className="italic text-sm md:text-base lg:text-lg line-clamp-4">
                   "{testimonial.text}"
                 </p>
-                <span className="text-lg py-2 text-right font-semibold">
+                <span className="text-right text-sm md:text-base font-semibold mt-2">
                   – {testimonial.author}
                 </span>
-                <p className="flex justify-end px-2 pt-4">{testimonial.star}</p>
+                <p className="text-right text-yellow-400 text-sm">
+                  {testimonial.star}
+                </p>
               </div>
             </div>
           </div>

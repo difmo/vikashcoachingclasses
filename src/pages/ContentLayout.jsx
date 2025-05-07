@@ -9,20 +9,22 @@ import {
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import Form from "../components/allform/Form";
-import phy from "../assets/a.jpg";
-
+import phy from "../assets/physics.png";
+import bio from "../assets/biology.png";
+import chem from "../assets/chem.png";
 const dataMap = {
   "online-physics-tutors": onlinePhysicsTutors,
   "online-chemistry-tutors": onlineChemistryTutors,
   "online-maths-tutors": onlineMathsTutors,
   "online-biology-tutors": onlineBiologyTutors,
 };
-// const imageMap = {
-//   physics: phy,
-//   chemistry: chem,
-//   math: mathImg,
-//   biology: bio,
-// };
+
+const imageMap = {
+  physics: phy,
+  biology: bio,
+  chemistry: chem,
+  // Add more: chemistry: chem, maths: mathImg, biology: bio
+};
 
 const getSlideVariant = (direction = "left") => ({
   hidden: {
@@ -44,7 +46,7 @@ const capitalize = (word) =>
 const ContentLayout = () => {
   const { subject } = useParams();
   const rawData = dataMap[subject]?.[0];
-  // const image = imageMap[subject];
+  const image = imageMap[subject?.split("-")[1]];
 
   if (!rawData) {
     return (
@@ -54,7 +56,6 @@ const ContentLayout = () => {
 
   const selectedData = [
     { mainHeading: rawData.mainHeadding },
-
     {
       title: rawData.mainTitle,
       subtitle: "Welcome Message",
@@ -120,11 +121,13 @@ const ContentLayout = () => {
 
   return (
     <div>
-      <div className="">
-        <div className="bg-[#f2f2f2] text-md text-blue-500 flex justify-center">
-          <div className="text-headerbordertext font-extrabold text-md flex justify-center">
-            Home / {rawData.mainHeadding}
-          </div>
+      <Helmet>
+        <title>{rawData.mainHeadding}</title>
+      </Helmet>
+
+      <div className="bg-[#f2f2f2] text-md text-blue-500 flex justify-center">
+        <div className="text-headerbordertext font-extrabold text-md">
+          Home / {rawData.mainHeadding}
         </div>
       </div>
 
@@ -149,13 +152,11 @@ const ContentLayout = () => {
                   <h2 className="text-2xl font-bold text-primary mb-2">
                     {item.title}
                   </h2>
-
                   {item.subtitle && (
                     <h3 className="text-lg font-semibold text-gray-700 mb-4">
                       {item.subtitle}
                     </h3>
                   )}
-
                   {item.description?.map((text, idx) => (
                     <p
                       key={idx}
@@ -165,27 +166,28 @@ const ContentLayout = () => {
                     </p>
                   ))}
                 </div>
-
-                {/* {index === 0 && image && (
-                  <div className="w-full md:w-1/3">
-                    <div className="flex items-center justify-center rounded-xl overflow-hidden shadow-md">
-                      <img
-                        src={image}
-                        alt={`${subject} tutoring`}
-                        className="w-full h-auto max-w-full rounded-xl"
-                      />
-                    </div>
-                  </div>
-                )} */}
               </motion.div>
             );
           })}
         </div>
-        <div className="flex flex-col md:flex-row justify-between flex-wrap pt-6">
+
+        {/* Bottom Section: Image on left, Form on right */}
+        <div className="flex flex-col md:flex-row items-center justify-between pt-12 gap-8">
+          {/* Bottom Image */}
+          {image && (
+            <div className="w-full md:w-1/2 flex justify-center">
+              <div className="rounded-xl overflow-hidden shadow-md max-w-sm">
+                <img
+                  src={image}
+                  alt={`${subject} tutoring`}
+                  className="w-full h-auto rounded-xl"
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Form */}
           <div className="w-full md:w-1/2">
-            {/* <img src={phy} alt="" className="w-full h-80 md:h-[400px]" /> */}
-          </div>
-          <div className="w-full md:w-1/2 mt-6 md:mt-0">
             <Form />
           </div>
         </div>
