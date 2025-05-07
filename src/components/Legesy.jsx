@@ -101,7 +101,7 @@ const Legacy = () => {
           className="w-full"
         >
           <div className="text-center mt-8">
-            <div className="bg-[#dba577] w-full inline-block px-4 py-2 rounded-lg border-2 border-white">
+            <div className="bg-[#dba577] w-full inline-block px-4 text-5xl font-bold py-2 rounded-lg border-2 border-white">
               <CustomHeading text1="Testimonials..." />
             </div>
 
