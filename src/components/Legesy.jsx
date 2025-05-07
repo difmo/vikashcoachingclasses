@@ -77,7 +77,7 @@ const Legacy = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 bg-[#dba577] border border-yellow-300/40 rounded-xl shadow-sm hover:shadow-amber-600 text-center"
+              className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 bg-[#dba577] border-white rounded-xl border-2  shadow-sm hover:shadow-amber-600 text-center"
             >
               <h2 className="text-xl font-semibold mb-2 text-[#51087E]">
                 {item.title}

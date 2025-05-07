@@ -221,7 +221,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="bg-gray-50">
+    <div className="">
       <div ref={ref} className="px-4 py-16 mx-auto sm:px-6 container">
         <h2 className="mb-10 text-4xl font-bold text-center text-black">
           Frequently Asked Questions...{" "}
