@@ -25,7 +25,6 @@ const imageMap = {
   biology: bio,
   chemistry: chem,
   maths: math,
-  // Add more: chemistry: chem, maths: mathImg, biology: bio
 };
 
 const getSlideVariant = (direction = "left") => ({
