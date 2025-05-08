@@ -132,7 +132,7 @@ const ContentLayout = () => {
         </div>
       </div>
 
-      <div className="container bg-primary-gradient text-text mx-auto px-4 py-8">
+      <div className="container bg-primary-gradient text-text mx-auto px-4 py-4">
         <div className="max-w-7xl mx-auto md:px-16">
           {selectedData.map((item, index) => {
             const isEven = index % 2 === 0;
