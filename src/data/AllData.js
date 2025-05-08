@@ -85,7 +85,7 @@ const onlinePhysicsTutors = [
     },
     closingLine:
       "Help your child fall in love with Physics and achieve academic success.",
-    slogan: "VIKAS INSTITUTE — Unlocking Physics Brilliance Across the Globe",
+    slogan: "VIKAS INSTITUTE — Unlocking Physics Brilliance Across the Globe.",
   },
 ];
 
@@ -169,7 +169,7 @@ const onlineChemistryTutors = [
       "Join hundreds of successful students from around the world who trust Vikas Institute for online Chemistry tutoring. Book your Free Demo Class today and take the first step toward academic success!",
 
     slogan:
-      "VIKAS INSTITUTE — Empowering Future Scientists Through Online Tutoring",
+      "VIKAS INSTITUTE — Empowering Future Scientists Through Online Tutoring.",
   },
 ];
 
@@ -268,7 +268,7 @@ const onlineMathsTutors = [
       "Book your Free Trial Session today and give your child the Vikas advantage!",
 
     slogan:
-      "VIKAS INSTITUTE — Unlocking Mathematical Brilliance Across the Globe",
+      "VIKAS INSTITUTE — Unlocking Mathematical Brilliance Across the Globe.",
   },
 ];
 
@@ -356,7 +356,7 @@ const onlineBiologyTutors = [
     closingLine:
       "Let your child thrive in Biology with expert help from Vikas Institute.",
     slogan:
-      "VIKAS INSTITUTE — Empowering Young Biologists for a Better Tomorrow",
+      "VIKAS INSTITUTE — Empowering Young Biologists for a Better Tomorrow.",
   },
 ];
 const testimonials = [
