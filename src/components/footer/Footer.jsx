@@ -51,7 +51,7 @@ export default function Footer() {
             {/* Get In Touch */}
             <div>
               <h2 className="text-orange-500 text-lg font-semibold mb-4">
-                GET IN TOUCH
+                GET IN TOUCH :
               </h2>
               <p className="flex items-center mb-2">
                 Malviya Nagar, New Delhi 110017
@@ -80,7 +80,7 @@ export default function Footer() {
             {/* Our Courses */}
             <div>
               <h2 className="text-orange-500 text-xl font-semibold mb-4">
-                Hire Online Private Tutors
+                Hire Online Private Tutors :
               </h2>
               {footerLinks.map((link, index) => (
                 <li>
@@ -103,7 +103,7 @@ export default function Footer() {
             {/* Newsletter */}
             <div>
               <h2 className="text-orange-500 text-xl font-semibold mb-4">
-                NEWSLETTER
+                NEWSLETTER :
               </h2>
               <p className="mb-4 flex text-left">
                 We specialize in providing personalized One to One tutors,
