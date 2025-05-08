@@ -6,7 +6,7 @@ const onlinePhysicsTutors = [
   {
     mainHeadding: "Online Physics Tutors",
     mainTitle:
-      "Hello, Are you Looking for  Online Physics Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE Board Students .",
+      "Hello, Are you Looking for  Online Physics Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE Board Students ?",
     welcomeMessage:
       "Welcome to Online Personal Physics Tutor @ Vikas Institute, your ultimate destination for top-quality online Physics tutoring. We specialize in Physics education for students following the CBSE, IB, IGCSE, ICSE, and ISE curricula across the UAE, Qatar, USA, UK, Canada, Australia, and India. With our team of highly skilled Physics tutors, customized learning plans, and student-focused online classes, we help students build confidence and excel in one of the most crucial academic subjects.",
     whyChooseUs: [
@@ -95,7 +95,7 @@ const onlineChemistryTutors = [
   {
     mainHeadding: "Online Chemistry Tutors",
     mainTitle:
-      "Online Private Chemistry Tutor for Class 11th, 12th, CBSE, IB, IGCSE, ICSE, ISE Boards Students  @www.vikasinstitute.in",
+      "Hello, Are you Looking for  Online Chemistry Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE Board Students ?",
     welcomeMessage:
       "Welcome to Online Personal Chemistry Tutors @ Vikas Institute, your premier platform for top-notch online Chemistry tutoring. We provide expert tutoring for students pursuing CBSE, IB, IGCSE, ICSE, and ISE curricula, and our online Chemistry classes are tailored for students in the UAE, Qatar, USA, UK, Canada, Australia, and India. With experienced tutors, customized lesson plans, and one-on-one attention, we ensure your child gains a solid understanding of Chemistry and excels academically.",
 
@@ -177,7 +177,7 @@ const onlineMathsTutors = [
   {
     mainHeadding: "Online Math Tutors",
     mainTitle:
-      "Online Private Maths Tutor for Class 11th, 12th, CBSE, IB, IGCSE, ICSE, ISE Boards Students @ www.vikasinstitute.in",
+      "Hello, Are you Looking for  Online Maths Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE Board Students ?",
     welcomeMessage: `Welcome to Online Personal Maths Tutor @ Vikas Institute, your ultimate destination for top-quality online Maths tutoring. We specialize in Mathematics education for students following the CBSE, IB, IGCSE, ICSE, and ISE curricula across the UAE, Qatar, USA, UK, Canada, Australia, and India. With our team of highly skilled Maths tutors, customized learning plans, and student-focused online classes, we help students build confidence and excel in one of the most crucial academic subjects.`,
 
     whyChooseUs: [
@@ -276,7 +276,7 @@ const onlineBiologyTutors = [
   {
     mainHeadding: "Online Biology Tutors",
     mainTitle:
-      "Online Private Biology Tutor for Class 11th, 12th, CBSE, IB, IGCSE, ICSE, ISE Board Students @ www.vikasinstitute.in",
+      "Hello, Are you Looking for  Online Biology Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE Board Students ?",
     welcomeMessage:
       "Welcome to Online Biology Tutors @ Vikas Institute, the trusted name in online Biology tutoring for students of CBSE, IB, IGCSE, ICSE, and ISE curricula. Whether you're based in the UAE, Qatar, USA, UK, Canada, Australia, or India, we bring expert Biology tutors right to your screen with flexible, one-on-one, and result-oriented online classes. At Vikas Institute, our mission is to empower students with a strong foundation in Biology through conceptual learning, critical thinking, and exam-ready strategies.",
     whyChooseUs: [
