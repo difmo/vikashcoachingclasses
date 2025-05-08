@@ -403,6 +403,7 @@ const testimonials = [
   {
     text: "Great teaching methods and regular assessments. My son is finally enjoying Physics!",
     author: "Mr. Thomas, Australia",
+    star: "⭐⭐⭐⭐⭐",
   },
   {
     text: "They don’t just teach — they make learning enjoyable!",
