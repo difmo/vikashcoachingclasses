@@ -59,15 +59,15 @@ const ContentLayout = () => {
     { mainHeading: rawData.mainHeadding },
     {
       title: rawData.mainTitle,
-      subtitle: "Welcome Message",
+      subtitle: "",
       description: [rawData.welcomeMessage],
     },
     {
-      title: "Why Choose Us",
+      title: "Why Choose Us :",
       description: rawData.whyChooseUs,
     },
     {
-      title: `Board Wise ${capitalize(subject)} Tutoring`,
+      title: `Board Wise ${capitalize(subject)} Tutors`,
       description: [
         `CBSE: ${rawData.boardTutoring?.CBSE || ""}`,
         `IB: ${rawData.boardTutoring?.IB || ""}`,
@@ -150,7 +150,7 @@ const ContentLayout = () => {
                 viewport={{ once: true, amount: 0.2 }}
               >
                 <div className="flex-1">
-                  <h2 className="text-2xl font-bold text-primary mb-2">
+                  <h2 className="text-2xl font-bold text-primary mb-4">
                     {item.title}
                   </h2>
                   {item.subtitle && (
@@ -161,7 +161,7 @@ const ContentLayout = () => {
                   {item.description?.map((text, idx) => (
                     <p
                       key={idx}
-                      className="text-gray-100 text-base md:text-lg mb-2 leading-relaxed"
+                      className="text-gray-100 text-base md:text-lg mb-4 leading-relaxed"
                     >
                       {text}
                     </p>

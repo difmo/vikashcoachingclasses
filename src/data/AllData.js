@@ -6,7 +6,7 @@ const onlinePhysicsTutors = [
   {
     mainHeadding: "Online Physics Tutors",
     mainTitle:
-      "Online Physics Tutoring for Class 11th, 12th, CBSE, IB, IGCSE, ICSE, ISE Boards Students",
+      "Hello, Are you Looking for  Online Physics Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE Board Students .",
     welcomeMessage:
       "Welcome to Online Personal Physics Tutor @ Vikas Institute, your ultimate destination for top-quality online Physics tutoring. We specialize in Physics education for students following the CBSE, IB, IGCSE, ICSE, and ISE curricula across the UAE, Qatar, USA, UK, Canada, Australia, and India. With our team of highly skilled Physics tutors, customized learning plans, and student-focused online classes, we help students build confidence and excel in one of the most crucial academic subjects.",
     whyChooseUs: [
