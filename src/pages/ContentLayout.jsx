@@ -67,7 +67,7 @@ const ContentLayout = () => {
       description: rawData.whyChooseUs,
     },
     {
-      title: `Board Wise ${capitalize(subject)} Tutors`,
+      title: `Board Wise ${capitalize(subject)} :`,
       description: [
         `CBSE: ${rawData.boardTutoring?.CBSE || ""}`,
         `IB: ${rawData.boardTutoring?.IB || ""}`,
@@ -77,15 +77,15 @@ const ContentLayout = () => {
       ],
     },
     {
-      title: "Global Coverage",
+      title: "Global Coverage :",
       description: rawData.globalCoverage,
     },
     {
-      title: "How It Works",
+      title: "How It Works :",
       description: rawData.howItWorks,
     },
     {
-      title: "Testimonials",
+      title: "Testimonials :",
       description: Array.isArray(rawData.testimonials)
         ? rawData.testimonials.map((item) =>
             typeof item === "string"
@@ -95,15 +95,15 @@ const ContentLayout = () => {
         : ["No testimonials available."],
     },
     {
-      title: "Competitive Exam Preparation",
+      title: "Competitive Exam Preparation :",
       description: rawData.competitiveExamPreparation,
     },
     {
-      title: "Benefits of Learning with Us",
+      title: "Benefits of Learning with Us :",
       description: rawData.benefits,
     },
     {
-      title: "Contact Us",
+      title: "Contact Us :",
       description: [
         `Phone: ${rawData.contact?.phone || ""}`,
         `Email: ${rawData.contact?.email || ""}`,
@@ -111,11 +111,11 @@ const ContentLayout = () => {
       ],
     },
     {
-      title: "Closing Note",
+      title: "Closing Note :",
       description: [rawData.closingLine],
     },
     {
-      title: "Our Slogan",
+      title: "Our Slogan :",
       description: [rawData.slogan],
     },
   ];
@@ -133,7 +133,7 @@ const ContentLayout = () => {
       </div>
 
       <div className="container bg-primary-gradient text-text mx-auto px-4 py-8">
-        <div className="max-w-7xl mx-auto space-y-12">
+        <div className="max-w-7xl mx-auto md:px-16">
           {selectedData.map((item, index) => {
             const isEven = index % 2 === 0;
             const direction = isEven ? "left" : "right";
@@ -176,12 +176,12 @@ const ContentLayout = () => {
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-6 p-4 md:p-8">
           {/* Image Section */}
           {image && (
-            <div className="w-full lg:w-1/2 flex justify-center ">
-              <div className="w-full xl:max-w-full rounded-xl border-2 border-white overflow-hidden ">
+            <div className="w-full lg:w-1/2 flex justify-center">
+              <div className="w-full rounded-xl border-2 border-white overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
                 <img
                   src={image}
                   alt={`${subject} tutoring`}
-                  className="w-full  h-auto md:h-[470px] xl:h-auto xl:object-cover rounded-xl"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[460px] lg:h-[480px] xl:h-[480px] bg-cover rounded-xl"
                 />
               </div>
             </div>
