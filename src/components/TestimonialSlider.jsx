@@ -79,19 +79,19 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <div className="w-full px-4 py-10">
+    <div className="w-full  py-8">
       <Slider {...sliderSettings}>
         {testimonials.map((testimonial, idx) => (
-          <div key={idx} className="px-2 md:px-3">
-            <div className="relative h-48 md:h-52 lg:h-56 xl:h-60 w-full rounded-2xl overflow-hidden shadow-lg border-2 border-white">
-              <div className="absolute inset-0 bg-[#dba577] text-headerbordertext p-4 md:p-6 flex flex-col justify-center">
-                <p className="italic text-sm md:text-base lg:text-lg line-clamp-4">
+          <div key={idx} className="px-2 md:px-6">
+            <div className="relative h-40 md:h-44 lg:h-48 xl:h-52 w-full rounded-2xl overflow-hidden shadow-lg border-2 border-white">
+              <div className="absolute inset-0 bg-[#dba577] text-headerbordertext px-4 md:py- md:px-8 flex flex-col justify-center">
+                <p className=" text-sm text-center md:text-base lg:text-lg line-clamp-4">
                   "{testimonial.text}"
                 </p>
-                <span className="text-right text-sm md:text-base font-semibold mt-2">
+                <span className="text-center text-sm md:text-base font-semibold mt-2">
                   – {testimonial.author}
                 </span>
-                <p className="text-right text-yellow-400 text-sm">
+                <p className="text-center text-yellow-400 text-sm">
                   {testimonial.star}
                 </p>
               </div>
