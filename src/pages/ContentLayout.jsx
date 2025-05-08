@@ -126,7 +126,7 @@ const ContentLayout = () => {
         <title>{rawData.mainHeadding}</title>
       </Helmet>
 
-      <div className="bg-[#f2f2f2] text-md text-blue-500 flex justify-center">
+      <div className="bg-[#f2f2f2] text-md text-blue-500 flex justify-start">
         <div className="text-headerbordertext font-extrabold text-md">
           Home / {rawData.mainHeadding}
         </div>
