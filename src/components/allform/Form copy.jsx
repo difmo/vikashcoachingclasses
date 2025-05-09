@@ -65,73 +65,41 @@ export default function Form() {
     setExperienceLevel(e.target.value);
   };
 
-  // Make sure `auth` is initialized from your Firebase config
-
   const setupRecaptcha = () => {
-    console.log("Setting up reCAPTCHA...");
-
     if (!window.recaptchaVerifier) {
-      console.log("Creating new RecaptchaVerifier instance");
-
       window.recaptchaVerifier = new RecaptchaVerifier(
+        auth,
         "recaptcha-container",
         {
           size: "invisible",
-          callback: (response) => {
-            console.log("reCAPTCHA solved:", response);
-          },
+          callback: (response) => {},
           "expired-callback": () => {
-            console.warn("reCAPTCHA expired.");
             alert("reCAPTCHA expired. Please try again.");
           },
-        },
-        auth
+        }
       );
-
-      window.recaptchaVerifier.render().then((widgetId) => {
-        console.log("reCAPTCHA rendered with widget ID:", widgetId);
-        window.recaptchaWidgetId = widgetId;
-      });
-    } else {
-      console.log("reCAPTCHA already initialized.");
+      window.recaptchaVerifier.render();
     }
   };
 
   const handleSendOTP = () => {
-    console.log("handleSendOTP called");
-
     const phoneNumber = selectedCountryCode + formData.phone;
-    console.log("Full phone number:", phoneNumber);
-
-    if (!formData.phone || formData.phone.length < 10) {
-      console.warn("Invalid phone number entered.");
-      alert("Enter a valid phone number.");
-      return;
+    if (!formData.phone) {
+      return alert("Enter a valid phone number.");
     }
 
-    console.log("Calling setupRecaptcha...");
     setupRecaptcha();
-
     const appVerifier = window.recaptchaVerifier;
-    console.log("AppVerifier:", appVerifier);
 
     signInWithPhoneNumber(auth, phoneNumber, appVerifier)
       .then((confirmationResult) => {
-        console.log(
-          "OTP sent successfully. ConfirmationResult:",
-          confirmationResult
-        );
-
         setVerificationId(confirmationResult.verificationId);
         setOtpSent(true);
         alert("OTP sent successfully!");
       })
       .catch((error) => {
         console.error("OTP Error:", error);
-
-        alert(
-          "Failed to send OTP. Please check the phone number and try again."
-        );
+        alert("Failed to send OTP. Use a valid phone number.");
       });
   };
 
@@ -151,6 +119,7 @@ export default function Form() {
   };
 
   const handleFinalSubmit = async (e) => {
+    console.log("submit button clicked");
     e.preventDefault();
     try {
       await addDoc(collection(db, "Vikasrequests"), {

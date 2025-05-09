@@ -11,6 +11,7 @@ import ChemistryTutors from "./pages/ChemistryTutors";
 import MathTutors from "./pages/MathTutors";
 import BiologyTutors from "./pages/BiologyTutors";
 import PhysicsTutors from "./pages/PhysicsTutors";
+import Demo from "./components/ademo/demo";
 
 function App() {
   return (
@@ -22,22 +23,15 @@ function App() {
           <Route path="/online-classes" element={<OnlineClasses />} />
           <Route path="/join-form" element={<JoinTeamForm />} />
           <Route path="/form" element={<Form />} />
+          <Route path="/demo" element={<Demo />} />
           {/* <Route path="/subject/:subject" element={<ContentLayout />} /> */}
-          <Route
-            path="/online-physics-tutors"
-            element={<PhysicsTutors />}
-          />
+          <Route path="/online-physics-tutors" element={<PhysicsTutors />} />
           <Route
             path="/online-chemistry-tutors"
             element={<ChemistryTutors />}
           />
-             <Route
-            path="/online-maths-tutors"
-            element={<MathTutors />}
-          />  <Route
-          path="/online-biology-tutors"
-          element={<BiologyTutors />}
-        />
+          <Route path="/online-maths-tutors" element={<MathTutors />} />{" "}
+          <Route path="/online-biology-tutors" element={<BiologyTutors />} />
           <Route path="/about-us" element={<AboutUs />} />
         </Route>
       </Routes>
