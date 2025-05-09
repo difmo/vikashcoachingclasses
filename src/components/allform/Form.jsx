@@ -147,7 +147,7 @@ export default function Form() {
     try {
       await addDoc(collection(db, "Vikasrequests"), {
         name: "Ravi Kumar",
-        phone: "9876543210",
+        phone: "+918853389395",
         classType: "Online",
         level: "Senior",
         board: "CBSE",
