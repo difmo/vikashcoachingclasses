@@ -6,7 +6,6 @@ import CustomRadio from "../CustomRadio";
 import img from "../../assets/logo1.jpeg";
 import CustomDropdown from "../CustomDropdown";
 import StudentCheckbox from "../StudentCheckbox";
-const [userId, setUserId] = useState(null); 
 import {
   db,
   RecaptchaVerifier,
@@ -35,6 +34,7 @@ const JoinTeamForm = () => {
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
   const [selectedOption, setSelectedOption] = useState("option1");
   const [confirmationResult, setConfirmationResult] = useState(null);
+  const [userId, setUserId] = useState(null); 
 
   const [formData, setFormData] = useState({
     name: "",
@@ -147,7 +147,6 @@ const JoinTeamForm = () => {
     if (!otpVerified) {
       return alert("Please verify OTP before submitting");
     }
-  
     await saveFormData();
   };
   
