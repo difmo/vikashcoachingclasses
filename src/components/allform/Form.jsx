@@ -115,9 +115,7 @@ export default function Form() {
         "https://us-central1-vip-home-tutors.cloudfunctions.net/sendTeachersForm",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+      
           body: JSON.stringify({
             name: formData.name,
             phone: selectedCountryCode + formData.phone,
@@ -158,10 +156,13 @@ export default function Form() {
         timestamp: new Date(),
       });
       await sendFormDataToEmail();
+      setOtpVerified(false);
       alert("Form submitted successfully!");
     } catch (err) {
       alert("Something went wrong. Please try again later.");
       console.error(err);
+      setOtpVerified(false);
+
     }
   };
 
