@@ -23,6 +23,7 @@ const JoinTeamForm = () => {
   const [otpVerified, setOtpVerified] = useState(false);
   const [selectedRole, setSelectedRole] = useState("Other");
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
+  const [selectedOption, setSelectedOption] = useState("option1");
   const [formData, setFormData] = useState({
     name: "",
     contact: "",
@@ -45,6 +46,9 @@ const JoinTeamForm = () => {
     }));
   };
 
+  const handleRadioChange = (value) => {
+    setSelectedOption(value);
+  };
   const handleFileChange = (e) => {
     setFormData({ ...formData, resume: e.target.files[0] });
   };
@@ -141,12 +145,19 @@ const JoinTeamForm = () => {
           </label>
           {boards.map((board) => (
             <label key={board} className="flex items-center -gap-2 text-sm">
-              <StudentCheckbox
+              {/* <StudentCheckbox
                 checked={formData.boards.includes(board)}
                 onChange={() => toggleSelection("boards", board)}
               />
               {board}
-            </label>
+           */}
+                <StudentCheckbox
+        id="option1"
+        // label="Option 1*"
+        checked={selectedOption === "option1"}
+        onChange={() => handleRadioChange("option1")}
+        groupName="student-options"
+      />{board} </label> 
           ))}
         </div>
         {/* Classes */}
@@ -157,9 +168,12 @@ const JoinTeamForm = () => {
           {classes.map((cla) => (
             <label key={cla} className="flex items-center -gap-1 text-sm">
               <StudentCheckbox
-                checked={formData.classes.includes(cla)}
-                onChange={() => toggleSelection("classes", cla)}
-              />
+        id="option2"
+        // label="Option 1*"
+        checked={selectedOption === "option2"}
+        onChange={() => handleRadioChange("option2")}
+        groupName="student-options"
+      />
               {cla}
             </label>
           ))}
@@ -307,7 +321,7 @@ const JoinTeamForm = () => {
                     }
                     required
                   />
-                  <div className="pb-4 flex flex-wrap sm:flex-nowrap gap-2 items-center">
+                  <div className="pb-2 md:pb-0 flex flex-wrap sm:flex-nowrap gap-2 items-center">
                     <div className="w-full sm:w-1/6">
                       <CustomDropdown
                         className="text-black w-full mt-4"

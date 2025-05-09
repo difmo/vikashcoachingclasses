@@ -19,12 +19,12 @@ const StudentCheckbox = ({
         style={style}
       >
         <input
-          type="radio" // Enforcing single selection
+          type="radio" 
           id={id}
           checked={checked}
           onChange={onChange}
           className="peer hidden"
-          name={groupName} // Grouping with a dynamic name to ensure single select
+          name={groupName} 
         />
         <div className="w-4 h-4 border-2 border-gray-300 rounded-full peer-checked:bg-yellow-500 peer-checked:border-blue-600 flex items-center justify-center transition-all duration-200">
           {checked && (
