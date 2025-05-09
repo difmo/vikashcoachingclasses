@@ -67,36 +67,7 @@ export default function Form() {
 
   // Make sure `auth` is initialized from your Firebase config
 
-  const setupRecaptcha = () => {
-    console.log("Setting up reCAPTCHA...");
-
-    if (!window.recaptchaVerifier) {
-      console.log("Creating new RecaptchaVerifier instance");
-
-      window.recaptchaVerifier = new RecaptchaVerifier(
-        "recaptcha-container",
-        {
-          size: "invisible",
-          callback: (response) => {
-            console.log("reCAPTCHA solved:", response);
-          },
-          "expired-callback": () => {
-            console.warn("reCAPTCHA expired.");
-            alert("reCAPTCHA expired. Please try again.");
-          },
-        },
-        auth
-      );
-
-      window.recaptchaVerifier.render().then((widgetId) => {
-        console.log("reCAPTCHA rendered with widget ID:", widgetId);
-        window.recaptchaWidgetId = widgetId;
-      });
-    } else {
-      console.log("reCAPTCHA already initialized.");
-    }
-  };
-
+ 
   const handleSendOTP = async () => {
     try {
       // Initialize reCAPTCHA verifier if not already initialized
@@ -121,44 +92,40 @@ export default function Form() {
     }
   };
   
+  const sendFormDataToEmail = async () => {
+    try {
+      const response = await fetch(
+        "https://us-central1-vip-home-tutors.cloudfunctions.net/sendTeachersForm",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            phone: selectedCountryCode + formData.phone,
+            classType: selectedClassType,
+            level: selectedLevel,
+            board: formData.board,
+            subjects: formData.subjects,
+            experienceLevel: experienceLevel,
+            timestamp: new Date().toISOString(),
+          }),
+        }
+      );
 
-  // const handleSendOTP = () => {
-  //   console.log("handleSendOTP called");
+      if (!response.ok) {
+        throw new Error("Failed to send form data to email");
+      }
 
-    // const phoneNumber = selectedCountryCode + formData.phone;
-  //   console.log("Full phone number:", phoneNumber);
-
-  //   if (!formData.phone || formData.phone.length < 10) {
-  //     console.warn("Invalid phone number entered.");
-  //     alert("Enter a valid phone number.");
-  //     return;
-  //   }
-
-  //   console.log("Calling setupRecaptcha...");
-  //   setupRecaptcha();
-
-  //   const appVerifier = window.recaptchaVerifier;
-  //   console.log("AppVerifier:", appVerifier);
-
-  //   signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-  //     .then((confirmationResult) => {
-  //       console.log(
-  //         "OTP sent successfully. ConfirmationResult:",
-  //         confirmationResult
-  //       );
-
-  //       setVerificationId(confirmationResult.verificationId);
-  //       setOtpSent(true);
-  //       alert("OTP sent successfully!");
-  //     })
-  //     .catch((error) => {
-  //       console.error("OTP Error:", error);
-
-  //       alert(
-  //         "Failed to send OTP. Please check the phone number and try again."
-  //       );
-  //     });
-  // };
+      const result = await response.json();
+      console.log("Email sent successfully:", result);
+      return true;
+    } catch (error) {
+      console.error("Error sending form data to email:", error);
+      throw error;
+    }
+  };
 
   const handleVerifyOTP = () => {
     if (!otp || !verificationId) return alert("Please enter the OTP.");
@@ -188,6 +155,10 @@ export default function Form() {
         experienceLevel,
         timestamp: new Date(),
       });
+      await sendFormDataToEmail();
+
+      // Show success message
+      
       alert("Form Submitted Successfully!");
     } catch (err) {
       alert("Something went wrong. Please try again later.");
