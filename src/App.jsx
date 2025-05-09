@@ -7,11 +7,12 @@ import Form from "./components/allform/Form";
 import ContentLayout from "./pages/ContentLayout";
 import AboutUs from "./components/AboutUs";
 import ScrollToTop from "./components/ScrollToTop";
+import ChemistryTutors from "./pages/ChemistryTutors";
 
 function App() {
   return (
     <BrowserRouter>
-    <ScrollToTop/>
+      <ScrollToTop />
       <Routes>
         <Route element={<LayOut />}>
           <Route path="/" element={<Home />} />
@@ -19,6 +20,10 @@ function App() {
           <Route path="/join-form" element={<JoinTeamForm />} />
           <Route path="/form" element={<Form />} />
           <Route path="/subject/:subject" element={<ContentLayout />} />
+          <Route
+            path="/online-chemistry-tutors"
+            element={<ChemistryTutors />}
+          />
           <Route path="/about-us" element={<AboutUs />} />
         </Route>
       </Routes>
