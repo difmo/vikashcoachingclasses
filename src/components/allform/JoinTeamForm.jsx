@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CustomButton from "../CustomButton";
 import CustomInput from "../CustomInput";
 import CustomCheckbox from "../CustomCheckbox";
-import CustomRadio from "../CustomRadio"; // You can remove if not used elsewhere
+import CustomRadio from "../CustomRadio";
 import img from "../../assets/logo1.jpeg";
 import CustomDropdown from "../CustomDropdown";
 import StudentCheckbox from "../StudentCheckbox";
