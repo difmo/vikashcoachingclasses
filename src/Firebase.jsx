@@ -11,8 +11,8 @@ import {
 
 // Firebase Configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBVpo0JWG6_03v6zmqycQ6eXlwR01P5rXA",
-  authDomain: "vip-home-tutors.firebaseapp.com",
+  apiKey:"AIzaSyBVpo0JWG6_03v6zmqycQ6eXlwR01P5rXA",
+  authDomain:   "vip-home-tutors.firebaseapp.com",
   projectId: "vip-home-tutors",
   storageBucket: "vip-home-tutors.appspot.com",
   messagingSenderId: "989662773201",
