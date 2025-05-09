@@ -39,7 +39,7 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Logo" className="h-11 border-2 rounded" />
+          <img src={logo} alt="Logo" className="h-11 border-2" />
         </Link>
 
         {/* Mobile Menu Button */}
