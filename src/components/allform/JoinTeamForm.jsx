@@ -24,6 +24,8 @@ const JoinTeamForm = () => {
   const [selectedRole, setSelectedRole] = useState("Other");
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
   const [selectedOption, setSelectedOption] = useState("option1");
+  const [confirmationResult, setConfirmationResult] = useState(null);
+
   const [formData, setFormData] = useState({
     name: "",
     contact: "",
@@ -55,21 +57,54 @@ const JoinTeamForm = () => {
   const handleCountryCodeSelect = (countryCode) => {
     setSelectedCountryCode(countryCode);
   };
-  const sendOtp = () => {
-    if (!formData.contact) return alert("Enter contact number first");
-    setOtpSent(true);
-    alert("OTP sent to " + formData.contact);
-  };
+  const sendOtp = async () => {
+    try {
+      // Initialize reCAPTCHA verifier if not already initialized
+      if (!window.recaptchaVerifier) {
+        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha', {
+          size: 'invisible',
+          callback: (response) => {
+            console.log('reCAPTCHA solved:', response);
+          },
+        });
+      }
+  
+      const appVerifier = window.recaptchaVerifier;
+      const phoneNumber = selectedCountryCode + formData.contact;
 
-  const verifyOtp = () => {
-    if (formData.otp === "1234") {
-      setOtpVerified(true);
-      alert("OTP verified");
-    } else {
-      alert("Incorrect OTP");
+      const result = await signInWithPhoneNumber(auth, phoneNumber, appVerifier);
+      setConfirmationResult(result);
+      alert('OTP sent');
+    } catch (error) {
+      console.error('Error sending OTP:', error.message);
+      alert('Error: ' + error.message);
     }
   };
 
+  // const sendOtp = () => {
+  //   console.log("hello world");
+  //   console.log(formData.contact);
+  //   if (!formData.contact) return alert("Enter contact number first");
+  //   setOtpSent(true);
+  //   alert("OTP sent to " + formData.contact);
+  // };
+
+  const verifyOtp = async () => {
+    if (!confirmationResult) {
+      alert("Please request OTP first");
+      return;
+    }
+  
+    try {
+      await confirmationResult.confirm(formData.otp);
+      setOtpVerified(true);
+      alert("OTP verified successfully");
+    } catch (error) {
+      console.error("OTP verification failed:", error.message);
+      alert("Invalid OTP");
+    }
+  };
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!otpVerified) return alert("Please verify OTP before submitting");
@@ -151,13 +186,13 @@ const JoinTeamForm = () => {
               />
               {board}
            */}
-                <StudentCheckbox
-        id="option1"
-        // label="Option 1*"
-        checked={selectedOption === "option1"}
-        onChange={() => handleRadioChange("option1")}
-        groupName="student-options"
-      />{board} </label> 
+              <StudentCheckbox
+                id="option1"
+                // label="Option 1*"
+                checked={selectedOption === "option1"}
+                onChange={() => handleRadioChange("option1")}
+                groupName="student-options"
+              />{board} </label>
           ))}
         </div>
         {/* Classes */}
@@ -168,12 +203,12 @@ const JoinTeamForm = () => {
           {classes.map((cla) => (
             <label key={cla} className="flex items-center -gap-1 text-sm">
               <StudentCheckbox
-        id="option2"
-        // label="Option 1*"
-        checked={selectedOption === "option2"}
-        onChange={() => handleRadioChange("option2")}
-        groupName="student-options"
-      />
+                id="option2"
+                // label="Option 1*"
+                checked={selectedOption === "option2"}
+                onChange={() => handleRadioChange("option2")}
+                groupName="student-options"
+              />
               {cla}
             </label>
           ))}
@@ -341,10 +376,13 @@ const JoinTeamForm = () => {
                     <div className="w-full sm:w-3/2">
                       <CustomInput
                         placeholder="Enter Mobile No. :"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleFileChange}
+                        name="contact"
+                        value={formData.contact}
+                        onChange={(e) =>
+                          setFormData({ ...formData, contact: e.target.value })
+                        }
                       />
+
                     </div>
                   </div>
                   <CustomInput
@@ -383,9 +421,8 @@ const JoinTeamForm = () => {
                           />
                           <div
                             className={`w-5 h-5 rounded-full border-2 flex items-center justify-center
-          ${
-            selectedRole === role.value ? "border-blue-600" : "border-gray-300"
-          }`}
+          ${selectedRole === role.value ? "border-blue-600" : "border-gray-300"
+                              }`}
                           >
                             {selectedRole === role.value && (
                               <div className="w-2.5 h-2.5 bg-[#dba577] rounded-full" />
