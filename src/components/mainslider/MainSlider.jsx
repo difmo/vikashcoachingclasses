@@ -92,7 +92,7 @@ const MainSlider = () => {
               <img
                 src={slides[current].image}
                 alt="Slide"
-                className="w-full h-full object-cover transition-opacity duration-500"
+                className="w-full h-full bg-cover transition-opacity duration-500"
               />
               <div className="absolute inset-0 bg-black/40" />
             </div>

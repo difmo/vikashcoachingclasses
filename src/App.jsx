@@ -8,6 +8,9 @@ import ContentLayout from "./pages/ContentLayout";
 import AboutUs from "./components/AboutUs";
 import ScrollToTop from "./components/ScrollToTop";
 import ChemistryTutors from "./pages/ChemistryTutors";
+import MathTutors from "./pages/MathTutors";
+import BiologyTutors from "./pages/BiologyTutors";
+import PhysicsTutors from "./pages/PhysicsTutors";
 
 function App() {
   return (
@@ -19,11 +22,22 @@ function App() {
           <Route path="/online-classes" element={<OnlineClasses />} />
           <Route path="/join-form" element={<JoinTeamForm />} />
           <Route path="/form" element={<Form />} />
-          <Route path="/subject/:subject" element={<ContentLayout />} />
+          {/* <Route path="/subject/:subject" element={<ContentLayout />} /> */}
+          <Route
+            path="/online-physics-tutors"
+            element={<PhysicsTutors />}
+          />
           <Route
             path="/online-chemistry-tutors"
             element={<ChemistryTutors />}
           />
+             <Route
+            path="/online-maths-tutors"
+            element={<MathTutors />}
+          />  <Route
+          path="/online-biology-tutors"
+          element={<BiologyTutors />}
+        />
           <Route path="/about-us" element={<AboutUs />} />
         </Route>
       </Routes>

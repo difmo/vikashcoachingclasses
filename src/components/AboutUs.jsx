@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import md from "../assets/md.jpeg";
-import md1 from "../assets/md1.jpeg";
+import md1 from "../assets/md0.jpeg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 

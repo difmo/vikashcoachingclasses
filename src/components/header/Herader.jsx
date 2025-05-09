@@ -12,13 +12,13 @@ const Header = () => {
 
   const navLinks = [
     { path: "/about-us", label: "About Us" },
-    { path: "/subject/online-physics-tutors", label: "Online Physics Tutors" },
+    { path: "/online-physics-tutors", label: "Online Physics Tutors" },
     {
       path: "/online-chemistry-tutors",
       label: "Online Chemistry Tutors",
     },
-    { path: "/subject/online-maths-tutors", label: "Online Maths Tutors" },
-    { path: "/subject/online-biology-tutors", label: "Online Biology Tutors" },
+    { path: "/online-maths-tutors", label: "Online Maths Tutors" },
+    { path: "/online-biology-tutors", label: "Online Biology Tutors" },
     { path: "/join-form", label: "Contact Us" },
   ];
 
