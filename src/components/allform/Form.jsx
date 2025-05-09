@@ -146,14 +146,14 @@ export default function Form() {
     e.preventDefault();
     try {
       await addDoc(collection(db, "Vikasrequests"), {
-        name: "Ravi Kumar",
-        phone: "8853389395",
-        classType: "Online",
-        level: "Senior",
-        board: "CBSE",
-        subjects: ["Physics", "Maths"],
-        experienceLevel: "5 years",
-        timestamp: "2025-05-09T10:00:00Z",
+        name: formData.name,
+        phone: selectedCountryCode + formData.phone,
+        classType: selectedClassType,
+        level: selectedLevel,
+        board: formData.board,
+        subjects: formData.subjects,
+        experienceLevel,
+        timestamp: new Date(),
       });
       await sendFormDataToEmail();
       setOtpVerified(false);
