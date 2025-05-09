@@ -11,10 +11,8 @@ import {
   RecaptchaVerifier,
   signInWithPhoneNumber,
   auth,
-  PhoneAuthProvider,
-  signInWithCredential,
 } from "../../Firebase";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 
 const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
 const subjects = ["Sci.", "Phy", "Chem", "Bio", "Maths", "Other"];
@@ -34,7 +32,7 @@ const JoinTeamForm = () => {
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
   const [selectedOption, setSelectedOption] = useState("option1");
   const [confirmationResult, setConfirmationResult] = useState(null);
-  const [userId, setUserId] = useState(null); 
+  const [userId, setUserId] = useState(null);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -61,20 +59,17 @@ const JoinTeamForm = () => {
   const handleRadioChange = (value) => {
     setSelectedOption(value);
   };
-  const handleFileChange = (e) => {
-    setFormData({ ...formData, resume: e.target.files[0] });
-  };
+
   const handleCountryCodeSelect = (countryCode) => {
     setSelectedCountryCode(countryCode);
   };
-
 
   const saveFormData = async () => {
     if (!userId) {
       alert("User ID not available. Please verify OTP again.");
       return;
     }
-  
+
     try {
       await setDoc(doc(db, "joinTeamForms", userId), {
         ...formData,
@@ -85,76 +80,76 @@ const JoinTeamForm = () => {
       alert("Form submitted and saved successfully!");
     } catch (error) {
       console.error("Error saving form data:", error);
-      alert("Failed to save form data.");
+      alert("Failed to save form data: " + error.message);
     }
   };
-  
 
   const sendOtp = async () => {
     try {
-      // Initialize reCAPTCHA verifier if not already initialized
+      const phoneNumber = `${selectedCountryCode}${formData.contact}`.trim();
+      if (!phoneNumber.match(/^\+\d{10,15}$/)) {
+        alert("Please enter a valid phone number (e.g., +919876543210)");
+        return;
+      }
+
       if (!window.recaptchaVerifier) {
-        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha', {
-          size: 'invisible',
-          callback: (response) => {
-            console.log('reCAPTCHA solved:', response);
+        window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha", {
+          size: "invisible",
+          callback: () => {
+            console.log("reCAPTCHA solved");
+          },
+          "expired-callback": () => {
+            console.log("reCAPTCHA expired");
+            window.recaptchaVerifier.reset();
           },
         });
       }
-  
-      const appVerifier = window.recaptchaVerifier;
-      const phoneNumber = selectedCountryCode + formData.contact;
 
+      const appVerifier = window.recaptchaVerifier;
       const result = await signInWithPhoneNumber(auth, phoneNumber, appVerifier);
       setConfirmationResult(result);
-      alert('OTP sent');
+      setOtpSent(true);
+      alert("OTP sent to " + phoneNumber);
     } catch (error) {
-      console.error('Error sending OTP:', error.message);
-      alert('Error: ' + error.message);
+      console.error("Error sending OTP:", error);
+      alert("Failed to send OTP: " + error.message);
+      if (window.recaptchaVerifier) {
+        window.recaptchaVerifier.reset();
+      }
     }
   };
-
-  // const sendOtp = () => {
-  //   console.log("hello world");
-  //   console.log(formData.contact);
-  //   if (!formData.contact) return alert("Enter contact number first");
-  //   setOtpSent(true);
-  //   alert("OTP sent to " + formData.contact);
-  // };
-
 
   const verifyOtp = async () => {
     if (!confirmationResult) {
       alert("Please request OTP first");
       return;
     }
-  
+
     try {
       const result = await confirmationResult.confirm(formData.otp);
       const uid = result.user.uid;
       setOtpVerified(true);
-      setUserId(uid); // Store the user ID
+      setUserId(uid);
       alert("OTP verified successfully");
     } catch (error) {
-      console.error("OTP verification failed:", error.message);
-      alert("Invalid OTP");
+      console.error("OTP verification failed:", error);
+      alert("Invalid OTP: " + error.message);
     }
   };
-  
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!otpVerified) {
-      return alert("Please verify OTP before submitting");
+      alert("Please verify OTP before submitting");
+      return;
     }
     await saveFormData();
   };
-  
+
   const roleFields = {
     Teacher: (
       <>
-        {/* Boards */}
-        <div className="flex flex-wrap gap-4 ">
+        <div className="flex flex-wrap gap-4">
           <label className="block font-semibold mr-2 text-gray-700">
             Select Board:
           </label>
@@ -168,7 +163,6 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
-        {/* Classes */}
         <div className="flex flex-wrap items-center gap-4">
           <label className="font-semibold text-gray-700 mr-4">
             Select Class:
@@ -183,8 +177,7 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
-        {/* Subjects */}
-        <div className="flex flex-wrap gap-4 ">
+        <div className="flex flex-wrap gap-4">
           <label className="block font-semibold mr-2 text-gray-700">
             Select Subject:
           </label>
@@ -208,51 +201,37 @@ const JoinTeamForm = () => {
         />
       </>
     ),
-
     "Students / Parents": (
       <>
-        {/* Boards */}
-        <div className="flex flex-wrap gap-4 ">
+        <div className="flex flex-wrap gap-4">
           <label className="block font-semibold mr-2 text-gray-700">
             Select Board:
           </label>
           {boards.map((board) => (
             <label key={board} className="flex items-center -gap-2 text-sm">
-              {/* <StudentCheckbox
+              <CustomCheckbox
                 checked={formData.boards.includes(board)}
                 onChange={() => toggleSelection("boards", board)}
               />
               {board}
-           */}
-              <StudentCheckbox
-                id="option1"
-                // label="Option 1*"
-                checked={selectedOption === "option1"}
-                onChange={() => handleRadioChange("option1")}
-                groupName="student-options"
-              />{board} </label>
+            </label>
           ))}
         </div>
-        {/* Classes */}
         <div className="flex flex-wrap items-center gap-4">
           <label className="font-semibold text-gray-700 mr-4">
-            Select Class :
+            Select Class:
           </label>
           {classes.map((cla) => (
             <label key={cla} className="flex items-center -gap-1 text-sm">
-              <StudentCheckbox
-                id="option2"
-                // label="Option 1*"
-                checked={selectedOption === "option2"}
-                onChange={() => handleRadioChange("option2")}
-                groupName="student-options"
+              <CustomCheckbox
+                checked={formData.classes.includes(cla)}
+                onChange={() => toggleSelection("classes", cla)}
               />
               {cla}
             </label>
           ))}
         </div>
-        {/* Subjects */}
-        <div className="flex flex-wrap gap-4 ">
+        <div className="flex flex-wrap gap-4">
           <label className="block font-semibold mr-2 text-gray-700">
             Select Subject:
           </label>
@@ -266,7 +245,6 @@ const JoinTeamForm = () => {
             </label>
           ))}
         </div>
-        {/* Level Dropdown */}
         <select
           className="w-full border rounded-md px-4 py-2"
           value={formData.level}
@@ -281,11 +259,10 @@ const JoinTeamForm = () => {
         </select>
       </>
     ),
-
     Other: (
       <>
         <textarea
-          placeholder="Message :"
+          placeholder="Message:"
           value={formData.message}
           onChange={(e) =>
             setFormData({ ...formData, message: e.target.value })
@@ -306,22 +283,18 @@ const JoinTeamForm = () => {
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-10 md:gap-0 md:border-2 rounded-2xl">
-              {/* Left */}
               <div className="w-full lg:w-1/2 flex flex-col items-center justify-center border-3 md:border-0 relative text-base sm:text-lg md:text-xl bg-primary text-headerbordertext py-6 rounded-2xl lg:rounded-e-none">
                 <h1 className="text-2xl sm:text-3xl font-bold absolute top-4 sm:top-8 text-center w-full">
                   Vikas Institute
                 </h1>
-
                 <div className="pb-5 pt-20 text-center space-y-2">
                   <p>Malviya Nagar, New Delhi - 110017</p>
-
                   <p>
                     Contact:{" "}
                     <a href="tel:+918427373281" className="hover:underline">
                       +91 8427373281
                     </a>
                   </p>
-
                   <p>
                     Email:{" "}
                     <a
@@ -331,7 +304,6 @@ const JoinTeamForm = () => {
                       info@vikasinstitute.in
                     </a>
                   </p>
-
                   <p>
                     Website:{" "}
                     <a
@@ -341,7 +313,6 @@ const JoinTeamForm = () => {
                       www.vikasinstitute.in
                     </a>
                   </p>
-
                   <p>
                     WhatsApp:{" "}
                     <a
@@ -354,40 +325,32 @@ const JoinTeamForm = () => {
                     </a>
                   </p>
                 </div>
-
                 <img
                   src={img}
                   alt="logo"
                   className="mx-auto mt-6 px-4 sm:px-6 max-w-[80%]"
                 />
-
                 <p className="pt-8 sm:pt-10 px-4 sm:px-6 font-light uppercase text-center text-sm sm:text-base">
                   A Most Trusted Website to Hire Best Online Private Tutors for{" "}
                   <br />
                   USA - CANADA - UK - QATAR - UAE - AUSTRALIA - INDIA.
                 </p>
-                <p
-                  className=" px-4 sm:px-6 pt-14
-                  font-light uppercase text-center text-sm sm:text-base"
-                >
-                  "At the Heart of our Success lies the Confidence that you
-                  Place in Us, Globly. Your Trust is our Greatest Asset."
+                <p className="px-4 sm:px-6 pt-14 font-light uppercase text-center text-sm sm:text-base">
+                  "At the Heart of our Success lies the Confidence that you Place
+                  in Us, Globally. Your Trust is our Greatest Asset."
                 </p>
               </div>
-
-              {/* Right */}
-              <div className="w-full lg:w-1/2 p-8 bg-white border-3 border-black md:border-0  rounded-2xl lg:rounded-s-none">
+              <div className="w-full lg:w-1/2 p-8 bg-white border-3 border-black md:border-0 rounded-2xl lg:rounded-s-none">
                 <h2 className="text-3xl font-bold text-center text-[#dba577] mb-6">
-                  Kindly, Fill the Form to get in Touch :
+                  Kindly, Fill the Form to get in Touch:
                 </h2>
-
                 <form
                   onSubmit={handleSubmit}
                   className="space-y-5 max-w-xl mx-auto"
                 >
                   <CustomInput
                     type="text"
-                    placeholder="Enter  Name :"
+                    placeholder="Enter Name:"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -398,50 +361,36 @@ const JoinTeamForm = () => {
                     <div className="w-full sm:w-1/6">
                       <CustomDropdown
                         className="text-black w-full mt-4"
-                        selectOption={[
-                          "+1",
-                          "+44 ",
-                          "+974",
-                          "+971",
-                          "+91",
-                          "+61",
-                        ]}
+                        selectOption={["+1", "+44", "+974", "+971", "+91", "+61"]}
                         selectedValue={selectedCountryCode}
                         onSelect={handleCountryCodeSelect}
                       />
                     </div>
-
                     <div className="w-full sm:w-3/2">
                       <CustomInput
-                        placeholder="Enter Mobile No. :"
+                        placeholder="Enter Mobile No.:"
                         name="contact"
                         value={formData.contact}
                         onChange={(e) =>
                           setFormData({ ...formData, contact: e.target.value })
                         }
                       />
-
                     </div>
                   </div>
                   <CustomInput
                     type="email"
-                    placeholder=" Email Id :"
+                    placeholder="Email Id:"
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
                     required
                   />
-                  <div className="flex flex-col sm:flex-row  gap-14 mb-4">
-                    <label className="font-semibold text-gray-800">
-                      Are You :
-                    </label>
+                  <div className="flex flex-col sm:flex-row gap-14 mb-4">
+                    <label className="font-semibold text-gray-800">Are You:</label>
                     {[
                       { value: "Teacher", label: "Teacher" },
-                      {
-                        value: "Students / Parents",
-                        label: "Students / Parents",
-                      },
+                      { value: "Students / Parents", label: "Students / Parents" },
                       { value: "Other", label: "Other" },
                     ].map((role) => (
                       <label
@@ -459,7 +408,10 @@ const JoinTeamForm = () => {
                           />
                           <div
                             className={`w-5 h-5 rounded-full border-2 flex items-center justify-center
-          ${selectedRole === role.value ? "border-blue-600" : "border-gray-300"
+                              ${
+                                selectedRole === role.value
+                                  ? "border-blue-600"
+                                  : "border-gray-300"
                               }`}
                           >
                             {selectedRole === role.value && (
@@ -471,23 +423,16 @@ const JoinTeamForm = () => {
                       </label>
                     ))}
                   </div>
-
-                  {/* Conditional Fields*/}
                   {roleFields[selectedRole]}
-
-                  {/* OTP */}
                   <div className="w-full flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-3 xl:gap-22">
-                    {/* Get OTP Button */}
                     <div className="w-full sm:w-auto">
                       <CustomButton
                         type="button"
                         label="Get OTP"
                         onClick={sendOtp}
-                        className="w-full py-3 text-sm  rounded-lg bg-[#dba577] hover:bg-[#c08c5c]"
+                        className="w-full py-3 text-sm rounded-lg bg-[#dba577] hover:bg-[#c08c5c]"
                       />
                     </div>
-
-                    {/* OTP Input Field */}
                     <div className="w-full sm:w-40">
                       <CustomInput
                         type="text"
@@ -499,8 +444,6 @@ const JoinTeamForm = () => {
                         className="w-full"
                       />
                     </div>
-
-                    {/* Verify Button */}
                     <div className="w-full sm:w-auto">
                       <CustomButton
                         type="button"
@@ -510,8 +453,7 @@ const JoinTeamForm = () => {
                       />
                     </div>
                   </div>
-
-                  {/* Submit */}
+                  <div id="recaptcha"></div>
                   <CustomButton
                     type="submit"
                     label="Submit"
