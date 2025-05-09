@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import CustomButton from "../CustomButton";
 import CustomInput from "../CustomInput";
 import CustomCheckbox from "../CustomCheckbox";
-import CustomRadio from "../CustomRadio";
-import img from "../../assets/logo1.jpeg";
 import CustomDropdown from "../CustomDropdown";
-import StudentCheckbox from "../StudentCheckbox";
 import {
   db,
   RecaptchaVerifier,
@@ -13,6 +10,7 @@ import {
   auth,
 } from "../../Firebase";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+import img from "../../assets/logo1.jpeg";
 
 const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
 const subjects = ["Sci.", "Phy", "Chem", "Bio", "Maths", "Other"];
@@ -30,9 +28,9 @@ const JoinTeamForm = () => {
   const [otpVerified, setOtpVerified] = useState(false);
   const [selectedRole, setSelectedRole] = useState("Other");
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
-  const [selectedOption, setSelectedOption] = useState("option1");
   const [confirmationResult, setConfirmationResult] = useState(null);
   const [userId, setUserId] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -56,10 +54,6 @@ const JoinTeamForm = () => {
     }));
   };
 
-  const handleRadioChange = (value) => {
-    setSelectedOption(value);
-  };
-
   const handleCountryCodeSelect = (countryCode) => {
     setSelectedCountryCode(countryCode);
   };
@@ -69,7 +63,7 @@ const JoinTeamForm = () => {
       alert("User ID not available. Please verify OTP again.");
       return;
     }
-
+    setIsLoading(true);
     try {
       await setDoc(doc(db, "joinTeamForms", userId), {
         ...formData,
@@ -81,10 +75,13 @@ const JoinTeamForm = () => {
     } catch (error) {
       console.error("Error saving form data:", error);
       alert("Failed to save form data: " + error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const sendOtp = async () => {
+    setIsLoading(true);
     try {
       const phoneNumber = `${selectedCountryCode}${formData.contact}`.trim();
       if (!phoneNumber.match(/^\+\d{10,15}$/)) {
@@ -95,9 +92,7 @@ const JoinTeamForm = () => {
       if (!window.recaptchaVerifier) {
         window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha", {
           size: "invisible",
-          callback: () => {
-            console.log("reCAPTCHA solved");
-          },
+          callback: () => console.log("reCAPTCHA solved"),
           "expired-callback": () => {
             console.log("reCAPTCHA expired");
             window.recaptchaVerifier.reset();
@@ -116,6 +111,8 @@ const JoinTeamForm = () => {
       if (window.recaptchaVerifier) {
         window.recaptchaVerifier.reset();
       }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -124,7 +121,7 @@ const JoinTeamForm = () => {
       alert("Please request OTP first");
       return;
     }
-
+    setIsLoading(true);
     try {
       const result = await confirmationResult.confirm(formData.otp);
       const uid = result.user.uid;
@@ -134,6 +131,8 @@ const JoinTeamForm = () => {
     } catch (error) {
       console.error("OTP verification failed:", error);
       alert("Invalid OTP: " + error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -275,7 +274,16 @@ const JoinTeamForm = () => {
   };
 
   return (
-    <div>
+    <div className="relative">
+      {isLoading && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="relative w-24 h-24">
+            <div className="absolute inset-0 border-4 border-t-4 border-t-[#dba577] border-gray-200 rounded-full animate-spin"></div>
+            <div className="absolute inset-2 border-4 border-t-4 border-t-[#c08c5c] border-gray-300 rounded-full animate-spin animation-delay-150"></div>
+            <div className="absolute inset-4 border-4 border-t-4 border-t-[#dba577] border-gray-400 rounded-full animate-spin animation-delay-300"></div>
+          </div>
+        </div>
+      )}
       <div className="bg-[#f2f2f2] text-md text-headerbordertext font-extrabold flex justify-center">
         Home / Contact Us
       </div>
