@@ -111,11 +111,30 @@ export default function Form() {
 
   const sendFormDataToEmail = async () => {
     try {
+      // const response = await fetch(
+      //   "https://us-central1-vip-home-tutors.cloudfunctions.net/sendTeachersForm",
+      //   {
+      //     method: "POST",
+
+      //     body: JSON.stringify({
+      //       name: formData.name,
+      //       phone: selectedCountryCode + formData.phone,
+      //       classType: selectedClassType,
+      //       level: selectedLevel,
+      //       board: formData.board,
+      //       subjects: formData.subjects,
+      //       experienceLevel: experienceLevel,
+      //       timestamp: new Date().toISOString(),
+      //     }),
+      //   }
+      // );
       const response = await fetch(
         "https://us-central1-vip-home-tutors.cloudfunctions.net/sendTeachersForm",
         {
           method: "POST",
-
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify({
             name: formData.name,
             phone: selectedCountryCode + formData.phone,
