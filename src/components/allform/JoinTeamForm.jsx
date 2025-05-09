@@ -6,6 +6,16 @@ import CustomRadio from "../CustomRadio";
 import img from "../../assets/logo1.jpeg";
 import CustomDropdown from "../CustomDropdown";
 import StudentCheckbox from "../StudentCheckbox";
+const [userId, setUserId] = useState(null); 
+import {
+  db,
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
+  auth,
+  PhoneAuthProvider,
+  signInWithCredential,
+} from "../../Firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
 const subjects = ["Sci.", "Phy", "Chem", "Bio", "Maths", "Other"];
@@ -57,6 +67,29 @@ const JoinTeamForm = () => {
   const handleCountryCodeSelect = (countryCode) => {
     setSelectedCountryCode(countryCode);
   };
+
+
+  const saveFormData = async () => {
+    if (!userId) {
+      alert("User ID not available. Please verify OTP again.");
+      return;
+    }
+  
+    try {
+      await setDoc(doc(db, "joinTeamForms", userId), {
+        ...formData,
+        role: selectedRole,
+        countryCode: selectedCountryCode,
+        timestamp: serverTimestamp(),
+      });
+      alert("Form submitted and saved successfully!");
+    } catch (error) {
+      console.error("Error saving form data:", error);
+      alert("Failed to save form data.");
+    }
+  };
+  
+
   const sendOtp = async () => {
     try {
       // Initialize reCAPTCHA verifier if not already initialized
@@ -89,6 +122,7 @@ const JoinTeamForm = () => {
   //   alert("OTP sent to " + formData.contact);
   // };
 
+
   const verifyOtp = async () => {
     if (!confirmationResult) {
       alert("Please request OTP first");
@@ -96,8 +130,10 @@ const JoinTeamForm = () => {
     }
   
     try {
-      await confirmationResult.confirm(formData.otp);
+      const result = await confirmationResult.confirm(formData.otp);
+      const uid = result.user.uid;
       setOtpVerified(true);
+      setUserId(uid); // Store the user ID
       alert("OTP verified successfully");
     } catch (error) {
       console.error("OTP verification failed:", error.message);
@@ -105,13 +141,16 @@ const JoinTeamForm = () => {
     }
   };
   
-  const handleSubmit = (e) => {
+  
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!otpVerified) return alert("Please verify OTP before submitting");
-    console.log({ ...formData, role: selectedRole });
-    alert("Form submitted successfully");
+    if (!otpVerified) {
+      return alert("Please verify OTP before submitting");
+    }
+  
+    await saveFormData();
   };
-
+  
   const roleFields = {
     Teacher: (
       <>
