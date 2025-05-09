@@ -65,32 +65,50 @@ export default function Form() {
     setExperienceLevel(e.target.value);
   };
 
-  // Make sure `auth` is initialized from your Firebase config
-
- 
   const handleSendOTP = async () => {
     try {
       // Initialize reCAPTCHA verifier if not already initialized
       if (!window.recaptchaVerifier) {
-        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha', {
-          size: 'invisible',
+        window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha", {
+          size: "invisible",
           callback: (response) => {
-            console.log('reCAPTCHA solved:', response);
+            console.log("reCAPTCHA solved:", response);
           },
         });
       }
-  
+
       const appVerifier = window.recaptchaVerifier;
       const phoneNumber = selectedCountryCode + formData.phone;
 
-      const result = await signInWithPhoneNumber(auth, phoneNumber, appVerifier);
-      alert('OTP sent');
+      const confirmationResult = await signInWithPhoneNumber(
+        auth,
+        phoneNumber,
+        appVerifier
+      );
+      setVerificationId(confirmationResult.verificationId); // Store verificationId
+      setOtpSent(true); // Update otpSent state to show OTP input field
+      alert("OTP sent successfully!");
     } catch (error) {
-      console.error('Error sending OTP:', error.message);
-      alert('Error: ' + error.message);
+      console.error("Error sending OTP:", error.message);
+      alert("Error: " + error.message);
     }
   };
-  
+
+  const handleVerifyOTP = () => {
+    if (!otp || !verificationId) return alert("Please enter the OTP.");
+
+    const credential = PhoneAuthProvider.credential(verificationId, otp);
+    signInWithCredential(auth, credential)
+      .then(() => {
+        setOtpVerified(true);
+        alert("OTP verified successfully!");
+      })
+      .catch((error) => {
+        console.error("OTP Verification Error:", error);
+        alert("Invalid OTP. Please try again.");
+      });
+  };
+
   const sendFormDataToEmail = async () => {
     try {
       const response = await fetch(
@@ -126,21 +144,6 @@ export default function Form() {
     }
   };
 
-  const handleVerifyOTP = () => {
-    if (!otp || !verificationId) return alert("Please enter the OTP.");
-
-    const credential = PhoneAuthProvider.credential(verificationId, otp);
-    signInWithCredential(auth, credential)
-      .then(() => {
-        setOtpVerified(true);
-        alert("OTP verified!");
-      })
-      .catch((error) => {
-        console.error("OTP Verification Error:", error);
-        alert("Invalid OTP. Try again.");
-      });
-  };
-
   const handleFinalSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -155,10 +158,7 @@ export default function Form() {
         timestamp: new Date(),
       });
       await sendFormDataToEmail();
-
-      // Show success message
-      
-      alert("Form Submitted Successfully!");
+      alert("Form submitted successfully!");
     } catch (err) {
       alert("Something went wrong. Please try again later.");
       console.error(err);
@@ -282,7 +282,7 @@ export default function Form() {
             value={otp}
             onChange={(e) => setOtp(e.target.value)}
           />
-          <div className="text-center pt-">
+          <div className="text-center pt-2">
             <CustomButton
               onClick={handleVerifyOTP}
               className="bg-[#51087E] text-white font-bold"
