@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import Form from "../components/allform/Form";
 
-import chem from "../assets/bgsvg/chwmi.jpeg";
+import chem from "../assets/bgsvg/phy.png";
 
 const getSlideVariant = (direction = "left") => ({
   hidden: {
