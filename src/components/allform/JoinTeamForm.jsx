@@ -23,6 +23,43 @@ const levels = [
   "Board + IIT-JEE",
 ];
 
+// Function to send form data to Cloud Function for email
+const sendJoinTeamForm = async (formData, selectedRole, selectedCountryCode) => {
+  try {
+    const response = await fetch(
+      "https://us-central1-vip-home-tutors.cloudfunctions.net/sendJoinTeamForm",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          contact: `${selectedCountryCode}${formData.contact}`,
+          email: formData.email,
+          role: selectedRole,
+          boards: formData.boards,
+          classes: formData.classes,
+          subjects: formData.subjects,
+          experience: formData.experience,
+          level: formData.level,
+          message: formData.message,
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to send form data");
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error("Error sending form data:", error);
+    throw error;
+  }
+};
+
 const JoinTeamForm = () => {
   const [otpSent, setOtpSent] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
@@ -142,7 +179,19 @@ const JoinTeamForm = () => {
       alert("Please verify OTP before submitting");
       return;
     }
-    await saveFormData();
+    setIsLoading(true);
+    try {
+      // Save to Firestore
+      await saveFormData();
+      // Send email via Cloud Function
+      await sendJoinTeamForm(formData, selectedRole, selectedCountryCode);
+      alert("Form data sent successfully!");
+    } catch (error) {
+      console.error("Error during submission:", error);
+      alert("Failed to submit form: " + error.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const roleFields = {
