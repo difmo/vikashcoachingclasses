@@ -84,7 +84,6 @@ export default function Form() {
       const phoneNumber = selectedCountryCode + formData.phone;
 
       const result = await signInWithPhoneNumber(auth, phoneNumber, appVerifier);
-      setConfirmationResult(result);
       alert('OTP sent');
     } catch (error) {
       console.error('Error sending OTP:', error.message);
