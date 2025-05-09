@@ -22,7 +22,6 @@ const AboutUs = () => {
     "X",
     "XI",
     "XII",
-
     "BOARDS",
     "CUET",
     "NEET",
@@ -81,17 +80,17 @@ const AboutUs = () => {
             <img
               src={md}
               alt="Vikas Sir"
-              className="h-96 md:h-[500px] w-full  object-contain rounded-lg  "
+              className="h-96 md:h-[500px] w-full  object-contain rounded-lg "
             />
           </div>
         </div>
 
         {/* Banner Section */}
-        <div className="my-10 flex justify-center" data-aos="fade-up">
+        <div className="my-10 flex justify-center " data-aos="fade-up">
           <img
             src={md1}
             alt="Banner"
-            className="w-full rounded-lg object-cover"
+            className="w-full rounded-lg border-4 border-headerbordertext object-cover"
           />
         </div>
 
