@@ -97,43 +97,68 @@ export default function Form() {
     }
   };
 
-  const handleSendOTP = () => {
-    console.log("handleSendOTP called");
+  const handleSendOTP = async () => {
+    try {
+      // Initialize reCAPTCHA verifier if not already initialized
+      if (!window.recaptchaVerifier) {
+        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha', {
+          size: 'invisible',
+          callback: (response) => {
+            console.log('reCAPTCHA solved:', response);
+          },
+        });
+      }
+  
+      const appVerifier = window.recaptchaVerifier;
+      const phoneNumber = selectedCountryCode + formData.phone;
 
-    const phoneNumber = selectedCountryCode + formData.phone;
-    console.log("Full phone number:", phoneNumber);
-
-    if (!formData.phone || formData.phone.length < 10) {
-      console.warn("Invalid phone number entered.");
-      alert("Enter a valid phone number.");
-      return;
+      const result = await signInWithPhoneNumber(auth, phoneNumber, appVerifier);
+      setConfirmationResult(result);
+      alert('OTP sent');
+    } catch (error) {
+      console.error('Error sending OTP:', error.message);
+      alert('Error: ' + error.message);
     }
-
-    console.log("Calling setupRecaptcha...");
-    setupRecaptcha();
-
-    const appVerifier = window.recaptchaVerifier;
-    console.log("AppVerifier:", appVerifier);
-
-    signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-      .then((confirmationResult) => {
-        console.log(
-          "OTP sent successfully. ConfirmationResult:",
-          confirmationResult
-        );
-
-        setVerificationId(confirmationResult.verificationId);
-        setOtpSent(true);
-        alert("OTP sent successfully!");
-      })
-      .catch((error) => {
-        console.error("OTP Error:", error);
-
-        alert(
-          "Failed to send OTP. Please check the phone number and try again."
-        );
-      });
   };
+  
+
+  // const handleSendOTP = () => {
+  //   console.log("handleSendOTP called");
+
+    // const phoneNumber = selectedCountryCode + formData.phone;
+  //   console.log("Full phone number:", phoneNumber);
+
+  //   if (!formData.phone || formData.phone.length < 10) {
+  //     console.warn("Invalid phone number entered.");
+  //     alert("Enter a valid phone number.");
+  //     return;
+  //   }
+
+  //   console.log("Calling setupRecaptcha...");
+  //   setupRecaptcha();
+
+  //   const appVerifier = window.recaptchaVerifier;
+  //   console.log("AppVerifier:", appVerifier);
+
+  //   signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+  //     .then((confirmationResult) => {
+  //       console.log(
+  //         "OTP sent successfully. ConfirmationResult:",
+  //         confirmationResult
+  //       );
+
+  //       setVerificationId(confirmationResult.verificationId);
+  //       setOtpSent(true);
+  //       alert("OTP sent successfully!");
+  //     })
+  //     .catch((error) => {
+  //       console.error("OTP Error:", error);
+
+  //       alert(
+  //         "Failed to send OTP. Please check the phone number and try again."
+  //       );
+  //     });
+  // };
 
   const handleVerifyOTP = () => {
     if (!otp || !verificationId) return alert("Please enter the OTP.");
@@ -269,7 +294,7 @@ export default function Form() {
         onSelect={handleLevelSelect}
       />
 
-      <div id="recaptcha-container"></div>
+      <div id="recaptcha"></div>
 
       {!otpSent ? (
         <div className="text-center -pt-2 ">

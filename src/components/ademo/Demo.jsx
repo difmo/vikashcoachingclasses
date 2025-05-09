@@ -1,24 +1,7 @@
+// src/components/Demo.jsx
 import React, { useState, useEffect } from "react";
-import { initializeApp, getApps } from "firebase/app";
-import {
-  getAuth,
-  RecaptchaVerifier,
-  signInWithPhoneNumber,
-} from "firebase/auth";
-
-// Firebase config
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+import { auth } from "../../Firebase"; // Adjust the path if needed
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 
 const Demo = () => {
   const [phone, setPhone] = useState("");
@@ -27,22 +10,25 @@ const Demo = () => {
   const [userId, setUserId] = useState("");
 
   useEffect(() => {
-    // Initialize recaptchaVerifier on component mount
-    window.recaptchaVerifier = new RecaptchaVerifier("recaptcha-container", {
-      size: "invisible", // Invisible reCAPTCHA
-      callback: (response) => {
-        console.log("reCAPTCHA solved");
-      },
-      auth, // Firebase auth instance
-    });
+    if (!window.recaptchaVerifier && auth) {
+      window.recaptchaVerifier = new RecaptchaVerifier(
+        "recaptcha-container",
+        {
+          size: "invisible",
+          callback: (response) => {
+            console.log("reCAPTCHA solved");
+          },
+        },
+        auth
+      );
+    }
   }, []);
 
-  // Function to handle sending OTP
   const handleSendOtp = async () => {
     if (!phone) return alert("Please enter a phone number");
 
     try {
-      const fullPhone = "+91" + phone; // Assuming it's an Indian phone number
+      const fullPhone = "+91" + phone; // You can change country code as needed
       const result = await signInWithPhoneNumber(
         auth,
         fullPhone,
@@ -56,7 +42,6 @@ const Demo = () => {
     }
   };
 
-  // Function to handle OTP verification
   const handleVerifyOtp = async () => {
     if (!otp || !confirmationResult) return alert("Enter OTP");
 
@@ -119,4 +104,3 @@ const Demo = () => {
 };
 
 export default Demo;
-  
