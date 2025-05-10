@@ -35,19 +35,6 @@ export default function Form() {
     board: "",
     level: "",
   });
-  setFormData({
-    name: "",
-    phone: "",
-    board: "",
-    subjects: [],
-  });
-  setSelectedClassType("Select Class");
-  setSelectedCountryCode("+91");
-  setSelectedLevel("");
-  setExperienceLevel("");
-  setOtp("");
-  setOtpSent(false);
-  setVerificationId("");
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
