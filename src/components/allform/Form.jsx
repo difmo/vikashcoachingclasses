@@ -48,14 +48,7 @@ export default function Form() {
   setOtp("");
   setOtpSent(false);
   setVerificationId("");
-  setErrors({
-    name: "",
-    phone: "",
-    classType: "",
-    subjects: "",
-    board: "",
-    level: "",
-  });
+
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
