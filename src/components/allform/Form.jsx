@@ -21,13 +21,19 @@ export default function Form() {
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
   const [selectedLevel, setSelectedLevel] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
-  const boards = ["CBSE", "IB", "ICSE", "ISC", "IGCSE"];
-
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     board: "",
     subjects: [],
+  });
+  const [errors, setErrors] = useState({
+    name: "",
+    phone: "",
+    classType: "",
+    subjects: "",
+    board: "",
+    level: "",
   });
 
   const handleInputChange = (e) => {
@@ -65,9 +71,60 @@ export default function Form() {
     setExperienceLevel(e.target.value);
   };
 
+  const validateForm = () => {
+    let formErrors = { ...errors };
+    let isValid = true;
+
+    if (!formData.name.trim()) {
+      formErrors.name = "Please enter your name.";
+      isValid = false;
+    } else {
+      formErrors.name = "";
+    }
+
+    if (!formData.phone || formData.phone.length < 10) {
+      formErrors.phone = "Please enter a valid phone number.";
+      isValid = false;
+    } else {
+      formErrors.phone = "";
+    }
+
+    if (selectedClassType === "Select Class") {
+      formErrors.classType = "Please select a class.";
+      isValid = false;
+    } else {
+      formErrors.classType = "";
+    }
+
+    if (formData.subjects.length === 0) {
+      formErrors.subjects = "Please select at least one subject.";
+      isValid = false;
+    } else {
+      formErrors.subjects = "";
+    }
+
+    if (!formData.board) {
+      formErrors.board = "Please select a board.";
+      isValid = false;
+    } else {
+      formErrors.board = "";
+    }
+
+    if (!selectedLevel) {
+      formErrors.level = "Please select a level.";
+      isValid = false;
+    } else {
+      formErrors.level = "";
+    }
+
+    setErrors(formErrors);
+    return isValid;
+  };
+
   const handleSendOTP = async () => {
+    if (!validateForm()) return;
+
     try {
-      // Initialize reCAPTCHA verifier if not already initialized
       if (!window.recaptchaVerifier) {
         window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha", {
           size: "invisible",
@@ -85,8 +142,8 @@ export default function Form() {
         phoneNumber,
         appVerifier
       );
-      setVerificationId(confirmationResult.verificationId); // Store verificationId
-      setOtpSent(true); // Update otpSent state to show OTP input field
+      setVerificationId(confirmationResult.verificationId);
+      setOtpSent(true);
       alert("OTP sent successfully!");
     } catch (error) {
       console.error("Error sending OTP:", error.message);
@@ -111,23 +168,6 @@ export default function Form() {
 
   const sendFormDataToEmail = async () => {
     try {
-      // const response = await fetch(
-      //   "https://us-central1-vip-home-tutors.cloudfunctions.net/sendTeachersForm",
-      //   {
-      //     method: "POST",
-
-      //     body: JSON.stringify({
-      //       name: formData.name,
-      //       phone: selectedCountryCode + formData.phone,
-      //       classType: selectedClassType,
-      //       level: selectedLevel,
-      //       board: formData.board,
-      //       subjects: formData.subjects,
-      //       experienceLevel: experienceLevel,
-      //       timestamp: new Date().toISOString(),
-      //     }),
-      //   }
-      // );
       const response = await fetch(
         "https://us-central1-vip-home-tutors.cloudfunctions.net/sendTeachersForm",
         {
@@ -163,6 +203,11 @@ export default function Form() {
 
   const handleFinalSubmit = async (e) => {
     e.preventDefault();
+    if (!experienceLevel) {
+      alert("Please select your experience level.");
+      return;
+    }
+
     try {
       await addDoc(collection(db, "Vikasrequests"), {
         name: formData.name,
@@ -197,6 +242,7 @@ export default function Form() {
           value={formData.name}
           onChange={handleInputChange}
         />
+        {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
       </div>
 
       <div className="pb-1 flex flex-wrap sm:flex-nowrap gap-2 items-center">
@@ -215,6 +261,7 @@ export default function Form() {
             value={formData.phone}
             onChange={handleInputChange}
           />
+          {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
         </div>
       </div>
 
@@ -224,6 +271,9 @@ export default function Form() {
         selectedValue={selectedClassType}
         onSelect={handleClassTypeSelect}
       />
+      {errors.classType && (
+        <p className="text-red-500 text-sm">{errors.classType}</p>
+      )}
 
       <div className="pb-1">
         <label className="block font-semibold mb- text-sm sm:text-base">
@@ -233,30 +283,28 @@ export default function Form() {
           </span>
         </label>
         <div className="grid grid-cols-3 gap- ">
-          {[
-            "Science",
-            "Physics",
-            "Chemistry",
-            "Maths",
-            "Biology",
-            "Others",
-          ].map((subject) => (
-            <label key={subject} className="flex items-center ">
-              <input
-                type="checkbox"
-                name="subjects"
-                value={subject}
-                onChange={handleSubjectChange}
-              />
-              <span className="text-sm sm:text-base px-2">{subject}</span>
-            </label>
-          ))}
+          {["Science", "Physics", "Chemistry", "Maths", "Biology", "Others"].map(
+            (subject) => (
+              <label key={subject} className="flex items-center ">
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value={subject}
+                  onChange={handleSubjectChange}
+                />
+                <span className="text-sm sm:text-base px-2">{subject}</span>
+              </label>
+            )
+          )}
         </div>
+        {errors.subjects && (
+          <p className="text-red-500 text-sm">{errors.subjects}</p>
+        )}
       </div>
 
       <div className="flex flex-wrap gap-2 pb-2">
         <label className="block text-black font-extrabold">Board : </label>
-        {boards.map((board) => (
+        {["CBSE", "IB", "ICSE", "ISC", "IGCSE"].map((board) => (
           <label key={board} className="flex items-center gap-2 text-sm">
             <input
               type="checkbox"
@@ -268,6 +316,9 @@ export default function Form() {
             {board}
           </label>
         ))}
+        {errors.board && (
+          <p className="text-red-500 text-sm">{errors.board}</p>
+        )}
       </div>
 
       <CustomDropdown
@@ -282,6 +333,7 @@ export default function Form() {
         selectedValue={selectedLevel}
         onSelect={handleLevelSelect}
       />
+      {errors.level && <p className="text-red-500 text-sm">{errors.level}</p>}
 
       <div id="recaptcha"></div>
 
