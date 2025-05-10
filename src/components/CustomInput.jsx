@@ -1,47 +1,71 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const CustomInput = ({
   style,
   placeholder,
-  label = "", // default to an empty string if undefined
+  label = "",
   id,
-  type = "text", // default to "text" if not provided
-  name, // required to map to the input field name for form handling
+  type = "text",
+  name,
   onChange,
   value,
-  error,
+  error = "",
+  setError,
+  onBlur,
+  required = false,
 }) => {
-  // Split the label to handle "*" for mandatory fields
+  const [touched, setTouched] = useState(false);
   const mainLabel = label ? label.split("*")[0] : "";
+
+  useEffect(() => {
+    if (required && touched && !value) {
+      setError?.("This field is required");
+    } else {
+      setError?.("");
+    }
+  }, [value, touched, required, setError]);
+
+  const handleBlur = () => {
+    setTouched(true);
+    onBlur?.();
+  };
 
   return (
     <div className="relative py-1.5">
-      {/* Label for the input */}
+      {/* Label */}
       {label && (
         <label
-          className="block mb-2 text-md font-semibold text-primary transition-all duration-300 ease-in-out"
           htmlFor={id}
+          className="block mb-2 text-md font-semibold text-primary transition-all duration-300 ease-in-out"
         >
           {mainLabel}
-          {label.includes("*") && <span className="text-red-500">*</span>}
+          {(label.includes("*") || required) && (
+            <span className="text-red-500">*</span>
+          )}
         </label>
       )}
+
       {/* Input Field */}
       <input
-        className="appearance-none border-2 bg-white border-gray-300 w-full py-2.5 px-2 text-black leading-tight focus:outline-none focus:ring-1 focus:ring-primary-orange focus:border-primary-orange transition-all duration-300 ease-in-out rounded-md"
-        type={type} // Define the input type (text by default)
-        name={name} // The name to be used for form submission
-        id={id} // Unique identifier for this input
-        value={value} // Controlled value for input
-        onChange={onChange} // Input change handler
-        placeholder={placeholder} // Placeholder text
-        style={style} // Custom styles (if any)
+        className={`appearance-none border-2 w-full py-2.5 px-2 text-black rounded-md bg-white leading-tight transition-all duration-300 ease-in-out focus:outline-none focus:ring-1 focus:ring-primary-orange focus:border-primary-orange ${
+          error ? "border-red-500" : "border-gray-300"
+        }`}
+        type={type}
+        name={name}
+        id={id}
+        value={value}
+        onChange={onChange}
+        onBlur={handleBlur}
+        placeholder={placeholder}
+        style={style}
       />
-      {/* Error Message */}
-      {error && <p className="mt-1 text-xs italic text-red-500">{error}</p>}
+
+      {/* Error Display */}
+      {touched && error && (
+        <p className="mt-1 text-xs italic text-red-500">{error}</p>
+      )}
     </div>
   );
 };
 
-// Export the component to make it available for other files
 export default CustomInput;

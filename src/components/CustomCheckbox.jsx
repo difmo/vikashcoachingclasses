@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const CustomCheckbox = ({
   label = "",
@@ -6,9 +6,26 @@ const CustomCheckbox = ({
   checked,
   onChange,
   error,
+  setError,
+  required = false,
   style,
+  onBlur,
 }) => {
+  const [touched, setTouched] = useState(false);
   const mainLabel = label ? label.split("*")[0] : "";
+
+  useEffect(() => {
+    if (required && touched && !checked) {
+      setError?.("This field is required");
+    } else {
+      setError?.("");
+    }
+  }, [checked, touched, required, setError]);
+
+  const handleBlur = (e) => {
+    setTouched(true);
+    onBlur?.(e);
+  };
 
   return (
     <div className="relative py-1">
@@ -21,10 +38,13 @@ const CustomCheckbox = ({
           type="checkbox"
           id={id}
           checked={checked}
-          onChange={onChange}
+          onChange={(e) => {
+            onChange(e);
+            setTouched(true);
+          }}
+          onBlur={handleBlur}
           className="peer hidden"
         />
-        {/*  */}
         <div className="w-4 h-4 border-2 border-gray-300 rounded-md peer-checked:bg-yellow-500 peer-checked:border-blue-600 flex items-center justify-center transition-all duration-200">
           {checked && (
             <svg
@@ -44,10 +64,14 @@ const CustomCheckbox = ({
         </div>
         <span>
           {mainLabel}
-          {label.includes("*") && <span className="text-red-500">*</span>}
+          {label.includes("*") || required ? (
+            <span className="text-red-500">*</span>
+          ) : null}
         </span>
       </label>
-      {error && <p className="mt-1 text-xs italic text-red-500">{error}</p>}
+      {touched && error && (
+        <p className="mt-1 text-xs italic text-red-500">{error}</p>
+      )}
     </div>
   );
 };
