@@ -25,7 +25,11 @@ const levels = [
 ];
 
 // Function to send form data to Cloud Function for email
-const sendJoinTeamForm = async (formData, selectedRole, selectedCountryCode) => {
+const sendJoinTeamForm = async (
+  formData,
+  selectedRole,
+  selectedCountryCode
+) => {
   try {
     const response = await fetch(
       "https://us-central1-vip-home-tutors.cloudfunctions.net/sendJoinTeamForm",
@@ -82,6 +86,12 @@ const JoinTeamForm = () => {
     message: "",
     otp: "",
   });
+  const handleSingleSelect = (field, value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [field]: value,
+    }));
+  };
 
   const toggleSelection = (field, value) => {
     setFormData((prev) => ({
@@ -139,7 +149,11 @@ const JoinTeamForm = () => {
       }
 
       const appVerifier = window.recaptchaVerifier;
-      const result = await signInWithPhoneNumber(auth, phoneNumber, appVerifier);
+      const result = await signInWithPhoneNumber(
+        auth,
+        phoneNumber,
+        appVerifier
+      );
       setConfirmationResult(result);
       setOtpSent(true);
       alert("OTP sent to " + phoneNumber);
@@ -257,29 +271,31 @@ const JoinTeamForm = () => {
             Select Board:
           </label>
           {boards.map((board) => (
-            <label key={board} className="flex items-center -gap-2 text-sm">
+            <label key={board} className="flex items-center gap-2 text-sm">
               <StudentCheckbox
-                checked={formData.boards.includes(board)}
-                onChange={() => toggleSelection("boards", board)}
+                checked={formData.boards === board}
+                onChange={() => handleSingleSelect("boards", board)}
               />
               {board}
             </label>
           ))}
         </div>
+
         <div className="flex flex-wrap items-center gap-4">
           <label className="font-semibold text-gray-700 mr-4">
             Select Class:
           </label>
           {classes.map((cla) => (
-            <label key={cla} className="flex items-center -gap-1 text-sm">
+            <label key={cla} className="flex items-center gap-2 text-sm">
               <StudentCheckbox
-                checked={formData.classes.includes(cla)}
-                onChange={() => toggleSelection("classes", cla)}
+                checked={formData.classes === cla}
+                onChange={() => handleSingleSelect("classes", cla)}
               />
               {cla}
             </label>
           ))}
         </div>
+
         <div className="flex flex-wrap gap-4">
           <label className="block font-semibold mr-2 text-gray-700">
             Select Subject:
@@ -394,8 +410,8 @@ const JoinTeamForm = () => {
                   USA - CANADA - UK - QATAR - UAE - AUSTRALIA - INDIA.
                 </p>
                 <p className="px-4 sm:px-6 pt-14 font-light uppercase text-center text-sm sm:text-base">
-                  "At the Heart of our Success lies the Confidence that you Place
-                  in Us, Globally. Your Trust is our Greatest Asset."
+                  "At the Heart of our Success lies the Confidence that you
+                  Place in Us, Globally. Your Trust is our Greatest Asset."
                 </p>
               </div>
               <div className="w-full lg:w-1/2 p-8 bg-white border-3 border-black md:border-0 rounded-2xl lg:rounded-s-none">
@@ -419,7 +435,14 @@ const JoinTeamForm = () => {
                     <div className="w-full sm:w-1/6">
                       <CustomDropdown
                         className="text-black w-full mt-4"
-                        selectOption={["+1", "+44", "+974", "+971", "+91", "+61"]}
+                        selectOption={[
+                          "+1",
+                          "+44",
+                          "+974",
+                          "+971",
+                          "+91",
+                          "+61",
+                        ]}
                         selectedValue={selectedCountryCode}
                         onSelect={handleCountryCodeSelect}
                       />
@@ -445,10 +468,15 @@ const JoinTeamForm = () => {
                     required
                   />
                   <div className="flex flex-col sm:flex-row gap-14 mb-4">
-                    <label className="font-semibold text-gray-800">Are You:</label>
+                    <label className="font-semibold text-gray-800">
+                      Are You:
+                    </label>
                     {[
                       { value: "Teacher", label: "Teacher" },
-                      { value: "Students / Parents", label: "Students / Parents" },
+                      {
+                        value: "Students / Parents",
+                        label: "Students / Parents",
+                      },
                       { value: "Other", label: "Other" },
                     ].map((role) => (
                       <label
