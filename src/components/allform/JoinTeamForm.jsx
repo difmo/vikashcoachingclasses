@@ -147,6 +147,24 @@ const JoinTeamForm = () => {
           },
         });
       }
+setFormData({
+      name: "",
+      contact: "",
+      email: "",
+      classes: [],
+      subjects: [],
+      boards: [],
+      experience: "",
+      level: "",
+      message: "",
+      otp: "",
+    });
+    setSelectedRole("Other");
+    setSelectedCountryCode("+91");
+    setOtpVerified(false);
+    setOtpSent(false);
+    setConfirmationResult(null);
+    setUserId(null);
 
       const appVerifier = window.recaptchaVerifier;
       const result = await signInWithPhoneNumber(

@@ -35,7 +35,27 @@ export default function Form() {
     board: "",
     level: "",
   });
-
+  setFormData({
+    name: "",
+    phone: "",
+    board: "",
+    subjects: [],
+  });
+  setSelectedClassType("Select Class");
+  setSelectedCountryCode("+91");
+  setSelectedLevel("");
+  setExperienceLevel("");
+  setOtp("");
+  setOtpSent(false);
+  setVerificationId("");
+  setErrors({
+    name: "",
+    phone: "",
+    classType: "",
+    subjects: "",
+    board: "",
+    level: "",
+  });
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -261,7 +281,9 @@ export default function Form() {
             value={formData.phone}
             onChange={handleInputChange}
           />
-          {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
+          {errors.phone && (
+            <p className="text-red-500 text-sm">{errors.phone}</p>
+          )}
         </div>
       </div>
 
@@ -283,19 +305,24 @@ export default function Form() {
           </span>
         </label>
         <div className="grid grid-cols-3 gap- ">
-          {["Science", "Physics", "Chemistry", "Maths", "Biology", "Others"].map(
-            (subject) => (
-              <label key={subject} className="flex items-center ">
-                <input
-                  type="checkbox"
-                  name="subjects"
-                  value={subject}
-                  onChange={handleSubjectChange}
-                />
-                <span className="text-sm sm:text-base px-2">{subject}</span>
-              </label>
-            )
-          )}
+          {[
+            "Science",
+            "Physics",
+            "Chemistry",
+            "Maths",
+            "Biology",
+            "Others",
+          ].map((subject) => (
+            <label key={subject} className="flex items-center ">
+              <input
+                type="checkbox"
+                name="subjects"
+                value={subject}
+                onChange={handleSubjectChange}
+              />
+              <span className="text-sm sm:text-base px-2">{subject}</span>
+            </label>
+          ))}
         </div>
         {errors.subjects && (
           <p className="text-red-500 text-sm">{errors.subjects}</p>
@@ -316,9 +343,7 @@ export default function Form() {
             {board}
           </label>
         ))}
-        {errors.board && (
-          <p className="text-red-500 text-sm">{errors.board}</p>
-        )}
+        {errors.board && <p className="text-red-500 text-sm">{errors.board}</p>}
       </div>
 
       <CustomDropdown
