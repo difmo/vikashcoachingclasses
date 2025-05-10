@@ -48,6 +48,7 @@ const StudentCheckbox = ({
           {label.includes("*") && <span className="text-red-500">*</span>}
         </span>
       </label>
+      {/*  */}
       {error && <p className="mt-1 text-xs italic text-red-500">{error}</p>}
     </div>
   );

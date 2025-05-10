@@ -11,6 +11,7 @@ import {
 } from "../../Firebase";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import img from "../../assets/logo1.jpeg";
+import StudentCheckbox from "../StudentCheckbox";
 
 const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
 const subjects = ["Sci.", "Phy", "Chem", "Bio", "Maths", "Other"];
@@ -257,7 +258,7 @@ const JoinTeamForm = () => {
           </label>
           {boards.map((board) => (
             <label key={board} className="flex items-center -gap-2 text-sm">
-              <CustomCheckbox
+              <StudentCheckbox
                 checked={formData.boards.includes(board)}
                 onChange={() => toggleSelection("boards", board)}
               />
@@ -271,7 +272,7 @@ const JoinTeamForm = () => {
           </label>
           {classes.map((cla) => (
             <label key={cla} className="flex items-center -gap-1 text-sm">
-              <CustomCheckbox
+              <StudentCheckbox
                 checked={formData.classes.includes(cla)}
                 onChange={() => toggleSelection("classes", cla)}
               />
