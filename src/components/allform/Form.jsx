@@ -13,6 +13,22 @@ import {
 } from "../../Firebase";
 
 export default function Form() {
+  const initialFormState = {
+    name: "",
+    phone: "",
+    board: "",
+    subjects: [],
+  };
+
+  const initialErrors = {
+    name: "",
+    phone: "",
+    classType: "",
+    subjects: "",
+    board: "",
+    level: "",
+  };
+
   const [otpSent, setOtpSent] = useState(false);
   const [otp, setOtp] = useState("");
   const [otpVerified, setOtpVerified] = useState(false);
@@ -21,20 +37,8 @@ export default function Form() {
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
   const [selectedLevel, setSelectedLevel] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    board: "",
-    subjects: [],
-  });
-  const [errors, setErrors] = useState({
-    name: "",
-    phone: "",
-    classType: "",
-    subjects: "",
-    board: "",
-    level: "",
-  });
+  const [formData, setFormData] = useState(initialFormState);
+  const [errors, setErrors] = useState(initialErrors);
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -201,11 +205,24 @@ export default function Form() {
     }
   };
 
+  const resetForm = () => {
+    setFormData(initialFormState);
+    setOtp("");
+    setOtpSent(false);
+    setOtpVerified(false);
+    setVerificationId("");
+    setSelectedClassType("Select Class");
+    setSelectedCountryCode("+91");
+    setSelectedLevel("");
+    setExperienceLevel("");
+    setErrors(initialErrors);
+  };
+
   const handleFinalSubmit = async (e) => {
     e.preventDefault();
     if (!experienceLevel) {
       alert(
-        "Thanks for Submiting, kindly wait  we will get in touch few hours."
+        "Thanks for submitting, kindly wait we will get in touch in a few hours."
       );
       return;
     }
@@ -222,8 +239,8 @@ export default function Form() {
         timestamp: new Date(),
       });
       await sendFormDataToEmail();
-      setOtpVerified(false);
       alert("Form submitted successfully!");
+      resetForm(); // 👈 Reset all fields here
     } catch (err) {
       alert("Something went wrong. Please try again later.");
       console.error(err);
@@ -345,28 +362,30 @@ export default function Form() {
       <div id="recaptcha"></div>
 
       {!otpSent ? (
-        <div className="text-center -pt-2 ">
-          <CustomButton
-            onClick={handleSendOTP}
-            className="text-[#51087E] hover:bg-primary bg-[#dba577] text-xl font-bold"
-            label="Get OTP"
-          />
-        </div>
-      ) : !otpVerified ? (
-        <div className="">
-          <CustomInput
-            placeholder="Enter OTP"
-            name="otp"
-            value={otp}
-            onChange={(e) => setOtp(e.target.value)}
-          />
-          <div className="text-center pt-2">
+        <div className="flex flex-wrap gap-2 items-center w-full">
+          {/* Left Section: Get OTP and OTP Input */}
+          <div className="flex flex-1 gap-2 items-center">
             <CustomButton
-              onClick={handleVerifyOTP}
-              className="bg-[#51087E] text-white font-bold"
-              label="Verify OTP"
+              onClick={handleSendOTP}
+              className="text-[#51087E] hover:bg-primary bg-[#dba577] px-2 sm:px-4 flex-shrink-0"
+              label="Get OTP"
+            />
+
+            <CustomInput
+              placeholder="Enter OTP"
+              name="otp"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
+              className="w-full min-w-[140px] sm:min-w-[180px] md:min-w-[220px] lg:min-w-[280px] flex-grow"
             />
           </div>
+
+          {/* Right Section: Verify OTP */}
+          <CustomButton
+            onClick={handleVerifyOTP}
+            className="bg-[#51087E] text-headerbordertext px-2 sm:px-4 flex-shrink-0"
+            label="Verify OTP"
+          />
         </div>
       ) : (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
