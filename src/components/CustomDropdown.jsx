@@ -68,8 +68,8 @@ const CustomDropdown = ({
           error ? "border-red-500" : "border-gray-300"
         } rounded-md bg-white text-black flex justify-between items-center`}
       >
-        <span className={selectedValue ? "" : "text-gray-400"}>
-          {selectedValue || "Select Option"}
+        <span className={selectedValue ? "" : "text-gray-600"}>
+          {selectedValue || "Select Level"}
         </span>
         <ChevronDown
           className={`ml-2 transition-transform ${isOpen ? "rotate-180" : ""}`}

@@ -204,7 +204,9 @@ export default function Form() {
   const handleFinalSubmit = async (e) => {
     e.preventDefault();
     if (!experienceLevel) {
-      alert("Please select your experience level.");
+      alert(
+        "Thanks for Submiting, kindly wait  we will get in touch few hours."
+      );
       return;
     }
 
@@ -269,7 +271,7 @@ export default function Form() {
 
       <CustomDropdown
         className="text-black"
-        selectOption={["7th", "8th", "9th", "10th", "12th", "Droppers"]}
+        selectOption={["7th", "8th", "9th", "10th", "11th", "12th", "Droppers"]}
         selectedValue={selectedClassType}
         onSelect={handleClassTypeSelect}
       />
@@ -385,7 +387,8 @@ export default function Form() {
                   onChange={handleExperienceChange}
                   className="mr-2"
                 />
-                Master/Expert Level (10+ years) – ₹3000 to ₹7000/hr
+                Want to Hire a intermediate level Teacher (up to 5 years of
+                Experience) Fees Range 10$ to 20$ [USP] Per Hr
               </label>
 
               <label className="block">
@@ -397,7 +400,8 @@ export default function Form() {
                   onChange={handleExperienceChange}
                   className="mr-2"
                 />
-                Proficient Level (5–10 years) – ₹2000 to ₹3000/hr
+                Want to Hine a Proficient level Teacher (upto 10 years of
+                Experience) Fei's Range 20$ to 35$ (USD) Per Hr
               </label>
 
               <label className="block">
@@ -409,7 +413,8 @@ export default function Form() {
                   onChange={handleExperienceChange}
                   className="mr-2"
                 />
-                Intermediate Level (5 years) – ₹1000 to ₹1500/hr
+                Wart to Hine a Expert level Teacher(More than 10 years of
+                Experience) Fees Range 35$ to 50$ (USD) Per Hr{" "}
               </label>
             </div>
 
