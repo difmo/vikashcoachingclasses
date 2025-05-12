@@ -134,6 +134,12 @@ export default function Form() {
   const handleSendOTP = async () => {
     setIsLoading(true);
     try {
+      //  const phoneNumber = `${selectedCountryCode}${formData.contact}`.trim();
+      if (!phoneNumber.match(/^\+\d{10,15}$/)) {
+        alert("Please enter a valid phone number (e.g., +919876543210)");
+        return;
+      }
+
       if (!window.recaptchaVerifier) {
         window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha', {
           size: 'invisible',
