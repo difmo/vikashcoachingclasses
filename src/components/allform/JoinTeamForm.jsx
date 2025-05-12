@@ -392,8 +392,10 @@ const JoinTeamForm = () => {
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-10 md:gap-0 md:border-2 rounded-2xl">
-              <Detail />
+              <div className="w-full rounded-2xl lg:rounded-e-none bg-primary h-auto lg:w-1/2">
+                <Detail />
 
+              </div>
               <div className="w-full lg:w-1/2 p-8 bg-white border-3 border-black md:border-0 rounded-2xl lg:rounded-s-none">
                 <h2 className="text-3xl font-bold text-center text-[#dba577] mb-6">
                   Kindly, Fill the Form to get in Touch:
@@ -447,61 +449,62 @@ const JoinTeamForm = () => {
                     }
                     required
                   />
-                  <div className="flex flex-col sm:flex-row gap-14 mb-4">
-                    <label className="font-semibold text-gray-800">
+                  <div className="w-full flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-4">
+                    {/* Label */}
+                    <div className="font-semibold text-gray-800 min-w-fit">
                       Are You:
-                    </label>
-                    {[
-                      { value: "Teacher", label: "Teacher" },
-                      {
-                        value: "Students / Parents",
-                        label: "Students / Parents",
-                      },
-                      { value: "Other", label: "Other" },
-                    ].map((role) => (
-                      <label
-                        key={role.value}
-                        className="inline-flex items-center gap-2 cursor-pointer"
-                      >
-                        <span className="relative">
-                          <input
-                            type="radio"
-                            name="role"
-                            value={role.value}
-                            checked={selectedRole === role.value}
-                            onChange={() => setSelectedRole(role.value)}
-                            className="sr-only"
-                          />
-                          <div
-                            className={`w-5 h-5 rounded-full border-2 flex items-center justify-center
-                              ${selectedRole === role.value
-                                ? "border-blue-600"
-                                : "border-gray-300"
-                              }`}
-                          >
-                            {selectedRole === role.value && (
-                              <div className="w-2.5 h-2.5 bg-[#dba577] rounded-full" />
-                            )}
-                          </div>
-                        </span>
-                        <span className="text-gray-800">{role.label}</span>
-                      </label>
-                    ))}
+                    </div>
+
+                    {/* Radio Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-3 md:gap-8 xl:gap-24">
+                      {[
+                        { value: "Teacher", label: "Teacher" },
+                        { value: "Students / Parents", label: "Students / Parents" },
+                        { value: "Other", label: "Other" },
+                      ].map((role) => (
+                        <label
+                          key={role.value}
+                          className="inline-flex items-center gap-1 cursor-pointer"
+                        >
+                          <span className="relative">
+                            <input
+                              type="radio"
+                              name="role"
+                              value={role.value}
+                              checked={selectedRole === role.value}
+                              onChange={() => setSelectedRole(role.value)}
+                              className="sr-only"
+                            />
+                            <div
+                              className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${selectedRole === role.value ? "border-blue-600" : "border-gray-300"
+                                }`}
+                            >
+                              {selectedRole === role.value && (
+                                <div className="w-2.5 h-2.5 bg-[#dba577] rounded-full" />
+                              )}
+                            </div>
+                          </span>
+                          <span className="text-gray-800 text-sm sm:text-base">{role.label}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
+
+
                   {roleFields[selectedRole]}
-                  <div className="w-full flex flex-col sm:flex-row sm:items-center gap-6 xl:gap-9">
+                  <div className="w-full flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 xl:gap-24">
                     {/* Get OTP Button */}
                     <div className="w-full sm:w-auto">
                       <CustomButton
                         type="button"
                         label="Get OTP"
                         onClick={sendOtp}
-                        className="w-full sm:w-auto py-3 text-sm rounded-lg bg-[#dba577] hover:bg-[#c08c5c]"
+                        className="w-full sm:min-w-[100px] py-3 text-[10px] rounded-lg bg-[#dba577] hover:bg-[#c08c5c]"
                       />
                     </div>
 
                     {/* OTP Input */}
-                    <div className="w-full  sm:w-1/3">
+                    <div className="w-full sm:w-auto flex justify-center">
                       <CustomInput
                         type="text"
                         placeholder="Enter OTP"
@@ -509,7 +512,7 @@ const JoinTeamForm = () => {
                         onChange={(e) =>
                           setFormData({ ...formData, otp: e.target.value })
                         }
-                        className="w-full py-3 text-sm rounded-lg"
+                        className="w-full sm:w-[180px] md:w-[220px] lg:w-[250px] px-3 py-3 text-sm rounded-lg"
                       />
                     </div>
 
@@ -519,10 +522,12 @@ const JoinTeamForm = () => {
                         type="button"
                         label="Verify"
                         onClick={verifyOtp}
-                        className="w-full sm:w-auto px-6 py-3 text-sm bg-[#dba577] rounded-lg hover:bg-green-600"
+                        className="w-full sm:min-w-[100px] px-6 py-3 text-sm bg-[#dba577] rounded-lg hover:bg-green-600"
                       />
                     </div>
                   </div>
+
+
 
                   <div id="recaptcha"></div>
                   <CustomButton

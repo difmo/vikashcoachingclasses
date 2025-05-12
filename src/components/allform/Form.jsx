@@ -365,27 +365,31 @@ export default function Form() {
       <div id="recaptcha"></div>
 
       {!otpVerified ? (
-        <div className="flex flex-wrap gap-2 items-center w-full">
+        <div className="flex flex-col sm:flex-row flex-nowrap items-center gap-3 overflow-x-auto w-full">
           <CustomButton
             onClick={handleSendOTP}
-            className="text-[#51087E] hover:bg-primary bg-[#dba577] px-2 sm:px-4"
+            className="w-full sm:w-auto shrink-0 px-3 py-3 text-[#51087E] text-sm hover:bg-primary bg-[#dba577] rounded"
             label="Get OTP"
           />
-
-
           <CustomInput
+            type="text"
             placeholder="Enter OTP"
-            name="otp"
             value={otp}
             onChange={(e) => setOtp(e.target.value)}
-            className="w-full min-w-[140px] sm:min-w-[180px] md:min-w-[220px] lg:min-w-[280px]"
+            className="w-full px-3 py-3 text-sm rounded-lg"
           />
+
+
           <CustomButton
             onClick={handleVerifyOTP}
-            className="bg-[#51087E] text-headerbordertext px-2 sm:px-4"
-            label="Verify OTP"
+            className="w-full sm:w-auto shrink-0 px-3 py-2 text-headerbordertext hover:bg-primary bg-[#dba577] rounded"
+            label="Verify"
           />
         </div>
+
+
+
+
       ) : (
         <div className="fixed inset-0 bg-white flex justify-center items-center z-50">
           <form

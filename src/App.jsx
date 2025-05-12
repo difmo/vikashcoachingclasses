@@ -20,7 +20,7 @@ function App() {
         <Route element={<LayOut />}>
           <Route path="/" element={<Home />} />
           <Route path="/online-classes" element={<OnlineClasses />} />
-          <Route path="/join-form" element={<JoinTeamForm />} />
+          <Route path="/contact-us" element={<JoinTeamForm />} />
           <Route path="/form" element={<Form />} />
           {/* <Route path="/subject/:subject" element={<ContentLayout />} /> */}
           <Route path="/online-physics-tutors" element={<PhysicsTutors />} />

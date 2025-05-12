@@ -19,7 +19,7 @@ const Header = () => {
     },
     { path: "/online-maths-tutors", label: "Online Maths Tutors" },
     { path: "/online-biology-tutors", label: "Online Biology Tutors" },
-    { path: "/join-form", label: "Contact Us" },
+    { path: "/contact-us", label: "Contact Us" },
   ];
 
   useEffect(() => {
