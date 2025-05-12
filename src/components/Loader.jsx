@@ -1,20 +1,17 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+// components/Loader.jsx
+import React from "react";
 
-const Loader = () => {
+const Loader = ({ isLoading }) => {
+  if (!isLoading) return null;
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-      <motion.div
-        className="flex space-x-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="w-8 h-8 bg-white rounded-full animate-bounce"></div>
-        <div className="w-8 h-8 bg-white rounded-full animate-bounce delay-150"></div>
-        <div className="w-8 h-8 bg-white rounded-full animate-bounce delay-300"></div>
-      </motion.div>
-    </div>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="relative w-24 h-24">
+            <div className="absolute inset-0 border-4 border-t-4 border-t-[#dba577] border-gray-200 rounded-full animate-spin"></div>
+            <div className="absolute inset-2 border-4 border-t-4 border-t-[#c08c5c] border-gray-300 rounded-full animate-spin animation-delay-150"></div>
+            <div className="absolute inset-4 border-4 border-t-4 border-t-[#dba577] border-gray-400 rounded-full animate-spin animation-delay-300"></div>
+          </div>
+        </div>
   );
 };
 

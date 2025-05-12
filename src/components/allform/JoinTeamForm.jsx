@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import CustomButton from "../CustomButton";
 import CustomInput from "../CustomInput";
@@ -10,8 +11,11 @@ import {
   auth,
 } from "../../Firebase";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
-import img from "../../assets/logo1.jpeg";
+
 import StudentCheckbox from "../StudentCheckbox";
+import Loader from "../Loader";
+import Deaital from "../Detail";
+import Detail from "../Detail";
 
 const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
 const subjects = ["Sci.", "Phy", "Chem", "Bio", "Maths", "Other"];
@@ -24,7 +28,6 @@ const levels = [
   "Board + IIT-JEE",
 ];
 
-// Function to send form data to Cloud Function for email
 const sendJoinTeamForm = async (
   formData,
   selectedRole,
@@ -105,64 +108,23 @@ const JoinTeamForm = () => {
   const handleCountryCodeSelect = (countryCode) => {
     setSelectedCountryCode(countryCode);
   };
+const validateForm = () => {
+  const errors = {};
+  if (!formData.name.trim()) errors.name = "Name is required.";
+  if (!formData.contact.trim()) errors.contact = "Mobile number is required.";
+  else if (!/^\d{10}$/.test(formData.contact.trim())) errors.contact = "Enter valid 10-digit mobile number.";
 
-  const validateForm = () => {
-    // Validate name, contact, email, and OTP
-    if (!formData.name.trim()) {
-      alert("Name is required.");
-      return false;
-    }
-    if (!formData.contact.trim()) {
-      alert("Contact number is required.");
-      return false;
-    }
-    if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) {
-      alert("Please enter a valid email.");
-      return false;
-    }
-    if (!otpVerified) {
-      alert("Please verify OTP before submitting.");
-      return false;
-    }
+  if (!formData.email.trim()) errors.email = "Email is required.";
+  else if (!/\S+@\S+\.\S+/.test(formData.email)) errors.email = "Enter a valid email.";
 
-    // Validate role-specific fields
-    if (selectedRole === "Teacher") {
-      if (!formData.boards.length) {
-        alert("Please select at least one board.");
-        return false;
-      }
-      if (!formData.classes.length) {
-        alert("Please select at least one class.");
-        return false;
-      }
-      if (!formData.subjects.length) {
-        alert("Please select at least one subject.");
-        return false;
-      }
-      if (!formData.experience.trim()) {
-        alert("Experience is required.");
-        return false;
-      }
-    } else if (selectedRole === "Students / Parents") {
-      if (!formData.boards.length) {
-        alert("Please select at least one board.");
-        return false;
-      }
-      if (!formData.classes.length) {
-        alert("Please select at least one class.");
-        return false;
-      }
-      if (!formData.subjects.length) {
-        alert("Please select at least one subject.");
-        return false;
-      }
-      if (!formData.level.trim()) {
-        alert("Please select a level.");
-        return false;
-      }
-    }
-    return true;
-  };
+  if (!selectedRole) errors.role = "Please select a role.";
+
+  if (!formData.otp.trim()) errors.otp = "OTP is required.";
+  else if (formData.otp.length !== 6) errors.otp = "OTP should be 6 digits.";
+
+  // Add more based on selectedRole fields if necessary
+  return errors;
+};
 
   const saveFormData = async () => {
     if (!userId) {
@@ -205,25 +167,7 @@ const JoinTeamForm = () => {
           },
         });
       }
-setFormData({
-      name: "",
-      contact: "",
-      email: "",
-      classes: [],
-      subjects: [],
-      boards: [],
-      experience: "",
-      level: "",
-      message: "",
-      otp: "",
-    });
-    setSelectedRole("Other");
-    setSelectedCountryCode("+91");
-    setOtpVerified(false);
-    setOtpSent(false);
-    setConfirmationResult(null);
-    setUserId(null);
-// siodcfndwiovhwdogiwde
+     
       const appVerifier = window.recaptchaVerifier;
       const result = await signInWithPhoneNumber(
         auth,
@@ -266,16 +210,36 @@ setFormData({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validateForm()) {
+    if (!otpVerified) {
+      alert("Please verify OTP before submitting");
       return;
     }
     setIsLoading(true);
     try {
-      // Save to Firestore
+    
       await saveFormData();
-      // Send email via Cloud Function
+     
       await sendJoinTeamForm(formData, selectedRole, selectedCountryCode);
       alert("Form data sent successfully!");
+       setFormData({
+        name: "",
+        contact: "",
+        email: "",
+        classes: [],
+        subjects: [],
+        boards: [],
+        experience: "",
+        level: "",
+        message: "",
+        otp: "",
+      });
+      setSelectedRole("Other");
+      setSelectedCountryCode("+91");
+      setOtpVerified(false);
+      setOtpSent(false);
+      setConfirmationResult(null);
+      setUserId(null);
+
     } catch (error) {
       console.error("Error during submission:", error);
       alert("Failed to submit form: " + error.message);
@@ -385,96 +349,187 @@ setFormData({
             </label>
           ))}
         </div>
-        <CustomDropdown
-          label="Level"
-          selectedValue={formData.level}
-          options={levels}
+        <select
+          className="w-full border rounded-md px-4 py-2"
+          value={formData.level}
+          onChange={(e) => setFormData({ ...formData, level: e.target.value })}
+        >
+          <option value="">Select Level</option>
+          {levels.map((lvl) => (
+            <option key={lvl} value={lvl}>
+              {lvl}
+            </option>
+          ))}
+        </select>
+      </>
+    ),
+    Other: (
+      <>
+        <textarea
+          placeholder="Message:"
+          value={formData.message}
           onChange={(e) =>
-            setFormData({ ...formData, level: e.target.value })
+            setFormData({ ...formData, message: e.target.value })
           }
+          rows={4}
+          className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
       </>
     ),
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-6">
-      <img src={img} alt="logo" className="mb-6" />
-      <h2 className="text-2xl font-semibold mb-4 text-center">Join Our Team</h2>
-      
-      <CustomInput
-        type="text"
-        placeholder="Name"
-        value={formData.name}
-        onChange={(e) =>
-          setFormData({ ...formData, name: e.target.value })
-        }
-      />
-
-      <div className="flex items-center gap-2">
-        <CustomInput
-          type="text"
-          placeholder="Contact"
-          value={formData.contact}
-          onChange={(e) =>
-            setFormData({ ...formData, contact: e.target.value })
-          }
-        />
-        <CustomDropdown
-          selectedValue={selectedCountryCode}
-          options={["+91", "+1", "+44", "+61"]}
-          onChange={(e) => handleCountryCodeSelect(e.target.value)}
-        />
-      </div>
-
-      <CustomInput
-        type="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={(e) =>
-          setFormData({ ...formData, email: e.target.value })
-        }
-      />
-
-      {roleFields[selectedRole]}
-
-      <CustomInput
-        type="text"
-        placeholder="Message"
-        value={formData.message}
-        onChange={(e) =>
-          setFormData({ ...formData, message: e.target.value })
-        }
-      />
-
-      {otpSent ? (
-        <>
-          <CustomInput
-            type="text"
-            placeholder="Enter OTP"
-            value={formData.otp}
-            onChange={(e) =>
-              setFormData({ ...formData, otp: e.target.value })
-            }
-          />
-          <CustomButton
-            type="button"
-            onClick={verifyOtp}
-            disabled={isLoading}
-            text="Verify OTP"
-          />
-        </>
-      ) : (
-        <CustomButton
-          type="button"
-          onClick={sendOtp}
-          disabled={isLoading}
-          text="Send OTP"
-        />
+    <div className="relative">
+      {isLoading && (
+       <Loader/>
       )}
-
-      <CustomButton type="submit" disabled={isLoading} text="Submit" />
-    </form>
+      <div className="bg-[#f2f2f2] text-md text-headerbordertext font-extrabold flex justify-center">
+        Home / Contact Us
+      </div>
+      <div className="container mx-auto py-10 px-4">
+        <div className="max-w-7xl mx-auto space-y-10">
+          <div className="overflow-hidden">
+            <div className="flex flex-col lg:flex-row gap-10 md:gap-0 md:border-2 rounded-2xl">
+              <Detail/>
+             
+              <div className="w-full lg:w-1/2 p-8 bg-white border-3 border-black md:border-0 rounded-2xl lg:rounded-s-none">
+                <h2 className="text-3xl font-bold text-center text-[#dba577] mb-6">
+                  Kindly, Fill the Form to get in Touch:
+                </h2>
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-5 max-w-xl mx-auto"
+                >
+                  <CustomInput
+                    type="text"
+                    placeholder="Enter Name:"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    required
+                  />
+                  <div className="pb-2 md:pb-0 flex flex-wrap sm:flex-nowrap gap-2 items-center">
+                    <div className="w-full sm:w-1/6">
+                      <CustomDropdown
+                        className="text-black w-full mt-4"
+                        selectOption={[
+                          "+1",
+                          "+44",
+                          "+974",
+                          "+971",
+                          "+91",
+                          "+61",
+                        ]}
+                        selectedValue={selectedCountryCode}
+                        onSelect={handleCountryCodeSelect}
+                      />
+                    </div>
+                    <div className="w-full sm:w-3/2">
+                      <CustomInput
+                        placeholder="Enter Mobile No.:"
+                        name="contact"
+                        value={formData.contact}
+                        onChange={(e) =>
+                          setFormData({ ...formData, contact: e.target.value })
+                        }
+                      />
+                    </div>
+                  </div>
+                  <CustomInput
+                    type="email"
+                    placeholder="Email Id:"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    required
+                  />
+                  <div className="flex flex-col sm:flex-row gap-14 mb-4">
+                    <label className="font-semibold text-gray-800">
+                      Are You:
+                    </label>
+                    {[
+                      { value: "Teacher", label: "Teacher" },
+                      {
+                        value: "Students / Parents",
+                        label: "Students / Parents",
+                      },
+                      { value: "Other", label: "Other" },
+                    ].map((role) => (
+                      <label
+                        key={role.value}
+                        className="inline-flex items-center gap-2 cursor-pointer"
+                      >
+                        <span className="relative">
+                          <input
+                            type="radio"
+                            name="role"
+                            value={role.value}
+                            checked={selectedRole === role.value}
+                            onChange={() => setSelectedRole(role.value)}
+                            className="sr-only"
+                          />
+                          <div
+                            className={`w-5 h-5 rounded-full border-2 flex items-center justify-center
+                              ${
+                                selectedRole === role.value
+                                  ? "border-blue-600"
+                                  : "border-gray-300"
+                              }`}
+                          >
+                            {selectedRole === role.value && (
+                              <div className="w-2.5 h-2.5 bg-[#dba577] rounded-full" />
+                            )}
+                          </div>
+                        </span>
+                        <span className="text-gray-800">{role.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                  {roleFields[selectedRole]}
+                  <div className="w-full flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-3 xl:gap-12">
+                    <div className="w-full sm:w-auto">
+                      <CustomButton
+                        type="button"
+                        label="Get OTP"
+                        onClick={sendOtp}
+                        className="w-full py-3 text-sm rounded-lg bg-[#dba577] hover:bg-[#c08c5c]"
+                      />
+                    </div>
+                    <div className="w-full sm:w-40">
+                      <CustomInput
+                        type="text"
+                        placeholder="Enter OTP"
+                        value={formData.otp}
+                        onChange={(e) =>
+                          setFormData({ ...formData, otp: e.target.value })
+                        }
+                        className="w-full"
+                      />
+                    </div>
+                    <div className="w-full sm:w-auto">
+                      <CustomButton
+                        type="button"
+                        label="Verify"
+                        onClick={verifyOtp}
+                        className="w-full sm:w-auto px-6 py-3 text-sm bg-[#dba577] rounded-lg hover:bg-green-600"
+                      />
+                    </div>
+                  </div>
+                  <div id="recaptcha"></div>
+                  <CustomButton
+                    type="submit"
+                    label="Submit"
+                    className="w-full bg-[#dba577] hover:bg-[#dba577] py-2 rounded-lg font-semibold text-white"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
