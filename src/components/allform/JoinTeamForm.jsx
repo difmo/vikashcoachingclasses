@@ -110,23 +110,23 @@ const JoinTeamForm = () => {
   const handleCountryCodeSelect = (countryCode) => {
     setSelectedCountryCode(countryCode);
   };
-const validateForm = () => {
-  const errors = {};
-  if (!formData.name.trim()) errors.name = "Name is required.";
-  if (!formData.contact.trim()) errors.contact = "Mobile number is required.";
-  else if (!/^\d{10}$/.test(formData.contact.trim())) errors.contact = "Enter valid 10-digit mobile number.";
+  const validateForm = () => {
+    const errors = {};
+    if (!formData.name.trim()) errors.name = "Name is required.";
+    if (!formData.contact.trim()) errors.contact = "Mobile number is required.";
+    else if (!/^\d{10}$/.test(formData.contact.trim())) errors.contact = "Enter valid 10-digit mobile number.";
 
-  if (!formData.email.trim()) errors.email = "Email is required.";
-  else if (!/\S+@\S+\.\S+/.test(formData.email)) errors.email = "Enter a valid email.";
+    if (!formData.email.trim()) errors.email = "Email is required.";
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) errors.email = "Enter a valid email.";
 
-  if (!selectedRole) errors.role = "Please select a role.";
+    if (!selectedRole) errors.role = "Please select a role.";
 
-  if (!formData.otp.trim()) errors.otp = "OTP is required.";
-  else if (formData.otp.length !== 6) errors.otp = "OTP should be 6 digits.";
+    if (!formData.otp.trim()) errors.otp = "OTP is required.";
+    else if (formData.otp.length !== 6) errors.otp = "OTP should be 6 digits.";
 
-  // Add more based on selectedRole fields if necessary
-  return errors;
-};
+    // Add more based on selectedRole fields if necessary
+    return errors;
+  };
 
   const saveFormData = async () => {
     if (!userId) {
@@ -169,7 +169,7 @@ const validateForm = () => {
           },
         });
       }
-     
+
       const appVerifier = window.recaptchaVerifier;
       const result = await signInWithPhoneNumber(
         auth,
@@ -218,12 +218,12 @@ const validateForm = () => {
     }
     setIsLoading(true);
     try {
-    
+
       await saveFormData();
-     
+
       await sendJoinTeamForm(formData, selectedRole, selectedCountryCode);
       alert("Form data sent successfully!");
-       setFormData({
+      setFormData({
         name: "",
         contact: "",
         email: "",
@@ -382,9 +382,9 @@ const validateForm = () => {
 
   return (
     <div className="relative">
-     
-       <Loader isLoading={isLoading} />
-   
+
+      <Loader isLoading={isLoading} />
+
       <div className="bg-[#f2f2f2] text-md text-headerbordertext font-extrabold flex justify-center">
         Home / Contact Us
       </div>
@@ -392,8 +392,8 @@ const validateForm = () => {
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-10 md:gap-0 md:border-2 rounded-2xl">
-              <Detail/>
-             
+              <Detail />
+
               <div className="w-full lg:w-1/2 p-8 bg-white border-3 border-black md:border-0 rounded-2xl lg:rounded-s-none">
                 <h2 className="text-3xl font-bold text-center text-[#dba577] mb-6">
                   Kindly, Fill the Form to get in Touch:
@@ -474,10 +474,9 @@ const validateForm = () => {
                           />
                           <div
                             className={`w-5 h-5 rounded-full border-2 flex items-center justify-center
-                              ${
-                                selectedRole === role.value
-                                  ? "border-blue-600"
-                                  : "border-gray-300"
+                              ${selectedRole === role.value
+                                ? "border-blue-600"
+                                : "border-gray-300"
                               }`}
                           >
                             {selectedRole === role.value && (
@@ -490,16 +489,19 @@ const validateForm = () => {
                     ))}
                   </div>
                   {roleFields[selectedRole]}
-                  <div className="w-full flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-3 xl:gap-12">
+                  <div className="w-full flex flex-col sm:flex-row sm:items-center gap-6 xl:gap-9">
+                    {/* Get OTP Button */}
                     <div className="w-full sm:w-auto">
                       <CustomButton
                         type="button"
                         label="Get OTP"
                         onClick={sendOtp}
-                        className="w-full py-3 text-sm rounded-lg bg-[#dba577] hover:bg-[#c08c5c]"
+                        className="w-full sm:w-auto py-3 text-sm rounded-lg bg-[#dba577] hover:bg-[#c08c5c]"
                       />
                     </div>
-                    <div className="w-full sm:w-40">
+
+                    {/* OTP Input */}
+                    <div className="w-full  sm:w-1/3">
                       <CustomInput
                         type="text"
                         placeholder="Enter OTP"
@@ -507,9 +509,11 @@ const validateForm = () => {
                         onChange={(e) =>
                           setFormData({ ...formData, otp: e.target.value })
                         }
-                        className="w-full"
+                        className="w-full py-3 text-sm rounded-lg"
                       />
                     </div>
+
+                    {/* Verify Button */}
                     <div className="w-full sm:w-auto">
                       <CustomButton
                         type="button"
@@ -519,6 +523,7 @@ const validateForm = () => {
                       />
                     </div>
                   </div>
+
                   <div id="recaptcha"></div>
                   <CustomButton
                     type="submit"
