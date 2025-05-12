@@ -110,7 +110,7 @@ const JoinTeamForm = () => {
       alert("User ID not available. Please verify OTP again.");
       return;
     }
-    setIsLoading(false);
+    setIsLoading(true);
     try {
       await setDoc(doc(db, "joinTeamForms", userId), {
         ...formData,
@@ -126,46 +126,9 @@ const JoinTeamForm = () => {
       setIsLoading(false);
     }
   };
-  const validate = () => {
-    let newErrors = {};
 
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      newErrors.email = "Email is invalid";
-    }
-
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone is required";
-    } else if (!/^\d{10}$/.test(formData.phone)) {
-      newErrors.phone = "Phone must be 10 digits";
-    }
-
-    if (!formData.otp.trim()) newErrors.otp = "OTP is required";
-
-    if (!formData.location.trim()) newErrors.location = "Location is required";
-    if (!formData.role) newErrors.role = "Role is required";
-
-    // Role-specific validations
-    if (formData.role === "Teacher") {
-      if (formData.subjects.length === 0)
-        newErrors.subjects = "Select at least one subject";
-      if (!formData.class) newErrors.class = "Class is required";
-      if (!formData.board) newErrors.board = "Board is required";
-      if (!formData.experience) newErrors.experience = "Experience is required";
-      if (!formData.resume) newErrors.resume = "Resume is required";
-    }
-
-    if (formData.role === "Other" && !formData.reason.trim()) {
-      newErrors.reason = "Reason is required";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
   const sendOtp = async () => {
-    setIsLoading(false);
+    setIsLoading(true);
     try {
       const phoneNumber = `${selectedCountryCode}${formData.contact}`.trim();
       if (!phoneNumber.match(/^\+\d{10,15}$/)) {
@@ -201,6 +164,7 @@ const JoinTeamForm = () => {
       setOtpSent(false);
       setConfirmationResult(null);
       setUserId(null);
+      // siodcfndwiovhwdogiwde
       const appVerifier = window.recaptchaVerifier;
       const result = await signInWithPhoneNumber(
         auth,
@@ -226,7 +190,7 @@ const JoinTeamForm = () => {
       alert("Please request OTP first");
       return;
     }
-    setIsLoading(false);
+    setIsLoading(true);
     try {
       const result = await confirmationResult.confirm(formData.otp);
       const uid = result.user.uid;
@@ -247,9 +211,11 @@ const JoinTeamForm = () => {
       alert("Please verify OTP before submitting");
       return;
     }
-    setIsLoading(false);
+    setIsLoading(true);
     try {
+      // Save to Firestore
       await saveFormData();
+      // Send email via Cloud Function
       await sendJoinTeamForm(formData, selectedRole, selectedCountryCode);
       alert("Form data sent successfully!");
     } catch (error) {
