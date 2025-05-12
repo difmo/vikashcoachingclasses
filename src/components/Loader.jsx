@@ -1,5 +1,3 @@
-// components/Loader.jsx
-import React from "react";
 
 const Loader = ({ isLoading }) => {
   if (!isLoading) return null;

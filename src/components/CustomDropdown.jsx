@@ -82,7 +82,7 @@ const CustomDropdown = ({
             <div
               key={option}
               onClick={() => handleSelect(option)}
-              className="p-3 hover:bg-blue-100 cursor-pointer text-black"
+              className="px-3 py-1 hover:bg-blue-100 cursor-pointer text-black"
             >
               {option}
             </div>

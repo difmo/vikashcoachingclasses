@@ -13,9 +13,11 @@ import {
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 
 import StudentCheckbox from "../StudentCheckbox";
-import Loader from "../Loader";
-import Deaital from "../Detail";
+
+
 import Detail from "../Detail";
+import Loader from "../Loader";
+
 
 const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
 const subjects = ["Sci.", "Phy", "Chem", "Bio", "Maths", "Other"];
@@ -380,9 +382,9 @@ const validateForm = () => {
 
   return (
     <div className="relative">
-      {isLoading && (
-       <Loader/>
-      )}
+     
+       <Loader isLoading={isLoading} />
+   
       <div className="bg-[#f2f2f2] text-md text-headerbordertext font-extrabold flex justify-center">
         Home / Contact Us
       </div>

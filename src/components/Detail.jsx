@@ -2,8 +2,8 @@ import React from 'react'
 import img from "../assets/logo1.jpeg";
 const Detail = () => {
     return (
-        <div>
-            <div className="w-full  flex flex-col items-center justify-center border-3 md:border-0 relative text-base sm:text-lg md:text-xl bg-primary text-headerbordertext py-8 rounded-2xl lg:rounded-e-none">
+        <div className='border-3 md:border-0 bg-primary text-headerbordertext py-8 rounded-2xl lg:rounded-e-none'>
+            <div className="w-full h-auto flex flex-col items-center justify-center  relative text-base sm:text-lg md:text-xl ">
                 <h1 className="text-2xl sm:text-3xl font-bold absolute top-4 sm:top-8 text-center w-full">
                     Vikas Institute
                 </h1>
