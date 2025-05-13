@@ -21,7 +21,7 @@ import Loader from "../Loader";
 
 const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
 const subjects = ["Sci.", "Phy", "Chem", "Bio", "Maths", "Other"];
-const classes = ["7th", "8th", "9th", "10th", "12th", "Droppers"];
+const classes = ["7th", "8th", "9th", "10th", "11th", "12th", "Droppers"];
 const levels = [
   "School Level",
   "NEET",
@@ -36,14 +36,7 @@ const sendJoinTeamForm = async (
   selectedCountryCode
 ) => {
   try {
-    const response = await fetch(
-      "https://us-central1-vip-home-tutors.cloudfunctions.net/sendJoinTeamForm",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+const requestBody = JSON.stringify({
           name: formData.name,
           contact: `${selectedCountryCode}${formData.contact}`,
           email: formData.email,
@@ -54,7 +47,16 @@ const sendJoinTeamForm = async (
           experience: formData.experience,
           level: formData.level,
           message: formData.message,
-        }),
+        });
+        console.log("Request Body:", requestBody);
+    const response = await fetch(
+      "https://us-central1-vip-home-tutors.cloudfunctions.net/sendJoinTeamForm",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: requestBody 
       }
     );
 
@@ -110,8 +112,8 @@ const JoinTeamForm = () => {
   const handleCountryCodeSelect = (countryCode) => {
     setSelectedCountryCode(countryCode);
   };
-    const [formErrors, setFormErrors] = useState({});
- const validateForm = () => {
+  const [formErrors, setFormErrors] = useState({});
+  const validateForm = () => {
     const errors = {};
 
     if (!formData.name.trim()) errors.name = "Name is required.";
@@ -144,8 +146,8 @@ const JoinTeamForm = () => {
     }
 
     if (selectedRole === "Students / Parents") {
-      if (!formData.boards) errors.boards = "Select your board.";
-      if (!formData.classes) errors.classes = "Select your class.";
+      if (formData.boards.length === 0) errors.boards = "Select your board.";
+      if (formData.classes.length === 0) errors.classes = "Select your class.";
       if (formData.subjects.length === 0) errors.subjects = "Select at least one subject.";
       if (!formData.level) errors.level = "Select a level.";
     }
@@ -306,8 +308,9 @@ const JoinTeamForm = () => {
             </label>
           ))}
           {formErrors.boards && <p className="text-red-500 text-sm">{formErrors.boards}</p>}
+
         </div>
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex flex-wrap items-center gap-3">
           <label className="font-semibold text-gray-700 mr-4">
             Select Class:
           </label>
@@ -321,8 +324,8 @@ const JoinTeamForm = () => {
             </label>
           ))}
 
-    
-      {formErrors.classes && <p className="text-red-500 text-sm">{formErrors.classes}</p>}
+
+          {formErrors.classes && <p className="text-red-500 text-sm">{formErrors.classes}</p>}
         </div>
         <div className="flex flex-wrap gap-4">
           <label className="block font-semibold mr-2 text-gray-700">
@@ -337,9 +340,9 @@ const JoinTeamForm = () => {
               {sub}
             </label>
           ))}
-         
 
-      {formErrors.subjects && <p className="text-red-500 text-sm">{formErrors.subjects}</p>}
+
+          {formErrors.subjects && <p className="text-red-500 text-sm">{formErrors.subjects}</p>}
         </div>
         <CustomInput
           type="text"
@@ -349,8 +352,8 @@ const JoinTeamForm = () => {
             setFormData({ ...formData, experience: e.target.value })
           }
         />
-        
-      {formErrors.experience && <p className="text-red-500 text-sm">{formErrors.experience}</p>}
+
+        {formErrors.experience && <p className="text-red-500 text-sm">{formErrors.experience}</p>}
       </>
     ),
     "Students / Parents": (
@@ -368,16 +371,17 @@ const JoinTeamForm = () => {
               {board}
             </label>
           ))}
-        
-      {formErrors.boards && <p className="text-red-500 text-sm">{formErrors.boards}</p>}
+          {formErrors.boards && (
+            <p className="text-red-500 text-sm w-full">{formErrors.boards}</p>
+          )}
         </div>
 
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex flex-wrap items-center gap-3">
           <label className="font-semibold text-gray-700 mr-4">
             Select Class:
           </label>
           {classes.map((cla) => (
-            <label key={cla} className="flex items-center gap-2 text-sm">
+            <label key={cla} className="flex items-center gap- text-sm">
               <StudentCheckbox
                 checked={formData.classes === cla}
                 onChange={() => handleSingleSelect("classes", cla)}
@@ -385,7 +389,9 @@ const JoinTeamForm = () => {
               {cla}
             </label>
           ))}
-        {formErrors.classes && <p className="text-red-500 text-sm">{formErrors.classes}</p>}
+          {formErrors.classes && (
+            <p className="text-red-500 text-sm w-full">{formErrors.classes}</p>
+          )}
         </div>
 
         <div className="flex flex-wrap gap-4">
@@ -401,7 +407,7 @@ const JoinTeamForm = () => {
               {sub}
             </label>
           ))}
-        {formErrors.subjects && <p className="text-red-500 text-sm">{formErrors.subjects}</p>}
+          {formErrors.subjects && <p className="text-red-500 text-sm">{formErrors.subjects}</p>}
         </div>
         <select
           className="w-full border rounded-md px-4 py-2"
@@ -468,7 +474,7 @@ const JoinTeamForm = () => {
                     required
                   />
                   {formErrors.name && <p className="text-red-500 text-sm">{formErrors.name}</p>}
-      
+
                   <div className="pb-2 md:pb-0 flex flex-wrap sm:flex-nowrap gap-2 items-center">
                     <div className="w-full sm:w-1/6">
                       <CustomDropdown
@@ -495,10 +501,10 @@ const JoinTeamForm = () => {
                         }
                       />
                     </div>
-                 
-  
+
+
                   </div>
-                     {formErrors.contact && <p className="text-red-500 text-sm">{formErrors.contact}</p>}
+                  {formErrors.contact && <p className="text-red-500 text-sm">{formErrors.contact}</p>}
                   <CustomInput
                     type="email"
                     placeholder="Email Id:"
@@ -508,7 +514,7 @@ const JoinTeamForm = () => {
                     }
                     required
                   />
-                      {formErrors.email && <p className="text-red-500 text-sm">{formErrors.email}</p>}
+                  {formErrors.email && <p className="text-red-500 text-sm">{formErrors.email}</p>}
                   <div className="w-full flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-4">
                     {/* Label */}
                     <div className="font-semibold text-gray-800 min-w-fit">
