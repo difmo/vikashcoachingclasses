@@ -415,10 +415,10 @@ export default function Form() {
             onSubmit={handleFinalSubmit}
             className="bg-white p-6 rounded-lg h-screen items-center w-full"
           >
-            <h3 className="text-lg font-semibold mb-4 text-center text-[#51087E]">
+            <h3 className="text-lg md:2xl font-semibold mb-4 text-center text-[#51087E]">
               Select Experience Level and Fee Range
             </h3>
-            <div className="space-y-3 justify-center text-center items-center">
+            <div className="space-y-3 justify-center text-center text-lg items-center">
               <label className="block py-2 md:px-28">
                 <input
                   type="radio"
@@ -429,7 +429,7 @@ export default function Form() {
                   className="mr-2"
                 />
                 Want to Hire a intermediate level Teacher (up to 5 years of
-                Experience) Fees Range 10$ to 20$ [USP] Per Hr
+                Experience) {" "} Fees Range 10$ to 20$ [USD] Per Hr
               </label>
 
               <label className="block py-2 md:px-28">
@@ -441,8 +441,8 @@ export default function Form() {
                   onChange={handleExperienceChange}
                   className="mr-2"
                 />
-                Want to Hine a Proficient level Teacher (upto 10 years of
-                Experience) Fei's Range 20$ to 35$ (USD) Per Hr
+                Want to Hire a Proficient level Teacher (upto 10 years of
+                Experience) {" "} Fees Range 20$ to 35$ (USD) Per Hr
               </label>
 
               <label className="block py-2 md:px-28">
@@ -454,8 +454,8 @@ export default function Form() {
                   onChange={handleExperienceChange}
                   className="mr-2"
                 />
-                Wart to Hine a Expert level Teacher(More than 10 years of
-                Experience) Fees Range 35$ to 50$ (USD) Per Hr{" "}
+                Wart to Hire a Expert level Teacher (More than 10 years of
+                Experience) {" "} Fees Range 35$ to 50$ (USD) Per Hr{" "}
               </label>
             </div>
             <div className="w-full flex justify-center mt-4 px-4">

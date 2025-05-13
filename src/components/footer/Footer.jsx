@@ -27,11 +27,11 @@ const socialLinks = [
 
 const footerLinks = [
   { url: "/", name: "Online Science Tutors" },
-  { url: "/subject/online-physics-tutors", name: "Online Physics Tutors" },
-  { url: "/subject/online-chemistry-tutors", name: "Online Chemistry Tutors" },
-  { url: "/subject/online-maths-tutors", name: "Online Maths Tutors" },
-  { url: "/subject/online-biology-tutors", name: "Online Biology Tutors" },
-  { url: "/join-form", name: "Contact Us" },
+  { url: "/online-physics-tutors", name: "Online Physics Tutors" },
+  { url: "/online-chemistry-tutors", name: "Online Chemistry Tutors" },
+  { url: "/online-maths-tutors", name: "Online Maths Tutors" },
+  { url: "/online-biology-tutors", name: "Online Biology Tutors" },
+  { url: "/contact-us", name: "Contact Us" },
 ];
 
 export default function Footer() {
