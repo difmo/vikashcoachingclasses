@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import CustomButton from "../CustomButton";
 import CustomInput from "../CustomInput";
@@ -14,10 +13,8 @@ import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 
 import StudentCheckbox from "../StudentCheckbox";
 
-
 import Detail from "../Detail";
 import Loader from "../Loader";
-
 
 const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
 const subjects = ["Sci.", "Phy", "Chem", "Bio", "Maths", "Other"];
@@ -36,19 +33,19 @@ const sendJoinTeamForm = async (
   selectedCountryCode
 ) => {
   try {
-const requestBody = JSON.stringify({
-          name: formData.name,
-          contact: `${selectedCountryCode}${formData.contact}`,
-          email: formData.email,
-          role: selectedRole,
-          boards: formData.boards,
-          classes: formData.classes,
-          subjects: formData.subjects,
-          experience: formData.experience,
-          level: formData.level,
-          message: formData.message,
-        });
-        console.log("Request Body:", requestBody);
+    const requestBody = JSON.stringify({
+      name: formData.name,
+      contact: `${selectedCountryCode}${formData.contact}`,
+      email: formData.email,
+      role: selectedRole,
+      boards: formData.boards,
+      classes: formData.classes,
+      subjects: formData.subjects,
+      experience: formData.experience,
+      level: formData.level,
+      message: formData.message,
+    });
+    console.log("Request Body:", requestBody);
     const response = await fetch(
       "https://us-central1-vip-home-tutors.cloudfunctions.net/sendJoinTeamForm",
       {
@@ -56,7 +53,7 @@ const requestBody = JSON.stringify({
         headers: {
           "Content-Type": "application/json",
         },
-        body: requestBody 
+        body: requestBody,
       }
     );
 
@@ -139,16 +136,21 @@ const JoinTeamForm = () => {
     }
 
     if (selectedRole === "Teacher") {
-      if (formData.boards.length === 0) errors.boards = "Select at least one board.";
-      if (formData.classes.length === 0) errors.classes = "Select at least one class.";
-      if (formData.subjects.length === 0) errors.subjects = "Select at least one subject.";
-      if (!formData.experience.trim()) errors.experience = "Experience is required.";
+      if (formData.boards.length === 0)
+        errors.boards = "Select at least one board.";
+      if (formData.classes.length === 0)
+        errors.classes = "Select at least one class.";
+      if (formData.subjects.length === 0)
+        errors.subjects = "Select at least one subject.";
+      if (!formData.experience.trim())
+        errors.experience = "Experience is required.";
     }
 
     if (selectedRole === "Students / Parents") {
       if (formData.boards.length === 0) errors.boards = "Select your board.";
       if (formData.classes.length === 0) errors.classes = "Select your class.";
-      if (formData.subjects.length === 0) errors.subjects = "Select at least one subject.";
+      if (formData.subjects.length === 0)
+        errors.subjects = "Select at least one subject.";
       if (!formData.level) errors.level = "Select a level.";
     }
     if (selectedRole === "Other") {
@@ -171,7 +173,7 @@ const JoinTeamForm = () => {
         countryCode: selectedCountryCode,
         timestamp: serverTimestamp(),
       });
-      alert("Form submitted and saved successfully!");
+      // alert("Form submitted and saved successfully!");
     } catch (error) {
       console.error("Error saving form data:", error);
       alert("Failed to save form data: " + error.message);
@@ -244,7 +246,6 @@ const JoinTeamForm = () => {
       console.error("OTP verification failed:", error);
       setIsLoading(false);
       alert("Invalid OTP: " + error.message);
-
     } finally {
       setIsLoading(false);
     }
@@ -307,8 +308,9 @@ const JoinTeamForm = () => {
               {board}
             </label>
           ))}
-          {formErrors.boards && <p className="text-red-500 text-sm">{formErrors.boards}</p>}
-
+          {formErrors.boards && (
+            <p className="text-red-500 text-sm">{formErrors.boards}</p>
+          )}
         </div>
         <div className="flex flex-wrap items-center gap-3">
           <label className="font-semibold text-gray-700 mr-4">
@@ -324,8 +326,9 @@ const JoinTeamForm = () => {
             </label>
           ))}
 
-
-          {formErrors.classes && <p className="text-red-500 text-sm">{formErrors.classes}</p>}
+          {formErrors.classes && (
+            <p className="text-red-500 text-sm">{formErrors.classes}</p>
+          )}
         </div>
         <div className="flex flex-wrap gap-4">
           <label className="block font-semibold mr-2 text-gray-700">
@@ -341,8 +344,9 @@ const JoinTeamForm = () => {
             </label>
           ))}
 
-
-          {formErrors.subjects && <p className="text-red-500 text-sm">{formErrors.subjects}</p>}
+          {formErrors.subjects && (
+            <p className="text-red-500 text-sm">{formErrors.subjects}</p>
+          )}
         </div>
         <CustomInput
           type="text"
@@ -353,7 +357,9 @@ const JoinTeamForm = () => {
           }
         />
 
-        {formErrors.experience && <p className="text-red-500 text-sm">{formErrors.experience}</p>}
+        {formErrors.experience && (
+          <p className="text-red-500 text-sm">{formErrors.experience}</p>
+        )}
       </>
     ),
     "Students / Parents": (
@@ -407,7 +413,9 @@ const JoinTeamForm = () => {
               {sub}
             </label>
           ))}
-          {formErrors.subjects && <p className="text-red-500 text-sm">{formErrors.subjects}</p>}
+          {formErrors.subjects && (
+            <p className="text-red-500 text-sm">{formErrors.subjects}</p>
+          )}
         </div>
         <select
           className="w-full border rounded-md px-4 py-2"
@@ -421,7 +429,9 @@ const JoinTeamForm = () => {
             </option>
           ))}
         </select>
-        {formErrors.level && <p className="text-red-500 text-sm">{formErrors.level}</p>}
+        {formErrors.level && (
+          <p className="text-red-500 text-sm">{formErrors.level}</p>
+        )}
       </>
     ),
     Other: (
@@ -435,14 +445,15 @@ const JoinTeamForm = () => {
           rows={4}
           className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
-        {formErrors.message && <p className="text-red-500 text-sm">{formErrors.message}</p>}
+        {formErrors.message && (
+          <p className="text-red-500 text-sm">{formErrors.message}</p>
+        )}
       </>
     ),
   };
 
   return (
     <div className="relative">
-
       <Loader isLoading={isLoading} />
 
       <div className="bg-[#f2f2f2] text-md text-headerbordertext font-extrabold flex justify-center">
@@ -454,7 +465,6 @@ const JoinTeamForm = () => {
             <div className="flex flex-col lg:flex-row gap-10 md:gap-0 md:border-2 rounded-2xl">
               <div className="w-full rounded-2xl lg:rounded-e-none bg-primary h-auto lg:w-1/2">
                 <Detail />
-
               </div>
               <div className="w-full lg:w-1/2 p-8 bg-white border-3 border-black md:border-0 rounded-2xl lg:rounded-s-none">
                 <h2 className="text-3xl font-bold text-center text-[#dba577] mb-6">
@@ -473,7 +483,9 @@ const JoinTeamForm = () => {
                     }
                     required
                   />
-                  {formErrors.name && <p className="text-red-500 text-sm">{formErrors.name}</p>}
+                  {formErrors.name && (
+                    <p className="text-red-500 text-sm">{formErrors.name}</p>
+                  )}
 
                   <div className="pb-2 md:pb-0 flex flex-wrap sm:flex-nowrap gap-2 items-center">
                     <div className="w-full sm:w-1/6">
@@ -501,10 +513,10 @@ const JoinTeamForm = () => {
                         }
                       />
                     </div>
-
-
                   </div>
-                  {formErrors.contact && <p className="text-red-500 text-sm">{formErrors.contact}</p>}
+                  {formErrors.contact && (
+                    <p className="text-red-500 text-sm">{formErrors.contact}</p>
+                  )}
                   <CustomInput
                     type="email"
                     placeholder="Email Id:"
@@ -514,7 +526,9 @@ const JoinTeamForm = () => {
                     }
                     required
                   />
-                  {formErrors.email && <p className="text-red-500 text-sm">{formErrors.email}</p>}
+                  {formErrors.email && (
+                    <p className="text-red-500 text-sm">{formErrors.email}</p>
+                  )}
                   <div className="w-full flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-4">
                     {/* Label */}
                     <div className="font-semibold text-gray-800 min-w-fit">
@@ -525,7 +539,10 @@ const JoinTeamForm = () => {
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-3 md:gap-8 xl:gap-24">
                       {[
                         { value: "Teacher", label: "Teacher" },
-                        { value: "Students / Parents", label: "Students / Parents" },
+                        {
+                          value: "Students / Parents",
+                          label: "Students/Parents",
+                        },
                         { value: "Other", label: "Other" },
                       ].map((role) => (
                         <label
@@ -542,21 +559,27 @@ const JoinTeamForm = () => {
                               className="sr-only"
                             />
                             <div
-                              className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${selectedRole === role.value ? "border-blue-600" : "border-gray-300"
-                                }`}
+                              className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+                                selectedRole === role.value
+                                  ? "border-blue-600"
+                                  : "border-gray-300"
+                              }`}
                             >
                               {selectedRole === role.value && (
                                 <div className="w-2.5 h-2.5 bg-[#dba577] rounded-full" />
                               )}
                             </div>
                           </span>
-                          <span className="text-gray-800 text-sm sm:text-base">{role.label}</span>
+                          <span className="text-gray-800 text-sm sm:text-base">
+                            {role.label}
+                          </span>
                         </label>
                       ))}
                     </div>
-                    {formErrors.role && <p className="text-red-500 text-sm">{formErrors.role}</p>}
+                    {formErrors.role && (
+                      <p className="text-red-500 text-sm">{formErrors.role}</p>
+                    )}
                   </div>
-
 
                   {roleFields[selectedRole]}
                   <div className="w-full flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 xl:gap-24">
@@ -593,8 +616,6 @@ const JoinTeamForm = () => {
                       />
                     </div>
                   </div>
-
-
 
                   <div id="recaptcha"></div>
                   <CustomButton

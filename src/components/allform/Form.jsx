@@ -4,6 +4,8 @@ import CustomButton from "../CustomButton";
 import CustomInput from "../CustomInput";
 import CustomDropdown from "../CustomDropdown";
 import { addDoc, collection } from "firebase/firestore";
+import { useEffect } from "react";
+
 import {
   db,
   RecaptchaVerifier,
@@ -28,7 +30,7 @@ export default function Form() {
     name: "",
     phone: "",
     classType: "",
-    subjects: "",
+    subjects: [],
     board: "",
     level: "",
   };
@@ -38,12 +40,15 @@ export default function Form() {
   const [otpVerified, setOtpVerified] = useState(false);
   const [verificationId, setVerificationId] = useState("");
   const [selectedClassType, setSelectedClassType] = useState("Select Class");
+  const [selectedsubjects, setSelectedsubjects] = useState("");
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
   const [selectedLevel, setSelectedLevel] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
+  const [errorsEx, setErrorsEx] = useState("");
   const [formData, setFormData] = useState(initialFormState);
   const [errors, setErrors] = useState(initialErrors);
   const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -78,6 +83,7 @@ export default function Form() {
 
   const handleExperienceChange = (e) => {
     setExperienceLevel(e.target.value);
+    setErrorsEx(""); // Clear error when user selects something
   };
 
   const validateForm = () => {
@@ -90,6 +96,11 @@ export default function Form() {
     } else {
       formErrors.name = "";
     }
+    // ❌ Using phoneNumber before it’s defined
+    // if (!phoneNumber.match(/^\+\d{10,15}$/)) {
+    //   alert("Please enter a valid phone number (e.g., +919876543210)");
+    //   return;
+    // }
 
     if (!formData.phone || formData.phone.length < 10) {
       formErrors.phone = "Please enter a valid phone number.";
@@ -126,26 +137,60 @@ export default function Form() {
       formErrors.level = "";
     }
 
+    // if (!experienceLevel) {
+    //   formErrors.experienceLevel = "Please select an experience level.";
+    //   isValid = false;
+    // } else {
+    //   formErrors.experienceLevel = "";
+    // }
+
     setErrors(formErrors);
     return isValid;
   };
 
+  useEffect(() => {
+    return () => {
+      if (window.recaptchaVerifier) {
+        delete window.recaptchaVerifier;
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!window.recaptchaVerifier) {
+      window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha", {
+        size: "invisible",
+        callback: () => {
+          console.log("reCAPTCHA resolved");
+        },
+        "expired-callback": () => {
+          console.log("reCAPTCHA expired. Resetting...");
+          window.recaptchaVerifier.render().then((widgetId) => {
+            window.grecaptcha.reset(widgetId);
+          });
+        },
+      });
+
+      // Render the reCAPTCHA widget immediately
+      window.recaptchaVerifier.render().catch(console.error);
+    }
+  }, []);
 
   const handleSendOTP = async () => {
     if (!validateForm()) {
       return alert("Please fill in all required fields.");
     }
     try {
-      //  const phoneNumber = `${selectedCountryCode}${formData.contact}`.trim();
-      if (!phoneNumber.match(/^\+\d{10,15}$/)) {
-        alert("Please enter a valid phone number (e.g., +919876543210)");
-        return;
-      }
+      // const phoneNumber = `${selectedCountryCode}${formData.contact}`.trim();
+      // if (!phoneNumber.match(/^\+\d{10,15}$/)) {
+      //   alert("Please enter a valid phone number (e.g., +919876543210)");
+      //   return;
+      // }
 
       if (!window.recaptchaVerifier) {
-        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha', {
-          size: 'invisible',
-          callback: () => { },
+        window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha", {
+          size: "invisible",
+          callback: () => {},
         });
       }
       setIsLoading(true);
@@ -162,16 +207,15 @@ export default function Form() {
       setVerificationId(confirmationResult.verificationId);
       setOtpSent(true);
       setIsLoading(false);
-      alert('OTP sent successfully!');
+      alert("OTP sent successfully!");
     } catch (error) {
-      console.error('Error sending OTP:', error.message);
-      alert('Error: ' + error.message);
+      console.error("Error sending OTP:", error.message);
+      alert("Error: " + error.message);
       setIsLoading(false);
     } finally {
       setIsLoading(false);
     }
   };
-
 
   const handleVerifyOTP = async () => {
     if (!otp || !verificationId) return alert("Please enter the OTP.");
@@ -191,7 +235,6 @@ export default function Form() {
       setIsLoading(false); // Ensure loader is turned off
     }
   };
-
 
   const sendFormDataToEmail = async () => {
     try {
@@ -230,6 +273,7 @@ export default function Form() {
     setOtpSent(false);
     setOtpVerified(false);
     setVerificationId("");
+    setSelectedsubjects("");
     setSelectedClassType("Select Class");
     setSelectedCountryCode("+91");
     setSelectedLevel("");
@@ -239,9 +283,19 @@ export default function Form() {
 
   const handleFinalSubmit = async (e) => {
     e.preventDefault();
-      setIsLoading(true);
+
+    // Validate that experienceLevel is selected
+    if (!experienceLevel) {
+      setErrorsEx("Please select an experience level.");
+      return;
+    }
+
+    // Clear errors and continue with submission logic
+    setErrorsEx("");
+
+    e.preventDefault();
+    setIsLoading(true);
     try {
-    
       await addDoc(collection(db, "Vikasrequests"), {
         name: formData.name,
         phone: selectedCountryCode + formData.phone,
@@ -259,6 +313,7 @@ export default function Form() {
       resetForm();
       navigate("/");
       setOtpVerified(false);
+      setFormData(initialFormState);
     } catch (err) {
       alert("Something went wrong. Please try again later.");
       console.error(err);
@@ -266,7 +321,6 @@ export default function Form() {
       setOtpVerified(false);
     }
   };
-
 
   return (
     <div className="relative w-full px-4 sm:px-6 md:px-4 pb-3 border-3 border-white rounded-lg">
@@ -338,6 +392,7 @@ export default function Form() {
                 type="checkbox"
                 name="subjects"
                 value={subject}
+                checked={formData.subjects.includes(subject)} // ← this is critical
                 onChange={handleSubjectChange}
               />
               <span className="text-sm sm:text-base px-2">{subject}</span>
@@ -383,10 +438,10 @@ export default function Form() {
       <div id="recaptcha"></div>
 
       {!otpVerified ? (
-        <div className="flex flex-col sm:flex-row flex-nowrap items-center gap-3 overflow-x-auto w-full">
+        <div className="flex flex-col sm:flex-row flex-nowrap items-center gap-2 justify-between w-full">
           <CustomButton
             onClick={handleSendOTP}
-            className="w-full sm:w-auto shrink-0 px-3 py-3 text-[#51087E] text-sm hover:bg-primary bg-[#dba577] rounded"
+            className=" shrink-0 px-3 py-3 text-[#51087E] text-sm hover:bg-primary bg-[#dba577] rounded"
             label="Get OTP"
           />
           <CustomInput
@@ -394,42 +449,38 @@ export default function Form() {
             placeholder="Enter OTP"
             value={otp}
             onChange={(e) => setOtp(e.target.value)}
-            className="w-full px-3 py-3 text-sm rounded-lg"
+            className=" px-3 py-3 text-sm rounded-lg"
           />
-
 
           <CustomButton
             onClick={handleVerifyOTP}
-            className="w-full sm:w-auto shrink-0 px-3 py-2 text-headerbordertext hover:bg-primary bg-[#dba577] rounded"
+            className=" shrink-0 px-3 py-2 text-headerbordertext hover:bg-primary bg-[#dba577] rounded"
             label="Verify"
           />
         </div>
-
-
-
-
       ) : (
         <div className="fixed inset-0 bg-white flex justify-center items-center z-50">
-               <Loader isLoading={isLoading} />
+          <Loader isLoading={isLoading} />
           <form
             onSubmit={handleFinalSubmit}
             className="bg-white p-6 rounded-lg h-screen items-center w-full"
           >
-            <h3 className="text-lg md:2xl font-semibold mb-4 text-center text-[#51087E]">
+            <h3 className="text-lg font-semibold mb-4 text-center text-[#51087E]">
               Select Experience Level and Fee Range
             </h3>
-            <div className="space-y-3 justify-center text-center text-lg items-center">
+
+            <div className="space-y-3 justify-center text-center items-center">
               <label className="block py-2 md:px-28">
                 <input
                   type="radio"
                   name="experience"
-                  value="expert"
-                  checked={experienceLevel === "expert"}
+                  value="intermediate"
+                  checked={experienceLevel === "intermediate"}
                   onChange={handleExperienceChange}
                   className="mr-2"
                 />
-                Want to Hire a intermediate level Teacher (up to 5 years of
-                Experience) {" "} Fees Range 10$ to 20$ [USD] Per Hr
+                Want to Hire an Intermediate level Teacher (up to 5 years of
+                Experience) Fees Range $10 to $20 (USD) Per Hour
               </label>
 
               <label className="block py-2 md:px-28">
@@ -441,36 +492,47 @@ export default function Form() {
                   onChange={handleExperienceChange}
                   className="mr-2"
                 />
-                Want to Hire a Proficient level Teacher (upto 10 years of
-                Experience) {" "} Fees Range 20$ to 35$ (USD) Per Hr
+                Want to Hire a Proficient level Teacher (up to 10 years of
+                Experience) Fees Range $20 to $35 (USD) Per Hour
               </label>
 
               <label className="block py-2 md:px-28">
                 <input
                   type="radio"
                   name="experience"
-                  value="intermediate"
-                  checked={experienceLevel === "intermediate"}
+                  value="expert"
+                  checked={experienceLevel === "expert"}
                   onChange={handleExperienceChange}
                   className="mr-2"
                 />
-                Wart to Hire a Expert level Teacher (More than 10 years of
-                Experience) {" "} Fees Range 35$ to 50$ (USD) Per Hr{" "}
+                Want to Hire an Expert level Teacher (More than 10 years of
+                Experience) Fees Range $35 to $50 (USD) Per Hour
               </label>
             </div>
+
+            {/* Error Display */}
+            {errorsEx && (
+              <p className="text-red-500 text-sm text-center mt-2">
+                {errorsEx}
+              </p>
+            )}
+
             <div className="w-full flex justify-center mt-4 px-4">
-              <button disabled={isLoading}
+              <button
                 type="submit"
-                className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 px-4 py-2 bg-[#dba577] hover:bg-[#c38e50] text-white font-bold rounded transition duration-200"
+                label="Submit"
+                className={`w-full sm:w-3/4 md:w-1/2 lg:w-1/3 px-4 py-2 ${
+                  isSubmitting
+                    ? "bg-gray-400"
+                    : "bg-[#dba577] hover:bg-[#c38e50]"
+                } text-white font-bold rounded transition duration-200`}
               >
                 Submit
               </button>
             </div>
-
           </form>
         </div>
-     )} 
+      )}
     </div>
   );
 }
-

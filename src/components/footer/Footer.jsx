@@ -7,22 +7,36 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../Firebase";
 
 const socialLinks = [
   {
     icon: <FaYoutube />,
     url: "https://youtube.com/@viptutors?si=5RXybw4w1k_a_lyX",
+    label: "YouTube",
   },
-  { icon: <FaTwitter />, url: "https://x.com/vikaskashyapsir?s=11" },
+  {
+    icon: <FaTwitter />,
+    url: "https://x.com/vikaskashyapsir?s=11",
+    label: "Twitter",
+  },
   {
     icon: <FaFacebookF />,
     url: "https://www.facebook.com/share/167YKPPfKp/?mibextid=wwXIfr",
+    label: "Facebook",
   },
   {
     icon: <FaInstagram />,
     url: "https://www.instagram.com/onlinephysicsguru?igsh=cWwzY3ptMXluaGps&utm_source=qr",
+    label: "Instagram",
   },
-  { icon: <FaWhatsapp />, url: "https://wa.me/919582699555" },
+  {
+    icon: <FaWhatsapp />,
+    url: "https://wa.me/919582699555",
+    label: "WhatsApp",
+  },
 ];
 
 const footerLinks = [
@@ -35,6 +49,49 @@ const footerLinks = [
 ];
 
 export default function Footer() {
+  const [formData, setFormData] = useState({ email: "" });
+  const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const validateForm = () => {
+    const { email } = formData;
+    const newErrors = {};
+    if (!email) newErrors.email = "Please enter your email.";
+    else if (!/^\S+@\S+\.\S+$/.test(email))
+      newErrors.email = "Enter a valid email.";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    setIsLoading(true);
+    try {
+      await addDoc(collection(db, "subscriptions"), {
+        email: formData.email,
+        createdAt: new Date(),
+      });
+      setShowPopup(true);
+      setFormData({ email: "" });
+      setErrors({});
+    } catch (error) {
+      console.error("Error adding document:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="bg-[#393951] text-white text-xl">
       <div className="container mx-auto">
@@ -91,15 +148,31 @@ export default function Footer() {
                 and AUSTRALIA.
               </p>
               <div className="flex w-full">
-                <input
-                  type="email"
-                  placeholder="Your Email Address"
-                  className="w-full p-2 rounded-l bg-white text-black outline-none"
-                />
-                <button className="bg-orange-500 rounded-r px-6 py-2 text-white font-semibold whitespace-nowrap">
-                  Sign Up
-                </button>
+                <form onSubmit={handleSubmit} className="flex items-center">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email Address"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full p-2 rounded-l bg-white text-black outline-none"
+                  />
+                  <button
+                    disabled={isLoading}
+                    className="bg-orange-500 rounded-r px-6 py-2 text-white font-semibold whitespace-nowrap"
+                  >
+                    {isLoading ? "Processing ..." : "Sign Up"}
+                  </button>
+                </form>
               </div>
+              {errors.email && (
+                <p className="text-sm text-red-500">{errors.email}</p>
+              )}
+              {showPopup && (
+                <p className="text-sm text-green-400 mt-2">
+                  Thank you for subscribing!
+                </p>
+              )}
             </div>
           </div>
 
