@@ -110,22 +110,50 @@ const JoinTeamForm = () => {
   const handleCountryCodeSelect = (countryCode) => {
     setSelectedCountryCode(countryCode);
   };
-  const validateForm = () => {
+    const [formErrors, setFormErrors] = useState({});
+ const validateForm = () => {
     const errors = {};
-    if (!formData.name.trim()) errors.name = "Name is required.";
-    if (!formData.contact.trim()) errors.contact = "Mobile number is required.";
-    else if (!/^\d{10}$/.test(formData.contact.trim())) errors.contact = "Enter valid 10-digit mobile number.";
 
-    if (!formData.email.trim()) errors.email = "Email is required.";
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) errors.email = "Enter a valid email.";
+    if (!formData.name.trim()) errors.name = "Name is required.";
+
+    if (!formData.contact.trim()) {
+      errors.contact = "Mobile number is required.";
+    } else if (!/^\d{10}$/.test(formData.contact.trim())) {
+      errors.contact = "Enter a valid 10-digit mobile number.";
+    }
+
+    if (!formData.email.trim()) {
+      errors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email.trim())) {
+      errors.email = "Enter a valid email.";
+    }
 
     if (!selectedRole) errors.role = "Please select a role.";
 
-    if (!formData.otp.trim()) errors.otp = "OTP is required.";
-    else if (formData.otp.length !== 6) errors.otp = "OTP should be 6 digits.";
+    if (otpSent && !formData.otp.trim()) {
+      errors.otp = "OTP is required.";
+    } else if (otpSent && formData.otp.length !== 6) {
+      errors.otp = "OTP should be 6 digits.";
+    }
 
-    // Add more based on selectedRole fields if necessary
-    return errors;
+    if (selectedRole === "Teacher") {
+      if (formData.boards.length === 0) errors.boards = "Select at least one board.";
+      if (formData.classes.length === 0) errors.classes = "Select at least one class.";
+      if (formData.subjects.length === 0) errors.subjects = "Select at least one subject.";
+      if (!formData.experience.trim()) errors.experience = "Experience is required.";
+    }
+
+    if (selectedRole === "Students / Parents") {
+      if (!formData.boards) errors.boards = "Select your board.";
+      if (!formData.classes) errors.classes = "Select your class.";
+      if (formData.subjects.length === 0) errors.subjects = "Select at least one subject.";
+      if (!formData.level) errors.level = "Select a level.";
+    }
+    if (selectedRole === "Other") {
+      if (!formData.message.trim()) errors.message = "Message is required.";
+    }
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
   };
 
   const saveFormData = async () => {
@@ -151,8 +179,12 @@ const JoinTeamForm = () => {
   };
 
   const sendOtp = async () => {
-    setIsLoading(true);
+    if (!validateForm()) {
+      return alert("Please fill in all required fields.");
+    }
+
     try {
+      setIsLoading(true);
       const phoneNumber = `${selectedCountryCode}${formData.contact}`.trim();
       if (!phoneNumber.match(/^\+\d{10,15}$/)) {
         alert("Please enter a valid phone number (e.g., +919876543210)");
@@ -179,12 +211,14 @@ const JoinTeamForm = () => {
       setConfirmationResult(result);
       setOtpSent(true);
       alert("OTP sent to " + phoneNumber);
+      setIsLoading(false);
     } catch (error) {
       console.error("Error sending OTP:", error);
       alert("Failed to send OTP: " + error.message);
       if (window.recaptchaVerifier) {
         window.recaptchaVerifier.reset();
       }
+      setIsLoading(false);
     } finally {
       setIsLoading(false);
     }
@@ -195,16 +229,20 @@ const JoinTeamForm = () => {
       alert("Please request OTP first");
       return;
     }
-    setIsLoading(true);
+
     try {
+      setIsLoading(true);
       const result = await confirmationResult.confirm(formData.otp);
       const uid = result.user.uid;
       setOtpVerified(true);
       setUserId(uid);
+      setIsLoading(false);
       alert("OTP verified successfully");
     } catch (error) {
       console.error("OTP verification failed:", error);
+      setIsLoading(false);
       alert("Invalid OTP: " + error.message);
+
     } finally {
       setIsLoading(false);
     }
@@ -216,9 +254,9 @@ const JoinTeamForm = () => {
       alert("Please verify OTP before submitting");
       return;
     }
-    setIsLoading(true);
-    try {
 
+    try {
+      setIsLoading(true);
       await saveFormData();
 
       await sendJoinTeamForm(formData, selectedRole, selectedCountryCode);
@@ -241,9 +279,10 @@ const JoinTeamForm = () => {
       setOtpSent(false);
       setConfirmationResult(null);
       setUserId(null);
-
+      setIsLoading(false);
     } catch (error) {
       console.error("Error during submission:", error);
+      setIsLoading(false);
       alert("Failed to submit form: " + error.message);
     } finally {
       setIsLoading(false);
@@ -266,6 +305,7 @@ const JoinTeamForm = () => {
               {board}
             </label>
           ))}
+          {formErrors.boards && <p className="text-red-500 text-sm">{formErrors.boards}</p>}
         </div>
         <div className="flex flex-wrap items-center gap-4">
           <label className="font-semibold text-gray-700 mr-4">
@@ -280,6 +320,9 @@ const JoinTeamForm = () => {
               {cla}
             </label>
           ))}
+
+    
+      {formErrors.classes && <p className="text-red-500 text-sm">{formErrors.classes}</p>}
         </div>
         <div className="flex flex-wrap gap-4">
           <label className="block font-semibold mr-2 text-gray-700">
@@ -294,6 +337,9 @@ const JoinTeamForm = () => {
               {sub}
             </label>
           ))}
+         
+
+      {formErrors.subjects && <p className="text-red-500 text-sm">{formErrors.subjects}</p>}
         </div>
         <CustomInput
           type="text"
@@ -303,6 +349,8 @@ const JoinTeamForm = () => {
             setFormData({ ...formData, experience: e.target.value })
           }
         />
+        
+      {formErrors.experience && <p className="text-red-500 text-sm">{formErrors.experience}</p>}
       </>
     ),
     "Students / Parents": (
@@ -320,6 +368,8 @@ const JoinTeamForm = () => {
               {board}
             </label>
           ))}
+        
+      {formErrors.boards && <p className="text-red-500 text-sm">{formErrors.boards}</p>}
         </div>
 
         <div className="flex flex-wrap items-center gap-4">
@@ -335,6 +385,7 @@ const JoinTeamForm = () => {
               {cla}
             </label>
           ))}
+        {formErrors.classes && <p className="text-red-500 text-sm">{formErrors.classes}</p>}
         </div>
 
         <div className="flex flex-wrap gap-4">
@@ -350,6 +401,7 @@ const JoinTeamForm = () => {
               {sub}
             </label>
           ))}
+        {formErrors.subjects && <p className="text-red-500 text-sm">{formErrors.subjects}</p>}
         </div>
         <select
           className="w-full border rounded-md px-4 py-2"
@@ -363,6 +415,7 @@ const JoinTeamForm = () => {
             </option>
           ))}
         </select>
+        {formErrors.level && <p className="text-red-500 text-sm">{formErrors.level}</p>}
       </>
     ),
     Other: (
@@ -376,6 +429,7 @@ const JoinTeamForm = () => {
           rows={4}
           className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
+        {formErrors.message && <p className="text-red-500 text-sm">{formErrors.message}</p>}
       </>
     ),
   };
@@ -413,6 +467,8 @@ const JoinTeamForm = () => {
                     }
                     required
                   />
+                  {formErrors.name && <p className="text-red-500 text-sm">{formErrors.name}</p>}
+      
                   <div className="pb-2 md:pb-0 flex flex-wrap sm:flex-nowrap gap-2 items-center">
                     <div className="w-full sm:w-1/6">
                       <CustomDropdown
@@ -439,7 +495,10 @@ const JoinTeamForm = () => {
                         }
                       />
                     </div>
+                 
+  
                   </div>
+                     {formErrors.contact && <p className="text-red-500 text-sm">{formErrors.contact}</p>}
                   <CustomInput
                     type="email"
                     placeholder="Email Id:"
@@ -449,6 +508,7 @@ const JoinTeamForm = () => {
                     }
                     required
                   />
+                      {formErrors.email && <p className="text-red-500 text-sm">{formErrors.email}</p>}
                   <div className="w-full flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-4">
                     {/* Label */}
                     <div className="font-semibold text-gray-800 min-w-fit">
@@ -488,6 +548,7 @@ const JoinTeamForm = () => {
                         </label>
                       ))}
                     </div>
+                    {formErrors.role && <p className="text-red-500 text-sm">{formErrors.role}</p>}
                   </div>
 
 

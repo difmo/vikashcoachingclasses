@@ -132,7 +132,9 @@ export default function Form() {
 
 
   const handleSendOTP = async () => {
-    setIsLoading(true);
+    if (!validateForm()) {
+      return alert("Please fill in all required fields.");
+    }
     try {
       //  const phoneNumber = `${selectedCountryCode}${formData.contact}`.trim();
       if (!phoneNumber.match(/^\+\d{10,15}$/)) {
@@ -146,6 +148,7 @@ export default function Form() {
           callback: () => { },
         });
       }
+      setIsLoading(true);
 
       const appVerifier = window.recaptchaVerifier;
       const phoneNumber = selectedCountryCode + formData.phone;
@@ -158,10 +161,12 @@ export default function Form() {
 
       setVerificationId(confirmationResult.verificationId);
       setOtpSent(true);
+      setIsLoading(false);
       alert('OTP sent successfully!');
     } catch (error) {
       console.error('Error sending OTP:', error.message);
       alert('Error: ' + error.message);
+      setIsLoading(false);
     } finally {
       setIsLoading(false);
     }
@@ -176,10 +181,12 @@ export default function Form() {
       const credential = PhoneAuthProvider.credential(verificationId, otp);
       await signInWithCredential(auth, credential);
       setOtpVerified(true);
+      setIsLoading(false);
       alert("OTP verified successfully!");
     } catch (error) {
       console.error("OTP Verification Error:", error);
       alert("Invalid OTP. Please try again.");
+      setIsLoading(false);
     } finally {
       setIsLoading(false); // Ensure loader is turned off
     }
@@ -207,11 +214,11 @@ export default function Form() {
           }),
         }
       );
-
+      setIsLoading(false);
       if (!response.ok) throw new Error("Failed to send form data to email");
-
       return true;
     } catch (error) {
+      setIsLoading(false);
       console.error("Error sending form data to email:", error);
       throw error;
     }
@@ -232,8 +239,9 @@ export default function Form() {
 
   const handleFinalSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
+      setIsLoading(true);
     try {
+    
       await addDoc(collection(db, "Vikasrequests"), {
         name: formData.name,
         phone: selectedCountryCode + formData.phone,
@@ -246,15 +254,19 @@ export default function Form() {
       });
 
       await sendFormDataToEmail();
+      setIsLoading(false);
       alert("Thanks for submitting! We'll get in touch soon.");
       resetForm();
       navigate("/");
+      setOtpVerified(false);
     } catch (err) {
       alert("Something went wrong. Please try again later.");
       console.error(err);
+      setIsLoading(false);
       setOtpVerified(false);
     }
   };
+
 
   return (
     <div className="relative w-full px-4 sm:px-6 md:px-4 pb-3 border-3 border-white rounded-lg">
@@ -398,6 +410,7 @@ export default function Form() {
 
       ) : (
         <div className="fixed inset-0 bg-white flex justify-center items-center z-50">
+               <Loader isLoading={isLoading} />
           <form
             onSubmit={handleFinalSubmit}
             className="bg-white p-6 rounded-lg h-screen items-center w-full"
@@ -446,7 +459,7 @@ export default function Form() {
               </label>
             </div>
             <div className="w-full flex justify-center mt-4 px-4">
-              <button
+              <button disabled={isLoading}
                 type="submit"
                 className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 px-4 py-2 bg-[#dba577] hover:bg-[#c38e50] text-white font-bold rounded transition duration-200"
               >
@@ -456,7 +469,7 @@ export default function Form() {
 
           </form>
         </div>
-      )}
+     )} 
     </div>
   );
 }
