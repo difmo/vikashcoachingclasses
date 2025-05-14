@@ -78,15 +78,33 @@ export default function Footer() {
 
     setIsLoading(true);
     try {
+      // Save to Firebase
       await addDoc(collection(db, "subscriptions"), {
         email: formData.email,
         createdAt: new Date(),
       });
+
+      // Send email to Mailer API
+      const response = await fetch(
+        "https://us-central1-vip-home-tutors.cloudfunctions.net/sendNewsletterSubscription",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: formData.email }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Mailer API request failed");
+      }
+
       setShowPopup(true);
       setFormData({ email: "" });
       setErrors({});
     } catch (error) {
-      console.error("Error adding document:", error);
+      console.error("Subscription error:", error);
     } finally {
       setIsLoading(false);
     }
@@ -126,7 +144,7 @@ export default function Footer() {
               <h2 className="text-orange-500 text-xl font-semibold mb-4">
                 Hire Online Private Tutors :
               </h2>
-              <ul className="">
+              <ul>
                 {footerLinks.map((link, index) => (
                   <li key={index}>
                     <a href={link.url} className="hover:text-orange-500">
@@ -148,7 +166,10 @@ export default function Footer() {
                 and AUSTRALIA.
               </p>
               <div className="flex w-full">
-                <form onSubmit={handleSubmit} className="flex items-center">
+                <form
+                  onSubmit={handleSubmit}
+                  className="flex items-center w-full"
+                >
                   <input
                     type="email"
                     name="email"

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CustomButton from "../CustomButton";
 import CustomInput from "../CustomInput";
@@ -49,6 +49,7 @@ export default function Form() {
   const [errors, setErrors] = useState(initialErrors);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef(null);
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -321,14 +322,35 @@ export default function Form() {
       setOtpVerified(false);
     }
   };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (formRef.current && !formRef.current.contains(event.target)) {
+        // Reset only errors:
+        setErrors(initialErrors);
+        setErrorsEx("");
+
+        // Optionally reset entire form:
+        // resetForm();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div className="relative w-full px-4 sm:px-6 md:px-4 pb-3 border-3 border-white rounded-lg">
+    <div
+      ref={formRef}
+      className="relative w-full px-4 sm:px-6 md:px-4 pb-3 border-3 border-white rounded-lg"
+    >
       <Loader isLoading={isLoading} />
+
       <div className="-mb-1 mt-1 text-[31px] tracking-tight text-[#dba577] font-extrabold">
         Kindly, Fill the Form :
       </div>
-
       <div className="-pb-1">
         <CustomInput
           placeholder="Enter Your Name :"
@@ -338,7 +360,6 @@ export default function Form() {
         />
         {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
       </div>
-
       <div className="pb-1 flex flex-wrap sm:flex-nowrap gap-2 items-center">
         <div className="w-full sm:w-1/6">
           <CustomDropdown
@@ -360,7 +381,6 @@ export default function Form() {
           )}
         </div>
       </div>
-
       <CustomDropdown
         className="text-black"
         selectOption={["7th", "8th", "9th", "10th", "11th", "12th", "Droppers"]}
@@ -370,7 +390,6 @@ export default function Form() {
       {errors.classType && (
         <p className="text-red-500 text-sm">{errors.classType}</p>
       )}
-
       <div className="pb-1">
         <label className="block font-semibold text-sm sm:text-base">
           Select Subjects :
@@ -403,7 +422,6 @@ export default function Form() {
           <p className="text-red-500 text-sm">{errors.subjects}</p>
         )}
       </div>
-
       <div className="flex flex-wrap gap-2 pb-2">
         <label className="block text-black font-extrabold">Board : </label>
         {["CBSE", "IB", "ICSE", "ISC", "IGCSE"].map((board) => (
@@ -420,7 +438,6 @@ export default function Form() {
         ))}
         {errors.board && <p className="text-red-500 text-sm">{errors.board}</p>}
       </div>
-
       <CustomDropdown
         className="text-black"
         selectOption={[
@@ -434,9 +451,7 @@ export default function Form() {
         onSelect={handleLevelSelect}
       />
       {errors.level && <p className="text-red-500 text-sm">{errors.level}</p>}
-
       <div id="recaptcha"></div>
-
       {!otpVerified ? (
         <div className="flex flex-col sm:flex-row flex-nowrap items-center gap-2 justify-between w-full">
           <CustomButton
@@ -459,17 +474,17 @@ export default function Form() {
           />
         </div>
       ) : (
-        <div className="fixed inset-0 bg-white flex justify-center items-center z-50">
+        <div className="fixed inset-0 pt-18 bg-white flex justify-center items-center z-50">
           <Loader isLoading={isLoading} />
           <form
             onSubmit={handleFinalSubmit}
-            className="bg-white p-6 rounded-lg h-screen items-center w-full"
+            className="bg-white p-6 rounded-lg h-screen ab  items-center w-full"
           >
-            <h3 className="text-lg font-semibold mb-4 text-center text-[#51087E]">
+            <h3 className="text-3xl font-semibold mb-4 text-center text-[#51087E]">
               Select Experience Level and Fee Range
             </h3>
 
-            <div className="space-y-3 justify-center text-center items-center">
+            <div className="space-y-3 justify-center text-center text-2xl  items-center">
               <label className="block py-2 md:px-28">
                 <input
                   type="radio"
