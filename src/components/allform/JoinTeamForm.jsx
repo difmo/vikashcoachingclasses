@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CustomButton from "../CustomButton";
 import CustomInput from "../CustomInput";
 import CustomCheckbox from "../CustomCheckbox";
@@ -77,7 +77,8 @@ const JoinTeamForm = () => {
   const [confirmationResult, setConfirmationResult] = useState(null);
   const [userId, setUserId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [formErrors, setFormErrors] = useState({});
+  const formRef = useRef(null);
   const [formData, setFormData] = useState({
     name: "",
     contact: "",
@@ -109,7 +110,6 @@ const JoinTeamForm = () => {
   const handleCountryCodeSelect = (countryCode) => {
     setSelectedCountryCode(countryCode);
   };
-  const [formErrors, setFormErrors] = useState({});
   const validateForm = () => {
     const errors = {};
 
@@ -251,6 +251,23 @@ const JoinTeamForm = () => {
     }
   };
 
+  useEffect(() => {
+    // Function to handle clicks outside the form
+    const handleClickOutside = (event) => {
+      if (formRef.current && !formRef.current.contains(event.target)) {
+        // Clicked outside the form, clear validation errors
+        setFormErrors({});
+      }
+    };
+
+    // Add event listener when component mounts
+    document.addEventListener("click", handleClickOutside);
+
+    // Clean up the event listener when component unmounts
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!otpVerified) {
@@ -466,7 +483,10 @@ const JoinTeamForm = () => {
               <div className="w-full rounded-2xl lg:rounded-e-none bg-primary h-auto lg:w-1/2">
                 <Detail />
               </div>
-              <div className="w-full lg:w-1/2 p-8 bg-white border-3 border-black md:border-0 rounded-2xl lg:rounded-s-none">
+              <div
+                ref={formRef}
+                className="w-full lg:w-1/2 p-8 bg-white border-3 border-black md:border-0 rounded-2xl lg:rounded-s-none"
+              >
                 <h2 className="text-3xl font-bold text-center text-[#dba577] mb-6">
                   Kindly, Fill the Form to get in Touch:
                 </h2>
