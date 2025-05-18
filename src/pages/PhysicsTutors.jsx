@@ -35,7 +35,7 @@ const PhysicsTutors = () => {
       description: rawData.whyChooseUs,
     },
     {
-      title: "Board Wise Chemistry :",
+      title: "Board Wise Tutoring :",
       description: [
         `CBSE: ${rawData.boardTutoring?.CBSE || ""}`,
         `IB: ${rawData.boardTutoring?.IB || ""}`,

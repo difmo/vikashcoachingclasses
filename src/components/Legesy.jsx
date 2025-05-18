@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import CustomHeading from "./CustomHeading";
 import TestimonialSlider from "./TestimonialSlider";
 import CategoryContent from "./CategoryContent";
-import StripeHeading from "./FrontendHelpers/Heading";
+import StripeHeading from "./frontend_helpers/Heading";
 import { tutordata } from "../data/AllData";
 import { desc } from "framer-motion/client";
 import img from "../assets/tutorcat/vikasinstitute.jpeg";
@@ -68,10 +68,10 @@ const Legacy = () => {
       <div className="container mx-auto px-4 py-10 ">
         {/* Heading */}
         {/* <div className="text-center mb-10 bg-[#ffffff] py-3 rounded-lg border-2 border-[#f5eee0e7]"> */}
-          {/* <h1 className="text-[#51087E] text-5xl font-bold">
+        {/* <h1 className="text-[#51087E] text-5xl font-bold">
            
           </h1> */}
-          <StripeHeading fontSize="text-4xl" text={" Our 11 Years of Legacy in Edutech Industries."}/>
+        <StripeHeading fontSize="text-4xl" text={" Our 11 Years of Legacy in Edutech Industries."} />
         {/* </div> */}
 
         {/* Stats Section */}
@@ -105,7 +105,12 @@ const Legacy = () => {
 
 
         <div>
-<TutoringSection img={img}/>
+          <div className="mt-4">
+
+          <StripeHeading fontSize="text-[21px]" text={"Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode | Vikas Institute"} />
+
+          </div>
+          <TutoringSection img={img} />
         </div>
 
 
@@ -119,8 +124,8 @@ const Legacy = () => {
           className="w-full"
         >
           <div className="text-center mt-8">
-         
-              <StripeHeading text="Testimonials..." />
+
+            <StripeHeading text="Testimonials..." />
 
             <p className="text-center  text-2xl mt-4 text-[#000000]">
               "At the Heart of our Success lies the Confidence that you Place in
@@ -165,15 +170,14 @@ export default Legacy;
 
 const TutoringSection = ({ img }) => {
   return (
-    <div className="px-4 py-8 max-w-7xl mx-auto">
-      <div className="flex flex-col  gap-8 items-start">
-           <h2 className="text-[26px] font-semibold">
-            Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode | Vikas Institute
-          </h2>
+    <div className=" py-b max-w-7xl mx-auto">
+      <div className="flex flex-col justify-center  gap-8 items-start">
+
+
 
         {/* Image */}
         <div className=" w-full">
-         
+
           <img
             src={img}
             alt="Online Science Tutoring"
@@ -183,7 +187,7 @@ const TutoringSection = ({ img }) => {
 
         {/* Text Content */}
         <div className=" w-full text-xl space-y-4 text-justify">
-        
+
           <p>
             In today’s fast-paced academic environment, students need more than just traditional classroom teaching to truly master core science subjects like Physics, Chemistry, Maths, and Biology. At Vikas Institute, we bring the power of personalized 1-to-1 online tutoring into your home, helping students from Class 6 to Class 12 – across all major curriculums (CBSE, ICSE, IGCSE, IB & ISC Boards) – achieve academic excellence in science.
           </p>
