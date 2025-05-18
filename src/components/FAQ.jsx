@@ -227,6 +227,8 @@ const FAQ = () => {
           Frequently Asked Questions...{" "}
         </h2>
 
+        {/* <Strip */}
+
         <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;

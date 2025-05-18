@@ -17,8 +17,9 @@
 
 /* Custom theme variables */
 @theme {
-  --color-primary: #f8e4c9;
+  --color-primary: #dba577;
   --color-secondary: #f8e4c9;
+  --color-colorcontent: #51087e;
   --color-headerbordertext: #51087e;
 }
 /* #fec624 */

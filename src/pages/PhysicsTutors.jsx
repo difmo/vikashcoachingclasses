@@ -129,7 +129,7 @@ const PhysicsTutors = () => {
                   {item.description?.map((text, idx) => (
                     <p
                       key={idx}
-                      className="text-gray-100 text-base md:text-lg mb-4 leading-relaxed"
+                      className="text-colorcontent text-base md:text-lg mb-4 leading-relaxed"
                     >
                       {text}
                     </p>

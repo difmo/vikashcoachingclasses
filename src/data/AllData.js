@@ -1,7 +1,12 @@
 import phy from "../assets/tutr.jpg";
 import phy1 from "../assets/a.jpg";
 // AllData.js
-
+import science from '../assets/tutorcat/sciencetutor.jpeg';
+import biology from '../assets/tutorcat/biology.jpeg';
+import chemistry from '../assets/tutorcat/chemistry.jpeg';
+import math from '../assets/tutorcat/math.jpeg';
+import physics from '../assets/tutorcat/physics.jpeg';
+import vikasinstitute from '../assets/tutorcat/vikasinstitute.jpeg';
 const onlinePhysicsTutors = [
   {
     mainHeadding: "Online Physics Tutors",
@@ -616,10 +621,59 @@ const testimonials = [
     star: "⭐⭐⭐⭐⭐",
   },
 ];
+
+
+const tutordata = [
+
+  {
+    "id": 1,
+    "title": "Online Science Tutoring :",
+    "description": "Personalized Learning for Academic Excellence In today’s competitive academic world, mastering science is essential for every student from middle school to high school and beyond. Science isn’t just about reading textbooks; it’s about understanding the world around us. Whether it's Physics, Chemistry, Biology, or Maths, these subjects form the foundation of higher education and professional success in fields like engineering, medicine, research, data science, and technology. Online science tutoring has emerged as a powerful solution for students who want personalized, flexible, and effective support in these core subjects. At Vikas Institute, we offer 1-to-1 live tutoring in Physics, Chemistry, Biology & Maths—tailored to the unique needs of each learner.",
+    "image": science,
+    "imageLeft": false
+  },
+  {
+    "id": 2,
+    "title": "Online Physics Tutoring : ",
+    "description": "Personalized Learning for Better Results Physics is one of the most important subjects for students pursuing science, engineering, or medical careers. However, many learners find it challenging due to its complex concepts and mathematical applications. At Vikas Institute, we make Physics simple, engaging, and result-oriented through 1-to-1 personalized online tutoring. Our online Physics tutoring is designed to meet the unique learning needs of each student, whether they’re in CBSE, ICSE, IGCSE, IB, or State Boards. From foundational topics like motion and forces to advanced concepts such as electromagnetism, optics, and modern physics, our expert tutors break down every concept in a clear and easy-to-understand manner. With live interactive sessions, digital whiteboards, visual aids, and regular assessments, we ensure deep conceptual clarity and exam readiness. Our tutors also help with homework, assignments, and competitive exam preparation including JEE, NEET, Olympiads, and SAT Subject Tests. At Vikas Institute, we offer 1-to-1 personalized online Physics tutoring designed to help students not only improve their marks but also develop a deep conceptual understanding of the subject. Whether you’re a middle school student learning motion for the first time or a senior secondary student preparing for JEE, NEET, IB, or board exams, we’ve got you covered.",
+    "image": physics,
+    "imageLeft": true
+  },
+  {
+    "id": 2,
+    "title": "Online Chemistry Tutoring : ",
+    "description": "Build Confidence in Every Concept Chemistry is the central science that bridges Physics and Biology. Yet, many students struggle with it due to the abstract theories, chemical equations, and formula memorization. At Vikas Institute, we simplify Chemistry through 1-to-1 personalized online tutoring that makes learning interactive, logical, and fun. Our online Chemistry tutoring covers all major curricula including CBSE, ICSE, IGCSE, IB, and State Boards. Whether your child needs help with basic concepts like atomic structure and chemical bonding or advanced topics such as organic chemistry and thermodynamics, we provide expert guidance at every step. Our experienced Chemistry tutors use real-life examples, digital whiteboards, visual demonstrations, and systematic revision methods to help students gain clarity and retain complex topics. Each session is customized to match the student’s pace and learning style. We also provide support for JEE, NEET, CUET, SAT Subject Tests, Olympiads, and school-level exams..",
+    "image": chemistry,
+    "imageLeft": false
+  },
+  {
+    "id": 3,
+    "title": "Online Maths Tutoring :",
+    "description": "Learn, Practice & Excel with Personalised Support Mathematics is a subject that builds logical reasoning, analytical skills, and problem-solving ability. Yet, many students face difficulty due to unclear fundamentals or lack of practice. At Vikas Institute, our 1-to-1 online Maths tutoring helps students overcome their fear of Maths and turn it into their strongest subject. We offer customized Maths tutoring for CBSE, ICSE, IGCSE, IB, and State Boards, from Grade 6 to 12. Whether it’s basic arithmetic, algebra, geometry, calculus, or statistics, our expert tutors break down every topic into simple, easy-to-understand steps. Our classes are interactive, engaging, and tailored to suit each student’s pace and learning style. Using digital whiteboards, real-life examples, and step-by-step explanations, we ensure that students understand the why behind every concept—not just how to solve a problem. We also support preparation for competitive exams such as JEE, CUET, Olympiads, SAT, ACT, and more, helping students tackle complex problems with confidence.",
+    "image": math,
+    "imageLeft": true
+  },
+  {
+    "id": 4,
+    "title": "Online Biology Tutoring ",
+    "description": " Understand Life, the Smart Way Biology is the study of life—fascinating, complex, and essential for students pursuing careers in medicine, biotechnology, and life sciences. However, students often struggle with lengthy theories, diagrams, and terminology-heavy chapters. At Vikas Institute, our 1-to-1 personalized online Biology tutoring simplifies learning through clear explanations, visual aids, and expert guidance. Our online Biology tutoring covers all major boards including CBSE, ICSE, IGCSE, IB, and State Boards, catering to students from Grade 6 to 12. Whether it’s cell structure, genetics, human physiology, plant biology, ecology, or evolution, our experienced tutors break down each topic into digestible and engaging lessons. Using interactive whiteboards, animations, and structured notes, we make difficult topics easier to understand and remember. Students also receive help with school homework, board exam preparation, and competitive tests like NEET, CUET, Olympiads, and SAT Subject Tests.",
+    "image": biology,
+    "imageLeft": false
+  },
+  // {
+  //   "id": 5,
+  //   "title": "Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode | Vikas Institute       ",
+  //   "description": "Prepare for competitive exams like NEET, JEE, and Science Olympiads with intensive coaching and expert guidance from top tutors.",
+  //   "image": "/images/tutors/exam-prep.jpg",
+  //   "imageLeft": false
+  // }
+]
+
 export {
   onlinePhysicsTutors,
   onlineChemistryTutors,
   onlineMathsTutors,
   onlineBiologyTutors,
   testimonials,
+  tutordata
 };

@@ -480,7 +480,7 @@ const JoinTeamForm = () => {
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-10 md:gap-0 md:border-2 rounded-2xl">
-              <div className="w-full rounded-2xl lg:rounded-e-none bg-primary h-auto lg:w-1/2">
+              <div className="w-full rounded-2xl lg:rounded-e-none bg-[#ffe1c8] h-auto lg:w-1/2">
                 <Detail />
               </div>
               <div

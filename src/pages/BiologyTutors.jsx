@@ -35,7 +35,7 @@ const BiologyTutors = () => {
       description: rawData.whyChooseUs,
     },
     {
-      title: "Board Wise Chemistry :",
+      title: "Board Wise Tutoring :",
       description: [
         `CBSE: ${rawData.boardTutoring?.CBSE || ""}`,
         `IB: ${rawData.boardTutoring?.IB || ""}`,
@@ -122,14 +122,14 @@ const BiologyTutors = () => {
                     {item.title}
                   </h2>
                   {item.subtitle && (
-                    <h3 className="text-lg font-semibold text-gray-700 mb-4">
+                    <h3 className="text-lg font-semibold text-black mb-4">
                       {item.subtitle}
                     </h3>
                   )}
                   {item.description?.map((text, idx) => (
                     <p
                       key={idx}
-                      className="text-gray-100 text-base md:text-lg mb-4 leading-relaxed"
+                      className="text-colorcontent text-base md:text-lg mb-4 leading-relaxed"
                     >
                       {text}
                     </p>

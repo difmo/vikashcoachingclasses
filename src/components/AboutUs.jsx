@@ -50,7 +50,7 @@ const AboutUs = () => {
             <h1 className="text-3xl  font-bold mb-4 text-primary">
               About Vikas Sir,
             </h1>
-            <p className="text-xl  text-primary text-justify">
+            <p className="text-xl  text-colorcontent text-justify">
               Vikas Sir is a Gold Medalist in IIT Delhi, M.Tech Programs for
               their outstanding academic performance and having more than 11
               years of experience. He has become a synonym for training Physics
@@ -99,7 +99,7 @@ const AboutUs = () => {
           <h2 className="text-2xl font-bold mb-4 text-center">
             Why Choose Us?
           </h2>
-          <p className="text-lg mb-4 text-justify text-primary">
+          <p className="text-lg mb-4 text-justify text-colorcontent">
             Our team of Qualified, Passionate and subject experts combines
             innovative teaching methodologies with hands-on problem-solving
             techniques to ensure that each student not only grasps the concepts
@@ -111,7 +111,7 @@ const AboutUs = () => {
           </p>
 
           <h3 className="text-xl font-bold mb-2">Assurance:</h3>
-          <p className="list-disc list-inside mb-4 text-lg text-primary">
+          <p className="list-disc list-inside mb-4 text-lg text-colorcontent">
             We evaluate tutors only on their own merits. We exclusively hire
             Full-Time Tutors and run background checks (qualification and
             experience) on all of our tutors so you can make an informed
@@ -119,13 +119,13 @@ const AboutUs = () => {
           </p>
 
           <h3 className="text-xl font-bold mb-2">Personalized Instruction:</h3>
-          <p className="text-lg mb-4 text-primary">
+          <p className="text-lg mb-4 text-colorcontent">
             A tutor can personalize lessons and deliver information in a fun,
             easy-to-understand manner.
           </p>
 
           <h3 className="text-xl font-bold mb-2">Increased Efficiency:</h3>
-          <p className="text-lg mb-4 text-primary">
+          <p className="text-lg mb-4 text-colorcontent">
             A tutor can personalize lessons and deliver information in a fun,
             easy-to-understand manner.
           </p>
@@ -133,7 +133,7 @@ const AboutUs = () => {
           <h3 className="text-xl font-bold mb-2">
             Competitive Exams Preparation:
           </h3>
-          <p className="text-lg mb-4 text-primary">
+          <p className="text-lg mb-4 text-colorcontent">
             We guides in Competitive Exams like NTSE, OLAMPIAD,CUET, NEET &
             IIT-JEE along with 9th,1Oth, 11th and 12th grade, So connect and
             join our tutors for a guaranteed results.
