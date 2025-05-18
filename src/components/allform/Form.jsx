@@ -344,7 +344,7 @@ export default function Form() {
   return (
     <div
       ref={formRef}
-      className="relative w-full px-4 sm:px-6 md:px-4 pb-3 border-3 border-white rounded-lg"
+      className="relative w-full px-4 sm:px-6 md:px-4 pb-3 border-2 border-[#a0a0a5] rounded-lg"
     >
       <Loader isLoading={isLoading} />
 
@@ -393,7 +393,7 @@ export default function Form() {
       <div className="pb-1">
         <label className="block font-semibold text-sm sm:text-base">
           Select Subjects :
-          <span className="text-sm text-[#ebe9e7]">
+          <span className="text-sm text-[#3134e2]">
             &nbsp;(You can Select Multiples)
           </span>
         </label>

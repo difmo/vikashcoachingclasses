@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import CustomHeading from "./CustomHeading";
 import TestimonialSlider from "./TestimonialSlider";
+import CategoryContent from "./CategoryContent";
 
 // Animation variants
 const fadeInLeft = {
@@ -61,7 +62,7 @@ const Legacy = () => {
     <div>
       <div className="container mx-auto px-4 py-10">
         {/* Heading */}
-        <div className="text-center mb-10 bg-[#dba577] py-3 rounded-lg border-2 border-white">
+        <div className="text-center mb-10 bg-[#ffffff] py-3 rounded-lg border-2 border-[#f5eee0e7]">
           <h1 className="text-[#51087E] text-5xl font-bold">
             Our 11 Years of Legacy in Edutech Industries.
           </h1>
@@ -77,7 +78,7 @@ const Legacy = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 bg-[#dba577] border-white rounded-xl border-2  shadow-sm hover:shadow-amber-600 text-center"
+              className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 bg-[#ffffff] border-[#f5eee0e7] rounded-xl border-2  shadow-sm hover:shadow-amber-600 text-center"
             >
               <h2 className="text-xl font-semibold mb-2 text-[#51087E]">
                 {item.title}
@@ -91,6 +92,9 @@ const Legacy = () => {
           ))}
         </div>
 
+              <CategoryContent/>
+
+
         {/* Testimonials Section */}
         <motion.div
           variants={fadeInRight}
@@ -101,7 +105,7 @@ const Legacy = () => {
           className="w-full"
         >
           <div className="text-center mt-8">
-            <div className="bg-[#dba577] w-full inline-block px-4 text-5xl font-bold py-2 rounded-lg border-2 border-white">
+            <div className="bg-[#fff] w-full inline-block px-4 text-5xl font-bold py-2 rounded-lg border-2 border-[#f5eee0e7]">
               <CustomHeading text1="Testimonials..." />
             </div>
 
