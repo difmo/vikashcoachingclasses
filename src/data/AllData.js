@@ -24,7 +24,7 @@ const onlinePhysicsTutors = [
       "Safe and Secure Online Learning Platform: We use secure platforms like Zoom and Google Meet for classes, supported by digital whiteboards and real-time collaboration tools.",
     ],
     boardTutoring: {
-      CBSE: "We follow the NCERT syllabus and help students from Classes 6 to 12 with topics like Mechanics, Thermodynamics, Waves, and Optics.",
+      CBSE: "We follow the NCERT syllabus and help students from Classes 7 to 12 with topics like Mechanics, Thermodynamics, Waves, and Optics.",
       IB: "We assist IB students with SL and HL Physics, covering topics like Forces, Energy, and Quantum Theory.",
       IGCSE:
         "Our tutors help IGCSE students understand key areas like Forces, Energy, and Motion.",
@@ -143,7 +143,7 @@ const onlineChemistryTutors = [
 
     testimonials: [
       "My son is in Class 11 CBSE and struggled with Organic Chemistry. Thanks to Vikas Institute, he not only improved his marks but also began to enjoy the subject. — Mrs. Kapoor, Dubai",
-      "The IB Chemistry tutor we found through Vikas Institute is amazing. She explains tough concepts clearly and helped my daughter score a 6 in HL. — Mr. Baker, UK",
+      "The IB Chemistry tutor we found through Vikas Institute is amazing. She explains tough concepts clearly and helped my daughter score a 7 in HL. — Mr. Baker, UK",
       "As a working parent in the US, I wanted someone reliable and consistent to help my child with Chemistry. Vikas Institute exceeded our expectations. — Mrs. Raina, California",
     ],
 
@@ -196,11 +196,11 @@ const onlineMathsTutors = [
     ],
 
     boardTutoring: {
-      CBSE: "Our CBSE Maths tutors follow the NCERT syllabus and help students from Classes 6 to 12 with topics such as Linear Equations, Probability, Statistics, and Coordinate Geometry. We also prepare students for exams like JEE and NTSE.",
+      CBSE: "Our CBSE Maths tutors follow the NCERT syllabus and help students from Classes 7 to 12 with topics such as Linear Equations, Probability, Statistics, and Coordinate Geometry. We also prepare students for exams like JEE and NTSE.",
       IB: "We offer expert Maths tutoring for IB students at both SL and HL levels. Our tutors assist with IA projects, past paper analysis, and prepare students for rigorous IB assessments.",
       IGCSE:
         "Our IGCSE Maths tutors are well-versed in Extended and Core syllabi. We teach key areas like Algebra, Mensuration, and Vectors with emphasis on solving past papers and understanding examiner expectations.",
-      ICSE: "We help ICSE students from Grades 6 to 10 with thorough coverage of Arithmetic, Geometry, Trigonometry, and Algebra. We provide regular practice worksheets, short quizzes, and problem-solving sessions.",
+      ICSE: "We help ICSE students from Grades 7 to 10 with thorough coverage of Arithmetic, Geometry, Trigonometry, and Algebra. We provide regular practice worksheets, short quizzes, and problem-solving sessions.",
       ISE: "Our ISE Maths tutoring supports senior secondary students with topics like Calculus, Linear Programming, and Statistics while preparing them for final exams and competitive entrance tests.",
     },
 
@@ -298,7 +298,7 @@ const onlineBiologyTutors = [
       IB: "Our tutors are well-versed with IB SL and HL topics like Molecular Biology, Genetics, Ecology, and Option Topics. Support is also provided for IAs and Extended Essays with research-based guidance.",
       IGCSE:
         "We offer structured lessons aligned with the syllabus, focusing on scientific terminology, past paper practice, and lab skills. Support provided for both Core and Extended students.",
-      ICSE: "With ICSE’s practical and theory-heavy approach, we guide students from Classes 6 to 10 with emphasis on precise definitions, labelling diagrams, and concept application.",
+      ICSE: "With ICSE’s practical and theory-heavy approach, we guide students from Classes 7 to 10 with emphasis on precise definitions, labelling diagrams, and concept application.",
       ISE: "Our experienced tutors cover Zoology, Botany, and Biotechnology for the ISE curriculum while helping students with board-specific preparation and foundational concepts for medical entrance exams.",
     },
     globalCoverage: [
