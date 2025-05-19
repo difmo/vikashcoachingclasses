@@ -190,7 +190,7 @@ const TutoringSection = ({ img }) => {
         <div className=" w-full text-xl space-y-4 text-justify">
 
           <p>
-            In today’s fast-paced academic environment, students need more than just traditional classroom teaching to truly master core science subjects like Physics, Chemistry, Maths, and Biology. At Vikas Institute, we bring the power of personalized 1-to-1 online tutoring into your home, helping students from Class 6 to Class 12 – across all major curriculums (CBSE, ICSE, IGCSE, IB & ISC Boards) – achieve academic excellence in science.
+            In today’s fast-paced academic environment, students need more than just traditional classroom teaching to truly master core science subjects like Physics, Chemistry, Maths, and Biology. At Vikas Institute, we bring the power of personalized 1-to-1 online tutoring into your home, helping students from Class 7 to Class 12 – across all major curriculums (CBSE, ICSE, IGCSE, IB & ISC Boards) – achieve academic excellence in science.
           </p>
 
           <p>
