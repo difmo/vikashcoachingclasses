@@ -102,6 +102,7 @@ const Legacy = () => {
         <CategoryContent heading={tutordata[1].title} desc={tutordata[1].description} imageLeft={true} image={tutordata[1].image} />
         <CategoryContent heading={tutordata[2].title} desc={tutordata[2].description} imageLeft={false} image={tutordata[2].image} />
         <CategoryContent heading={tutordata[3].title} desc={tutordata[3].description} imageLeft={true} image={tutordata[3].image} />
+        <CategoryContent heading={tutordata[4].title} desc={tutordata[4].description} imageLeft={false} image={tutordata[4].image} />
 
 
         <div>
