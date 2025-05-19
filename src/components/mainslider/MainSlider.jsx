@@ -6,7 +6,7 @@ import vikas0 from "../../assets/homeslider/vikas0.png";
 import vikas1 from "../../assets/homeslider/vikas.png";
 import vikas2 from "../../assets/homeslider/vikas1.png";
 import vikas3 from "../../assets/homeslider/vikas3.png";
-import vikas4 from "../../assets/homeslider/vikas4.png";
+import vikas4 from "../../assets/homeslider/vikas4.jpg";
 
 const slides = [
   {
@@ -32,7 +32,7 @@ const slides = [
   {
     image: vikas3,
     heading: "Hi, Looking for Online Biology Tutor ",
-    text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
+    text: "You are at the Right Place, Kixndly fill the Form to Get in Touch or Whatsapp us ... ",
   },
 ];
 
