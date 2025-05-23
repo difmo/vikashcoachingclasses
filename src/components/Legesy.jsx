@@ -97,7 +97,7 @@ const Legacy = () => {
             </motion.div>
           ))}
         </div>
-        <StripeHeading text={"Online Tutoring Availble for CBSE, IGCSE, IB, ICSE, ISC Boards for Global Students."} />
+        <StripeHeading text={"Online Tutoring Available for CBSE, IGCSE, IB, ICSE, ISC Boards for Global Students."} />
         <CategoryContent heading={tutordata[0].title} desc={tutordata[0].description} imageLeft={false} image={tutordata[0].image} />
         <CategoryContent heading={tutordata[1].title} desc={tutordata[1].description} imageLeft={true} image={tutordata[1].image} />
         <CategoryContent heading={tutordata[2].title} desc={tutordata[2].description} imageLeft={false} image={tutordata[2].image} />

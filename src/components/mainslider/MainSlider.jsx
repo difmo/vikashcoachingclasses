@@ -32,7 +32,7 @@ const slides = [
   {
     image: vikas3,
     heading: "Hi, Looking for Online Biology Tutor ",
-    text: "You are at the Right Place, Kixndly fill the Form to Get in Touch or Whatsapp us ... ",
+    text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
 ];
 
@@ -94,7 +94,7 @@ const MainSlider = () => {
                 alt="Slide"
                 className="w-full h-full bg-cover transition-opacity duration-500"
               />
-              <div className="absolute inset-0 bg-black/40" />
+              <div className="absolute inset-0 bg-black/15" />
             </div>
 
             {/* Text on Slide */}
