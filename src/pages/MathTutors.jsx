@@ -91,7 +91,60 @@ const MathTutors = () => {
   return (
     <div>
       <Helmet>
-        <title>{rawData.mainHeadding}</title>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Online Maths Tutors Near Me | Vikas Institute</title>
+
+        <meta name="google-site-verification" content="E_lsntfktFWor0CLJ5-oipez6gAJ5lvHRX-dOFmj8vw" />
+        <meta
+          name="description"
+          content="Looking for expert online maths tutors? Vikas Institute offers personalized math tutoring services to help you excel. Get quality math coaching from experienced tutors near you. Join now for the best results in your math journey!"
+        />
+        <meta name="robots" content="noodp, index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="author" content="Vikas Institute" />
+
+        {/* Open Graph */}
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Online Maths Tutors Near Me | Vikas Institute" />
+        <meta
+          property="og:description"
+          content="Looking for expert online maths tutors? Vikas Institute offers personalized math tutoring services to help you excel. Get quality math coaching from experienced tutors near you. Join now for the best results in your math journey!"
+        />
+        <meta property="og:url" content="https://www.vikasinstitute.in/online-maths-tutors" />
+        <meta property="og:site_name" content="Vikas Institute" />
+        <meta property="og:image" content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg" />
+
+        {/* Canonical URL & Icons */}
+        <link rel="canonical" href="https://www.vikasinstitute.in/online-maths-tutors" />
+        <link
+          rel="shortcut icon"
+          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          type="image/x-icon"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+        />
+
+        {/* Facebook Page */}
+        <meta property="fb:page_id" content="100075934304530" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@VikaskashyapSir" />
+        <meta property="twitter:account_id" content="1807308218143809536" />
+        <meta property="twitter:title" content="Online Maths Tutors Near Me | Vikas Institute" />
+        <meta
+          property="twitter:description"
+          content="Looking for expert online maths tutors? Vikas Institute offers personalized math tutoring services to help you excel. Get quality math coaching from experienced tutors near you. Join now for the best results in your math journey!"
+        />
+        <meta
+          property="twitter:image:src"
+          content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+        />
       </Helmet>
 
       <div className="bg-[#f2f2f2] text-md text-blue-500 flex justify-center">

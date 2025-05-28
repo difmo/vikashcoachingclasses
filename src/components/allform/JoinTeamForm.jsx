@@ -15,6 +15,7 @@ import StudentCheckbox from "../StudentCheckbox";
 
 import Detail from "../Detail";
 import Loader from "../Loader";
+import { Helmet } from "react-helmet";
 
 const boards = ["CBSE", "IB", "IGCSE", "ICSE", "ISC"];
 const subjects = ["Sci.", "Phy", "Chem", "Bio", "Maths", "Other"];
@@ -471,6 +472,66 @@ const JoinTeamForm = () => {
 
   return (
     <div className="relative">
+         <Helmet>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Get in Touch for Inquiries and Support | Vikas Institute</title>
+
+        <meta name="google-site-verification" content="E_lsntfktFWor0CLJ5-oipez6gAJ5lvHRX-dOFmj8vw" />
+        <meta
+          name="description"
+          content="Have questions or need assistance? Reach out to Vikas Institute today for all your inquiries. Our team is ready to help you with any information or support you need."
+        />
+        <meta name="robots" content="noodp, index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="author" content="Vikas Institute" />
+
+        {/* Open Graph */}
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Get in Touch for Inquiries and Support | Vikas Institute" />
+        <meta
+          property="og:description"
+          content="Have questions or need assistance? Reach out to Vikas Institute today for all your inquiries. Our team is ready to help you with any information or support you need."
+        />
+        <meta property="og:url" content="https://www.vikasinstitute.in/join-form" />
+        <meta property="og:site_name" content="Vikas Institute" />
+        <meta property="og:image" content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg" />
+
+        {/* Canonical and Icons */}
+        <link rel="canonical" href="https://www.vikasinstitute.in/join-form" />
+        <link
+          rel="shortcut icon"
+          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          type="image/x-icon"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+        />
+
+        {/* Facebook Page */}
+        <meta property="fb:page_id" content="100075934304530" />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@VikaskashyapSir" />
+        <meta property="twitter:account_id" content="1807308218143809536" />
+        <meta
+          property="twitter:title"
+          content="Get in Touch for Inquiries and Support | Vikas Institute"
+        />
+        <meta
+          property="twitter:description"
+          content="Have questions or need assistance? Reach out to Vikas Institute today for all your inquiries. Our team is ready to help you with any information or support you need."
+        />
+        <meta
+          property="twitter:image:src"
+          content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+        />
+      </Helmet>
+
       <Loader isLoading={isLoading} />
 
       <div className="bg-[#f2f2f2] text-md text-headerbordertext font-extrabold flex justify-center">

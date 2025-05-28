@@ -6,7 +6,7 @@ import vikas0 from "../../assets/homeslider/vikas0.png";
 import vikas1 from "../../assets/homeslider/vikas.png";
 import vikas2 from "../../assets/homeslider/vikas1.png";
 import vikas3 from "../../assets/homeslider/vikas3.png";
-import vikas4 from "../../assets/homeslider/vikas4.jpg";
+import vikas4 from "../../assets/homeslider/vikas4.png";
 
 const slides = [
   {

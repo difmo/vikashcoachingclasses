@@ -3,6 +3,8 @@ import md from "../assets/md.jpeg";
 import md1 from "../assets/md0.jpeg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet";
+
 
 const AboutUs = () => {
   const topFeatures = [
@@ -34,6 +36,62 @@ const AboutUs = () => {
 
   return (
     <>
+        <Helmet>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>About Us | Vikas Institute</title>
+
+        <meta name="google-site-verification" content="E_lsntfktFWor0CLJ5-oipez6gAJ5lvHRX-dOFmj8vw" />
+        <meta
+          name="description"
+          content="Learn about Vikas Institute’s mission, values, and commitment to delivering high-quality education and skill development. Discover how we empower students for a brighter future."
+        />
+        <meta name="robots" content="noodp, index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="author" content="Vikas Institute" />
+
+        {/* Open Graph */}
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="About Us | Vikas Institute" />
+        <meta
+          property="og:description"
+          content="Learn about Vikas Institute’s mission, values, and commitment to delivering high-quality education and skill development. Discover how we empower students for a brighter future."
+        />
+        <meta property="og:url" content="https://www.vikasinstitute.in/about-us" />
+        <meta property="og:site_name" content="Vikas Institute" />
+        <meta property="og:image" content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg" />
+
+        {/* Canonical and Favicon */}
+        <link rel="canonical" href="https://www.vikasinstitute.in/about-us" />
+        <link
+          rel="shortcut icon"
+          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          type="image/x-icon"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+        />
+
+        {/* Facebook */}
+        <meta property="fb:page_id" content="100075934304530" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@VikaskashyapSir" />
+        <meta property="twitter:account_id" content="1807308218143809536" />
+        <meta property="twitter:title" content="About Us | Vikas Institute" />
+        <meta
+          property="twitter:description"
+          content="Learn about Vikas Institute’s mission, values, and commitment to delivering high-quality education and skill development. Discover how we empower students for a brighter future."
+        />
+        <meta
+          property="twitter:image:src"
+          content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+        />
+      </Helmet>
       <div className="">
         <div className=" bg-[#f2f2f2] text-md font-extrabold text-headerbordertext flex justify-center">
           Home / About Us
