@@ -181,7 +181,7 @@ const TutoringSection = ({ img }) => {
 
           <img
             src={img}
-            alt="Online Science Tutoring"
+            alt="vikasinstitute.in"
             className="w-full h-auto rounded-lg object-cover"
           />
         </div>

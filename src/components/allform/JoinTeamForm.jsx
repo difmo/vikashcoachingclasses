@@ -535,7 +535,7 @@ const JoinTeamForm = () => {
       <Loader isLoading={isLoading} />
 
       <div className="bg-[#f2f2f2] text-md text-headerbordertext font-extrabold flex justify-center">
-        Home / Contact Us
+       <a href="/">Home</a> &nbsp;/ Contact Us
       </div>
       <div className="container mx-auto py-10 px-4">
         <div className="max-w-7xl mx-auto space-y-10">

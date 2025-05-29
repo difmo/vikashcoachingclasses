@@ -149,7 +149,7 @@ const ChemistryTutors = () => {
 
       <div className="bg-[#f2f2f2] text-md text-blue-500 flex justify-center">
         <div className="text-headerbordertext font-extrabold text-md">
-          Home / {rawData.mainHeadding}
+         <a href="/">Home</a>&nbsp;/ {rawData.mainHeadding}
         </div>
       </div>
 
@@ -199,7 +199,7 @@ const ChemistryTutors = () => {
             <div className="w-full rounded-xl border-2 border-white overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
               <img
                 src={chem}
-                alt="Online Chemistry Tutors"
+                alt="vikasinstitute.in"
                 className="w-full h-[300px] sm:h-[400px] md:h-[460px] lg:h-[480px] xl:h-[480px] bg-cover rounded-xl"
               />
             </div>

@@ -94,7 +94,7 @@ const AboutUs = () => {
       </Helmet>
       <div className="">
         <div className=" bg-[#f2f2f2] text-md font-extrabold text-headerbordertext flex justify-center">
-          Home / About Us
+         <a href="/">Home</a>&nbsp; / About Us
         </div>
       </div>
       <div className="w-full max-w-7xl mx-auto px-4 py-8">
@@ -137,7 +137,7 @@ const AboutUs = () => {
           >
             <img
               src={md}
-              alt="Vikas Sir"
+              alt="vikasinstitute.in"
               className="h-96 md:h-[500px] w-full  object-contain rounded-lg "
             />
           </div>

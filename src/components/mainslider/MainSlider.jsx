@@ -91,7 +91,7 @@ const MainSlider = () => {
             <div className="relative w-full h-full rounded-2xl border-3 border-white overflow-hidden">
               <img
                 src={slides[current].image}
-                alt="Slide"
+                alt="vikasinstitute.in"
                 className="w-full h-full bg-cover transition-opacity duration-500"
               />
               <div className="absolute inset-0 bg-black/15" />
