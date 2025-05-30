@@ -91,7 +91,79 @@ const PhysicsTutors = () => {
   return (
     <div>
       <Helmet>
-        <title>{rawData.mainHeadding}</title>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <title>Online Physics Tutors | Vikas Institute</title>
+
+        <meta
+          name="description"
+          content="Get personalized online physics tutoring from Vikas Institute. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
+        />
+        <meta name="robots" content="noodp, index, follow" />
+        <meta
+          name="google-site-verification"
+          content="E_lsntfktFWor0CLJ5-oipez6gAJ5lvHRX-dOFmj8vw"
+        />
+        <meta name="author" content="Vikas Institute" />
+        <meta name="googlebot" content="index, follow" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Online Physics Tutors | Vikas Institute"
+        />
+        <meta
+          property="og:description"
+          content="Get personalized online physics tutoring from Vikas Institute. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
+        />
+        <meta property="og:url" content="https://www.vikasinstitute.in/" />
+        <meta property="og:site_name" content="Vikas Institute" />
+        <meta
+          property="og:image"
+          content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+        />
+
+        {/* Facebook Page ID */}
+        <meta property="fb:page_id" content="100075934304530" />
+
+        {/* Twitter Card data */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@VikaskashyapSir" />
+        <meta property="twitter:account_id" content="1807308218143809536" />
+        <meta
+          property="twitter:title"
+          content="Online Physics Tutors | Vikas Institute"
+        />
+        <meta
+          property="twitter:description"
+          content="Get personalized online physics tutoring from Vikas Institute. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
+        />
+        <meta
+          property="twitter:image:src"
+          content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+        />
+
+        {/* Canonical and Icons */}
+        <link
+          rel="canonical"
+          href="https://www.vikasinstitute.in/online-physics-tutors"
+        />
+        <link
+          rel="shortcut icon"
+          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          type="image/x-icon"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+        />
       </Helmet>
 
       <div className="bg-[#f2f2f2] text-md text-blue-500 flex justify-center">
