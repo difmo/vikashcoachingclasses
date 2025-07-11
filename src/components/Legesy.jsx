@@ -8,7 +8,7 @@ import CategoryContent from "./CategoryContent";
 import StripeHeading from "./frontend_helpers/Heading";
 import { tutordata } from "../data/AllData";
 import { desc } from "framer-motion/client";
-import img from "../assets/tutorcat/vikasinstitute.jpeg";
+import img from "../assets/tutorcat/pcmb.jpg";
 
 
 // Animation variants
@@ -71,7 +71,7 @@ const Legacy = () => {
         {/* <h1 className="text-[#51087E] text-5xl font-bold">
            
           </h1> */}
-        <StripeHeading fontSize="text-4xl" text={" Our 11 Years of Legacy in Edutech Industries."} />
+        <StripeHeading fontSize="text-6xl" text={" Our 11 Years of Legacy in Edutech Industries."} />
         {/* </div> */}
 
         {/* Stats Section */}
@@ -108,7 +108,7 @@ const Legacy = () => {
         <div>
           <div className="mt-4">
 
-          <StripeHeading fontSize="text-[21px]" text={"Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode | Vikas Institute"} />
+          <StripeHeading fontSize="text-[21px]" text={"Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode | P.C.M.B. Tutors"} />
 
           </div>
           <TutoringSection img={img} />
@@ -181,8 +181,9 @@ const TutoringSection = ({ img }) => {
 
           <img
             src={img}
+
             alt="vikasinstitute.in"
-            className="w-full h-auto rounded-lg object-cover"
+            className="w-full h-auto  object-cover rounded-[80px]"
           />
         </div>
 
@@ -190,14 +191,14 @@ const TutoringSection = ({ img }) => {
         <div className=" w-full text-xl space-y-4 text-justify">
 
           <p>
-            In today’s fast-paced academic environment, students need more than just traditional classroom teaching to truly master core science subjects like Physics, Chemistry, Maths, and Biology. At Vikas Institute, we bring the power of personalized 1-to-1 online tutoring into your home, helping students from Class 7 to Class 12 – across all major curriculums (CBSE, ICSE, IGCSE, IB & ISC Boards) – achieve academic excellence in science.
+            In today’s fast-paced academic environment, students need more than just traditional classroom teaching to truly master core science subjects like Physics, Chemistry, Maths, and Biology. At P.C.M.B Tutors, we bring the power of personalized 1-to-1 online tutoring into your home, helping students from Class 7 to Class 12 – across all major curriculums (CBSE, ICSE, IGCSE, IB & ISC Boards) – achieve academic excellence in science.
           </p>
 
           <p>
             Whether you're struggling with Newton’s laws in Physics, balancing chemical equations, solving calculus problems, or understanding human physiology, our personalized tutoring approach is tailored to unlock each student’s true potential.
           </p>
 
-          <h3 className="font-semibold text-lg">Why Choose 1-to-1 Online Tutoring with Vikas Institute?</h3>
+          <h3 className="font-semibold text-lg">Why Choose 1-to-1 Online Tutoring with P.C.M.B Tutors ?</h3>
 
           <ul className="list-disc pl-6 space-y-2">
             <li>

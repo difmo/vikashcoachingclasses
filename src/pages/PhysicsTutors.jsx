@@ -98,18 +98,18 @@ const PhysicsTutors = () => {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
 
-        <title>Online Physics Tutors | Vikas Institute</title>
+        <title>Online Physics Tutors | P.C.M.B. Tutors</title>
 
         <meta
           name="description"
-          content="Get personalized online physics tutoring from Vikas Institute. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
+          content="Get personalized online physics tutoring from P.C.M.B. Tutors. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
         />
         <meta name="robots" content="noodp, index, follow" />
         <meta
           name="google-site-verification"
           content="E_lsntfktFWor0CLJ5-oipez6gAJ5lvHRX-dOFmj8vw"
         />
-        <meta name="author" content="Vikas Institute" />
+        <meta name="author" content="P.C.M.B. Tutors" />
         <meta name="googlebot" content="index, follow" />
 
         {/* Open Graph / Facebook */}
@@ -117,17 +117,17 @@ const PhysicsTutors = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Online Physics Tutors | Vikas Institute"
+          content="Online Physics Tutors | P.C.M.B. Tutors"
         />
         <meta
           property="og:description"
-          content="Get personalized online physics tutoring from Vikas Institute. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
+          content="Get personalized online physics tutoring from P.C.M.B. Tutors. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
         />
-        <meta property="og:url" content="https://www.vikasinstitute.in/" />
-        <meta property="og:site_name" content="Vikas Institute" />
+        <meta property="og:url" content="https://www.pcmbtutors.com/" />
+        <meta property="og:site_name" content="P.C.M.B. Tutors" />
         <meta
           property="og:image"
-          content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          content="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
         />
 
         {/* Facebook Page ID */}
@@ -139,30 +139,30 @@ const PhysicsTutors = () => {
         <meta property="twitter:account_id" content="1807308218143809536" />
         <meta
           property="twitter:title"
-          content="Online Physics Tutors | Vikas Institute"
+          content="Online Physics Tutors | P.C.M.B. Tutors"
         />
         <meta
           property="twitter:description"
-          content="Get personalized online physics tutoring from Vikas Institute. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
+          content="Get personalized online physics tutoring from P.C.M.B. Tutors. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
         />
         <meta
           property="twitter:image:src"
-          content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          content="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
         />
 
         {/* Canonical and Icons */}
         <link
           rel="canonical"
-          href="https://www.vikasinstitute.in/online-physics-tutors"
+          href="https://www.pcmbtutors.com/online-physics-tutors"
         />
         <link
           rel="shortcut icon"
-          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          href="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
           type="image/x-icon"
         />
         <link
           rel="apple-touch-icon"
-          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          href="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
         />
       </Helmet>
 

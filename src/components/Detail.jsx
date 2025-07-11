@@ -5,7 +5,7 @@ const Detail = () => {
         <div className='border-3 md:border-0  text-headerbordertext py-8 rounded-2xl lg:rounded-e-none'>
             <div className="w-full h-auto flex flex-col items-center justify-center  relative text-base sm:text-lg md:text-xl ">
                 <h1 className="text-2xl sm:text-3xl font-bold absolute top-4 sm:top-8 text-center w-full">
-                    Vikas Institute
+                    P.C.M.B. Tutors
                 </h1>
                 <div className="pb-5 pt-20 text-center space-y-2">
                     <p>Malviya Nagar, New Delhi - 110017</p>
@@ -18,19 +18,19 @@ const Detail = () => {
                     <p>
                         Email:{" "}
                         <a
-                            href="mailto:info@vikasinstitute.in"
+                            href="mailto:info@pcmbtutors.com"
                             className="hover:underline"
                         >
-                            info@vikasinstitute.in
+                            info@pcmbtutors.com
                         </a>
                     </p>
                     <p>
                         Website:{" "}
                         <a
-                            href="https://www.vikasinstitute.in/"
+                            href="https://www.pcmbtutors.com/"
                             className="hover:underline"
                         >
-                            www.vikasinstitute.in
+                            www.pcmbtutors.com
                         </a>
                     </p>
                     <p>

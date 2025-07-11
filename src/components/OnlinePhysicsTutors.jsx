@@ -5,7 +5,7 @@ const physics = [
     mainTitle:
       "Online Physics Tutoring for Class 11th, 12th, CBSE, IB, IGCSE, ICSE, ISE Boards Students",
     welcomeMessage:
-      "Welcome to Online Personal Physics Tutor @ Vikas Institute, your ultimate destination for top-quality online Physics tutoring. We specialize in Physics education for students following the CBSE, IB, IGCSE, ICSE, and ISE curricula across the UAE, Qatar, USA, UK, Canada, Australia, and India. With our team of highly skilled Physics tutors, customized learning plans, and student-focused online classes, we help students build confidence and excel in one of the most crucial academic subjects.",
+      "Welcome to Online Personal Physics Tutor @ P.C.M.B. Tutors, your ultimate destination for top-quality online Physics tutoring. We specialize in Physics education for students following the CBSE, IB, IGCSE, ICSE, and ISE curricula across the UAE, Qatar, USA, UK, Canada, Australia, and India. With our team of highly skilled Physics tutors, customized learning plans, and student-focused online classes, we help students build confidence and excel in one of the most crucial academic subjects.",
     whyChooseUs: [
       "Qualified and Passionate Tutors: Our Physics tutors are highly qualified professionals with extensive teaching experience in various international and Indian boards. They bring energy and clarity to every lesson, making even the toughest physics problems easier to solve.",
       "Personalized Lesson Plans: Each student has a unique learning style. Our tutors assess the individual needs and tailor the lesson plans accordingly.",
@@ -44,7 +44,7 @@ const physics = [
         name: "Mrs. Iqbal",
         location: "Dubai",
         message:
-          "Vikas Institute helped my son transition smoothly from ICSE to IGCSE Physics. The tutor was extremely knowledgeable and patient.",
+          "P.C.M.B. Tutors helped my son transition smoothly from ICSE to IGCSE Physics. The tutor was extremely knowledgeable and patient.",
       },
       {
         name: "Mr. Henry",
@@ -56,7 +56,7 @@ const physics = [
         name: "Mrs. Desai",
         location: "New York",
         message:
-          "Highly recommended! Vikas Institute made the tutoring process stress-free and my son showed great improvement.",
+          "Highly recommended! P.C.M.B. Tutors made the tutoring process stress-free and my son showed great improvement.",
       },
     ],
     competitiveExamPreparation: [
@@ -77,12 +77,12 @@ const physics = [
     ],
     contact: {
       phone: "+91 8427373281",
-      email: "info@vikasinstitute.in",
-      website: "www.vikasinstitute.in",
+      email: "info@pcmbtutors.com",
+      website: "www.pcmbtutors.com",
     },
     closingLine:
       "Help your child fall in love with Physics and achieve academic success.",
-    slogan: "VIKAS INSTITUTE — Unlocking Physics Brilliance Across the Globe",
+    slogan: "P.C.M.B. Tutors — Unlocking Physics Brilliance Across the Globe",
   },
 ];
 const OnlinePhysicsTutors = () => {
@@ -92,39 +92,39 @@ const OnlinePhysicsTutors = () => {
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>Online Physics Tutors | Vikas Institute</title>
+        <title>Online Physics Tutors | P.C.M.B. Tutors</title>
 
         <meta name="google-site-verification" content="E_lsntfktFWor0CLJ5-oipez6gAJ5lvHRX-dOFmj8vw" />
         <meta
           name="description"
-          content="Get personalized online physics tutoring from Vikas Institute. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
+          content="Get personalized online physics tutoring from P.C.M.B. Tutors. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
         />
         <meta name="robots" content="noodp, index, follow" />
         <meta name="googlebot" content="index, follow" />
-        <meta name="author" content="Vikas Institute" />
+        <meta name="author" content="P.C.M.B. Tutors" />
 
         {/* Open Graph Tags */}
         <meta property="og:locale" content="en_GB" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Online Physics Tutors | Vikas Institute" />
+        <meta property="og:title" content="Online Physics Tutors | P.C.M.B. Tutors" />
         <meta
           property="og:description"
-          content="Get personalized online physics tutoring from Vikas Institute. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
+          content="Get personalized online physics tutoring from P.C.M.B. Tutors. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
         />
-        <meta property="og:url" content="https://www.vikasinstitute.in/online-physics-tutors" />
-        <meta property="og:site_name" content="Vikas Institute" />
-        <meta property="og:image" content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg" />
+        <meta property="og:url" content="https://www.pcmbtutors.com/online-physics-tutors" />
+        <meta property="og:site_name" content="P.C.M.B. Tutors" />
+        <meta property="og:image" content="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg" />
 
         {/* Canonical and Icons */}
-        <link rel="canonical" href="https://www.vikasinstitute.in/online-physics-tutors" />
+        <link rel="canonical" href="https://www.pcmbtutors.com/online-physics-tutors" />
         <link
           rel="shortcut icon"
-          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          href="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
           type="image/x-icon"
         />
         <link
           rel="apple-touch-icon"
-          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          href="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
         />
 
         {/* Facebook Page ID */}
@@ -134,14 +134,14 @@ const OnlinePhysicsTutors = () => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@VikaskashyapSir" />
         <meta property="twitter:account_id" content="1807308218143809536" />
-        <meta property="twitter:title" content="Online Physics Tutors | Vikas Institute" />
+        <meta property="twitter:title" content="Online Physics Tutors | P.C.M.B. Tutors" />
         <meta
           property="twitter:description"
-          content="Get personalized online physics tutoring from Vikas Institute. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
+          content="Get personalized online physics tutoring from P.C.M.B. Tutors. Our expert tutors provide high-quality lessons to help you master concepts and improve your grades. Enroll today for comprehensive, flexible, and interactive learning!"
         />
         <meta
           property="twitter:image:src"
-          content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          content="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
         />
       </Helmet>
 

@@ -122,7 +122,7 @@ export default function Footer() {
               </h2>
               <p className="mb-2">Malviya Nagar, New Delhi 110017</p>
               <p className="mb-2">Contact No : +91 84273 73281</p>
-              <p className="mb-7 text-2xl">info@vikasinstitute.in</p>
+              <p className="mb-7 text-2xl">info@pcmbtutors.com</p>
 
               <div className="flex space-x-4 mb-4">
                 {socialLinks.map((item, index) => (
@@ -202,7 +202,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between text-sm items-center py-5">
             <p>
               <span className="text-orange-500">
-                Vikas Institute @ SYBRA CORPORATION. &nbsp;
+                P.C.M.B. Tutors @ SYBRA CORPORATION. &nbsp;
               </span>
               All Rights Reserved.
             </p>

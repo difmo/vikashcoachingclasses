@@ -94,39 +94,39 @@ const ChemistryTutors = () => {
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>Online Chemistry Tutors | Expert Chemistry Coaching | Vikas Institute</title>
+        <title>Online Chemistry Tutors | Expert Chemistry Coaching | P.C.M.B. Tutors</title>
 
         <meta name="google-site-verification" content="E_lsntfktFWor0CLJ5-oipez6gAJ5lvHRX-dOFmj8vw" />
         <meta
           name="description"
-          content="Get top-quality online chemistry tutoring with Vikas Institute. Our expert tutors offer personalized lessons to help you master chemistry concepts and excel in your studies. Join us today for interactive, flexible, and effective chemistry learning!"
+          content="Get top-quality online chemistry tutoring with P.C.M.B. Tutors. Our expert tutors offer personalized lessons to help you master chemistry concepts and excel in your studies. Join us today for interactive, flexible, and effective chemistry learning!"
         />
         <meta name="robots" content="noodp, index, follow" />
         <meta name="googlebot" content="index, follow" />
-        <meta name="author" content="Vikas Institute" />
+        <meta name="author" content="P.C.M.B. Tutors" />
 
         {/* Open Graph Tags */}
         <meta property="og:locale" content="en_GB" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Online Chemistry Tutors | Expert Chemistry Coaching | Vikas Institute" />
+        <meta property="og:title" content="Online Chemistry Tutors | Expert Chemistry Coaching | P.C.M.B. Tutors" />
         <meta
           property="og:description"
-          content="Get top-quality online chemistry tutoring with Vikas Institute. Our expert tutors offer personalized lessons to help you master chemistry concepts and excel in your studies. Join us today for interactive, flexible, and effective chemistry learning!"
+          content="Get top-quality online chemistry tutoring with P.C.M.B. Tutors. Our expert tutors offer personalized lessons to help you master chemistry concepts and excel in your studies. Join us today for interactive, flexible, and effective chemistry learning!"
         />
-        <meta property="og:url" content="https://www.vikasinstitute.in/online-chemistry-tutors" />
-        <meta property="og:site_name" content="Vikas Institute" />
-        <meta property="og:image" content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg" />
+        <meta property="og:url" content="https://www.pcmbtutors.com/online-chemistry-tutors" />
+        <meta property="og:site_name" content="P.C.M.B. Tutors" />
+        <meta property="og:image" content="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg" />
 
         {/* Canonical and Icons */}
-        <link rel="canonical" href="https://www.vikasinstitute.in/online-chemistry-tutors" />
+        <link rel="canonical" href="https://www.pcmbtutors.com/online-chemistry-tutors" />
         <link
           rel="shortcut icon"
-          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          href="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
           type="image/x-icon"
         />
         <link
           rel="apple-touch-icon"
-          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          href="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
         />
 
         {/* Facebook Page */}
@@ -136,14 +136,14 @@ const ChemistryTutors = () => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@VikaskashyapSir" />
         <meta property="twitter:account_id" content="1807308218143809536" />
-        <meta property="twitter:title" content="Online Chemistry Tutors | Expert Chemistry Coaching | Vikas Institute" />
+        <meta property="twitter:title" content="Online Chemistry Tutors | Expert Chemistry Coaching | P.C.M.B. Tutors" />
         <meta
           property="twitter:description"
-          content="Get top-quality online chemistry tutoring with Vikas Institute. Our expert tutors offer personalized lessons to help you master chemistry concepts and excel in your studies. Join us today for interactive, flexible, and effective chemistry learning!"
+          content="Get top-quality online chemistry tutoring with P.C.M.B. Tutors. Our expert tutors offer personalized lessons to help you master chemistry concepts and excel in your studies. Join us today for interactive, flexible, and effective chemistry learning!"
         />
         <meta
           property="twitter:image:src"
-          content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          content="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
         />
       </Helmet>
 

@@ -28,18 +28,18 @@ const CategoryContent = ({ imageLeft = false, heading, desc, image }) => {
 
   return (
     <div className="px-4 py-8 relative">
-      <h2 className="text-3xl mb-8 text-center md:text-left">
-        {heading}
-      </h2>
+
 
       <div
-        className={`flex flex-col-reverse md:flex-row ${
-          imageLeft ? "md:flex-row-reverse" : ""
-        } gap-8 items-center`}
+        className={`flex flex-col-reverse md:flex-row ${imageLeft ? "md:flex-row-reverse" : ""
+          } gap-8 items-center`}
       >
         {/* Text Content */}
-        <div className="md:w-1/2 w-full h-96 overflow-hidden relative">
-          <p className="text-xl leading-relaxed text-justify line-clamp-[11]">
+        <div className="md:w-1/2 w-full  overflow-hidden relative">
+          <h2 className="text-[61px]  leading-tight mb-2 text-center md:text-left text-[#b601fe]  underline underline-offset-12 ">
+            {heading}
+          </h2>
+          <p className="text-xl leading-relaxed text-justify line-clamp-[10]">
             {desc}
           </p>
           {/* Read More Button */}

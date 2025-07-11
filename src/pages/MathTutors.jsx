@@ -94,39 +94,39 @@ const MathTutors = () => {
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>Online Maths Tutors Near Me | Vikas Institute</title>
+        <title>Online Maths Tutors Near Me | P.C.M.B. Tutors</title>
 
         <meta name="google-site-verification" content="E_lsntfktFWor0CLJ5-oipez6gAJ5lvHRX-dOFmj8vw" />
         <meta
           name="description"
-          content="Looking for expert online maths tutors? Vikas Institute offers personalized math tutoring services to help you excel. Get quality math coaching from experienced tutors near you. Join now for the best results in your math journey!"
+          content="Looking for expert online maths tutors? P.C.M.B. Tutors offers personalized math tutoring services to help you excel. Get quality math coaching from experienced tutors near you. Join now for the best results in your math journey!"
         />
         <meta name="robots" content="noodp, index, follow" />
         <meta name="googlebot" content="index, follow" />
-        <meta name="author" content="Vikas Institute" />
+        <meta name="author" content="P.C.M.B. Tutors" />
 
         {/* Open Graph */}
         <meta property="og:locale" content="en_GB" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Online Maths Tutors Near Me | Vikas Institute" />
+        <meta property="og:title" content="Online Maths Tutors Near Me | P.C.M.B. Tutors" />
         <meta
           property="og:description"
-          content="Looking for expert online maths tutors? Vikas Institute offers personalized math tutoring services to help you excel. Get quality math coaching from experienced tutors near you. Join now for the best results in your math journey!"
+          content="Looking for expert online maths tutors? P.C.M.B. Tutors offers personalized math tutoring services to help you excel. Get quality math coaching from experienced tutors near you. Join now for the best results in your math journey!"
         />
-        <meta property="og:url" content="https://www.vikasinstitute.in/online-maths-tutors" />
-        <meta property="og:site_name" content="Vikas Institute" />
-        <meta property="og:image" content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg" />
+        <meta property="og:url" content="https://www.pcmbtutors.com/online-maths-tutors" />
+        <meta property="og:site_name" content="P.C.M.B. Tutors" />
+        <meta property="og:image" content="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg" />
 
         {/* Canonical URL & Icons */}
-        <link rel="canonical" href="https://www.vikasinstitute.in/online-maths-tutors" />
+        <link rel="canonical" href="https://www.pcmbtutors.com/online-maths-tutors" />
         <link
           rel="shortcut icon"
-          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          href="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
           type="image/x-icon"
         />
         <link
           rel="apple-touch-icon"
-          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          href="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
         />
 
         {/* Facebook Page */}
@@ -136,14 +136,14 @@ const MathTutors = () => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@VikaskashyapSir" />
         <meta property="twitter:account_id" content="1807308218143809536" />
-        <meta property="twitter:title" content="Online Maths Tutors Near Me | Vikas Institute" />
+        <meta property="twitter:title" content="Online Maths Tutors Near Me | P.C.M.B. Tutors" />
         <meta
           property="twitter:description"
-          content="Looking for expert online maths tutors? Vikas Institute offers personalized math tutoring services to help you excel. Get quality math coaching from experienced tutors near you. Join now for the best results in your math journey!"
+          content="Looking for expert online maths tutors? P.C.M.B. Tutors offers personalized math tutoring services to help you excel. Get quality math coaching from experienced tutors near you. Join now for the best results in your math journey!"
         />
         <meta
           property="twitter:image:src"
-          content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          content="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
         />
       </Helmet>
 

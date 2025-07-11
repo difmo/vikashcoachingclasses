@@ -13,7 +13,7 @@ const onlinePhysicsTutors = [
     mainTitle:
       "Hello, Are you Looking for  Online Physics Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE Board Students ?",
     welcomeMessage:
-      "Welcome to Online Personal Physics Tutor @ Vikas Institute, your ultimate destination for top-quality online Physics tutoring. We specialize in Physics education for students following the CBSE, IB, IGCSE, ICSE, and ISE curricula across the UAE, Qatar, USA, UK, Canada, Australia, and India. With our team of highly skilled Physics tutors, customized learning plans, and student-focused online classes, we help students build confidence and excel in one of the most crucial academic subjects.",
+      "Welcome to Online Personal Physics Tutor @ P.C.M.B. Tutors, your ultimate destination for top-quality online Physics tutoring. We specialize in Physics education for students following the CBSE, IB, IGCSE, ICSE, and ISE curricula across the UAE, Qatar, USA, UK, Canada, Australia, and India. With our team of highly skilled Physics tutors, customized learning plans, and student-focused online classes, we help students build confidence and excel in one of the most crucial academic subjects.",
     whyChooseUs: [
       "Qualified and Passionate Tutors: Our Physics tutors are highly qualified professionals with extensive teaching experience in various international and Indian boards. They bring energy and clarity to every lesson, making even the toughest physics problems easier to solve.",
       "Personalized Lesson Plans: Each student has a unique learning style. Our tutors assess the individual needs and tailor the lesson plans accordingly.",
@@ -52,7 +52,7 @@ const onlinePhysicsTutors = [
         name: "Mrs. Iqbal",
         location: "Dubai",
         message:
-          "Vikas Institute helped my son transition smoothly from ICSE to IGCSE Physics. The tutor was extremely knowledgeable and patient.",
+          "P.C.M.B. Tutors helped my son transition smoothly from ICSE to IGCSE Physics. The tutor was extremely knowledgeable and patient.",
       },
       {
         name: "Mr. Henry",
@@ -64,7 +64,7 @@ const onlinePhysicsTutors = [
         name: "Mrs. Desai",
         location: "New York",
         message:
-          "Highly recommended! Vikas Institute made the tutoring process stress-free and my son showed great improvement.",
+          "Highly recommended! P.C.M.B. Tutors made the tutoring process stress-free and my son showed great improvement.",
       },
     ],
     competitiveExamPreparation: [
@@ -85,12 +85,12 @@ const onlinePhysicsTutors = [
     ],
     contact: {
       phone: "+91 8427373281",
-      email: "info@vikasinstitute.in",
-      website: "www.vikasinstitute.in",
+      email: "info@pcmbtutors.com",
+      website: "www.pcmbtutors.com",
     },
     closingLine:
       "Help your child fall in love with Physics and achieve academic success.",
-    slogan: "VIKAS INSTITUTE — Unlocking Physics Brilliance Across the Globe.",
+    slogan: "P.C.M.B. Tutors — Unlocking Physics Brilliance Across the Globe.",
   },
 ];
 
@@ -102,7 +102,7 @@ const onlineChemistryTutors = [
     mainTitle:
       "Hello, Are you Looking for  Online Chemistry Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE Board Students ?",
     welcomeMessage:
-      "Welcome to Online Personal Chemistry Tutors @ Vikas Institute, your premier platform for top-notch online Chemistry tutoring. We provide expert tutoring for students pursuing CBSE, IB, IGCSE, ICSE, and ISE curricula, and our online Chemistry classes are tailored for students in the UAE, Qatar, USA, UK, Canada, Australia, and India. With experienced tutors, customized lesson plans, and one-on-one attention, we ensure your child gains a solid understanding of Chemistry and excels academically.",
+      "Welcome to Online Personal Chemistry Tutors @ P.C.M.B. Tutors, your premier platform for top-notch online Chemistry tutoring. We provide expert tutoring for students pursuing CBSE, IB, IGCSE, ICSE, and ISE curricula, and our online Chemistry classes are tailored for students in the UAE, Qatar, USA, UK, Canada, Australia, and India. With experienced tutors, customized lesson plans, and one-on-one attention, we ensure your child gains a solid understanding of Chemistry and excels academically.",
 
     whyChooseUs: [
       "Expert Chemistry Tutors: Our team includes subject matter experts with advanced degrees in Chemistry and years of teaching experience. They are well-versed with the syllabi of CBSE, IB, IGCSE, ICSE, and ISE, ensuring your child receives the best guidance.",
@@ -142,9 +142,9 @@ const onlineChemistryTutors = [
     ],
 
     testimonials: [
-      "My son is in Class 11 CBSE and struggled with Organic Chemistry. Thanks to Vikas Institute, he not only improved his marks but also began to enjoy the subject. — Mrs. Kapoor, Dubai",
-      "The IB Chemistry tutor we found through Vikas Institute is amazing. She explains tough concepts clearly and helped my daughter score a 7 in HL. — Mr. Baker, UK",
-      "As a working parent in the US, I wanted someone reliable and consistent to help my child with Chemistry. Vikas Institute exceeded our expectations. — Mrs. Raina, California",
+      "My son is in Class 11 CBSE and struggled with Organic Chemistry. Thanks to P.C.M.B. Tutors, he not only improved his marks but also began to enjoy the subject. — Mrs. Kapoor, Dubai",
+      "The IB Chemistry tutor we found through P.C.M.B. Tutors is amazing. She explains tough concepts clearly and helped my daughter score a 7 in HL. — Mr. Baker, UK",
+      "As a working parent in the US, I wanted someone reliable and consistent to help my child with Chemistry. P.C.M.B. Tutors exceeded our expectations. — Mrs. Raina, California",
     ],
 
     competitiveExamPreparation: [
@@ -166,15 +166,15 @@ const onlineChemistryTutors = [
 
     contact: {
       phone: "+91 8427373281",
-      email: "info@vikasinstitute.in",
-      website: "www.vikasinstitute.in",
+      email: "info@pcmbtutors.com",
+      website: "www.pcmbtutors.com",
     },
 
     closingLine:
-      "Join hundreds of successful students from around the world who trust Vikas Institute for online Chemistry tutoring. Book your Free Demo Class today and take the first step toward academic success!",
+      "Join hundreds of successful students from around the world who trust P.C.M.B. Tutors for online Chemistry tutoring. Book your Free Demo Class today and take the first step toward academic success!",
 
     slogan:
-      "VIKAS INSTITUTE — Empowering Future Scientists Through Online Tutoring.",
+      "P.C.M.B. Tutors — Empowering Future Scientists Through Online Tutoring.",
   },
 ];
 
@@ -183,7 +183,7 @@ const onlineMathsTutors = [
     mainHeadding: "Online Math Tutors",
     mainTitle:
       "Hello, Are you Looking for  Online Maths Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE Board Students ?",
-    welcomeMessage: `Welcome to Online Personal Maths Tutor @ Vikas Institute, your ultimate destination for top-quality online Maths tutoring. We specialize in Mathematics education for students following the CBSE, IB, IGCSE, ICSE, and ISE curricula across the UAE, Qatar, USA, UK, Canada, Australia, and India. With our team of highly skilled Maths tutors, customized learning plans, and student-focused online classes, we help students build confidence and excel in one of the most crucial academic subjects.`,
+    welcomeMessage: `Welcome to Online Personal Maths Tutor @ P.C.M.B. Tutors, your ultimate destination for top-quality online Maths tutoring. We specialize in Mathematics education for students following the CBSE, IB, IGCSE, ICSE, and ISE curricula across the UAE, Qatar, USA, UK, Canada, Australia, and India. With our team of highly skilled Maths tutors, customized learning plans, and student-focused online classes, we help students build confidence and excel in one of the most crucial academic subjects.`,
 
     whyChooseUs: [
       "Qualified and Passionate Tutors: Our Maths tutors are highly qualified professionals with extensive teaching experience in various international and Indian boards. They bring energy and clarity to every lesson, making even the toughest math problems easier to solve.",
@@ -227,19 +227,19 @@ const onlineMathsTutors = [
         name: "Mrs. Iqbal",
         location: "Dubai",
         message:
-          "Vikas Institute helped my son in the UAE transition smoothly from ICSE to IGCSE Maths. The tutor was extremely knowledgeable and patient.",
+          "P.C.M.B. Tutors helped my son in the UAE transition smoothly from ICSE to IGCSE Maths. The tutor was extremely knowledgeable and patient.",
       },
       {
         name: "Mr. Henry",
         location: "London",
         message:
-          "The IB Maths support my daughter received from Vikas Institute was incredible. She scored a 7 in her finals!",
+          "The IB Maths support my daughter received from P.C.M.B. Tutors was incredible. She scored a 7 in her finals!",
       },
       {
         name: "Mrs. Desai",
         location: "New York",
         message:
-          "As a parent in the USA, I was looking for a reliable online Maths tutor for my son. Vikas Institute made the process easy and stress-free. Highly recommended!",
+          "As a parent in the USA, I was looking for a reliable online Maths tutor for my son. P.C.M.B. Tutors made the process easy and stress-free. Highly recommended!",
       },
     ],
 
@@ -265,15 +265,15 @@ const onlineMathsTutors = [
 
     contact: {
       phone: "+91 8427373281",
-      email: "info@vikasinstitute.in",
-      website: "www.vikasinstitute.in",
+      email: "info@pcmbtutors.com",
+      website: "www.pcmbtutors.com",
     },
 
     closingLine:
       "Book your Free Trial Session today and give your child the Vikas advantage!",
 
     slogan:
-      "VIKAS INSTITUTE — Unlocking Mathematical Brilliance Across the Globe.",
+      "P.C.M.B. Tutors — Unlocking Mathematical Brilliance Across the Globe.",
   },
 ];
 
@@ -283,7 +283,7 @@ const onlineBiologyTutors = [
     mainTitle:
       "Hello, Are you Looking for  Online Biology Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE Board Students ?",
     welcomeMessage:
-      "Welcome to Online Biology Tutors @ Vikas Institute, the trusted name in online Biology tutoring for students of CBSE, IB, IGCSE, ICSE, and ISE curricula. Whether you're based in the UAE, Qatar, USA, UK, Canada, Australia, or India, we bring expert Biology tutors right to your screen with flexible, one-on-one, and result-oriented online classes. At Vikas Institute, our mission is to empower students with a strong foundation in Biology through conceptual learning, critical thinking, and exam-ready strategies.",
+      "Welcome to Online Biology Tutors @ P.C.M.B. Tutors, the trusted name in online Biology tutoring for students of CBSE, IB, IGCSE, ICSE, and ISE curricula. Whether you're based in the UAE, Qatar, USA, UK, Canada, Australia, or India, we bring expert Biology tutors right to your screen with flexible, one-on-one, and result-oriented online classes. At P.C.M.B. Tutors, our mission is to empower students with a strong foundation in Biology through conceptual learning, critical thinking, and exam-ready strategies.",
     whyChooseUs: [
       "Certified and Experienced Biology Tutors: Our tutors are handpicked professionals with degrees in Life Sciences, Biotechnology, Medicine, and Education. They are highly experienced in teaching school-level Biology and preparing students for national and international exams.",
       "Board-Specific Lesson Plans: We offer specialized lesson plans tailored to each curriculum—whether it’s the NCERT-based CBSE syllabus or the rigorous IB and IGCSE structures.",
@@ -322,7 +322,7 @@ const onlineBiologyTutors = [
         name: "Mrs. Bansal",
         location: "Delhi",
         message:
-          "My daughter struggled with Class 12 Biology, but after joining Vikas Institute, she scored 92%. The tutor was patient, knowledgeable, and supportive.",
+          "My daughter struggled with Class 12 Biology, but after joining P.C.M.B. Tutors, she scored 92%. The tutor was patient, knowledgeable, and supportive.",
       },
       {
         name: "Mr. Clarke",
@@ -334,7 +334,7 @@ const onlineBiologyTutors = [
         name: "Mrs. Reema",
         location: "Doha",
         message:
-          "Finding a good Biology tutor in Qatar was hard until we found Vikas Institute. The online sessions are as effective as in-person coaching.",
+          "Finding a good Biology tutor in Qatar was hard until we found P.C.M.B. Tutors. The online sessions are as effective as in-person coaching.",
       },
     ],
     competitiveExamPreparation: [
@@ -355,13 +355,13 @@ const onlineBiologyTutors = [
     ],
     contact: {
       phone: "+91 8427373281",
-      email: "info@vikasinstitute.in",
-      website: "www.vikasinstitute.in",
+      email: "info@pcmbtutors.com",
+      website: "www.pcmbtutors.com",
     },
     closingLine:
-      "Let your child thrive in Biology with expert help from Vikas Institute.",
+      "Let your child thrive in Biology with expert help from P.C.M.B. Tutors.",
     slogan:
-      "VIKAS INSTITUTE — Empowering Young Biologists for a Better Tomorrow.",
+      "P.C.M.B. Tutors — Empowering Young Biologists for a Better Tomorrow.",
   },
 ];
 const testimonials = [
@@ -371,7 +371,7 @@ const testimonials = [
     star: "⭐⭐⭐⭐⭐",
   },
   {
-    text: "Thanks to Vikas Institute, my daughter scored 95% in IGCSE Physics. Brilliant teaching!",
+    text: "Thanks to P.C.M.B. Tutors, my daughter scored 95% in IGCSE Physics. Brilliant teaching!",
     author: "Mrs. Kapoor, Dubai",
     star: "⭐⭐⭐⭐⭐",
   },
@@ -396,7 +396,7 @@ const testimonials = [
     star: "⭐⭐⭐⭐⭐",
   },
   {
-    text: "I never thought online tutoring could be so effective. Thank you Vikas Institute!",
+    text: "I never thought online tutoring could be so effective. Thank you P.C.M.B. Tutors!",
     author: "Sarah, Canada",
     star: "⭐⭐⭐⭐⭐",
   },
@@ -436,7 +436,7 @@ const testimonials = [
     star: "⭐⭐⭐⭐⭐",
   },
   {
-    text: "My grades improved within a month. Vikas Institute is a blessing!",
+    text: "My grades improved within a month. P.C.M.B. Tutors is a blessing!",
     author: "Ishita, ICSE Board",
     star: "⭐⭐⭐⭐⭐",
   },
@@ -446,7 +446,7 @@ const testimonials = [
     star: "⭐⭐⭐⭐⭐",
   },
   {
-    text: "I tried other platforms, but nothing compares to Vikas Institute’s personalized support.",
+    text: "I tried other platforms, but nothing compares to P.C.M.B. Tutors’s personalized support.",
     author: "Tanisha, Canada",
     star: "⭐⭐⭐⭐⭐",
   },
@@ -481,7 +481,7 @@ const testimonials = [
     star: "⭐⭐⭐⭐⭐",
   },
   {
-    text: "Vikas Institute helped my son move from average to A+ in just one term.",
+    text: "P.C.M.B. Tutors helped my son move from average to A+ in just one term.",
     author: "Mrs. Das, UK",
     star: "⭐⭐⭐⭐⭐",
   },
@@ -506,7 +506,7 @@ const testimonials = [
     star: "⭐⭐⭐⭐⭐",
   },
   {
-    text: "100% satisfaction. Vikas Institute really cares about your progress.",
+    text: "100% satisfaction. P.C.M.B. Tutors really cares about your progress.",
     author: "Manoj, Delhi",
     star: "⭐⭐⭐⭐⭐",
   },
@@ -556,7 +556,7 @@ const testimonials = [
     star: "⭐⭐⭐⭐⭐",
   },
   {
-    text: "From weak in Physics to top of my class—thank you Vikas Institute!",
+    text: "From weak in Physics to top of my class—thank you P.C.M.B. Tutors!",
     author: "Prateek, India",
     star: "⭐⭐⭐⭐⭐",
   },
@@ -611,12 +611,12 @@ const testimonials = [
     star: "⭐⭐⭐⭐⭐",
   },
   {
-    text: "Vikas Institute tutors go above and beyond—thank you!",
+    text: "P.C.M.B. Tutors tutors go above and beyond—thank you!",
     author: "Sneha, Australia",
     star: "⭐⭐⭐⭐⭐",
   },
   {
-    text: "From struggling to excelling in Physics—all thanks to Vikas Institute!",
+    text: "From struggling to excelling in Physics—all thanks to P.C.M.B. Tutors!",
     author: "Nidhi, Grade 10",
     star: "⭐⭐⭐⭐⭐",
   },
@@ -628,41 +628,41 @@ const tutordata = [
   {
     "id": 1,
     "title": "Online Science Tutoring : ",
-    "description": "Personalized Learning for Academic Excellence In today’s competitive academic world, mastering science is essential for every student from middle school to high school and beyond. Science isn’t just about reading textbooks; it’s about understanding the world around us. Whether it's Physics, Chemistry, Biology, or Maths, these subjects form the foundation of higher education and professional success in fields like engineering, medicine, research, data science, and technology. Online science tutoring has emerged as a powerful solution for students who want personalized, flexible, and effective support in these core subjects. At Vikas Institute, we offer 1-to-1 live tutoring in Physics, Chemistry, Biology & Maths—tailored to the unique needs of each learner.",
+    "description": "Personalized Learning for Academic Excellence In today’s competitive academic world, mastering science is essential for every student from middle school to high school and beyond. Science isn’t just about reading textbooks; it’s about understanding the world around us. Whether it's Physics, Chemistry, Biology, or Maths, these subjects form the foundation of higher education and professional success in fields like engineering, medicine, research, data science, and technology. Online science tutoring has emerged as a powerful solution for students who want personalized, flexible, and effective support in these core subjects. At P.C.M.B. Tutors, we offer 1-to-1 live tutoring in Physics, Chemistry, Biology & Maths—tailored to the unique needs of each learner.",
     "image": science,
     "imageLeft": false
   },
   {
     "id": 2,
     "title": "Online Physics Tutoring : ",
-    "description": "Personalized Learning for Better Results Physics is one of the most important subjects for students pursuing science, engineering, or medical careers. However, many learners find it challenging due to its complex concepts and mathematical applications. At Vikas Institute, we make Physics simple, engaging, and result-oriented through 1-to-1 personalized online tutoring. Our online Physics tutoring is designed to meet the unique learning needs of each student, whether they’re in CBSE, ICSE, IGCSE, IB, or State Boards. From foundational topics like motion and forces to advanced concepts such as electromagnetism, optics, and modern physics, our expert tutors break down every concept in a clear and easy-to-understand manner. With live interactive sessions, digital whiteboards, visual aids, and regular assessments, we ensure deep conceptual clarity and exam readiness. Our tutors also help with homework, assignments, and competitive exam preparation including JEE, NEET, Olympiads, and SAT Subject Tests. At Vikas Institute, we offer 1-to-1 personalized online Physics tutoring designed to help students not only improve their marks but also develop a deep conceptual understanding of the subject. Whether you’re a middle school student learning motion for the first time or a senior secondary student preparing for JEE, NEET, IB, or board exams, we’ve got you covered.",
+    "description": "Personalized Learning for Better Results Physics is one of the most important subjects for students pursuing science, engineering, or medical careers. However, many learners find it challenging due to its complex concepts and mathematical applications. At P.C.M.B. Tutors, we make Physics simple, engaging, and result-oriented through 1-to-1 personalized online tutoring. Our online Physics tutoring is designed to meet the unique learning needs of each student, whether they’re in CBSE, ICSE, IGCSE, IB, or State Boards. From foundational topics like motion and forces to advanced concepts such as electromagnetism, optics, and modern physics, our expert tutors break down every concept in a clear and easy-to-understand manner. With live interactive sessions, digital whiteboards, visual aids, and regular assessments, we ensure deep conceptual clarity and exam readiness. Our tutors also help with homework, assignments, and competitive exam preparation including JEE, NEET, Olympiads, and SAT Subject Tests. At P.C.M.B. Tutors, we offer 1-to-1 personalized online Physics tutoring designed to help students not only improve their marks but also develop a deep conceptual understanding of the subject. Whether you’re a middle school student learning motion for the first time or a senior secondary student preparing for JEE, NEET, IB, or board exams, we’ve got you covered.",
     "image": physics,
     "imageLeft": true
   },
   {
     "id": 2,
     "title": "Online Chemistry Tutoring : ",
-    "description": "Build Confidence in Every Concept Chemistry is the central science that bridges Physics and Biology. Yet, many students struggle with it due to the abstract theories, chemical equations, and formula memorization. At Vikas Institute, we simplify Chemistry through 1-to-1 personalized online tutoring that makes learning interactive, logical, and fun. Our online Chemistry tutoring covers all major curricula including CBSE, ICSE, IGCSE, IB, and State Boards. Whether your child needs help with basic concepts like atomic structure and chemical bonding or advanced topics such as organic chemistry and thermodynamics, we provide expert guidance at every step. Our experienced Chemistry tutors use real-life examples, digital whiteboards, visual demonstrations, and systematic revision methods to help students gain clarity and retain complex topics. Each session is customized to match the student’s pace and learning style. We also provide support for JEE, NEET, CUET, SAT Subject Tests, Olympiads, and school-level exams..",
+    "description": "Build Confidence in Every Concept Chemistry is the central science that bridges Physics and Biology. Yet, many students struggle with it due to the abstract theories, chemical equations, and formula memorization. At P.C.M.B. Tutors, we simplify Chemistry through 1-to-1 personalized online tutoring that makes learning interactive, logical, and fun. Our online Chemistry tutoring covers all major curricula including CBSE, ICSE, IGCSE, IB, and State Boards. Whether your child needs help with basic concepts like atomic structure and chemical bonding or advanced topics such as organic chemistry and thermodynamics, we provide expert guidance at every step. Our experienced Chemistry tutors use real-life examples, digital whiteboards, visual demonstrations, and systematic revision methods to help students gain clarity and retain complex topics. Each session is customized to match the student’s pace and learning style. We also provide support for JEE, NEET, CUET, SAT Subject Tests, Olympiads, and school-level exams..",
     "image": chemistry,
     "imageLeft": false
   },
   {
     "id": 3,
     "title": "Online Maths Tutoring : ",
-    "description": "Learn, Practice & Excel with Personalised Support Mathematics is a subject that builds logical reasoning, analytical skills, and problem-solving ability. Yet, many students face difficulty due to unclear fundamentals or lack of practice. At Vikas Institute, our 1-to-1 online Maths tutoring helps students overcome their fear of Maths and turn it into their strongest subject. We offer customized Maths tutoring for CBSE, ICSE, IGCSE, IB, and State Boards, from Grade 7 to 12. Whether it’s basic arithmetic, algebra, geometry, calculus, or statistics, our expert tutors break down every topic into simple, easy-to-understand steps. Our classes are interactive, engaging, and tailored to suit each student’s pace and learning style. Using digital whiteboards, real-life examples, and step-by-step explanations, we ensure that students understand the why behind every concept—not just how to solve a problem. We also support preparation for competitive exams such as JEE, CUET, Olympiads, SAT, ACT, and more, helping students tackle complex problems with confidence.",
+    "description": "Learn, Practice & Excel with Personalised Support Mathematics is a subject that builds logical reasoning, analytical skills, and problem-solving ability. Yet, many students face difficulty due to unclear fundamentals or lack of practice. At P.C.M.B. Tutors, our 1-to-1 online Maths tutoring helps students overcome their fear of Maths and turn it into their strongest subject. We offer customized Maths tutoring for CBSE, ICSE, IGCSE, IB, and State Boards, from Grade 7 to 12. Whether it’s basic arithmetic, algebra, geometry, calculus, or statistics, our expert tutors break down every topic into simple, easy-to-understand steps. Our classes are interactive, engaging, and tailored to suit each student’s pace and learning style. Using digital whiteboards, real-life examples, and step-by-step explanations, we ensure that students understand the why behind every concept—not just how to solve a problem. We also support preparation for competitive exams such as JEE, CUET, Olympiads, SAT, ACT, and more, helping students tackle complex problems with confidence.",
     "image": math,
     "imageLeft": true
   },
   {
     "id": 4,
     "title": "Online Biology Tutoring :",
-    "description": " Understand Life, the Smart Way Biology is the study of life—fascinating, complex, and essential for students pursuing careers in medicine, biotechnology, and life sciences. However, students often struggle with lengthy theories, diagrams, and terminology-heavy chapters. At Vikas Institute, our 1-to-1 personalized online Biology tutoring simplifies learning through clear explanations, visual aids, and expert guidance. Our online Biology tutoring covers all major boards including CBSE, ICSE, IGCSE, IB, and State Boards, catering to students from Grade 7 to 12. Whether it’s cell structure, genetics, human physiology, plant biology, ecology, or evolution, our experienced tutors break down each topic into digestible and engaging lessons. Using interactive whiteboards, animations, and structured notes, we make difficult topics easier to understand and remember. Students also receive help with school homework, board exam preparation, and competitive tests like NEET, CUET, Olympiads, and SAT Subject Tests.",
+    "description": " Understand Life, the Smart Way Biology is the study of life—fascinating, complex, and essential for students pursuing careers in medicine, biotechnology, and life sciences. However, students often struggle with lengthy theories, diagrams, and terminology-heavy chapters. At P.C.M.B. Tutors, our 1-to-1 personalized online Biology tutoring simplifies learning through clear explanations, visual aids, and expert guidance. Our online Biology tutoring covers all major boards including CBSE, ICSE, IGCSE, IB, and State Boards, catering to students from Grade 7 to 12. Whether it’s cell structure, genetics, human physiology, plant biology, ecology, or evolution, our experienced tutors break down each topic into digestible and engaging lessons. Using interactive whiteboards, animations, and structured notes, we make difficult topics easier to understand and remember. Students also receive help with school homework, board exam preparation, and competitive tests like NEET, CUET, Olympiads, and SAT Subject Tests.",
     "image": biology,
     "imageLeft": false
   },
   // {
   //   "id": 5,
-  //   "title": "Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode | Vikas Institute       ",
+  //   "title": "Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode | P.C.M.B. Tutors       ",
   //   "description": "Prepare for competitive exams like NEET, JEE, and Science Olympiads with intensive coaching and expert guidance from top tutors.",
   //   "image": "/images/tutors/exam-prep.jpg",
   //   "imageLeft": false

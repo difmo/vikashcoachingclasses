@@ -45,7 +45,7 @@ const OnlineClasses = () => {
       <div className="container mx-auto">
         <div className="py-6">
           <div className=" bg-[#f2f2f2] text-md  font-extrabold flex justify-center">
-            Home / Vikas Institute
+            Home / P.C.M.B. Tutors
           </div>
         </div>
         <div ref={ref} className="m-8">

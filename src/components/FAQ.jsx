@@ -30,9 +30,9 @@ const fadeInRight = {
 
 const faqs = [
   {
-    question: "Are Vikas Institute Tutors, Qualified and Verified ?",
+    question: "Are P.C.M.B. Tutors, Qualified and Verified ?",
     answer: [
-      "Absolutely. At Vikas Institute, we take great pride in the quality and integrity of our tutoring team. Every tutor associated with our institute is not only highly qualified but also thoroughly verified to ensure they meet the highest standards of educational excellence and trustworthiness.",
+      "Absolutely. At P.C.M.B. Tutors, we take great pride in the quality and integrity of our tutoring team. Every tutor associated with our institute is not only highly qualified but also thoroughly verified to ensure they meet the highest standards of educational excellence and trustworthiness.",
       "1. Strong Academic Background",
       "All our tutors hold degrees from reputed institutions, with specialization in subjects like Physics, Math, Chemistry, Biology, and more, based on the curriculum they teach. We cater to CBSE, ICSE, IGCSE, IB, and American Curriculum students, and our tutors are selected accordingly to match the academic standards of each board.",
       "2 . Rigorous Selection Process",
@@ -52,16 +52,16 @@ const faqs = [
       "Even after onboarding, our tutors are regularly monitored and trained to adapt to the latest teaching methodologies and technological tools.",
       "We actively collect student and parent feedback to continually assess and improve tutor performance.",
       "With our qualified, verified, and experienced tutors, you can be confident that your child is in the best hands.",
-      "Have more questions? Reach out to us at info@vikasinstitute.in or call +91 8427373281.",
+      "Have more questions? Reach out to us at info@pcmbtutors.com or call +91 8427373281.",
     ],
   },
   {
     question:
-      "What is the Process of Hiring Online Private Tutors from www.vikasinstitute.in?",
+      "What is the Process of Hiring Online Private Tutors from www.pcmbtutors.com?",
     answer: [
-      "Hiring a qualified online private tutor from Vikas Institute is simple, quick, and fully personalized to your academic needs. We follow a step-by-step process to ensure you get the best tutor for your child’s learning goals, curriculum, and schedule.",
+      "Hiring a qualified online private tutor from P.C.M.B. Tutors is simple, quick, and fully personalized to your academic needs. We follow a step-by-step process to ensure you get the best tutor for your child’s learning goals, curriculum, and schedule.",
       "1. Submit an Inquiry",
-      "Start by contacting us through our website www.vikasinstitute.in, email (info@vikasinstitute.in), or WhatsApp/call at +91 8427373281. Share your details including:",
+      "Start by contacting us through our website www.pcmbtutors.com, email (info@pcmbtutors.com), or WhatsApp/call at +91 8427373281. Share your details including:",
       "• Student’s grade and subject(s)",
       "• Curriculum (CBSE, IB, IGCSE, ICSE, ISC etc.)",
       "• Preferred schedule and time zone",
@@ -80,19 +80,19 @@ const faqs = [
       "• Regular progress updates",
       "• Personalized assignments and test prep",
       "• Continuous academic support",
-      "6. Why Choose Vikas Institute?",
+      "6. Why Choose P.C.M.B. Tutors?",
       "• Highly qualified and verified tutors",
       "• Coverage for CBSE, ICSE, IGCSE, IB, and other international boards",
       "• Personalized one-on-one classes across UAE, Qatar, UK, USA, Australia, Canada, and India",
       "• Ongoing feedback and performance tracking",
-      "Ready to get started? Contact us today at info@vikasinstitute.in or +91 8427373281 to book your free demo class!",
+      "Ready to get started? Contact us today at info@pcmbtutors.com or +91 8427373281 to book your free demo class!",
     ],
   },
   {
     question:
-      "What is the Payment / Fee Paying System for Hired Online Private Tutors from www.vikasinstitute.in?",
+      "What is the Payment / Fee Paying System for Hired Online Private Tutors from www.pcmbtutors.com?",
     answer: [
-      "At Vikas Institute, we offer a transparent, flexible, and secure payment system...",
+      "At P.C.M.B. Tutors, we offer a transparent, flexible, and secure payment system...",
       "1. Flexible Payment Plans",
       "We understand that every student’s needs are different. We offer:",
       "• Hourly-based plans",
@@ -116,16 +116,16 @@ const faqs = [
       "• Multi-currency support",
       "• Time-zone friendly billing cycles",
       "• Need Help With Payment?",
-      "Contact us at info@vikasinstitute.in or WhatsApp +91 8427373281 for support.",
+      "Contact us at info@pcmbtutors.com or WhatsApp +91 8427373281 for support.",
     ],
   },
   {
     question: "What are the Terms and Conditions?",
     answer: [
-      "By using www.vikasinstitute.in and enrolling in our online tutoring services, you agree to the following terms and conditions. Please read them carefully before proceeding.",
+      "By using www.pcmbtutors.com and enrolling in our online tutoring services, you agree to the following terms and conditions. Please read them carefully before proceeding.",
 
       "1. Service Overview",
-      "Vikas Institute provides personalized online tutoring for CBSE, ICSE, IGCSE, IB, and other international curricula across UAE, Qatar, UK, USA, Canada, Australia, and India.",
+      "P.C.M.B. Tutors provides personalized online tutoring for CBSE, ICSE, IGCSE, IB, and other international curricula across UAE, Qatar, UK, USA, Canada, Australia, and India.",
 
       "2. Enrollment and Registration",
       "• Students or parents must provide accurate information during registration.",
@@ -146,7 +146,7 @@ const faqs = [
       "5. Cancellation and Rescheduling",
       "• Classes can be rescheduled with at least 24 hours’ prior notice.",
       "• Missed sessions without prior notice will be counted and charged.",
-      "• Refunds are considered only in exceptional cases, at the discretion of Vikas Institute.",
+      "• Refunds are considered only in exceptional cases, at the discretion of P.C.M.B. Tutors.",
 
       "6. Code of Conduct",
       "• Students must attend on time and behave respectfully.",
@@ -155,14 +155,14 @@ const faqs = [
 
       "7. Technical Requirements",
       "• Students must ensure stable internet, a functional device, and access to Zoom or Google Meet.",
-      "• Vikas Institute is not responsible for technical issues on the student’s side.",
+      "• P.C.M.B. Tutors is not responsible for technical issues on the student’s side.",
 
       "8. Privacy and Data Protection",
       "• All personal data is kept confidential and used for educational purposes only.",
       "• Sessions may be recorded for quality monitoring, with prior notification.",
 
       "9. Limitation of Liability",
-      "• Vikas Institute provides the best support possible but does not guarantee specific academic results.",
+      "• P.C.M.B. Tutors provides the best support possible but does not guarantee specific academic results.",
       "• The institute is not liable for indirect, incidental, or consequential damages.",
 
       "10. Amendments",
@@ -171,19 +171,19 @@ const faqs = [
 
       "11. Contact Us",
       "Have questions or concerns? Reach out to us at:",
-      " info@vikasinstitute.in",
+      " info@pcmbtutors.com",
       "+91 8427373281",
     ],
   },
   {
     question: "Important Notes for Students and Parents.",
     answer: [
-      "Please read the following important guidelines carefully before starting your tutoring sessions with Vikas Institute. These policies are in place to ensure transparency, quality, and a smooth learning experience.",
+      "Please read the following important guidelines carefully before starting your tutoring sessions with P.C.M.B. Tutors. These policies are in place to ensure transparency, quality, and a smooth learning experience.",
 
       "1. No Direct Fee Transfers to Tutors",
-      "• All payments must be made directly to Vikas Institute via approved channels only.",
+      "• All payments must be made directly to P.C.M.B. Tutors via approved channels only.",
       "• Direct transactions with tutors are strictly prohibited.",
-      "• If any direct fee payment is made to a tutor without our knowledge and any misalignment, fraud, or issue occurs, Vikas Institute and its authorized personnel are not responsible.",
+      "• If any direct fee payment is made to a tutor without our knowledge and any misalignment, fraud, or issue occurs, P.C.M.B. Tutors and its authorized personnel are not responsible.",
 
       "2. Fee Must Be Paid in Advance",
       "• Classes will only be scheduled once the fee is received and confirmed by our accounts team.",
@@ -193,7 +193,7 @@ const faqs = [
       "• Missed classes without prior notice will be counted as completed and charged accordingly.",
 
       "4. Refunds Are Not Guaranteed",
-      "• Refunds are only provided in exceptional cases and are at the sole discretion of Vikas Institute.",
+      "• Refunds are only provided in exceptional cases and are at the sole discretion of P.C.M.B. Tutors.",
 
       "5. Students Are Responsible for Technical Readiness",
       "• Please ensure you have a working device, stable internet, and access to Zoom or Google Meet before each session.",
@@ -206,7 +206,7 @@ const faqs = [
       "• Some sessions may be recorded for internal training and quality control purposes. You will be informed in advance when recordings are made.",
 
       "8. Student Privacy is Protected",
-      "• All personal and academic information shared with Vikas Institute is strictly confidential and used solely for tutoring purposes.",
+      "• All personal and academic information shared with P.C.M.B. Tutors is strictly confidential and used solely for tutoring purposes.",
     ],
   },
 ];

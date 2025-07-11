@@ -40,39 +40,39 @@ const AboutUs = () => {
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>About Us | Vikas Institute</title>
+        <title>About Us | P.C.M.B. Tutors</title>
 
         <meta name="google-site-verification" content="E_lsntfktFWor0CLJ5-oipez6gAJ5lvHRX-dOFmj8vw" />
         <meta
           name="description"
-          content="Learn about Vikas Institute’s mission, values, and commitment to delivering high-quality education and skill development. Discover how we empower students for a brighter future."
+          content="Learn about P.C.M.B. Tutors’s mission, values, and commitment to delivering high-quality education and skill development. Discover how we empower students for a brighter future."
         />
         <meta name="robots" content="noodp, index, follow" />
         <meta name="googlebot" content="index, follow" />
-        <meta name="author" content="Vikas Institute" />
+        <meta name="author" content="P.C.M.B. Tutors" />
 
         {/* Open Graph */}
         <meta property="og:locale" content="en_GB" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="About Us | Vikas Institute" />
+        <meta property="og:title" content="About Us | P.C.M.B. Tutors" />
         <meta
           property="og:description"
-          content="Learn about Vikas Institute’s mission, values, and commitment to delivering high-quality education and skill development. Discover how we empower students for a brighter future."
+          content="Learn about P.C.M.B. Tutors’s mission, values, and commitment to delivering high-quality education and skill development. Discover how we empower students for a brighter future."
         />
-        <meta property="og:url" content="https://www.vikasinstitute.in/about-us" />
-        <meta property="og:site_name" content="Vikas Institute" />
-        <meta property="og:image" content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg" />
+        <meta property="og:url" content="https://www.pcmbtutors.com/about-us" />
+        <meta property="og:site_name" content="P.C.M.B. Tutors" />
+        <meta property="og:image" content="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg" />
 
         {/* Canonical and Favicon */}
-        <link rel="canonical" href="https://www.vikasinstitute.in/about-us" />
+        <link rel="canonical" href="https://www.pcmbtutors.com/about-us" />
         <link
           rel="shortcut icon"
-          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          href="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
           type="image/x-icon"
         />
         <link
           rel="apple-touch-icon"
-          href="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          href="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
         />
 
         {/* Facebook */}
@@ -82,14 +82,14 @@ const AboutUs = () => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@VikaskashyapSir" />
         <meta property="twitter:account_id" content="1807308218143809536" />
-        <meta property="twitter:title" content="About Us | Vikas Institute" />
+        <meta property="twitter:title" content="About Us | P.C.M.B. Tutors" />
         <meta
           property="twitter:description"
-          content="Learn about Vikas Institute’s mission, values, and commitment to delivering high-quality education and skill development. Discover how we empower students for a brighter future."
+          content="Learn about P.C.M.B. Tutors’s mission, values, and commitment to delivering high-quality education and skill development. Discover how we empower students for a brighter future."
         />
         <meta
           property="twitter:image:src"
-          content="https://www.vikasinstitute.in/assets/logo-DsoWFvQT.jpeg"
+          content="https://www.pcmbtutors.com/assets/logo-DsoWFvQT.jpeg"
         />
       </Helmet>
       <div className="">
@@ -125,7 +125,7 @@ const AboutUs = () => {
                 Globe. So if you want to Score Good grades in competitive exams
                 like NEET or IIT-JEE along with Boards then connect us for a
                 guaranteed result & Get One to One Online PHYSICS, CHEMISTRY,
-                MATHS & BIOLOGY classes with Vikas Instutite Faculties and make
+                MATHS & BIOLOGY classes with P.C.M.B. Tutors Faculties and make
                 your Concepts sharp & fair by clearing yours doubts.
               </span>
             </p>
