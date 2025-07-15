@@ -6,7 +6,7 @@ const FloatingCallAndWhatsappButtons = () => {
   return (
     <div className="flex">
       <motion.a
-        href="https://wa.me/919582699555"
+        href="https://wa.me/918750919571"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"

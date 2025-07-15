@@ -84,7 +84,7 @@ const onlinePhysicsTutors = [
       "Safe, secure, and engaging learning experience",
     ],
     contact: {
-      phone: "+91 8427373281",
+      phone: "+91 8750919571",
       email: "info@pcmbtutors.com",
       website: "www.pcmbtutors.com",
     },
@@ -165,7 +165,7 @@ const onlineChemistryTutors = [
     ],
 
     contact: {
-      phone: "+91 8427373281",
+      phone: "+91 8750919571",
       email: "info@pcmbtutors.com",
       website: "www.pcmbtutors.com",
     },
@@ -264,7 +264,7 @@ const onlineMathsTutors = [
     ],
 
     contact: {
-      phone: "+91 8427373281",
+      phone: "+91 8750919571",
       email: "info@pcmbtutors.com",
       website: "www.pcmbtutors.com",
     },
@@ -354,7 +354,7 @@ const onlineBiologyTutors = [
       "Customized packages and demo sessions",
     ],
     contact: {
-      phone: "+91 8427373281",
+      phone: "+91 8750919571",
       email: "info@pcmbtutors.com",
       website: "www.pcmbtutors.com",
     },

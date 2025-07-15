@@ -21,7 +21,7 @@ const slides = [
   },
   {
     image: vikas2,
-    heading: "Hi, Looking for Online Chemistry Tutor ",
+    heading: "Hi, Looking for Online Chem Tutor ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
   {

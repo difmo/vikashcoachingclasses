@@ -76,7 +76,7 @@ const physics = [
       "Safe, secure, and engaging learning experience",
     ],
     contact: {
-      phone: "+91 8427373281",
+      phone: "+91 8750919571",
       email: "info@pcmbtutors.com",
       website: "www.pcmbtutors.com",
     },

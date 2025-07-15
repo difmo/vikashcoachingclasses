@@ -108,7 +108,12 @@ const Legacy = () => {
         <div>
           <div className="mt-4">
 
-          <StripeHeading fontSize="text-[21px]" text={"Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode | P.C.M.B. Tutors"} />
+            <StripeHeading
+              fontSize="text-xl sm:text-2xl md:text-2xl lg:text-3xl"
+              text={
+                "Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode | P.C.M.B. Tutors"
+              }
+            />
 
           </div>
           <TutoringSection img={img} />
@@ -177,13 +182,12 @@ const TutoringSection = ({ img }) => {
 
 
         {/* Image */}
-        <div className=" w-full">
 
+        <div className="px-10  w-full"> {/* ✅ Equal left and right margin via padding */}
           <img
             src={img}
-
             alt="vikasinstitute.in"
-            className="w-full h-auto  object-cover rounded-[80px]"
+            className="w-full h-auto object-cover  border-5 border-blue-600 rounded-[80px]"
           />
         </div>
 

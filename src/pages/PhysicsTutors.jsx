@@ -215,11 +215,11 @@ const PhysicsTutors = () => {
         {/* Bottom Section: Image & Form */}
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-6 p-4 md:p-8">
           <div className="w-full lg:w-1/2 flex justify-center">
-            <div className="w-full rounded-xl border-2 border-white overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+            <div className="w-full rounded-xl   overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 border-4 border-blue-600">
               <img
                 src={chem}
                 alt="vikasinstitute.in"
-                className="w-full h-[300px] sm:h-[400px] md:h-[460px] lg:h-[480px] xl:h-[480px] bg-cover rounded-xl"
+                className="w-full h-[300px] sm:h-[400px] md:h-[460px] lg:h-[480px] xl:h-[480px] bg-cover rounded-xl "
               />
             </div>
           </div>

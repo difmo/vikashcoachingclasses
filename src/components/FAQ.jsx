@@ -52,7 +52,7 @@ const faqs = [
       "Even after onboarding, our tutors are regularly monitored and trained to adapt to the latest teaching methodologies and technological tools.",
       "We actively collect student and parent feedback to continually assess and improve tutor performance.",
       "With our qualified, verified, and experienced tutors, you can be confident that your child is in the best hands.",
-      "Have more questions? Reach out to us at info@pcmbtutors.com or call +91 8427373281.",
+      "Have more questions? Reach out to us at info@pcmbtutors.com or call +91 8750919571.",
     ],
   },
   {
@@ -61,7 +61,7 @@ const faqs = [
     answer: [
       "Hiring a qualified online private tutor from P.C.M.B. Tutors is simple, quick, and fully personalized to your academic needs. We follow a step-by-step process to ensure you get the best tutor for your child’s learning goals, curriculum, and schedule.",
       "1. Submit an Inquiry",
-      "Start by contacting us through our website www.pcmbtutors.com, email (info@pcmbtutors.com), or WhatsApp/call at +91 8427373281. Share your details including:",
+      "Start by contacting us through our website www.pcmbtutors.com, email (info@pcmbtutors.com), or WhatsApp/call at +91 8750919571. Share your details including:",
       "• Student’s grade and subject(s)",
       "• Curriculum (CBSE, IB, IGCSE, ICSE, ISC etc.)",
       "• Preferred schedule and time zone",
@@ -85,7 +85,7 @@ const faqs = [
       "• Coverage for CBSE, ICSE, IGCSE, IB, and other international boards",
       "• Personalized one-on-one classes across UAE, Qatar, UK, USA, Australia, Canada, and India",
       "• Ongoing feedback and performance tracking",
-      "Ready to get started? Contact us today at info@pcmbtutors.com or +91 8427373281 to book your free demo class!",
+      "Ready to get started? Contact us today at info@pcmbtutors.com or +91 8750919571 to book your free demo class!",
     ],
   },
   {
@@ -116,7 +116,7 @@ const faqs = [
       "• Multi-currency support",
       "• Time-zone friendly billing cycles",
       "• Need Help With Payment?",
-      "Contact us at info@pcmbtutors.com or WhatsApp +91 8427373281 for support.",
+      "Contact us at info@pcmbtutors.com or WhatsApp +91 8750919571 for support.",
     ],
   },
   {
@@ -172,7 +172,7 @@ const faqs = [
       "11. Contact Us",
       "Have questions or concerns? Reach out to us at:",
       " info@pcmbtutors.com",
-      "+91 8427373281",
+      "+91 8750919571",
     ],
   },
   {

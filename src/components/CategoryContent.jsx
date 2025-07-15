@@ -36,7 +36,7 @@ const CategoryContent = ({ imageLeft = false, heading, desc, image }) => {
       >
         {/* Text Content */}
         <div className="md:w-1/2 w-full  overflow-hidden relative">
-          <h2 className="text-[61px]  leading-tight mb-2 text-center md:text-left text-[#b601fe]  underline underline-offset-12 ">
+<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] leading-tight mb-2 text-center md:text-left text-[#b601fe] underline underline-offset-12">
             {heading}
           </h2>
           <p className="text-xl leading-relaxed text-justify line-clamp-[10]">
@@ -45,14 +45,14 @@ const CategoryContent = ({ imageLeft = false, heading, desc, image }) => {
           {/* Read More Button */}
           <button
             onClick={() => setIsModalOpen(true)}
-            className="mt-2 text-blue-600 underline hover:text-blue-800"
+            className="mt-2  text-blue-600 underline hover:text-blue-800"
           >
             Read more
           </button>
         </div>
 
         {/* Image Content */}
-        <div className="md:w-1/2 w-full h-96">
+        <div className="md:w-1/2 w-full h-96 border-4 rounded-xl border-blue-600">
           <img
             className="rounded-xl w-full h-full object-cover"
             src={image}

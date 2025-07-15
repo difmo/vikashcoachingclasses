@@ -177,7 +177,7 @@ const ContentLayout = () => {
           {/* Image Section */}
           {image && (
             <div className="w-full lg:w-1/2 flex justify-center">
-              <div className="w-full rounded-xl border-2 border-white overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+              <div className="w-full rounded-xl  overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 border-4 border-blue-600">
                 <img
                   src={image}
                   alt={`${subject} tutoring`}

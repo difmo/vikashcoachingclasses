@@ -12,7 +12,7 @@ const Detail = () => {
                     <p>
                         Contact:{" "}
                         <a href="tel:+918427373281" className="hover:underline">
-                            +91 8427373281
+                            +91 8750919571
                         </a>
                     </p>
                     <p>
@@ -36,12 +36,12 @@ const Detail = () => {
                     <p>
                         WhatsApp:{" "}
                         <a
-                            href="https://wa.me/919582699555"
+                            href="https://wa.me/918750919571"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:underline"
                         >
-                            919582699555
+                            918750919571
                         </a>
                     </p>
                 </div>

@@ -34,7 +34,7 @@ const socialLinks = [
   },
   {
     icon: <FaWhatsapp />,
-    url: "https://wa.me/919582699555",
+    url: "https://wa.me/918750919571",
     label: "WhatsApp",
   },
 ];
@@ -111,7 +111,7 @@ export default function Footer() {
   };
 
   return (
-    <div className="bg-[#393951] text-white text-xl">
+<div className="bg-[#393951] text-white text-xl sticky-b-0 mb-0">
       <div className="container mx-auto">
         <footer className="pt-10 px-5">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 pb-5">
@@ -121,7 +121,7 @@ export default function Footer() {
                 GET IN TOUCH :
               </h2>
               <p className="mb-2">Malviya Nagar, New Delhi 110017</p>
-              <p className="mb-2">Contact No : +91 84273 73281</p>
+              <p className="mb-2">Contact No : +91 8750919571</p>
               <p className="mb-7 text-2xl">info@pcmbtutors.com</p>
 
               <div className="flex space-x-4 mb-4">
