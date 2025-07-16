@@ -65,17 +65,17 @@ const Legacy = () => {
 
   return (
     <div>
-      <div className="container mx-auto px-4 py-10 ">
+      <div className="container mx-auto px-4 py-10  ">
         {/* Heading */}
         {/* <div className="text-center mb-10 bg-[#ffffff] py-3 rounded-lg border-2 border-[#f5eee0e7]"> */}
         {/* <h1 className="text-[#51087E] text-5xl font-bold">
            
           </h1> */}
-        <StripeHeading fontSize="text-6xl" text={" Our 11 Years of Legacy in Edutech Industries."} />
+        <StripeHeading fontSize="text-6xl " text={"Our 11 Years of Legacy in Edutech Industries."} />
         {/* </div> */}
 
         {/* Stats Section */}
-        <div className="flex flex-wrap justify-center gap-6 mb-12">
+        <div className="flex flex-wrap justify-center gap-6 mb-12 ">
           {legacyStats.map((item, index) => (
             <motion.div
               key={index}
@@ -84,7 +84,7 @@ const Legacy = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 bg-[#ffffff] border-[#f5eee0e7] rounded-xl border-2  shadow-sm hover:shadow-amber-600 text-center"
+              className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 bg-[#ffffff] border-[#b601fe] rounded-xl   shadow-sm hover:shadow-amber-600 text-center border-2"
             >
               <h2 className="text-xl font-semibold mb-2 text-[#51087E]">
                 {item.title}
@@ -109,10 +109,9 @@ const Legacy = () => {
           <div className="mt-4">
 
             <StripeHeading
-              fontSize="text-xl sm:text-2xl md:text-2xl lg:text-3xl"
-              text={
-                "Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode | P.C.M.B. Tutors"
-              }
+              fontSize="text-[20px] sm:text-[24px] md:text-[24px] lg:text-[30px]"
+text="Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode | P.C.M.B. Tutors"
+
             />
 
           </div>
@@ -176,7 +175,7 @@ export default Legacy;
 
 const TutoringSection = ({ img }) => {
   return (
-    <div className=" py-b max-w-7xl mx-auto">
+    <div className="py-b max-w-7xl mx-auto">
       <div className="flex flex-col justify-center  gap-8 items-start">
 
 
@@ -187,12 +186,12 @@ const TutoringSection = ({ img }) => {
           <img
             src={img}
             alt="vikasinstitute.in"
-            className="w-full h-auto object-cover  border-5 border-blue-600 rounded-[80px]"
+            className="w-full h-auto object-cover  border-5 border-[#b601fe] rounded-[80px]"
           />
         </div>
 
         {/* Text Content */}
-        <div className=" w-full text-xl space-y-4 text-justify">
+        <div className="w-full text-xl space-y-4 text-justify">
 
           <p>
             In today’s fast-paced academic environment, students need more than just traditional classroom teaching to truly master core science subjects like Physics, Chemistry, Maths, and Biology. At P.C.M.B Tutors, we bring the power of personalized 1-to-1 online tutoring into your home, helping students from Class 7 to Class 12 – across all major curriculums (CBSE, ICSE, IGCSE, IB & ISC Boards) – achieve academic excellence in science.

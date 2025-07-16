@@ -85,6 +85,8 @@ const physics = [
     slogan: "P.C.M.B. Tutors — Unlocking Physics Brilliance Across the Globe",
   },
 ];
+
+
 const OnlinePhysicsTutors = () => {
   return (
     <div>

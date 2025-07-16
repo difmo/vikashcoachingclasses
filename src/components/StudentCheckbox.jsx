@@ -26,7 +26,7 @@ const StudentCheckbox = ({
           className="peer hidden"
           name={groupName} 
         />
-        <div className="w-4 h-4 border-2 border-gray-300 rounded-full peer-checked:bg-yellow-500 peer-checked:border-blue-600 flex items-center justify-center transition-all duration-200">
+        <div className="w-4 h-4 border-2 border-gray-300 rounded-full peer-checked:bg-yellow-500 peer-checked:border-[#b601fe] flex items-center justify-center transition-all duration-200">
           {checked && (
             <svg
               className="w-3 h-3 text-primary"

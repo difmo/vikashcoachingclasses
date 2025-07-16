@@ -31,7 +31,7 @@ const slides = [
   },
   {
     image: vikas3,
-    heading: "Hi, Looking for Online Biology Tutor ",
+    heading: " ",
     text: "You are at the Right Place, Kindly fill the Form to Get in Touch or Whatsapp us ... ",
   },
 ];
@@ -68,7 +68,7 @@ const MainSlider = () => {
       {/* Top Section */}
       <div className="bg-[#f2f2f2] text-[#51087E] flex justify-center font-extrabold text-md md:text-md overflow-hidden">
         <motion.div
-          className="whitespace-nowrap"
+          className="whitespace-nowrap text-[#b601fe]"
           animate={{ x: ["100%", "-100%"] }}
           transition={{
             repeat: Infinity,
@@ -88,7 +88,7 @@ const MainSlider = () => {
         <div className="flex flex-col md:flex-row gap-6 mt-4">
           {/* Left: Slider */}
           <div className="relative  w-full md:w-1/2 xl:w-2/3 h-[213px] sm:h-[392px] md:h-[523px] lg:h-[491px] xl:h-[490px] overflow-hidden rounded-lg">
-            <div className="relative w-full h-full rounded-2xl border-3 border-white overflow-hidden">
+            <div className="relative w-full h-full rounded-2xl border-3 border-[#b601fe] overflow-hidden">
               <img
                 src={slides[current].image}
                 alt="vikasinstitute.in"

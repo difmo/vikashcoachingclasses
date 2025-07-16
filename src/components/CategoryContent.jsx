@@ -45,14 +45,14 @@ const CategoryContent = ({ imageLeft = false, heading, desc, image }) => {
           {/* Read More Button */}
           <button
             onClick={() => setIsModalOpen(true)}
-            className="mt-2  text-blue-600 underline hover:text-blue-800"
+            className="mt-2  text-[#b601fe] underline hover:text-blue-800 cursor-pointer"
           >
             Read more
           </button>
         </div>
 
         {/* Image Content */}
-        <div className="md:w-1/2 w-full h-96 border-4 rounded-xl border-blue-600">
+        <div className="md:w-1/2 w-full h-96 border-4 rounded-[17px] border-[#b601fe]">
           <img
             className="rounded-xl w-full h-full object-cover"
             src={image}

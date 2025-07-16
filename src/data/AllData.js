@@ -6,7 +6,7 @@ import biology from '../assets/tutorcat/biology.jpeg';
 import chemistry from '../assets/tutorcat/chemistry.jpeg';
 import math from '../assets/tutorcat/math.jpeg';
 import physics from '../assets/tutorcat/physics.jpeg';
-import vikasinstitute from '../assets/tutorcat/vikasinstitute.jpeg';
+//import vikasinstitute from '../assets/tutorcat/vikasinstitute.jpeg';
 const onlinePhysicsTutors = [
   {
     mainHeadding: "Online Physics Tutors",
@@ -627,7 +627,7 @@ const tutordata = [
 
   {
     "id": 1,
-    "title": "Online Science Tutoring : ",
+    "title": "Online Science Tutoring :",
     "description": "Personalized Learning for Academic Excellence In today’s competitive academic world, mastering science is essential for every student from middle school to high school and beyond. Science isn’t just about reading textbooks; it’s about understanding the world around us. Whether it's Physics, Chemistry, Biology, or Maths, these subjects form the foundation of higher education and professional success in fields like engineering, medicine, research, data science, and technology. Online science tutoring has emerged as a powerful solution for students who want personalized, flexible, and effective support in these core subjects. At P.C.M.B. Tutors, we offer 1-to-1 live tutoring in Physics, Chemistry, Biology & Maths—tailored to the unique needs of each learner.",
     "image": science,
     "imageLeft": false

@@ -28,7 +28,7 @@ const CustomRadio = ({
           onChange={onChange}
           className="peer hidden"
         />
-        <div className="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-blue-600 flex items-center justify-center transition-all duration-200">
+        <div className="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[#b601fe] flex items-center justify-center transition-all duration-200">
           {checked && (
             <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full" />
           )}

@@ -196,7 +196,7 @@ const ChemistryTutors = () => {
         {/* Bottom Section: Image & Form */}
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-6 p-4 md:p-8">
           <div className="w-full lg:w-1/2 flex justify-center">
-            <div className="w-full rounded-xl border-4 border-blue-600 overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 ">
+              <div className="w-full  border-4 border-[#b601fe] rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
               <img
                 src={chem}
                 alt="vikasinstitute.in"
@@ -205,7 +205,7 @@ const ChemistryTutors = () => {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2 mt-6 lg:mt-0">
+          <div className="w-full lg:w-1/2 mt-6 lg:mt-0 ">
             <Form />
           </div>
         </div>
@@ -215,3 +215,4 @@ const ChemistryTutors = () => {
 };
 
 export default ChemistryTutors;
+  

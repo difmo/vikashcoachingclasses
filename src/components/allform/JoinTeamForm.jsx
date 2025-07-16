@@ -642,7 +642,7 @@ const JoinTeamForm = () => {
                             <div
                               className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
                                 selectedRole === role.value
-                                  ? "border-blue-600"
+                                  ? "border-[#b601fe]"
                                   : "border-gray-300"
                               }`}
                             >
