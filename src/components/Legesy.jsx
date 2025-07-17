@@ -109,8 +109,8 @@ const Legacy = () => {
           <div className="mt-4">
 
             <StripeHeading
-              fontSize="text-[20px] sm:text-[24px] md:text-[24px] lg:text-[30px]"
-text="Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode | P.C.M.B. Tutors"
+              fontSize="text-[15px] sm:text-[19px] md:text-[19px] lg:text-[28px]"
+text="Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode At P.C.M.B. Tutors"
 
             />
 
