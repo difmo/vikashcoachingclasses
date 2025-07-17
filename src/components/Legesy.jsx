@@ -109,8 +109,8 @@ const Legacy = () => {
           <div className="mt-4">
 
             <StripeHeading
-              fontSize="text-[15px] sm:text-[19px] md:text-[19px] lg:text-[28px]"
-text="Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode At P.C.M.B. Tutors"
+              fontSize="text-[13px] sm:text-[16px] md:text-[16px] lg:text-[25px]"
+text="Online Science Tutoring (Physics, Chemistry, Maths & Biology) in 1-to-1 Personalized Mode at P.C.M.B. Tutors"
 
             />
 
@@ -182,7 +182,7 @@ const TutoringSection = ({ img }) => {
 
         {/* Image */}
 
-        <div className="px-10  w-full"> {/* ✅ Equal left and right margin via padding */}
+        <div className="px-25  w-full"> {/* ✅ Equal left and right margin via padding */}
           <img
             src={img}
             alt="vikasinstitute.in"
@@ -194,7 +194,7 @@ const TutoringSection = ({ img }) => {
         <div className="w-full text-xl space-y-4 text-justify">
 
           <p>
-            In today’s fast-paced academic environment, students need more than just traditional classroom teaching to truly master core science subjects like Physics, Chemistry, Maths, and Biology. At P.C.M.B Tutors, we bring the power of personalized 1-to-1 online tutoring into your home, helping students from Class 7 to Class 12 – across all major curriculums (CBSE, ICSE, IGCSE, IB & ISC Boards) – achieve academic excellence in science.
+            In today’s fast-paced academic environment, students need more than just traditional classroom teaching to truly master core science subjects like Physics, Chemistry, Maths and Biology. At P.C.M.B Tutors, we bring the power of personalized 1-to-1 online tutoring into your home, helping students from Class 7 to Class 12 – across all major curriculums (CBSE, ICSE, IGCSE, IB & ISC Boards) – achieve academic excellence in science and Mathematics.
           </p>
 
           <p>
@@ -205,16 +205,16 @@ const TutoringSection = ({ img }) => {
 
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <strong>Customized Learning Plans for Every Student:</strong> Our expert tutors first assess the student’s current knowledge, strengths, and areas that need improvement. A customized plan is created for optimal learning.
+              <strong>Customized Learning Plans for Every Student:</strong> Our expert tutors first assess the student’s current knowledge, strengths and areas that need improvement. A customized plan is created for optimal learning.
             </li>
             <li>
-              <strong>Expert Tutors:</strong> Highly qualified tutors, including IITians, NITians, PhDs, and professionals, ensure students gain conceptual clarity and score better.
+              <strong>Expert Tutors:</strong> Highly qualified tutors, including IITians, NITians, PhDs and professionals, ensure students gain conceptual clarity and score better.
             </li>
             <li>
-              <strong>Flexible Scheduling:</strong> Sessions are scheduled around your convenience — be it daily or on weekends.
+              <strong>Flexible Scheduling:</strong> Sessions are scheduled around your convenience that may  be  daily or on weekends.
             </li>
             <li>
-              <strong>Interactive & Engaging:</strong> Digital tools like whiteboards, simulations, and quizzes make learning fun and effective.
+              <strong>Interactive & Engaging:</strong> Digital tools like whiteboards, simulations and quizzes make learning fun and effective.
             </li>
             <li>
               <strong>Guaranteed Results:</strong> Our entire model is results-driven, helping students measurably improve their academic performance.
@@ -222,7 +222,7 @@ const TutoringSection = ({ img }) => {
           </ul>
 
           <p>
-            We understand that when parents invest in personalized tutoring, they expect clear improvement in understanding, marks, and performance. Our framework is designed to help students reach their full potential with confidence.
+            We understand that when parents invest in personalized tutoring, they expect clear improvement in understanding, marks and performance. Our framework is designed to help students reach their full potential with confidence.
           </p>
         </div>
       </div>

@@ -11,24 +11,24 @@ const onlinePhysicsTutors = [
   {
     mainHeadding: "Online Physics Tutors",
     mainTitle:
-      "Hello, Are you Looking for  Online Physics Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE Board Students ?",
+      "Hello, Are you Looking for  Online Physics Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE and other Boards Students ?",
     welcomeMessage:
-      "Welcome to Online Personal Physics Tutor @ P.C.M.B. Tutors, your ultimate destination for top-quality online Physics tutoring. We specialize in Physics education for students following the CBSE, IB, IGCSE, ICSE, and ISE curricula across the UAE, Qatar, USA, UK, Canada, Australia, and India. With our team of highly skilled Physics tutors, customized learning plans, and student-focused online classes, we help students build confidence and excel in one of the most crucial academic subjects.",
+      "Welcome to Online Personal Physics Tutor @ P.C.M.B. Tutors, your ultimate destination for top-quality online Physics tutoring. We specialize in Physics education for students following the CBSE, IB, IGCSE, ICSE and ISE curricula across the UAE, Qatar, USA, UK, Canada, Australia and India. With our team of highly skilled Physics tutors, customized learning plans and student-focused online classes, we help students build confidence and excel in one of the most crucial academic subjects.",
     whyChooseUs: [
       "Qualified and Passionate Tutors: Our Physics tutors are highly qualified professionals with extensive teaching experience in various international and Indian boards. They bring energy and clarity to every lesson, making even the toughest physics problems easier to solve.",
       "Personalized Lesson Plans: Each student has a unique learning style. Our tutors assess the individual needs and tailor the lesson plans accordingly.",
       "Interactive One-on-One Sessions: Our online Physics tutoring is conducted through interactive, one-on-one classes that provide personalized attention and create a distraction-free environment for optimal learning.",
-      "Flexible Scheduling Across Time Zones: We accommodate schedules from different time zones including Dubai, Doha, New York, London, Toronto, Sydney, and Mumbai to ensure maximum convenience for parents and students.",
-      "Performance-Oriented Approach: Our focus is on improving academic performance. Regular assessments, instant feedback, error analysis, and exam-specific strategies help students achieve higher grades.",
+      "Flexible Scheduling Across Time Zones: We accommodate schedules from different time zones including Dubai, Doha, New York, London, Toronto, Sydney and Mumbai to ensure maximum convenience for parents and students.",
+      "Performance-Oriented Approach: Our focus is on improving academic performance. Regular assessments, instant feedback, error analysis and exam-specific strategies help students achieve higher grades.",
       "Affordable and Transparent Pricing: We offer premium Physics tutoring services at affordable rates with no hidden costs.",
       "Safe and Secure Online Learning Platform: We use secure platforms like Zoom and Google Meet for classes, supported by digital whiteboards and real-time collaboration tools.",
     ],
     boardTutoring: {
-      CBSE: "We follow the NCERT syllabus and help students from Classes 7 to 12 with topics like Mechanics, Thermodynamics, Waves, and Optics.",
-      IB: "We assist IB students with SL and HL Physics, covering topics like Forces, Energy, and Quantum Theory.",
+      CBSE: "We follow the NCERT syllabus and help students from Classes 7 to 12 with topics like Mechanics, Thermodynamics, Waves and Optics.",
+      IB: "We assist IB students with SL and HL Physics, covering topics like Forces, Energy and Quantum Theory.",
       IGCSE:
-        "Our tutors help IGCSE students understand key areas like Forces, Energy, and Motion.",
-      ICSE: "We provide detailed tutoring in Mechanics, Optics, and Thermodynamics for ICSE students.",
+        "Our tutors help IGCSE students understand key areas like Forces, Energy and Motion.",
+      ICSE: "We provide detailed tutoring in Mechanics, Optics and Thermodynamics for ICSE students.",
       ISE: "Our ISE tutoring includes advanced topics such as Fluid Mechanics and Nuclear Physics.",
     },
     globalCoverage: [
@@ -38,7 +38,7 @@ const onlinePhysicsTutors = [
       "UK: London, Birmingham, Leeds, Manchester",
       "Canada: Toronto, Vancouver, Ottawa, Calgary",
       "Australia: Sydney, Melbourne, Perth, Brisbane",
-      "India: Delhi, Mumbai, Hyderabad, Chennai, Bangalore, Pune, and more",
+      "India: Delhi, Mumbai, Hyderabad, Chennai, Bangalore, Pune and more",
     ],
     howItWorks: [
       "Step 1: Free Initial Assessment",
@@ -81,7 +81,7 @@ const onlinePhysicsTutors = [
       "Regular updates for parents and guardians",
       "Emphasis on core concepts and exam strategies",
       "Affordable rates and customized learning plans",
-      "Safe, secure, and engaging learning experience",
+      "Safe, secure and engaging learning experience",
     ],
     contact: {
       phone: "+91 8750919571",
@@ -90,7 +90,7 @@ const onlinePhysicsTutors = [
     },
     closingLine:
       "Help your child fall in love with Physics and achieve academic success.",
-    slogan: "P.C.M.B. Tutors — Unlocking Physics Brilliance Across the Globe.",
+    slogan: "P.C.M.B. Tutors : Unlocking Physics Brilliance Across the Globe.",
   },
 ];
 
@@ -100,26 +100,26 @@ const onlineChemistryTutors = [
   {
     mainHeadding: "Online Chemistry Tutors",
     mainTitle:
-      "Hello, Are you Looking for  Online Chemistry Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE Board Students ?",
+      "Hello, Are you Looking for  Online Chemistry Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE and other Boards Students ?",
     welcomeMessage:
-      "Welcome to Online Personal Chemistry Tutors @ P.C.M.B. Tutors, your premier platform for top-notch online Chemistry tutoring. We provide expert tutoring for students pursuing CBSE, IB, IGCSE, ICSE, and ISE curricula, and our online Chemistry classes are tailored for students in the UAE, Qatar, USA, UK, Canada, Australia, and India. With experienced tutors, customized lesson plans, and one-on-one attention, we ensure your child gains a solid understanding of Chemistry and excels academically.",
+      "Welcome to Online Personal Chemistry Tutors @ P.C.M.B. Tutors, your premier platform for top-notch online Chemistry tutoring. We provide expert tutoring for students pursuing CBSE, IB, IGCSE, ICSE and ISE curricula, and our online Chemistry classes are tailored for students in the UAE, Qatar, USA, UK, Canada, Australia and India. With experienced tutors, customized lesson plans and one-on-one attention, we ensure your child gains a solid understanding of Chemistry and excels academically.",
 
     whyChooseUs: [
-      "Expert Chemistry Tutors: Our team includes subject matter experts with advanced degrees in Chemistry and years of teaching experience. They are well-versed with the syllabi of CBSE, IB, IGCSE, ICSE, and ISE, ensuring your child receives the best guidance.",
-      "Personalized Learning: Every student learns differently. Our tutors design tailored lesson plans to suit each student's pace, style, and learning goals. Whether it's mastering organic reactions or understanding atomic structures, we've got it covered.",
-      "One-on-One Online Classes: Live, interactive classes allow your child to receive individual attention. We encourage questions, promote discussion, and clear doubts in real time, building confidence and mastery.",
-      "Time Zone Friendly: We offer flexible scheduling options to match time zones across Dubai, Doha, New York, London, Toronto, Sydney, and New Delhi. Our Chemistry tutors are available when your child is ready to learn.",
-      "Conceptual Clarity + Exam Readiness: From daily schoolwork to competitive exams like NEET, SAT Subject Tests, or AP Chemistry, we prepare students for success with concept clarity, regular tests, and revision sessions.",
+      "Expert Chemistry Tutors: Our team includes subject matter experts with advanced degrees in Chemistry and years of teaching experience. They are well-versed with the syllabi of CBSE, IB, IGCSE, ICSE and ISE, ensuring your child receives the best guidance.",
+      "Personalized Learning: Every student learns differently. Our tutors design tailored lesson plans to suit each student's pace, style and learning goals. Whether it's mastering organic reactions or understanding atomic structures, we've got it covered.",
+      "One-on-One Online Classes: Live or interactive classes allow your child to receive individual attention. We encourage questions, promote discussion and clear doubts in real time, building confidence and mastery.",
+      "Time Zone Friendly: We offer flexible scheduling options to match time zones across Dubai, Doha, New York, London, Toronto, Sydney and New Delhi. Our Chemistry tutors are available when your child is ready to learn.",
+      "Conceptual Clarity + Exam Readiness: From daily schoolwork to competitive exams like NEET, SAT Subject Tests, or AP Chemistry, we prepare students for success with concept clarity, regular tests and revision sessions.",
       "Transparent Pricing: We provide affordable, quality education with no hidden costs. Choose from a variety of flexible plans designed for every need and budget.",
-      "Regular Feedback and Progress Reports: We maintain open communication with parents by offering regular feedback, performance updates, and goal tracking.",
+      "Regular Feedback and Progress Reports: We maintain open communication with parents by offering regular feedback, performance updates and goal tracking.",
     ],
 
     boardTutoring: {
-      CBSE: "Our CBSE Chemistry tutors follow the latest NCERT syllabus for Classes 9 to 12. We provide detailed conceptual explanations, problem-solving techniques, and exam-focused preparation.",
-      IB: "Our tutors are trained in delivering IB Chemistry content at both SL and HL levels. We offer support for internal assessments (IAs), extended essays, and prepare students for Paper 1, 2, and 3 of the final exams.",
+      CBSE: "Our CBSE Chemistry tutors follow the latest NCERT syllabus for Classes 9 to 12. We provide detailed conceptual explanations, problem-solving techniques and exam-focused preparation.",
+      IB: "Our tutors are trained in delivering IB Chemistry content at both SL and HL levels. We offer support for internal assessments (IAs), extended essays and prepare students for Paper 1, 2 and 3 of the final exams.",
       IGCSE:
-        "Our IGCSE Chemistry tutors guide students through challenging topics such as chemical bonding, stoichiometry, and electrochemistry with precision, using past papers and targeted revision plans.",
-      ICSE: "We provide robust ICSE Chemistry preparation, focusing on practical-oriented learning, structured problem-solving, and memory techniques for balancing equations, naming compounds, and understanding periodic trends.",
+        "Our IGCSE Chemistry tutors guide students through challenging topics such as chemical bonding, stoichiometry and electrochemistry with precision, using past papers and targeted revision plans.",
+      ICSE: "We provide robust ICSE Chemistry preparation, focusing on practical-oriented learning, structured problem-solving and memory techniques for balancing equations, naming compounds, and understanding periodic trends.",
       ISE: "For students under the Indian School Examination curriculum, we offer result-driven Chemistry tutoring tailored to board specifications and competitive readiness.",
     },
 
@@ -130,7 +130,7 @@ const onlineChemistryTutors = [
       "UK: London, Birmingham, Manchester, Liverpool",
       "Canada: Toronto, Vancouver, Calgary, Edmonton",
       "Australia: Sydney, Melbourne, Brisbane, Perth",
-      "India: Delhi, Mumbai, Hyderabad, Bangalore, Chennai, Pune, and other cities",
+      "India: Delhi, Mumbai, Hyderabad, Bangalore, Chennai, Pune and other cities",
     ],
 
     howItWorks: [
@@ -174,7 +174,7 @@ const onlineChemistryTutors = [
       "Join hundreds of successful students from around the world who trust P.C.M.B. Tutors for online Chemistry tutoring. Book your Free Demo Class today and take the first step toward academic success!",
 
     slogan:
-      "P.C.M.B. Tutors — Empowering Future Scientists Through Online Tutoring.",
+      "P.C.M.B. Tutors : Empowering Future Scientists Through Online Tutoring.",
   },
 ];
 
@@ -182,26 +182,26 @@ const onlineMathsTutors = [
   {
     mainHeadding: "Online Math Tutors",
     mainTitle:
-      "Hello, Are you Looking for  Online Maths Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE Board Students ?",
-    welcomeMessage: `Welcome to Online Personal Maths Tutor @ P.C.M.B. Tutors, your ultimate destination for top-quality online Maths tutoring. We specialize in Mathematics education for students following the CBSE, IB, IGCSE, ICSE, and ISE curricula across the UAE, Qatar, USA, UK, Canada, Australia, and India. With our team of highly skilled Maths tutors, customized learning plans, and student-focused online classes, we help students build confidence and excel in one of the most crucial academic subjects.`,
+      "Hello, Are you Looking for  Online Maths Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE amd other Boards Students ?",
+    welcomeMessage: `Welcome to Online Personal Maths Tutor @ P.C.M.B. Tutors, your ultimate destination for top-quality online Maths tutoring. We specialize in Mathematics education for students following the CBSE, IB, IGCSE, ICSE and ISE curricula across the UAE, Qatar, USA, UK, Canada, Australia and India. With our team of highly skilled Maths tutors, customized learning plans and student-focused online classes, we help students build confidence and excel in one of the most crucial academic subjects.`,
 
     whyChooseUs: [
       "Qualified and Passionate Tutors: Our Maths tutors are highly qualified professionals with extensive teaching experience in various international and Indian boards. They bring energy and clarity to every lesson, making even the toughest math problems easier to solve.",
-      "Personalized Lesson Plans: Each student has a unique learning style. Our tutors assess the individual needs and tailor the lesson plans accordingly. Whether your child needs help with Algebra, Geometry, Calculus, or Trigonometry, we ensure complete conceptual understanding.",
+      "Personalized Lesson Plans: Each student has a unique learning style. Our tutors assess the individual needs and tailor the lesson plans accordingly. Whether your child needs help with Algebra, Geometry, Calculus or Trigonometry, we ensure complete conceptual understanding.",
       "Interactive One-on-One Sessions: Our online Maths tutoring is conducted through interactive, one-on-one classes that provide personalized attention and create a distraction-free environment for optimal learning.",
-      "Flexible Scheduling Across Time Zones: We accommodate schedules from different time zones including Dubai, Doha, New York, London, Toronto, Sydney, and Mumbai to ensure maximum convenience for parents and students.",
-      "Performance-Oriented Approach: Our focus is on improving academic performance. Regular assessments, instant feedback, error analysis, and exam-specific strategies help students achieve higher grades.",
+      "Flexible Scheduling Across Time Zones: We accommodate schedules from different time zones including Dubai, Doha, New York, London, Toronto, Sydney and Mumbai to ensure maximum convenience for parents and students.",
+      "Performance-Oriented Approach: Our focus is on improving academic performance. Regular assessments, instant feedback, error analysis and exam-specific strategies help students achieve higher grades.",
       "Affordable and Transparent Pricing: We offer premium Maths tutoring services at affordable rates with no hidden costs. Our flexible plans are designed to meet every family’s educational needs and budget.",
       "Safe and Secure Online Learning Platform: We use secure platforms like Zoom and Google Meet for classes, supported by digital whiteboards and real-time collaboration tools.",
     ],
 
     boardTutoring: {
-      CBSE: "Our CBSE Maths tutors follow the NCERT syllabus and help students from Classes 7 to 12 with topics such as Linear Equations, Probability, Statistics, and Coordinate Geometry. We also prepare students for exams like JEE and NTSE.",
-      IB: "We offer expert Maths tutoring for IB students at both SL and HL levels. Our tutors assist with IA projects, past paper analysis, and prepare students for rigorous IB assessments.",
+      CBSE: "Our CBSE Maths tutors follow the NCERT syllabus and help students from Classes 7 to 12 with topics such as Linear Equations, Probability, Statistics and Coordinate Geometry. We also prepare students for exams like JEE and NTSE.",
+      IB: "We offer expert Maths tutoring for IB students at both SL and HL levels. Our tutors assist with IA projects, past paper analysis and prepare students for rigorous IB assessments.",
       IGCSE:
-        "Our IGCSE Maths tutors are well-versed in Extended and Core syllabi. We teach key areas like Algebra, Mensuration, and Vectors with emphasis on solving past papers and understanding examiner expectations.",
-      ICSE: "We help ICSE students from Grades 7 to 10 with thorough coverage of Arithmetic, Geometry, Trigonometry, and Algebra. We provide regular practice worksheets, short quizzes, and problem-solving sessions.",
-      ISE: "Our ISE Maths tutoring supports senior secondary students with topics like Calculus, Linear Programming, and Statistics while preparing them for final exams and competitive entrance tests.",
+        "Our IGCSE Maths tutors are well-versed in Extended and Core syllabi. We teach key areas like Algebra, Mensuration and Vectors with emphasis on solving past papers and understanding examiner expectations.",
+      ICSE: "We help ICSE students from Grades 7 to 10 with thorough coverage of Arithmetic, Geometry, Trigonometry and Algebra. We provide regular practice worksheets, short quizzes and problem-solving sessions.",
+      ISE: "Our ISE Maths tutoring supports senior secondary students with topics like Calculus, Linear Programming and Statistics while preparing them for final exams and competitive entrance tests.",
     },
 
     globalCoverage: [
@@ -211,15 +211,15 @@ const onlineMathsTutors = [
       "UK: London, Birmingham, Leeds, Manchester",
       "Canada: Toronto, Vancouver, Ottawa, Calgary",
       "Australia: Sydney, Melbourne, Perth, Brisbane",
-      "India: Delhi, Mumbai, Hyderabad, Chennai, Bangalore, Pune, and more",
+      "India: Delhi, Mumbai, Hyderabad, Chennai, Bangalore, Pune and more",
     ],
 
     howItWorks: [
-      "Step 1: Free Initial Assessment: We start with a free consultation and academic assessment to understand your child’s current level, areas of improvement, and learning goals.",
-      "Step 2: Tutor Matching: Based on the assessment, we assign a highly qualified Maths tutor who aligns with the student’s learning pace, curriculum, and schedule.",
-      "Step 3: Personalized Online Classes: Live, interactive sessions are conducted using advanced tools such as digital whiteboards, screen sharing, and real-time collaboration features.",
+      "Step 1: Free Initial Assessment: We start with a free consultation and academic assessment to understand your child’s current level, areas of improvement and learning goals.",
+      "Step 2: Tutor Matching: Based on the assessment, we assign a highly qualified Maths tutor who aligns with the student’s learning pace, curriculum and schedule.",
+      "Step 3: Personalized Online Classes: Live, interactive sessions are conducted using advanced tools such as digital whiteboards, screen sharing and real-time collaboration features.",
       "Step 4: Regular Assignments & Feedback: Students receive homework assignments after every session. Parents are given monthly progress reports and ongoing feedback.",
-      "Step 5: Exam Preparation: We conduct regular mock tests, past paper practice, and revision sessions to prepare students for school and board exams.",
+      "Step 5: Exam Preparation: We conduct regular mock tests, past paper practice and revision sessions to prepare students for school and board exams.",
     ],
 
     testimonials: [
@@ -250,7 +250,7 @@ const onlineMathsTutors = [
       "ACT Maths",
       "AP Calculus AB & BC",
       "Maths Olympiads",
-      "NTSE, KVPY, and other national-level tests",
+      "NTSE, KVPY and other national-level tests",
     ],
 
     benefits: [
@@ -260,7 +260,7 @@ const onlineMathsTutors = [
       "Regular updates for parents and guardians",
       "Emphasis on core concepts and exam strategies",
       "Affordable rates and customized learning plans",
-      "Safe, secure, and engaging learning experience",
+      "Safe, secure and engaging learning experience",
     ],
 
     contact: {
@@ -273,7 +273,7 @@ const onlineMathsTutors = [
       "Book your Free Trial Session today and give your child the Vikas advantage!",
 
     slogan:
-      "P.C.M.B. Tutors — Unlocking Mathematical Brilliance Across the Globe.",
+      "P.C.M.B. Tutors : Unlocking Mathematical Brilliance Across the Globe.",
   },
 ];
 
@@ -281,25 +281,25 @@ const onlineBiologyTutors = [
   {
     mainHeadding: "Online Biology Tutors",
     mainTitle:
-      "Hello, Are you Looking for  Online Biology Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE Board Students ?",
+      "Hello, Are you Looking for  Online Biology Tutor for Class 11th, 12th, CUET, NEET, IIT-JEE for  CBSE, IB, IGCSE, ICSE, ISE and other Boards Students ?",
     welcomeMessage:
-      "Welcome to Online Biology Tutors @ P.C.M.B. Tutors, the trusted name in online Biology tutoring for students of CBSE, IB, IGCSE, ICSE, and ISE curricula. Whether you're based in the UAE, Qatar, USA, UK, Canada, Australia, or India, we bring expert Biology tutors right to your screen with flexible, one-on-one, and result-oriented online classes. At P.C.M.B. Tutors, our mission is to empower students with a strong foundation in Biology through conceptual learning, critical thinking, and exam-ready strategies.",
+      "Welcome to Online Biology Tutors @ P.C.M.B. Tutors, the trusted name in online Biology tutoring for students of CBSE, IB, IGCSE, ICSE and ISE curricula. Whether you're based in the UAE, Qatar, USA, UK, Canada, Australia or India, we bring expert Biology tutors right to your screen with flexible, one-on-one and result-oriented online classes. At P.C.M.B. Tutors, our mission is to empower students with a strong foundation in Biology through conceptual learning, critical thinking and exam-ready strategies.",
     whyChooseUs: [
-      "Certified and Experienced Biology Tutors: Our tutors are handpicked professionals with degrees in Life Sciences, Biotechnology, Medicine, and Education. They are highly experienced in teaching school-level Biology and preparing students for national and international exams.",
+      "Certified and Experienced Biology Tutors: Our tutors are handpicked professionals with degrees in Life Sciences, Biotechnology, Medicine and Education. They are highly experienced in teaching school-level Biology and preparing students for national and international exams.",
       "Board-Specific Lesson Plans: We offer specialized lesson plans tailored to each curriculum—whether it’s the NCERT-based CBSE syllabus or the rigorous IB and IGCSE structures.",
-      "Flexible Timings Across Time Zones: Our classes are available as per your convenience. Students in Dubai, Doha, London, Toronto, New York, Sydney, or Mumbai can all access sessions according to their own schedules.",
+      "Flexible Timings Across Time Zones: Our classes are available as per your convenience. Students in Dubai, Doha, London, Toronto, New York, Sydney or Mumbai can all access sessions according to their own schedules.",
       "Interactive One-on-One Classes: Our online sessions are completely personalized. With tools like whiteboards, presentations, 3D diagrams, and quizzes, we keep the classes interactive and engaging.",
       "Regular Tests & Progress Reports: We believe in tracking performance. Regular tests, homework, and detailed feedback help us ensure consistent academic growth.",
       "Affordable Pricing: Get world-class Biology education at competitive rates. Choose from various plans based on your goals and budget.",
-      "Parental Involvement: We believe parents are key stakeholders. Regular updates, consultations, and reports keep you involved in your child’s progress.",
+      "Parental Involvement: We believe parents are key stakeholders. Regular updates, consultations and reports keep you involved in your child’s progress.",
     ],
     boardTutoring: {
-      CBSE: "We cover all topics from Cell Biology to Human Physiology and Biotechnology with clarity. Our tutors focus on diagrams, definitions, NCERT highlights, and question bank solving. Ideal for board preparation and NEET foundation.",
-      IB: "Our tutors are well-versed with IB SL and HL topics like Molecular Biology, Genetics, Ecology, and Option Topics. Support is also provided for IAs and Extended Essays with research-based guidance.",
+      CBSE: "We cover all topics from Cell Biology to Human Physiology and Biotechnology with clarity. Our tutors focus on diagrams, definitions, NCERT highlights and question bank solving. Ideal for board preparation and NEET foundation.",
+      IB: "Our tutors are well-versed with IB SL and HL topics like Molecular Biology, Genetics, Ecology and Option Topics. Support is also provided for IAs and Extended Essays with research-based guidance.",
       IGCSE:
-        "We offer structured lessons aligned with the syllabus, focusing on scientific terminology, past paper practice, and lab skills. Support provided for both Core and Extended students.",
-      ICSE: "With ICSE’s practical and theory-heavy approach, we guide students from Classes 7 to 10 with emphasis on precise definitions, labelling diagrams, and concept application.",
-      ISE: "Our experienced tutors cover Zoology, Botany, and Biotechnology for the ISE curriculum while helping students with board-specific preparation and foundational concepts for medical entrance exams.",
+        "We offer structured lessons aligned with the syllabus, focusing on scientific terminology, past paper practice and lab skills. Support provided for both Core and Extended students.",
+      ICSE: "With ICSE’s practical and theory-heavy approach, we guide students from Classes 7 to 10 with emphasis on precise definitions, labelling diagrams and concept application.",
+      ISE: "Our experienced tutors cover Zoology, Botany and Biotechnology for the ISE curriculum while helping students with board-specific preparation and foundational concepts for medical entrance exams.",
     },
     globalCoverage: [
       "UAE: Dubai, Sharjah, Abu Dhabi, Al Ain",
@@ -308,13 +308,13 @@ const onlineBiologyTutors = [
       "UK: London, Manchester, Birmingham, Glasgow",
       "Canada: Toronto, Montreal, Calgary, Ottawa",
       "Australia: Sydney, Melbourne, Brisbane, Perth",
-      "India: Delhi, Mumbai, Pune, Bangalore, Chennai, Hyderabad, and more",
+      "India: Delhi, Mumbai, Pune, Bangalore, Chennai, Hyderabad and more",
     ],
     howItWorks: [
-      "Step 1: Free Consultation: We begin with a free student assessment and consultation to understand current academic level, strengths, and areas of improvement.",
+      "Step 1: Free Consultation: We begin with a free student assessment and consultation to understand current academic level, strengths and areas of improvement.",
       "Step 2: Matching with the Right Tutor: Based on the curriculum and time zone, we assign the most suitable Biology tutor.",
-      "Step 3: Personalized Classes Begin: Students attend live sessions via secure platforms. Diagrams, real-life examples, visuals, and animations make learning Biology exciting.",
-      "Step 4: Practice and Testing: Each topic is reinforced with worksheets, quizzes, and mock tests. We make sure students retain what they learn.",
+      "Step 3: Personalized Classes Begin: Students attend live sessions via secure platforms. Diagrams, real-life examples, visuals and animations make learning Biology exciting.",
+      "Step 4: Practice and Testing: Each topic is reinforced with worksheets, quizzes and mock tests. We make sure students retain what they learn.",
       "Step 5: Progress Review: Parents receive regular performance updates and are involved in academic planning.",
     ],
     testimonials: [
@@ -322,7 +322,7 @@ const onlineBiologyTutors = [
         name: "Mrs. Bansal",
         location: "Delhi",
         message:
-          "My daughter struggled with Class 12 Biology, but after joining P.C.M.B. Tutors, she scored 92%. The tutor was patient, knowledgeable, and supportive.",
+          "My daughter struggled with Class 12 Biology, but after joining P.C.M.B. Tutors, she scored 92%. The tutor was patient, knowledgeable and supportive.",
       },
       {
         name: "Mr. Clarke",
@@ -361,7 +361,7 @@ const onlineBiologyTutors = [
     closingLine:
       "Let your child thrive in Biology with expert help from P.C.M.B. Tutors.",
     slogan:
-      "P.C.M.B. Tutors — Empowering Young Biologists for a Better Tomorrow.",
+      "P.C.M.B. Tutors : Empowering Young Biologists for a Better Tomorrow.",
   },
 ];
 const testimonials = [
@@ -628,35 +628,35 @@ const tutordata = [
   {
     "id": 1,
     "title": "Online Science Tutoring :",
-    "description": "Personalized Learning for Academic Excellence In today’s competitive academic world, mastering science is essential for every student from middle school to high school and beyond. Science isn’t just about reading textbooks; it’s about understanding the world around us. Whether it's Physics, Chemistry, Biology, or Maths, these subjects form the foundation of higher education and professional success in fields like engineering, medicine, research, data science, and technology. Online science tutoring has emerged as a powerful solution for students who want personalized, flexible, and effective support in these core subjects. At P.C.M.B. Tutors, we offer 1-to-1 live tutoring in Physics, Chemistry, Biology & Maths—tailored to the unique needs of each learner.",
+    "description": "Personalized Learning for Academic Excellence In today’s competitive academic world, mastering science is essential for every student from middle school to high school and beyond. Science isn’t just about reading textbooks; it’s about understanding the world around us. Whether it's Physics, Chemistry, Biology or Maths, these subjects form the foundation of higher education and professional success in fields like engineering, medicine, research, data science and technology. Online science tutoring has emerged as a powerful solution for students who want personalized, flexible and effective support in these core subjects. At P.C.M.B. Tutors, we offer 1-to-1 live tutoring in Physics, Chemistry, Biology & Maths which is tailored to the unique needs of each learner.",
     "image": science,
     "imageLeft": false
   },
   {
     "id": 2,
     "title": "Online Physics Tutoring : ",
-    "description": "Personalized Learning for Better Results Physics is one of the most important subjects for students pursuing science, engineering, or medical careers. However, many learners find it challenging due to its complex concepts and mathematical applications. At P.C.M.B. Tutors, we make Physics simple, engaging, and result-oriented through 1-to-1 personalized online tutoring. Our online Physics tutoring is designed to meet the unique learning needs of each student, whether they’re in CBSE, ICSE, IGCSE, IB, or State Boards. From foundational topics like motion and forces to advanced concepts such as electromagnetism, optics, and modern physics, our expert tutors break down every concept in a clear and easy-to-understand manner. With live interactive sessions, digital whiteboards, visual aids, and regular assessments, we ensure deep conceptual clarity and exam readiness. Our tutors also help with homework, assignments, and competitive exam preparation including JEE, NEET, Olympiads, and SAT Subject Tests. At P.C.M.B. Tutors, we offer 1-to-1 personalized online Physics tutoring designed to help students not only improve their marks but also develop a deep conceptual understanding of the subject. Whether you’re a middle school student learning motion for the first time or a senior secondary student preparing for JEE, NEET, IB, or board exams, we’ve got you covered.",
+    "description": "Personalized Learning for Better Results Physics is one of the most important subjects for students pursuing science, engineering or medical careers. However, many learners find it challenging due to its complex concepts and mathematical applications. At P.C.M.B. Tutors, we make Physics simple, engaging and result-oriented through 1-to-1 personalized online tutoring. Our online Physics tutoring is designed to meet the unique learning needs of each student, whether they’re in CBSE, ICSE, IGCSE, IB,  ISC or State Boards. From foundational topics like motion and forces to advanced concepts such as electromagnetism, optics and modern physics, our expert tutors break down every concept in a clear and easy-to-understand manner. With live interactive sessions, digital whiteboards, visual aids and regular assessments, we ensure deep conceptual clarity and exam readiness. Our tutors also help with homework, assignments and competitive exam preparation including JEE, NEET, Olympiads and SAT Subject Tests. At P.C.M.B. Tutors, we offer 1-to-1 personalized online Physics tutoring designed to help students not only improve their marks but also develop a deep conceptual understanding of the subject. Whether you’re a middle school student learning motion for the first time or a senior secondary student preparing for JEE, NEET, IB, ISC or board exams, we’ve got you covered.",
     "image": physics,
     "imageLeft": true
   },
   {
     "id": 2,
     "title": "Online Chemistry Tutoring : ",
-    "description": "Build Confidence in Every Concept Chemistry is the central science that bridges Physics and Biology. Yet, many students struggle with it due to the abstract theories, chemical equations, and formula memorization. At P.C.M.B. Tutors, we simplify Chemistry through 1-to-1 personalized online tutoring that makes learning interactive, logical, and fun. Our online Chemistry tutoring covers all major curricula including CBSE, ICSE, IGCSE, IB, and State Boards. Whether your child needs help with basic concepts like atomic structure and chemical bonding or advanced topics such as organic chemistry and thermodynamics, we provide expert guidance at every step. Our experienced Chemistry tutors use real-life examples, digital whiteboards, visual demonstrations, and systematic revision methods to help students gain clarity and retain complex topics. Each session is customized to match the student’s pace and learning style. We also provide support for JEE, NEET, CUET, SAT Subject Tests, Olympiads, and school-level exams..",
+    "description": "Build Confidence in Every Concept Chemistry is the central science that bridges Physics and Biology. Yet, many students struggle with it due to the abstract theories, chemical equations and formula memorization. At P.C.M.B. Tutors, we simplify Chemistry through 1-to-1 personalized online tutoring that makes learning interactive, logical and fun. Our online Chemistry tutoring covers all major curricula including CBSE, ICSE, IGCSE, IB, ISC and State Boards. Whether your child needs help with basic concepts like atomic structure and chemical bonding or advanced topics such as organic chemistry and thermodynamics, we provide expert guidance at every step. Our experienced Chemistry tutors use real-life examples, digital whiteboards, visual demonstrations and systematic revision methods to help students gain clarity and retain complex topics. Each session is customized to match the student’s pace and learning style. We also provide support for JEE, NEET, CUET, SAT Subject Tests, Olympiads and school-level exams..",
     "image": chemistry,
     "imageLeft": false
   },
   {
     "id": 3,
     "title": "Online Maths Tutoring : ",
-    "description": "Learn, Practice & Excel with Personalised Support Mathematics is a subject that builds logical reasoning, analytical skills, and problem-solving ability. Yet, many students face difficulty due to unclear fundamentals or lack of practice. At P.C.M.B. Tutors, our 1-to-1 online Maths tutoring helps students overcome their fear of Maths and turn it into their strongest subject. We offer customized Maths tutoring for CBSE, ICSE, IGCSE, IB, and State Boards, from Grade 7 to 12. Whether it’s basic arithmetic, algebra, geometry, calculus, or statistics, our expert tutors break down every topic into simple, easy-to-understand steps. Our classes are interactive, engaging, and tailored to suit each student’s pace and learning style. Using digital whiteboards, real-life examples, and step-by-step explanations, we ensure that students understand the why behind every concept—not just how to solve a problem. We also support preparation for competitive exams such as JEE, CUET, Olympiads, SAT, ACT, and more, helping students tackle complex problems with confidence.",
+    "description": "Learn, Practice & Excel with Personalised Support Mathematics is a subject that builds logical reasoning, analytical skills, and problem-solving ability. Yet, many students face difficulty due to unclear fundamentals or lack of practice. At P.C.M.B. Tutors, our 1-to-1 online Maths tutoring helps students overcome their fear of Maths and turn it into their strongest subject. We offer customized Maths tutoring for CBSE, ICSE, IGCSE, IB, ISC and State Boards, from Grade 7 to 12. Whether it’s basic arithmetic, algebra, geometry, calculus or statistics, our expert tutors break down every topic into simple, easy-to-understand steps. Our classes are interactive, engaging and tailored to suit each student’s pace and learning style. Using digital whiteboards, real-life examples and step-by-step explanations, we ensure that students understand the why behind every concept ie not just how to solve a problem. We also support preparation for competitive exams such as JEE, CUET, Olympiads, SAT, ACT and more, helping students tackle complex problems with confidence.",
     "image": math,
     "imageLeft": true
   },
   {
     "id": 4,
     "title": "Online Biology Tutoring :",
-    "description": " Understand Life, the Smart Way Biology is the study of life—fascinating, complex, and essential for students pursuing careers in medicine, biotechnology, and life sciences. However, students often struggle with lengthy theories, diagrams, and terminology-heavy chapters. At P.C.M.B. Tutors, our 1-to-1 personalized online Biology tutoring simplifies learning through clear explanations, visual aids, and expert guidance. Our online Biology tutoring covers all major boards including CBSE, ICSE, IGCSE, IB, and State Boards, catering to students from Grade 7 to 12. Whether it’s cell structure, genetics, human physiology, plant biology, ecology, or evolution, our experienced tutors break down each topic into digestible and engaging lessons. Using interactive whiteboards, animations, and structured notes, we make difficult topics easier to understand and remember. Students also receive help with school homework, board exam preparation, and competitive tests like NEET, CUET, Olympiads, and SAT Subject Tests.",
+    "description": " Understand Life, the Smart Way Biology is the study of life ie fascinating, complex and essential for students pursuing careers in medicine, biotechnology and life sciences. However, students often struggle with lengthy theories, diagrams and terminology-heavy chapters. At P.C.M.B. Tutors, our 1-to-1 personalized online Biology tutoring simplifies learning through clear explanations, visual aids, and expert guidance. Our online Biology tutoring covers all major boards including CBSE, ICSE, IGCSE, IB, ISC and State Boards, catering to students from Grade 7 to 12. Whether it’s cell structure, genetics, human physiology, plant biology, ecology or evolution, our experienced tutors break down each topic into digestible and engaging lessons. Using interactive whiteboards, animations and structured notes, we make difficult topics easier to understand and remember. Students also receive help with school homework, board exam preparation and competitive tests like NEET, CUET, Olympiads and SAT Subject Tests.",
     "image": biology,
     "imageLeft": false
   },
